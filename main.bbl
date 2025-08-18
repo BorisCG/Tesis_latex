@@ -25,6 +25,15 @@ Generator, T., ``Creador de tablas online para \latex'', 2024,
 \backrefprint\backrefparscantrue
 
 \backrefparscanfalse
+\bibitem{makino1992hermite}
+Makino, J. y Aarseth, S.~J., ``On a hermite integrator with ahmad-cohen scheme
+  for gravitational many-body problems'', {Publications of the Astronomical
+  Society of Japan}, vol.~44, no.~2, pp.~141--151, 1992,
+  \href{https://dx.doi.org/10.1093/pasj/44.2.141}
+  {\nolinkurl{doi:\detokenize{10.1093/pasj/44.2.141}}}.
+\backrefprint\backrefparscantrue
+
+\backrefparscanfalse
 \bibitem{einstein}
 Einstein, A., ``{Zur Elektrodynamik bewegter K{\"o}rper}. ({German}) [{On} the
   electrodynamics of moving bodies]'', {Annalen der Physik}, vol.~322, no.~10,

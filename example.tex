@@ -114,13 +114,53 @@ A continuación se detallan algunos links de ayuda para el uso de las referencia
 \section{density criterion}
 \section{Stars and gas in equilibrium}
 
-\chapter{Into the code}
+\chapter{A method for coupling gas and stars}
 
-In order to make the simulations, we need to set up the code:
+In this work, we investigate the effect of gas in the process of seeds for SMBH formation. In contrast with other works, we do not take into account gas accretion by stars, since we are interested in the gravitational effect of gas over stars and vice versa.
 
-\section{Ph4}
-\section{Fi}
-\section{Bridge}
+We need, in principle, three codes: one for the stars, one for the gas and a coupling code that make gravitational interactions between gas and stars.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Esquemas/Codes_scheme.png} % Ruta relativa
+	\caption{Codes scheme}
+	\label{img:codes_scheme}
+\end{figure}
+
+The N-Body and SPH codes are used through the AMUSE interface, and are coupling with an external code.
+
+
+\section{N-body code: Ph4}
+
+The proposed scenarios presented in (referencia a capitulo) require the modeling of dense stellar clusters. And as we need to consider close encounters and collisions, is necessary a precise code.
+
+We use the PH4 code from the AMUSE interface. In the present section, we include a description of the code, as some external routines.
+
+\subsection{Hermite integrator}
+
+The Ph4 code uses an fourth-order Hermite integrator \cite{makino1992hermite} for calculating the position and velocities of stars due to gravity. This is a predictor-corrector method.
+
+The fourth-order Hermite scheme is based in a precise calculation of the individual time step. Considering the particle $i$ with own time $t_i$, time step $\Delta t_i$, position $x_i$, velocity $v_i$, acceleration $a_i$ and jerk $\dot{a_i}$, calculated at time $t_i$. The algorithm of  integration process proceeds as:
+
+\begin{enumerate}
+	\item Select the particle with minimum $t_i + \Delta t_i$. Set the global time as $t=t_i + \Delta t_i$.
+	\item Calculate the predicted positions ($x_p$) and velocities ($v_p$) for all particles, using the actual values for $x$, $v$, $a$, $\dot{a}$. 
+	\item Calculate the acceleration ($a_i$) and jerk ($\dot{a_i}$) for particle $i$ at time $t_i + \Delta t_i$ using the predicted positions and velocities.
+	\item Calculate the second and third time derivative of acceleration ($a_i^{(2)}$ and $a_i^{(3)}$), using an Hermite interpolation.
+	\item Add the corrections to position and velocities of particle $i$. Calculate and update the time step $t_i$.
+	\item Repeat the algorithm.
+\end{enumerate}
+
+
+
+
+
+\subsection{Block time steps}
+\subsection{Collisions and mergers}
+\subsection{Escaping stars}
+
+\section{Smoothed particles hydrodynamics: Fi}
+\section{Coupling strategy: Bridge}
 
 \chapter{Results and analysis}
 
