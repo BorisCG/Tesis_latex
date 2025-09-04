@@ -138,7 +138,7 @@ We use the PH4 code from the AMUSE interface. In the present section, we include
 
 \subsection{Hermite integrator}
 
-The Ph4 code uses an fourth-order Hermite integrator \cite{makino1992hermite} for calculating the position and velocities of stars due to gravity. This is a predictor-corrector method.
+The Ph4 code uses an fourth-order Hermite integrator \cite{makino1992} for calculating the position and velocities of stars due to gravity. This is a predictor-corrector method.
 
 The fourth-order Hermite scheme is based in a precise calculation of the individual time step. Considering the particle $i$ with own time $t_i$, time step $\Delta t_i$, position $x_i$, velocity $v_i$, acceleration $a_i$ and jerk $\dot{a_i}$, calculated at time $t_i$. The algorithm of  integration process proceeds as:
 
@@ -147,7 +147,8 @@ The fourth-order Hermite scheme is based in a precise calculation of the individ
 	\item Calculate the predicted positions ($x_p$) and velocities ($v_p$) for all particles, using the actual values for $x$, $v$, $a$, $\dot{a}$. 
 	\item Calculate the acceleration ($a_i$) and jerk ($\dot{a_i}$) for particle $i$ at time $t_i + \Delta t_i$ using the predicted positions and velocities.
 	\item Calculate the second and third time derivative of acceleration ($a_i^{(2)}$ and $a_i^{(3)}$), using an Hermite interpolation.
-	\item Add the corrections to position and velocities of particle $i$. Calculate and update the time step $t_i$.
+	\item Add the corrections to position and velocities of particle $i$.
+	\item Calculate and update the time step $\Delta t_i$.
 	\item Repeat the algorithm.
 \end{enumerate}
 
@@ -187,7 +188,7 @@ The fourth-order Hermite scheme is based in a precise calculation of the individ
 	\insertequationcaptioned[\label{eqn:formulasinsentido}]{\int_{a}^{b} f(x) \dd{x} = \fracnpartial{f(x)}{x}{\eta} \cdotp \textstyle \sum_{x=a}^{b} f(x)\cancelto{1+\frac{\epsilon}{k}}{\bigp{1+\Delta x}}}{Ecuación sin sentido.}
 
 	% Inserta una definición
-	\begin{defn}[ver \cite{einstein}]
+	\begin{defn}[ver \cite{einstein1905}]
 		Definición definitiva
 		$$\frac{d}{dx}\int_a^xf(y)dy=f(x)$$
 	\end{defn}
@@ -380,6 +381,113 @@ end
 % el cual acepta \chapter y escribe el título de anexos encima
 % ------------------------------------------------------------------------------
 \begin{appendixs}
+	\section{Hermite 4th order}
+	The N-body code used in this work, ph4, uses an Hermite fourth order integrator. The next subsections describe in detail the algorithm and calculations in the main integration cycle.
+	
+	% Primer paso
+	\subsection{Step 1: Particle selection}
+	The firs step is to select the particle to be advanced. Considering that at current time the particles have his own  time $t_j$, time step $\Delta t_j$, coordinates $x_j$ and $v_j$, acceleration $a_j$ and jerk $\dot{a_j}$ (with $\dot{a_j} = \partial a_j / \partial t$). The particle selected is the one that has the minimum $t + \Delta t$:
+	
+	\begin{equation}
+		i = \arg\min_j(t_j + \Delta t_j)
+	\end{equation}
+	
+	Note that always $t_j \leq t_i + \Delta t_i$, for all $j$. Now, we set the current time as $t = t_i + \Delta t_i$.
+	
+	% Segundo paso
+	\subsection{Step 2: Calculate the predicted position and velocities for all particles}
+	
+	From Taylor expansion for position, we have the expression:
+	
+	\begin{equation}
+		x(t) = x(t_0) + \dot{x}(t_0)(t - t_0) + \frac{x^{(2)}(t_0)}{2!}(t - t_0)^2 + ...
+	\end{equation}
+	
+	Using that $\dot{x} = v, x^{(2)} = \dot{v} = a, x^{(3)} = v^{(2)} = \dot{a} ...$, we make predictions over position and velocity of order $\dot{a}$:
+	
+	\begin{align}
+		x_{p, j} &= x_j + v_j (t - t_j) + \frac{a_j}{2!} (t-t_j)^2 + \frac{\dot{a}_j}{3!} (t-t_j)^3 \\
+		v_{p, j} &= v_j + a_j (t - t_j) + \frac{\dot{a}_j}{2!} (t-t_j)^2
+	\end{align}
+	
+	The acceleration is due only to gravitational force. The expression for each particle j is:
+	
+	\begin{equation}
+		a_j = \sum_{k \neq j} G m_k \frac{r_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{3/2}} \label{eq:ap_accel}
+	\end{equation}
+	
+	Where $\epsilon$ is the softening parameter, and
+	
+	\begin{equation}
+		r_{0,jk} = r_{k} - r_{j}
+	\end{equation}
+	
+	Deriving \ref{eq:ap_accel} respect time, we have the jerk:
+	
+	\begin{align}
+		\dot{a}_j &= \frac{\partial a_j}{\partial t} \\
+		&= \sum_{k \neq j} G m_k \frac{\partial}{\partial t}\frac{r_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{3/2}} \\
+		\dot{a}_j &= \sum_{k \neq j} G m_k \left[\frac{v_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{3/2}} - \frac{3(v_{0,jk} \cdot r_{0,jk})r_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{5/2}}\right] \label{eq:ap_jerk}
+	\end{align}
+	
+	where
+	
+	\begin{equation}
+		v_{0,jk} = v_{k} - v_{j}
+	\end{equation}
+	
+	% Tercer paso
+	\subsection{Step 3: Calculate acceleration and jerk for particle $i$}
+	
+	Similar to equations \ref{eq:ap_accel} and \ref{eq:ap_jerk}, we calculate the acceleration and jerk, using the predicted positions and velocity:
+	
+	\begin{align}
+		a_i &= \sum_{j \neq i} G m_j \frac{r_{ij}}{(r_{ij}^2 + \epsilon^2)^{3/2}} \label{eq:ap_accel_pred} \\
+		\dot{a}_i &= \sum_{j \neq i} G m_j \left[\frac{v_{ij}}{(r_{ij}^2 + \epsilon^2)^{3/2}} - \frac{3(v_{ij} \cdot r_{ij})r_{ij}}{(r_{ij}^2 + \epsilon^2)^{5/2}}\right] \label{eq:ap_jerk_pred} \\
+		r_{ij} &= r_{p,j} - r_{p,i} \\
+		v_{ij} &= v_{p,j} - v_{p,i}
+	\end{align}
+	
+	Note that for all particles we have the velocity and jerk. Now, we calculate the predicted acceleration and jerk, just for particle $i$.
+	
+	% Cuarto Paso
+	\subsection{Step 4: Second and third time derivative of acceleration, using Hermite interpolation}
+	
+	% Quinto Paso
+	\subsection{Step 5: Add corrections}
+	
+	First, we begin with the Taylor expansion for the position of particle $i$, at the time $t = t_i$:
+	
+	\begin{align}
+		x_i(t_i + \Delta t_i) =& x_i(t_i) + \dot{x_i}(t_i)\Delta t_i + \frac{{x_i}^{(2)}(t_i){\Delta t_i}^2}{2!} + ... + \frac{{x_i}^{(5)}(t_i){\Delta t_i}^5}{5!}\\
+		=& x_i + v_i \Delta t_i + \frac{a_{0, i} {\Delta t_i}^2}{2} + \frac{\dot{a}_{0, i} {\Delta t_i}^3}{6} + \frac{a^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{a^{(3)}_{0, i} {\Delta t_i}^5}{120}
+	\end{align}
+	
+	From \eqref{eq:ap_xpred} we replace $x_{p, i}$ in the first four terms in the equation:
+	
+	\begin{equation}
+		x_i(t_i + \Delta t_i) = x_{p, i} + \frac{a^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{a^{(3)}_{0, i} {\Delta t_i}^5}{120} \label{eq:ap_xcorr}
+	\end{equation}
+	
+	In a similar way, we have an expression for the velocity:
+	
+	\begin{equation}
+		v_i(t_i + \Delta t_i) = v_{p, i} + \frac{a^{(2)}_{0, i} {\Delta t_i}^3}{6} + \frac{a^{(3)}_{0, i} {\Delta t_i}^4}{24} \label{eq:ap_vcorr}
+	\end{equation}
+	
+	\subsection{Step 6: Time step update}
+	
+	Now that particle $i$ has been changed his position and velocity, is necessary to calculate a new time step. The most common is to use the standard formula \cite{aarseth1985}
+	
+	\begin{enumerate}
+		\item Select the particle with minimum $t_i + \Delta t_i$. Set the global time as $t=t_i + \Delta t_i$.
+		\item Calculate the predicted positions ($x_p$) and velocities ($v_p$) for all particles, using the actual values for $x$, $v$, $a$, $\dot{a}$. 
+		\item Calculate the acceleration ($a_i$) and jerk ($\dot{a_i}$) for particle $i$ at time $t_i + \Delta t_i$ using the predicted positions and velocities.
+		\item Calculate the second and third time derivative of acceleration ($a_i^{(2)}$ and $a_i^{(3)}$), using an Hermite interpolation.
+		\item Add the corrections to position and velocities of particle $i$. 
+		\item Calculate and update the time step $\Delta t_i$.
+		\item Repeat the algorithm.
+	\end{enumerate}
 	
 	\section{Cálculos realizados}
 

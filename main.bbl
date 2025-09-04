@@ -1,52 +1,37 @@
-\begin{thebibliography}{1}
-  \providecommand\backrefparscanfalse{}
-  \providecommand\backrefparscantrue{}
-  \providecommand\backrefprint{}
+\begin{thebibliography}{}
 
-\backrefparscanfalse
-\bibitem{overleaf}
-Overleaf, ``Uno de los mejores editores online para \latex, renovado con su
-  versión 2.0'', Agosto 2024, \href{https://es.overleaf.com/}
-  {\nolinkurl{\detokenize{https://es.overleaf.com/}}}.
-\backrefprint\backrefparscantrue
+\bibitem[Aarseth, 1985]{aarseth1985}
+Aarseth, S.~J. (1985).
+\newblock Direct methods for n-body simulations.
+\newblock In J.~U. Brackbill \& B.~I. Cohen (Eds.), {\em Multiple Time Scales}
+  (pp.\ 377--418). Academic Press.
 
-\backrefparscanfalse
-\bibitem{excel2latex}
-Excel2Latex, ``Plugin para hacer tablas con excel'', 2017,
-  \href{https://www.ctan.org/tex-archive/support/excel2latex/}
-  {\nolinkurl{\detokenize{https://www.ctan.org/tex-archive/support/excel2latex/}}}.
-\backrefprint\backrefparscantrue
+\bibitem[Einstein, 1905]{einstein1905}
+Einstein, A. (1905).
+\newblock Zur elektrodynamik bewegter körper.
+\newblock {\em Annalen der Physik}, 322(10), 891--921.
 
-\backrefparscanfalse
-\bibitem{tablesgenerator}
-Generator, T., ``Creador de tablas online para \latex'', 2024,
-  \href{https://www.tablesgenerator.com}
-  {\nolinkurl{\detokenize{https://www.tablesgenerator.com}}}.
-\backrefprint\backrefparscantrue
+\bibitem[Excel2Latex, 2017]{excel2latex}
+Excel2Latex (2017).
+\newblock Plugin para hacer tablas con excel.
 
-\backrefparscanfalse
-\bibitem{makino1992hermite}
-Makino, J. y Aarseth, S.~J., ``On a hermite integrator with ahmad-cohen scheme
-  for gravitational many-body problems'', {Publications of the Astronomical
-  Society of Japan}, vol.~44, no.~2, pp.~141--151, 1992,
-  \href{https://dx.doi.org/10.1093/pasj/44.2.141}
-  {\nolinkurl{doi:\detokenize{10.1093/pasj/44.2.141}}}.
-\backrefprint\backrefparscantrue
+\bibitem[Generator, 2024]{tablesgenerator}
+Generator, T. (2024).
+\newblock Creador de tablas online para latex.
 
-\backrefparscanfalse
-\bibitem{einstein}
-Einstein, A., ``{Zur Elektrodynamik bewegter K{\"o}rper}. ({German}) [{On} the
-  electrodynamics of moving bodies]'', {Annalen der Physik}, vol.~322, no.~10,
-  pp.~891--921, 1905,
-  \href{https://dx.doi.org/https://dx.doi.org/10.1002/andp.19053221004}
-  {\nolinkurl{doi:\detokenize{https://dx.doi.org/10.1002/andp.19053221004}}}.
-\backrefprint\backrefparscantrue
+\bibitem[Makino \& Aarseth, 1992]{makino1992}
+Makino, J. \& Aarseth, S.~J. (1992).
+\newblock On a hermite integrator with ahmad-cohen scheme for gravitational
+  many-body problems.
+\newblock {\em Publications of the Astronomical Society of Japan}, 44(2),
+  141--151.
 
-\backrefparscanfalse
-\bibitem{template}
-Pizarro, P., ``Template informe en \latex'', 2016-2024,
-  \href{https://latex.ppizarror.com/informe}
-  {\nolinkurl{\detokenize{https://latex.ppizarror.com/informe}}}.
-\backrefprint\backrefparscantrue
+\bibitem[Overleaf, 2024]{overleaf}
+Overleaf (2024).
+\newblock Editor online para latex.
+
+\bibitem[Pizarro, 2024]{template}
+Pizarro, P. (2024).
+\newblock Template informe en latex.
 
 \end{thebibliography}

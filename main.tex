@@ -77,6 +77,10 @@
 % IMPORTACIÓN DEL TEMPLATE
 \input{template}
 
+\makeatletter
+\def\@cite#1#2{(#1\if@tempswa, #2\fi)}
+\def\@biblabel#1{}
+\makeatother
 
 % INICIO DE LAS PÁGINAS
 \begin{document}
