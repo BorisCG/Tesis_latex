@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  16 AUG 2025 19:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  4 SEP 2025 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2219,24 +2219,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -2286,17 +2286,17 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 )
 \symgns@font=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 81.
-Package gensymb Info: Math companion symbols declared on input line 81.
-LaTeX Info: Redefining \degree on input line 81.
-LaTeX Info: Redefining \celsius on input line 81.
+(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 82.
+Package gensymb Info: Math companion symbols declared on input line 82.
+LaTeX Info: Redefining \degree on input line 82.
+LaTeX Info: Redefining \celsius on input line 82.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 81.
-LaTeX Info: Redefining \ohm on input line 81.
-Package gensymb Info: Using \textohm for \ohm on input line 81.
-Package gensymb Info: Using \textmu for \micro on input line 81.
+erthousand on input line 82.
+LaTeX Info: Redefining \ohm on input line 82.
+Package gensymb Info: Using \textohm for \ohm on input line 82.
+Package gensymb Info: Using \textmu for \micro on input line 82.
 \c@lstlisting=\count439
-Package hyperref Info: Link coloring ON on input line 81.
+Package hyperref Info: Link coloring ON on input line 82.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2368,67 +2368,67 @@ Package hyperref Info: Link coloring ON on input line 81.
 File: ./img//departamentos/uchile2.pdf Graphic file (type pdf)
 <use ./img//departamentos/uchile2.pdf>
 Package pdftex.def Info: ./img//departamentos/uchile2.pdf  used on input line 8
-4.
+5.
 (pdftex.def)             Requested size: 50.42442pt x 85.35826pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
-4.
+5.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-4.
+5.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-84.
+85.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-84.
+85.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 84.
+(Font)              <12> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 84.
+(Font)              <8> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 84.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+(Font)              <6> on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 84
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 85
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 84
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 85
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 8
-4.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-4.
+5.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -2470,14 +2470,14 @@ dvips/lm/lm-ec.enc} <./img//departamentos/uchile2.pdf>]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Calculating math sizes for size <10.95007> on input line 90
+LaTeX Font Info:    Calculating math sizes for size <10.95007> on input line 91
 .
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95007> on input line 90.
+(Font)              <10.95007> on input line 91.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.66501> on input line 90.
+(Font)              <7.66501> on input line 91.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.47504> on input line 90.
+(Font)              <5.47504> on input line 91.
  [1
 
 
@@ -2560,7 +2560,7 @@ Chapter 5.
 File: ./img//ejemplos/test-image-wrap.jpg Graphic file (type jpg)
 <use ./img//ejemplos/test-image-wrap.jpg>
 Package pdftex.def Info: ./img//ejemplos/test-image-wrap.jpg  used on input lin
-e 177.
+e 179.
 (pdftex.def)             Requested size: 127.45044pt x 127.45032pt.
 [8
 
@@ -2616,17 +2616,17 @@ File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 )
 File: ./img//ejemplos/test-image.png Graphic file (type png)
 <use ./img//ejemplos/test-image.png>
-Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 292
+Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 294
 .
 (pdftex.def)             Requested size: 184.9429pt x 104.0224pt.
 File: ./img//ejemplos/test-image-wrap.jpg Graphic file (type jpg)
 <use ./img//ejemplos/test-image-wrap.jpg>
 Package pdftex.def Info: ./img//ejemplos/test-image-wrap.jpg  used on input lin
-e 293.
+e 295.
 (pdftex.def)             Requested size: 113.81297pt x 113.81102pt.
 File: ./img//ejemplos/test-image.png Graphic file (type png)
 <use ./img//ejemplos/test-image.png>
-Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 295
+Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 297
 .
 (pdftex.def)             Requested size: 312.9803pt x 176.043pt.
  [11] [12
@@ -2640,7 +2640,7 @@ Chapter 6.
 ]
 File: ./img//ejemplos/test-image.png Graphic file (type png)
 <use ./img//ejemplos/test-image.png>
-Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 389
+Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 391
 .
 (pdftex.def)             Requested size: 321.19922pt x 180.67455pt.
  [15
