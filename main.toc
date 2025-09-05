@@ -32,8 +32,8 @@
 \contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{15}{subsection.Alph0.1.2}%
 \contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{16}{subsection.Alph0.1.3}%
 \contentsline {subsection}{\numberline {A.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{16}{subsection.Alph0.1.4}%
-\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{16}{subsection.Alph0.1.5}%
-\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{17}{subsection.Alph0.1.6}%
-\contentsline {section}{\numberline {B}Cálculos realizados}{17}{section.Alph0.2}%
-\contentsline {subsection}{\numberline {B.1}Metodología}{17}{subsection.Alph0.2.1}%
-\contentsline {subsection}{\numberline {B.2}Resultados}{18}{subsection.Alph0.2.2}%
+\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{17}{subsection.Alph0.1.5}%
+\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{18}{subsection.Alph0.1.6}%
+\contentsline {section}{\numberline {B}Cálculos realizados}{18}{section.Alph0.2}%
+\contentsline {subsection}{\numberline {B.1}Metodología}{18}{subsection.Alph0.2.1}%
+\contentsline {subsection}{\numberline {B.2}Resultados}{19}{subsection.Alph0.2.2}%
