@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  5 SEP 2025 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  5 SEP 2025 21:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2628,27 +2628,27 @@ Chapter 6.
 ] [15
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 44
-0.
+LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 43
+3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.39996> on input line 440.
+(Font)              <14.39996> on input line 433.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.07993> on input line 440.
+(Font)              <10.07993> on input line 433.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.19998> on input line 440.
+(Font)              <7.19998> on input line 433.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 440.
+(hyperref)                removing `math shift' on input line 433.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 440.
+(hyperref)                removing `math shift' on input line 433.
 
 [16] [17] [18]
 File: ./img//ejemplos/test-image.png Graphic file (type png)
 <use ./img//ejemplos/test-image.png>
-Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 572
+Package pdftex.def Info: ./img//ejemplos/test-image.png  used on input line 565
 .
 (pdftex.def)             Requested size: 321.19922pt x 180.67455pt.
  [19])
@@ -2662,11 +2662,11 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35165 strings out of 474222
- 574076 string characters out of 5748733
+ 35180 strings out of 474222
+ 574287 string characters out of 5748733
  2103975 words of memory out of 5000000
- 56559 multiletter control sequences out of 15000+600000
- 701978 words of font info for 197 fonts, out of 8000000 for 9000
+ 56569 multiletter control sequences out of 15000+600000
+ 728462 words of font info for 206 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,19n,153p,2881b,4594s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pf
@@ -2681,10 +2681,10 @@ fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb
 e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmvtt10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (28 pages, 407840 bytes).
+Output written on main.pdf (28 pages, 409691 bytes).
 PDF statistics:
- 786 PDF objects out of 1000 (max. 8388607)
+ 787 PDF objects out of 1000 (max. 8388607)
  705 compressed objects within 8 object streams
- 208 named destinations out of 1000 (max. 500000)
+ 207 named destinations out of 1000 (max. 500000)
  369 words of extra memory for PDF output out of 10000 (max. 10000000)
 

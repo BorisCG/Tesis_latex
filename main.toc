@@ -27,7 +27,7 @@
 \contentsline {chapter}{\numberline {6}Conclusions}{13}{chapter.6}%
 \contentsline {chapter}{References}{14}{section*.18}%
 \contentsline {chapter}{Appendices}{15}{appendix*.21}%
-\contentsline {section}{\numberline {A}Hermite 4th order}{15}{section.Alph0.1}%
+\contentsline {section}{\numberline {A}Fourth-Order Hermite Integration Scheme}{15}{section.Alph0.1}%
 \contentsline {subsection}{\numberline {A.1}Step 1: Particle selection}{15}{subsection.Alph0.1.1}%
 \contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{15}{subsection.Alph0.1.2}%
 \contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{16}{subsection.Alph0.1.3}%
@@ -35,5 +35,5 @@
 \contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{17}{subsection.Alph0.1.5}%
 \contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{18}{subsection.Alph0.1.6}%
 \contentsline {section}{\numberline {B}Cálculos realizados}{18}{section.Alph0.2}%
-\contentsline {subsection}{\numberline {B.1}Metodología}{18}{subsection.Alph0.2.1}%
+\contentsline {subsection}{\numberline {B.1}Metodología}{19}{subsection.Alph0.2.1}%
 \contentsline {subsection}{\numberline {B.2}Resultados}{19}{subsection.Alph0.2.2}%

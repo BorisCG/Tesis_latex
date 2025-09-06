@@ -381,186 +381,179 @@ end
 % el cual acepta \chapter y escribe el título de anexos encima
 % ------------------------------------------------------------------------------
 \begin{appendixs}
-	\section{Hermite 4th order}
-	The N-body code used in this work, ph4, uses an Hermite fourth order integrator. The next subsections describe in detail the algorithm and calculations in the main integration cycle.
+	\section{Fourth-Order Hermite Integration Scheme}
+	The N-body code used in this work, \texttt{ph4}, is based on a fourth-order Hermite integrator. The following subsections describe in detail the individual time step scheme (ITS) from \cite{makino1992}, including the time step criterion in the N-body code.
 	
 	% Primer paso
 	\subsection{Step 1: Particle selection}
-	The firs step is to select the particle to be advanced. Considering that at current time the particles have his own  time $t_j$, time step $\Delta t_j$, coordinates $x_j$ and $v_j$, acceleration $a_j$ and jerk $\dot{a_j}$ (with $\dot{a_j} = \partial a_j / \partial t$). The particle selected is the one that has the minimum $t + \Delta t$:
+	The first step is to select the next particle to be advanced. At any given time, each particle $j$ has its own mass $m_j$, time $t_j$, time step $\Delta t_j$, coordinates $\mathbf{x}_j$ and $\mathbf{v}_j$, acceleration $\mathbf{a}_j$ and jerk $\dot{\mathbf{a}}_j$ (with $\dot{\mathbf{a}}_j = \partial \mathbf{a}_j / \partial t$). The selected particle $i$ is the one satisfying the condition:
 	
 	\begin{equation}
 		i = \arg\min_j(t_j + \Delta t_j)
 	\end{equation}
 	
-	Note that always $t_j \leq t_i + \Delta t_i$, for all $j$. Now, we set the current time as $t = t_i + \Delta t_i$.
+	Note that always $t_j \leq t_i + \Delta t_i$, for all $j$. The current simulation time is then set to $t = t_i + \Delta t_i$.
 	
 	% Segundo paso
 	\subsection{Step 2: Calculate the predicted position and velocities for all particles}
 	
-	From Taylor expansion for position, we have the expression:
-	
-	\begin{equation}
-		x(t) = x(t_0) + \dot{x}(t_0)(t - t_0) + \frac{x^{(2)}(t_0)}{2!}(t - t_0)^2 + ...
-	\end{equation}
-	
-	Using that $\dot{x} = v, x^{(2)} = \dot{v} = a, x^{(3)} = v^{(2)} = \dot{a} ...$, we make predictions over position and velocity of order $\dot{a}$:
-	
+	The positions and velocities of all particles are predicted at time $t$, using a Taylor expansion up to third-order (jerk):
 	\begin{align}
-		x_{p, j} &= x_j + v_j (t - t_j) + \frac{a_j}{2!} (t-t_j)^2 + \frac{\dot{a}_j}{3!} (t-t_j)^3 \label{eq:ap_xpred} \\
-		v_{p, j} &= v_j + a_j (t - t_j) + \frac{\dot{a}_j}{2!} (t-t_j)^2
+		\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_j}{2!} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_j}{3!} (t - t_j)^3 \label{eq:ap_xpred} \\
+		\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_j (t - t_j) + \frac{\dot{\mathbf{a}}_j}{2!} (t - t_j)^2
 	\end{align}
 	
-	The acceleration is due only to gravitational force. The expression for each particle j is:
+	The acceleration is due only to gravitational force. The expression for each particle $j$ is:
 	
 	\begin{equation}
-		a_{0, j} = \sum_{k \neq j} G m_k \frac{r_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{3/2}} \label{eq:ap_accel}
+		\mathbf{a}_{0, j} = \sum_{k \neq j} G m_k \frac{\mathbf{r}_{0,jk}}{(\mathbf{r}_{0,jk}^2 + \epsilon^2)^{3/2}} \label{eq:ap_accel}
 	\end{equation}
 	
-	Where $\epsilon$ is the softening parameter, and
+	where $\epsilon$ is the softening parameter, and
 	
 	\begin{equation}
-		r_{0,jk} = r_{k} - r_{j}
+		\mathbf{r}_{0,jk} = \mathbf{r}_{k} - \mathbf{r}_{j}
 	\end{equation}
 	
-	Deriving \ref{eq:ap_accel} respect time, we have the jerk:
+	Differentiating Eq.~\eqref{eq:ap_accel} with respect to time yields the jerk:
 	
 	\begin{align}
-		\dot{a}_{0, j} &= \frac{\partial a_j}{\partial t} \\
-		&= \sum_{k \neq j} G m_k \frac{\partial}{\partial t}\frac{r_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{3/2}} \\
-		\dot{a}_{0, j} &= \sum_{k \neq j} G m_k \left[\frac{v_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{3/2}} - \frac{3(v_{0,jk} \cdot r_{0,jk})r_{0,jk}}{(r_{0,jk}^2 + \epsilon^2)^{5/2}}\right] \label{eq:ap_jerk}
+		\dot{\mathbf{a}}_{0, j} &= \frac{\partial \mathbf{a}_j}{\partial t} \\
+		&= \sum_{k \neq j} G m_k \frac{\partial}{\partial t}\frac{\mathbf{r}_{0,jk}}{(\mathbf{r}_{0,jk}^2 + \epsilon^2)^{3/2}} \\
+		\dot{\mathbf{a}}_{0, j} &= \sum_{k \neq j} G m_k \left[\frac{\mathbf{v}_{0,jk}}{(\mathbf{r}_{0,jk}^2 + \epsilon^2)^{3/2}} - \frac{3(\mathbf{v}_{0,jk} \cdot \mathbf{r}_{0,jk})\mathbf{r}_{0,jk}}{(\mathbf{r}_{0,jk}^2 + \epsilon^2)^{5/2}}\right] \label{eq:ap_jerk}
 	\end{align}
 	
 	where
 	
 	\begin{equation}
-		v_{0,jk} = v_{k} - v_{j}
+		\mathbf{v}_{0,jk} = \mathbf{v}_{k} - \mathbf{v}_{j}
 	\end{equation}
 	
 	% Tercer paso
 	\subsection{Step 3: Calculate acceleration and jerk for particle $i$}
 	
-	Similar to equations \ref{eq:ap_accel} and \ref{eq:ap_jerk}, we calculate the acceleration and jerk, using the predicted positions and velocity:
+	Similar to equations (\ref{eq:ap_accel}) and (\ref{eq:ap_jerk}), the acceleration and jerk are calculated using the predicted positions and velocity:
 	
 	\begin{align}
-		a_{1, i} &= \sum_{j \neq i} G m_j \frac{r_{ij}}{(r_{ij}^2 + \epsilon^2)^{3/2}} \label{eq:ap_accel_pred} \\
-		\dot{a}_{1, i} &= \sum_{j \neq i} G m_j \left[\frac{v_{ij}}{(r_{ij}^2 + \epsilon^2)^{3/2}} - \frac{3(v_{ij} \cdot r_{ij})r_{ij}}{(r_{ij}^2 + \epsilon^2)^{5/2}}\right] \label{eq:ap_jerk_pred} \\
-		r_{ij} &= r_{p,j} - r_{p,i} \\
-		v_{ij} &= v_{p,j} - v_{p,i}
+		\mathbf{a}_{1, i} &= \sum_{j \neq i} G m_j \frac{\mathbf{r}_{ij}}{(\mathbf{r}_{ij}^2 + \epsilon^2)^{3/2}} \label{eq:ap_accel_pred} \\
+		\dot{\mathbf{a}}_{1, i} &= \sum_{j \neq i} G m_j \left[\frac{\mathbf{v}_{ij}}{(\mathbf{r}_{ij}^2 + \epsilon^2)^{3/2}} - \frac{3(\mathbf{v}_{ij} \cdot \mathbf{r}_{ij})\mathbf{r}_{ij}}{(\mathbf{r}_{ij}^2 + \epsilon^2)^{5/2}}\right] \label{eq:ap_jerk_pred} \\
+		\mathbf{r}_{ij} &= \mathbf{r}_{p,j} - \mathbf{r}_{p,i} \\
+		\mathbf{v}_{ij} &= \mathbf{v}_{p,j} - \mathbf{v}_{p,i}
 	\end{align}
 	
-	Note that for all particles we have the velocity and jerk. Now, we calculate the predicted acceleration and jerk, just for particle $i$.
+	In this notation, the subscript $0$ denotes quantities evaluated at the beginning of the time step ($t_i$), while the subscript $1$ denotes quantities evaluated at the end of the time step ($t$), using the predicted position and velocity ($\mathbf{x}_{p, i}$ and $\mathbf{v}_{p_i}$).
 	
 	% Cuarto Paso
 	\subsection{Step 4: Second and third time derivative of acceleration, using Hermite interpolation}
 	
-	In order to have a precise estimation of the next step, the second and third time derivative are calculated, using Hermite interpolation. First, begin with a model of acceleration as a polynome of time:
+	To obtain a high-order correction of $\mathbf{x}$ and $\mathbf{v}$, the acceleration of particle $i$ is modeled as a third-order polynomial in time:
 	
 	\begin{equation}
-		a(t) = \alpha t^3 + b t^2 + c t + d \label{eq:ap_accel_pol}
+		\mathbf{a}(\tau) = \alpha \tau^3 + \beta \tau^2 + \gamma \tau + \delta \label{eq:ap_accel_pol}
 	\end{equation}
 	
-	We can easily calculate the time derivatives:
+	The successive time derivatives of $\mathbf{a}(\tau)$ are then:
 	
 	\begin{align}
-		\dot{a}(t) &= 3 \alpha t^2 + 2 b t + c \label{eq:ap_jerk_pol} \\
-		a^{(2)} (t) &= 6 \alpha t + b \label{eq:ap_a2_pol} \\
-		a^{(3)} (t) &= 6 \alpha \label{eq:ap_a3_pol}
+		\dot{\mathbf{a}}(\tau) &= 3 \alpha \tau^2 + 2 \beta \tau + \gamma \label{eq:ap_jerk_pol} \\
+		\mathbf{a}^{(2)} (\tau) &= 6 \alpha \tau + \beta \label{eq:ap_a2_pol} \\
+		\mathbf{a}^{(3)} (\tau) &= 6 \alpha \label{eq:ap_a3_pol}
 	\end{align}
 	
-	But from step 2 and 3, we have the acceleration and jerk, evaluated in $t_i$ and $t_i + \Delta t_i$ (predicted). Replacing in \ref{eq:ap_accel_pol} and \ref{eq:ap_jerk_pol}, we have 4 equations:
+	The coefficients $\alpha$, $\beta$, $\gamma$, and $\delta$ are determined by using the known values of acceleration and jerk at times $t_i$ and $t$. This provides a system of four equations:
 	
 	\begin{align}
-		a(t_i) = a_{0, i} &=  \alpha t_i^3 + b t_i^2 + c t_i + d \label{eq:ap_a_ti} \\
-		a(t) = a_{1, i} &=  \alpha t^3 + b t^2 + c t + d \label{eq:ap_a_t} \\
-		\dot{a}(t_i) = \dot{a}_{0, i} &= 3 \alpha t_i^2 + 2 b t_i + c \\
-		\dot{a}(t) = \dot{a}_{1, i} &= 3 \alpha t^2 + 2 b t + c \label{eq:ap_adot_t}
+		\mathbf{a}(t_i) = \mathbf{a}_{0, i} &=  \alpha t_i^3 + \beta t_i^2 + \gamma t_i + \delta \label{eq:ap_a_ti} \\
+		\mathbf{a}(t) = \mathbf{a}_{1, i} &=  \alpha t^3 + \beta t^2 + \gamma t + \delta \label{eq:ap_a_t} \\
+		\dot{\mathbf{a}}(t_i) = \dot{\mathbf{a}}_{0, i} &= 3 \alpha t_i^2 + 2 \beta t_i + \gamma \\
+		\dot{\mathbf{a}}(t) = \dot{\mathbf{a}}_{1, i} &= 3 \alpha t^2 + 2 \beta t + \gamma \label{eq:ap_adot_t}
 	\end{align}
 	
-	where $t = t_i + \Delta t_i$ is the current time. Note that for the second and third time derivative of acceleration, is enough to get $\alpha$ and $b$. From \ref{eq:ap_adot_t}:
+	where $t = t_i + \Delta t_i$ is the current time. As the system of equations is linearly independent, the four coefficients can be determined. However, determining $\alpha$ and $\beta$ is enough to get the second and third time derivative of acceleration. From (\ref{eq:ap_adot_t}):
 	
 	\begin{equation}
-		c = \dot{a}_{1, i} - 3 \alpha t^2 - 2bt
+		\gamma = \dot{\mathbf{a}}_{1, i} - 3 \alpha t^2 - 2 \beta t \label{eq:app_gamma}
 	\end{equation}
 	
-	using this expression in \ref{eq:ap_a_t} $-$ \ref{eq:ap_a_ti}, we have:
+	Subtracting Eq.~\eqref{eq:ap_a_ti} from \eqref{eq:ap_a_t} and using Eq.~\eqref{eq:app_gamma} gives:
 	
 	\begin{equation}
-		b = \frac{(\dot{a}_{1, i} - \dot{a}_{0, i}) - \alpha 3 (t^2 - t_i^2)}{2(t - t_i)} \label{eq:ap_b_var}
+		\beta = \frac{(\dot{\mathbf{a}}_{1, i} - \dot{\mathbf{a}}_{0, i}) - \alpha 3 (t^2 - t_i^2)}{2(t - t_i)} \label{eq:ap_b_var}
 	\end{equation}
 	
-	now we use \ref{eq:ap_b_var} in \ref{eq:ap_a_t} $-$ \ref{eq:ap_a_ti}:
+	Subtracting Eq.~\eqref{eq:ap_a_ti} from \eqref{eq:ap_a_t}, and using \eqref{eq:ap_b_var} gives an expression for $\alpha$:
 	
 	\begin{equation}
-		\alpha = \frac{(\dot{a}_{1, i} + \dot{a}_{0, i})(t - t_i) - 2(a_{1, i} - a_{0, i})}{(t - t_i)^3} \label{eq:ap_alpha_var}
+		\alpha = \frac{(\dot{\mathbf{a}}_{1, i} + \dot{\mathbf{a}}_{0, i})(t - t_i) - 2(\mathbf{a}_{1, i} - \mathbf{a}_{0, i})}{(t - t_i)^3} \label{eq:ap_alpha_var}
 	\end{equation}
 	
-	replacing \ref{eq:ap_alpha_var} in \ref{eq:ap_b_var}:
+	Replacing this result in Eq.~\eqref{eq:ap_b_var}:
 	
 	\begin{equation}
-		b = \frac{-\dot{a}_{1, i}(t + 2 t_i) - \dot{a}_{0, i}(2 t + t_i)}{(t - t_i)^2} + \frac{3(a_{0, i} - a_{1, i})(t + t_i)}{(t - t_i)^3}
+		\beta = \frac{-\dot{\mathbf{a}}_{1, i}(t + 2 t_i) - \dot{\mathbf{a}}_{0, i}(2 t + t_i)}{(t - t_i)^2} + \frac{3(\mathbf{a}_{0, i} - \mathbf{a}_{1, i})(t + t_i)}{(t - t_i)^3}
 	\end{equation}
 	
-	With this, we can evaluate the second and third time derivative of acceleration in $t_i$. For the equation \ref{eq:ap_a3_pol}, and using $t - t_i = \Delta t_i$:
+	The second and third time derivatives of the acceleration at time $t_i$ can now be evaluated. For the Eq.~\eqref{eq:ap_a3_pol}, and using $t - t_i = \Delta t_i$:
 	
 	\begin{align}
-		a^{(3)}_{0, i} &= a^{(3)} (t_i) = 6 \alpha \\
-		a^{(3)}_{0, i} &= 6 \frac{(\dot{a}_{1, i} + \dot{a}_{0, i})\Delta t_i - 2(a_{1, i} - a_{0, i})}{{\Delta t_i}^3} \\
-		a^{(3)}_{0, i} &= \frac{12 (a_{0, i} - a_{1, i}) + 6(\dot{a}_{0, i} + \dot{a}_{1, i})\Delta t_i}{{\Delta t_i}^3} \label{eq:ap_a3_ti}
+		\mathbf{a}^{(3)}_{0, i} &= \mathbf{a}^{(3)} (t_i) = 6 \alpha \\
+		\mathbf{a}^{(3)}_{0, i} &= 6 \frac{(\dot{\mathbf{a}}_{1, i} + \dot{\mathbf{a}}_{0, i})\Delta t_i - 2(\mathbf{a}_{1, i} - \mathbf{a}_{0, i})}{{\Delta t_i}^3} \\
+		\mathbf{a}^{(3)}_{0, i} &= \frac{12 (\mathbf{a}_{0, i} - \mathbf{a}_{1, i}) + 6(\dot{\mathbf{a}}_{0, i} + \dot{\mathbf{a}}_{1, i})\Delta t_i}{{\Delta t_i}^3} \label{eq:ap_a3_ti}
 	\end{align}
 	
-	Evaluating the second time derivative in $t_i$, and replacing the obtained for $\alpha$ and $b$:
+	Evaluating the second time derivative in $t_i$, and replacing the obtained for $\alpha$ and $\beta$:
 	
 	\begin{align}
-		a^{(2)}_{0, i} &= a^{(2)} (t_i) = 6 \alpha t_i + b \\
-		a^{(2)}_{0, i} &= \frac{-6(a_{0, i} - a_{0, i}) - \Delta t_i(4\dot{a}_{0, i} + 2\dot{a}_{1, i})}{{\Delta t_i}^2}
+		\mathbf{a}^{(2)}_{0, i} &= \mathbf{a}^{(2)} (t_i) = 6 \alpha t_i + \beta \\
+		\mathbf{a}^{(2)}_{0, i} &= \frac{-6(\mathbf{a}_{0, i} - \mathbf{a}_{1, i}) - \Delta t_i(4\dot{\mathbf{a}}_{0, i} + 2\dot{\mathbf{a}}_{1, i})}{{\Delta t_i}^2}
 	\end{align}
 	
 	
 	% Quinto Paso
 	\subsection{Step 5: Add corrections}
 	
-	First, we begin with the Taylor expansion for the position of particle $i$, at the time $t = t_i$:
+	The next step in the scheme is to correct position and velocity of particle $i$ at time $t$. Using a higher-order Taylor expansion around $t_i$:
 	
 	\begin{align}
-		x_i(t_i + \Delta t_i) =& x_i(t_i) + \dot{x_i}(t_i)\Delta t_i + \frac{{x_i}^{(2)}(t_i){\Delta t_i}^2}{2!} + ... + \frac{{x_i}^{(5)}(t_i){\Delta t_i}^5}{5!}\\
-		=& x_i + v_i \Delta t_i + \frac{a_{0, i} {\Delta t_i}^2}{2} + \frac{\dot{a}_{0, i} {\Delta t_i}^3}{6} + \frac{a^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{a^{(3)}_{0, i} {\Delta t_i}^5}{120}
+		\mathbf{x}_i(t_i + \Delta t_i) =& \mathbf{x}_i(t_i) + \dot{\mathbf{x}_i}(t_i)\Delta t_i + \frac{{\mathbf{x}_i}^{(2)}(t_i){\Delta t_i}^2}{2!} + ... + \frac{{\mathbf{x}_i}^{(5)}(t_i){\Delta t_i}^5}{5!}\\
+		=& \mathbf{x}_i + \mathbf{v}_i \Delta t_i + \frac{\mathbf{a}_{0, i} {\Delta t_i}^2}{2} + \frac{\dot{\mathbf{a}}_{0, i} {\Delta t_i}^3}{6} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^5}{120}
 	\end{align}
 	
-	From \eqref{eq:ap_xpred} we replace $x_{p, i}$ in the first four terms in the equation:
+	The first four terms of this expansion correspond to the predicted position $\mathbf{x}_{p, i}$ from Eq.~\eqref{eq:ap_xpred}. Therefore, the corrected position can be written as:
 	
 	\begin{equation}
-		x_i(t_i + \Delta t_i) = x_{p, i} + \frac{a^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{a^{(3)}_{0, i} {\Delta t_i}^5}{120} \label{eq:ap_xcorr}
+		\mathbf{x}_i(t_i + \Delta t_i) = \mathbf{x}_{p, i} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^5}{120} \label{eq:ap_xcorr}
 	\end{equation}
 	
-	In a similar way, we have an expression for the velocity:
+	In a similar way, the corrected velocity is:
 	
 	\begin{equation}
-		v_i(t_i + \Delta t_i) = v_{p, i} + \frac{a^{(2)}_{0, i} {\Delta t_i}^3}{6} + \frac{a^{(3)}_{0, i} {\Delta t_i}^4}{24} \label{eq:ap_vcorr}
+		\mathbf{v}_i(t_i + \Delta t_i) = \mathbf{v}_{p, i} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^3}{6} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^4}{24} \label{eq:ap_vcorr}
 	\end{equation}
 	
-	The goal of this method is that for updating the position and velocity with high precision (order $\mathcal{O}(a^{(3)})$), is only necessary to calculate the actual acceleration and jerk for all particles, and predicted acceleration and jerk for particle $i$.
+	The advantage of this scheme is that achieving high integration accuracy only requires the explicit calculation of the acceleration and jerk for all particles, and the predicted acceleration and jerk for the particle being advanced. This results in an integration scheme that is fourth-order accurate in time ($\mathcal{O}(a^{(3)})$).
 	
 	\subsection{Step 6: Time step update}
 	
-	Now that particle $i$ has been changed his position and velocity, is necessary to calculate a new time step. The importance of this step is that controls the energy error. An proved and stable criteria is the standard formula from \cite{aarseth1985}:
+	After updating the position and velocity of particle $i$, a new time step $\Delta t_i$ must be calculated. This step is crucial for controlling the integration error. A proven and stable criterion is given by the standard formula \cite{aarseth1985}:
 	
 	\begin{equation}
-		\Delta t_i = \sqrt{\eta \frac{|a_{1, i}| |a^{(2)}_{1, i}| + |\dot{a}_{1, i}|^2}{|\dot{a}_{1, i}| |a^{(3)}_{1, i}| + |a^{(2)}_{1, i}|^2}}
+		\Delta t_i = \sqrt{\eta \frac{|\mathbf{a}_{1, i}| |\mathbf{a}^{(2)}_{1, i}| + |\dot{\mathbf{a}}_{1, i}|^2}{|\dot{\mathbf{a}}_{1, i}| |\mathbf{a}^{(3)}_{1, i}| + |\mathbf{a}^{(2)}_{1, i}|^2}}
 	\end{equation}
 	
-	The values for $a_{1, i}$ and $\dot{a}_{1, i}$ are known, since are directly calculated. The value of $a^{(3)}(t)$ is constant, because is used a third-order interpolation. We only calculate $a^{(2)}_{1, i}$:
+	The values for $\mathbf{a}_{1, i}$ and $\dot{\mathbf{a}}_{1, i}$ are known from the direct calculation in Step 3. The value of $\mathbf{a}^{(3)}(t)$ is constant, since a third-order polynomial interpolation is used. Only $\mathbf{a}^{(2)}_{1, i}$ should be calculated:
 	
 	\begin{equation}
-		a^{(2)}_{1, i} = a^{(2)}_{0, i} + \Delta t_i a^{(3)}_{0, i}
+		\mathbf{a}^{(2)}_{1, i} = \mathbf{a}^{(2)}_{0, i} + \Delta t_i \mathbf{a}^{(3)}_{0, i}
 	\end{equation}
 	
-	In the beginning of simulation, the high order derivatives of acceleration are not available, so an alternative formula for time step can be used in the startup:
+	During the initialization of the algorithm, the higher-order derivatives of the acceleration are not available, so an alternative formula for time step can be used in the startup:
 	
 	\begin{equation}
-		\Delta t = \eta_s \frac{|a|}{|\dot{a}|}
+		\Delta t = \eta_s \frac{|\mathbf{a}|}{|\dot{\mathbf{a}}|}
 	\end{equation}
 	
-	In \cite{makino1992} suggest $\eta_s \sim 0.01$
+	The suggested value for the startup parameter is $\eta_s \sim 0.01$ \cite{makino1992}.
 	
 	\section{Cálculos realizados}
 
