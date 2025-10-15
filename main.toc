@@ -10,30 +10,30 @@
 \contentsline {chapter}{\numberline {3}A method for coupling gas and stars}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}N-body code: Ph4}{5}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Hermite integrator}{5}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Block time steps}{6}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Collisions and mergers}{6}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Escaping stars}{6}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}Smoothed particles hydrodynamics: Fi}{6}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Coupling strategy: Bridge}{6}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Results and analysis}{7}{chapter.4}%
-\contentsline {chapter}{\numberline {5}El desarrollo de la tesis}{8}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Aquí una nueva sección}{8}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Haciendo una tesis como un profesional}{8}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Otros párrafos más normales}{9}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Ejemplos de inserción de código fuente}{10}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Agregando múltiples imágenes}{11}{subsection.5.1.4}%
-\contentsline {section}{Más ejemplos}{12}{section*.17}%
-\contentsline {subsection}{Listas y Enumeraciones}{12}{section*.17}%
-\contentsline {chapter}{\numberline {6}Conclusions}{13}{chapter.6}%
-\contentsline {chapter}{References}{14}{section*.18}%
-\contentsline {chapter}{Appendices}{15}{appendix*.21}%
-\contentsline {section}{\numberline {A}Fourth-Order Hermite Integration Scheme}{15}{section.Alph0.1}%
-\contentsline {subsection}{\numberline {A.1}Step 1: Particle selection}{15}{subsection.Alph0.1.1}%
-\contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{15}{subsection.Alph0.1.2}%
-\contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{16}{subsection.Alph0.1.3}%
-\contentsline {subsection}{\numberline {A.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{16}{subsection.Alph0.1.4}%
-\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{17}{subsection.Alph0.1.5}%
-\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{18}{subsection.Alph0.1.6}%
-\contentsline {section}{\numberline {B}Cálculos realizados}{18}{section.Alph0.2}%
-\contentsline {subsection}{\numberline {B.1}Metodología}{19}{subsection.Alph0.2.1}%
-\contentsline {subsection}{\numberline {B.2}Resultados}{19}{subsection.Alph0.2.2}%
+\contentsline {subsection}{\numberline {3.1.2}Block time steps}{7}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Collisions and mergers}{7}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Escaping stars}{7}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Smoothed particles hydrodynamics: Fi}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Coupling strategy: Bridge}{7}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Results and analysis}{8}{chapter.4}%
+\contentsline {chapter}{\numberline {5}El desarrollo de la tesis}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Aquí una nueva sección}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Haciendo una tesis como un profesional}{9}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Otros párrafos más normales}{10}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Ejemplos de inserción de código fuente}{11}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Agregando múltiples imágenes}{12}{subsection.5.1.4}%
+\contentsline {section}{Más ejemplos}{13}{section*.17}%
+\contentsline {subsection}{Listas y Enumeraciones}{13}{section*.17}%
+\contentsline {chapter}{\numberline {6}Conclusions}{14}{chapter.6}%
+\contentsline {chapter}{References}{15}{section*.18}%
+\contentsline {chapter}{Appendices}{16}{appendix*.21}%
+\contentsline {section}{\numberline {A}Fourth-Order Hermite Integration Scheme}{16}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {A.1}Step 1: Particle selection}{16}{subsection.Alph0.1.1}%
+\contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{16}{subsection.Alph0.1.2}%
+\contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{17}{subsection.Alph0.1.3}%
+\contentsline {subsection}{\numberline {A.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{17}{subsection.Alph0.1.4}%
+\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{18}{subsection.Alph0.1.5}%
+\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{19}{subsection.Alph0.1.6}%
+\contentsline {section}{\numberline {B}Cálculos realizados}{19}{section.Alph0.2}%
+\contentsline {subsection}{\numberline {B.1}Metodología}{20}{subsection.Alph0.2.1}%
+\contentsline {subsection}{\numberline {B.2}Resultados}{20}{subsection.Alph0.2.2}%

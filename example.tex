@@ -140,7 +140,7 @@ We use the PH4 code from the AMUSE interface. In the present section, we include
 
 The Ph4 code uses an fourth-order Hermite integrator \cite{makino1992} for calculating the position and velocities of stars due to gravity. This is a predictor-corrector method.
 
-The fourth-order Hermite scheme is based in a precise calculation of the individual time step. Considering the particle $i$ with own time $t_i$, time step $\Delta t_i$, position $x_i$, velocity $v_i$, acceleration $a_i$ and jerk $\dot{a_i}$, calculated at time $t_i$. The algorithm of  integration process proceeds as:
+The fourth-order Hermite scheme is based in a precise calculation of the individual time step. Considering the particle $i$ with own time $t_i$, time step $\Delta t_i$, position $x_i$, velocity $v_i$, acceleration $a_i$ and jerk $\dot{a_i}$, calculated at time $t_i$. The algorithm of  integration process proceeds as follows:
 
 \begin{enumerate}
 	\item Select the particle with minimum $t_i + \Delta t_i$. Set the global time as $t=t_i + \Delta t_i$.
@@ -151,6 +151,39 @@ The fourth-order Hermite scheme is based in a precise calculation of the individ
 	\item Calculate and update the time step $\Delta t_i$.
 	\item Repeat the algorithm.
 \end{enumerate}
+
+From appendix~\ref{ap:A}, the predicted positions and velocities are:
+
+\begin{align}
+	\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_{0,j}}{2!} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_{0,j}}{3!} (t - t_j)^3 \\
+	\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_{0,j} (t - t_j) + \frac{\dot{\mathbf{a}}_{0,j}}{2!} (t - t_j)^2
+\end{align}
+
+Where $\mathbf{x}_j$, $\mathbf{v}_j$ are the positions and velocities at time $t_i$. Note that the index $i$ runs for all particles. The acceleration $\mathbf{a}_j$ and jerk $\dot{\mathbf{a}}_j$ are computed by equations:
+
+ 
+\begin{align}
+	\mathbf{a}_{0, j} &= \sum_{k \neq j} G m_k \frac{\mathbf{r}_{0,jk}}{(\mathbf{r}_{0,jk}^2 + \epsilon^2)^{3/2}}\\
+	\dot{\mathbf{a}}_{0, j} &= \sum_{k \neq j} G m_k \left[\frac{\mathbf{v}_{0,jk}}{(\mathbf{r}_{0,jk}^2 + \epsilon^2)^{3/2}} - \frac{3(\mathbf{v}_{0,jk} \cdot \mathbf{r}_{0,jk})\mathbf{r}_{0,jk}}{(\mathbf{r}_{0,jk}^2 + \epsilon^2)^{5/2}}\right] \\
+	\mathbf{r}_{0,jk} &= \mathbf{r}_{k} - \mathbf{r}_{j} \\
+	\mathbf{v}_{0,jk} &= \mathbf{v}_{k} - \mathbf{v}_{j}
+\end{align}
+
+From the Hermite interpolation, we can have an estimation of the second and third time derivative of acceleration. This estimation is used then for correct the positions and velocities.
+
+\begin{align}
+	\mathbf{a}^{(2)}_{0, i} &= \frac{-6(\mathbf{a}_{0, i} - \mathbf{a}_{1, i}) - \Delta t_i(4\dot{\mathbf{a}}_{0, i} + 2\dot{\mathbf{a}}_{1, i})}{{\Delta t_i}^2} \\
+	\mathbf{a}^{(3)}_{0, i} &= \frac{12 (\mathbf{a}_{0, i} - \mathbf{a}_{1, i}) + 6(\dot{\mathbf{a}}_{0, i} + \dot{\mathbf{a}}_{1, i})\Delta t_i}{{\Delta t_i}^3}
+\end{align}
+
+After that, the correction over position and velocity is as follows:
+
+\begin{align}
+	\mathbf{x}_i(t_i + \Delta t_i) =& \mathbf{x}_{p, i} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^5}{120} \\
+	\mathbf{v}_i(t_i + \Delta t_i) =& \mathbf{v}_{p, i} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^3}{6} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^4}{24}
+\end{align}
+
+Where corrections of four order have been made. The advantage of this method is that is only needed to calculate the acceleration and jerk
 
 
 
@@ -381,7 +414,7 @@ end
 % el cual acepta \chapter y escribe el título de anexos encima
 % ------------------------------------------------------------------------------
 \begin{appendixs}
-	\section{Fourth-Order Hermite Integration Scheme}
+	\section{Fourth-Order Hermite Integration Scheme} \label{ap:A}
 	The N-body code used in this work, \texttt{ph4}, is based on a fourth-order Hermite integrator. The following subsections describe in detail the individual time step scheme (ITS) from \cite{makino1992}, including the time step criterion in the N-body code.
 	
 	% Primer paso
@@ -399,8 +432,8 @@ end
 	
 	The positions and velocities of all particles are predicted at time $t$, using a Taylor expansion up to third-order (jerk):
 	\begin{align}
-		\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_j}{2!} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_j}{3!} (t - t_j)^3 \label{eq:ap_xpred} \\
-		\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_j (t - t_j) + \frac{\dot{\mathbf{a}}_j}{2!} (t - t_j)^2
+		\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_{0,j}}{2!} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_{0,j}}{3!} (t - t_j)^3 \label{eq:ap_xpred} \\
+		\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_{0,j} (t - t_j) + \frac{\dot{\mathbf{a}}_{0,j}}{2!} (t - t_j)^2
 	\end{align}
 	
 	The acceleration is due only to gravitational force. The expression for each particle $j$ is:
