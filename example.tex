@@ -152,14 +152,14 @@ The fourth-order Hermite scheme is based in a precise calculation of the individ
 	\item Repeat the algorithm.
 \end{enumerate}
 
-From appendix~\ref{ap:A}, the predicted positions and velocities are:
+In the appendix~\ref{ap:A} the algorithm and equations are showed. From (\ref{eq:ap_xpred}) and (\ref{eq:ap_velpred}), the predicted positions and velocities are:
 
 \begin{align}
 	\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_{0,j}}{2!} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_{0,j}}{3!} (t - t_j)^3 \\
 	\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_{0,j} (t - t_j) + \frac{\dot{\mathbf{a}}_{0,j}}{2!} (t - t_j)^2
 \end{align}
 
-Where $\mathbf{x}_j$, $\mathbf{v}_j$ are the positions and velocities at time $t_i$. Note that the index $i$ runs for all particles. The acceleration $\mathbf{a}_j$ and jerk $\dot{\mathbf{a}}_j$ are computed by equations:
+Where $\mathbf{x}_j$, $\mathbf{v}_j$ are the positions and velocities at time $t_j$, the individual time for each particle. Note that the index $j$ runs for all particles. The acceleration $\mathbf{a}_j$ and jerk $\dot{\mathbf{a}}_j$ are computed by equations:
 
  
 \begin{align}
@@ -183,13 +183,11 @@ After that, the correction over position and velocity is as follows:
 	\mathbf{v}_i(t_i + \Delta t_i) =& \mathbf{v}_{p, i} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^3}{6} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^4}{24}
 \end{align}
 
-Where corrections of four order have been made. The advantage of this method is that is only needed to calculate the acceleration and jerk
-
-
-
-
+Where corrections of four order have been made. The advantage of this method is that is only needed to calculate the acceleration and jerk in each step.
 
 \subsection{Block time steps}
+
+
 \subsection{Collisions and mergers}
 \subsection{Escaping stars}
 
@@ -433,7 +431,7 @@ end
 	The positions and velocities of all particles are predicted at time $t$, using a Taylor expansion up to third-order (jerk):
 	\begin{align}
 		\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_{0,j}}{2!} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_{0,j}}{3!} (t - t_j)^3 \label{eq:ap_xpred} \\
-		\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_{0,j} (t - t_j) + \frac{\dot{\mathbf{a}}_{0,j}}{2!} (t - t_j)^2
+		\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_{0,j} (t - t_j) + \frac{\dot{\mathbf{a}}_{0,j}}{2!} (t - t_j)^2 \label{eq:ap_velpred}
 	\end{align}
 	
 	The acceleration is due only to gravitational force. The expression for each particle $j$ is:
@@ -474,7 +472,7 @@ end
 		\mathbf{v}_{ij} &= \mathbf{v}_{p,j} - \mathbf{v}_{p,i}
 	\end{align}
 	
-	In this notation, the subscript $0$ denotes quantities evaluated at the beginning of the time step ($t_i$), while the subscript $1$ denotes quantities evaluated at the end of the time step ($t$), using the predicted position and velocity ($\mathbf{x}_{p, i}$ and $\mathbf{v}_{p_i}$).
+	In this notation, the subscript $0$ denotes quantities evaluated at the beginning of the time step ($t_j$), while the subscript $1$ denotes quantities evaluated at the end of the time step ($t$), using the predicted position and velocity ($\mathbf{x}_{p, i}$ and $\mathbf{v}_{p_i}$).
 	
 	% Cuarto Paso
 	\subsection{Step 4: Second and third time derivative of acceleration, using Hermite interpolation}
@@ -489,7 +487,7 @@ end
 	
 	\begin{align}
 		\dot{\mathbf{a}}(\tau) &= 3 \alpha \tau^2 + 2 \beta \tau + \gamma \label{eq:ap_jerk_pol} \\
-		\mathbf{a}^{(2)} (\tau) &= 6 \alpha \tau + \beta \label{eq:ap_a2_pol} \\
+		\mathbf{a}^{(2)} (\tau) &= 6 \alpha \tau + 2 \beta \label{eq:ap_a2_pol} \\
 		\mathbf{a}^{(3)} (\tau) &= 6 \alpha \label{eq:ap_a3_pol}
 	\end{align}
 	
@@ -498,7 +496,7 @@ end
 	\begin{align}
 		\mathbf{a}(t_i) = \mathbf{a}_{0, i} &=  \alpha t_i^3 + \beta t_i^2 + \gamma t_i + \delta \label{eq:ap_a_ti} \\
 		\mathbf{a}(t) = \mathbf{a}_{1, i} &=  \alpha t^3 + \beta t^2 + \gamma t + \delta \label{eq:ap_a_t} \\
-		\dot{\mathbf{a}}(t_i) = \dot{\mathbf{a}}_{0, i} &= 3 \alpha t_i^2 + 2 \beta t_i + \gamma \\
+		\dot{\mathbf{a}}(t_i) = \dot{\mathbf{a}}_{0, i} &= 3 \alpha t_i^2 + 2 \beta t_i + \gamma \label{eq:ap_adot_ti} \\
 		\dot{\mathbf{a}}(t) = \dot{\mathbf{a}}_{1, i} &= 3 \alpha t^2 + 2 \beta t + \gamma \label{eq:ap_adot_t}
 	\end{align}
 	
@@ -508,13 +506,13 @@ end
 		\gamma = \dot{\mathbf{a}}_{1, i} - 3 \alpha t^2 - 2 \beta t \label{eq:app_gamma}
 	\end{equation}
 	
-	Subtracting Eq.~\eqref{eq:ap_a_ti} from \eqref{eq:ap_a_t} and using Eq.~\eqref{eq:app_gamma} gives:
+	Subtracting Eq.~\eqref{eq:ap_adot_ti} from \eqref{eq:ap_adot_t}:
 	
 	\begin{equation}
 		\beta = \frac{(\dot{\mathbf{a}}_{1, i} - \dot{\mathbf{a}}_{0, i}) - \alpha 3 (t^2 - t_i^2)}{2(t - t_i)} \label{eq:ap_b_var}
 	\end{equation}
 	
-	Subtracting Eq.~\eqref{eq:ap_a_ti} from \eqref{eq:ap_a_t}, and using \eqref{eq:ap_b_var} gives an expression for $\alpha$:
+	Subtracting Eq.~\eqref{eq:ap_a_ti} from \eqref{eq:ap_a_t}, and using results from \eqref{eq:app_gamma} and \eqref{eq:ap_b_var} gives an expression for $\alpha$:
 	
 	\begin{equation}
 		\alpha = \frac{(\dot{\mathbf{a}}_{1, i} + \dot{\mathbf{a}}_{0, i})(t - t_i) - 2(\mathbf{a}_{1, i} - \mathbf{a}_{0, i})}{(t - t_i)^3} \label{eq:ap_alpha_var}
@@ -523,7 +521,7 @@ end
 	Replacing this result in Eq.~\eqref{eq:ap_b_var}:
 	
 	\begin{equation}
-		\beta = \frac{-\dot{\mathbf{a}}_{1, i}(t + 2 t_i) - \dot{\mathbf{a}}_{0, i}(2 t + t_i)}{(t - t_i)^2} + \frac{3(\mathbf{a}_{0, i} - \mathbf{a}_{1, i})(t + t_i)}{(t - t_i)^3}
+		\beta = \frac{-\dot{\mathbf{a}}_{1, i}(t + 2 t_i) - \dot{\mathbf{a}}_{0, i}(2 t + t_i)}{(t - t_i)^2} + \frac{3(\mathbf{a}_{1, i} - \mathbf{a}_{0, i})(t + t_i)}{(t - t_i)^3}
 	\end{equation}
 	
 	The second and third time derivatives of the acceleration at time $t_i$ can now be evaluated. For the Eq.~\eqref{eq:ap_a3_pol}, and using $t - t_i = \Delta t_i$:
