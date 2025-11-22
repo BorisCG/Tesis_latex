@@ -116,50 +116,50 @@ A continuación se detallan algunos links de ayuda para el uso de las referencia
 
 \chapter{A method for coupling gas and stars}
 
-In this work, we investigate the effect of gas in the process of seeds for SMBH formation. In contrast with other works, we do not take into account gas accretion by stars, since we are interested in the gravitational effect of gas over stars and vice versa.
+In this work, we investigate the effect of gas on the formation seeds of SMBHs. In contrast with other works, we do not take into account gas accretion by stars, since we are interested exclusively in the gravitational interaction between gas and stars.
 
-We need, in principle, three codes: one for the stars, one for the gas and a coupling code that make gravitational interactions between gas and stars.
+We require, in principle, three codes: one for the stars, one for the gas and a coupling code that handles gravitational interactions between gas and stars.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Esquemas/Codes_scheme.png} % Ruta relativa
-	\caption{Codes scheme}
+	\caption{Schematic representation of the code coupling framework}
 	\label{img:codes_scheme}
 \end{figure}
 
-The N-Body and SPH codes are used through the AMUSE interface, and are coupling with an external code.
+The N-Body and SPH codes are accessed through the AMUSE interface, and coupled via an external code.
 
 
 \section{N-body code: Ph4}
 
-The proposed scenarios presented in (referencia a capitulo) require the modeling of dense stellar clusters. And as we need to consider close encounters and collisions, is necessary a precise code.
+The proposed scenarios presented in (referencia a capitulo) require modeling dense stellar clusters. As we need to consider close encounters and collisions, a high-precision code is necessary.
 
-We use the PH4 code from the AMUSE interface. In the present section, we include a description of the code, as some external routines.
+The PH4 code from the AMUSE interface is used. In this section, we include a description of the code, and some external routines.
 
 \subsection{Hermite integrator}
 
-The Ph4 code uses an fourth-order Hermite integrator \cite{makino1992} for calculating the position and velocities of stars due to gravity. This is a predictor-corrector method.
+The Ph4 code uses a fourth-order Hermite integrator \cite{makino1992} for calculating the positions and velocities of stars due to gravity. This is a predictor-corrector method.
 
-The fourth-order Hermite scheme is based in a precise calculation of the individual time step. Considering the particle $i$ with own time $t_i$, time step $\Delta t_i$, position $x_i$, velocity $v_i$, acceleration $a_i$ and jerk $\dot{a_i}$, calculated at time $t_i$. The algorithm of  integration process proceeds as follows:
+The fourth-order Hermite scheme is based on a precise calculation of the individual time step. Considering the particle $i$ with its own time $t_i$, time step $\Delta t_i$, position $\mathbf{x}_i$, velocity $\mathbf{v}_i$, acceleration $\mathbf{a}_i$ and jerk $\dot{\mathbf{a}}_i$, all calculated at time $t_i$. The integration algorithm proceeds as follows:
 
 \begin{enumerate}
-	\item Select the particle with minimum $t_i + \Delta t_i$. Set the global time as $t=t_i + \Delta t_i$.
-	\item Calculate the predicted positions ($x_p$) and velocities ($v_p$) for all particles, using the actual values for $x$, $v$, $a$, $\dot{a}$. 
-	\item Calculate the acceleration ($a_i$) and jerk ($\dot{a_i}$) for particle $i$ at time $t_i + \Delta t_i$ using the predicted positions and velocities.
-	\item Calculate the second and third time derivative of acceleration ($a_i^{(2)}$ and $a_i^{(3)}$), using an Hermite interpolation.
-	\item Add the corrections to position and velocities of particle $i$.
+	\item Select the particle with the minimum $t_i + \Delta t_i$. Set the global time to $t=t_i + \Delta t_i$.
+	\item Calculate the predicted positions ($\mathbf{x}_p$) and velocities ($\mathbf{v}_p$) for all particles, using the current values for $\mathbf{x}$, $\mathbf{v}$, $\mathbf{a}$, $\dot{\mathbf{a}}$. 
+	\item Calculate the acceleration ($\mathbf{a}_i$) and jerk ($\dot{\mathbf{a}}_i$) for particle $i$ at time $t_i + \Delta t_i$ using the predicted positions and velocities.
+	\item Calculate the second and third time derivatives of acceleration ($\mathbf{a}_i^{(2)}$ and $\mathbf{a}_i^{(3)}$) using Hermite interpolation.
+	\item Apply corrections to the position and velocity of particle $i$.
 	\item Calculate and update the time step $\Delta t_i$.
 	\item Repeat the algorithm.
 \end{enumerate}
 
-In the appendix~\ref{ap:A} the algorithm and equations are showed. From (\ref{eq:ap_xpred}) and (\ref{eq:ap_velpred}), the predicted positions and velocities are:
+A detailed derivation of the algorithm and the full set of equations are provided in Appendix~\ref{ap:A}. From Eqs.~(\ref{eq:ap_xpred}) and (\ref{eq:ap_velpred}), the predicted positions and velocities are:
 
 \begin{align}
-	\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_{0,j}}{2!} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_{0,j}}{3!} (t - t_j)^3 \\
+	\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_{0,j}}{2} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_{0,j}}{3!} (t - t_j)^3 \\
 	\mathbf{v}_{p, j} &= \mathbf{v}_j + \mathbf{a}_{0,j} (t - t_j) + \frac{\dot{\mathbf{a}}_{0,j}}{2!} (t - t_j)^2
 \end{align}
 
-Where $\mathbf{x}_j$, $\mathbf{v}_j$ are the positions and velocities at time $t_j$, the individual time for each particle. Note that the index $j$ runs for all particles. The acceleration $\mathbf{a}_j$ and jerk $\dot{\mathbf{a}}_j$ are computed by equations:
+Here, $\mathbf{x}_j$ and $\mathbf{v}_j$ are the position and velocity of particle $j$ at time $t_j$. The current acceleration $\mathbf{a}_{0,j}$ and jerk $\dot{\mathbf{a}}_{0,j}$ are computed as:
 
  
 \begin{align}
@@ -169,23 +169,59 @@ Where $\mathbf{x}_j$, $\mathbf{v}_j$ are the positions and velocities at time $t
 	\mathbf{v}_{0,jk} &= \mathbf{v}_{k} - \mathbf{v}_{j}
 \end{align}
 
-From the Hermite interpolation, we can have an estimation of the second and third time derivative of acceleration. This estimation is used then for correct the positions and velocities.
+Using Hermite interpolation, the second and third time derivatives of the acceleration can be estimated. This estimation is subsequently used to correct the positions and velocities. The relevant expressions, derived in the appendix, are:
 
 \begin{align}
 	\mathbf{a}^{(2)}_{0, i} &= \frac{-6(\mathbf{a}_{0, i} - \mathbf{a}_{1, i}) - \Delta t_i(4\dot{\mathbf{a}}_{0, i} + 2\dot{\mathbf{a}}_{1, i})}{{\Delta t_i}^2} \\
 	\mathbf{a}^{(3)}_{0, i} &= \frac{12 (\mathbf{a}_{0, i} - \mathbf{a}_{1, i}) + 6(\dot{\mathbf{a}}_{0, i} + \dot{\mathbf{a}}_{1, i})\Delta t_i}{{\Delta t_i}^3}
 \end{align}
 
-After that, the correction over position and velocity is as follows:
+The final corrected position and velocity of particle $i$ are then given by:
 
 \begin{align}
 	\mathbf{x}_i(t_i + \Delta t_i) =& \mathbf{x}_{p, i} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^4}{24} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^5}{120} \\
 	\mathbf{v}_i(t_i + \Delta t_i) =& \mathbf{v}_{p, i} + \frac{\mathbf{a}^{(2)}_{0, i} {\Delta t_i}^3}{6} + \frac{\mathbf{a}^{(3)}_{0, i} {\Delta t_i}^4}{24}
 \end{align}
 
-Where corrections of four order have been made. The advantage of this method is that is only needed to calculate the acceleration and jerk in each step.
+These corrections incorporate terms up to fourth order. The main advantage of this method is that it only requires the explicit calculation of the acceleration and jerk at each step, with higher-order derivatives being obtained through the interpolation scheme.
 
-\subsection{Block time steps}
+\subsection{Block Time Steps}
+
+An important part of the Hermite integrator is the time step calculation. The time step controls precision, energy conservation and integration time. While time steps are individual (each particle has its own), they are grouped into blocks for efficiency.
+
+Time steps are set in two steps. First, a dynamic time step is calculated. Then, the time step is assigned using a block scheme. For the dynamical time step, the standard formula (\ref{eq:ap_tstep_std}) is used:
+
+\begin{align}
+	\Delta t_i = \sqrt{\eta \frac{|\mathbf{a}_{1, i}| |\mathbf{a}^{(2)}_{1, i}| + |\dot{\mathbf{a}}_{1, i}|^2}{|\dot{\mathbf{a}}_{1, i}| |\mathbf{a}^{(3)}_{1, i}| + |\mathbf{a}^{(2)}_{1, i}|^2}} \label{eq:3.11}
+\end{align}
+
+As can be seen, $\mathbf{a}_{1, i}$ and $\dot{\mathbf{a}}_{1, i}$ are calculated in each step, while $\mathbf{a}^{(3)}_{1, i}$ is constant. Only $\mathbf{a}^{(2)}_{1, i}$ needs to be estimated:
+
+\begin{align}
+	\mathbf{a}^{(2)}_{1, i} = \mathbf{a}^{(2)}_{0, i} + \Delta t_i \mathbf{a}^{(3)}_{1, i}
+\end{align}
+
+When the simulation begins, the initial time steps are calculated using (\ref{eq:ap_tstep_ini}):
+
+\begin{align}
+	\Delta t = \eta_s \frac{|\mathbf{a}|}{|\dot{\mathbf{a}}|} \label{eq:3.13}
+\end{align}
+
+The main algorithm of the Hermite 4th-order scheme evolves the particle with the minimum $t_j + \Delta t_j$. As it is expensive to evolve particles one by one, the goal is to assign particles to discrete time steps. In Ph4, time steps are set to powers of two of the N-body time units.
+
+During initialization, the time step is calculated using Equation (\ref{eq:3.13}), and then set. Given the initial time step $\Delta t_{0, j}$, the N-body time $\tau$, and an integer $n$:
+
+\begin{equation}
+	0.5 < \frac{\tau 2^{n}}{\Delta t_{0, j}} < 1
+\end{equation}
+
+The time step is then set to $\tau 2^{n}$
+
+As the model evolves, the new time step is computed using (\ref{eq:3.11}). The time step is halved if the calculated time step is smaller than the current time step, and doubled if it is larger than twice the current time step.
+
+The advantage of this time step criterion is that the time step in the code is equal to or lower than that required by the dynamics. Moreover, since particles share the same time steps, they can be integrated simultaneously. Additionally, all particles can be synchronized, as their times are multiples of powers of two of the same time unit.
+
+
 
 
 \subsection{Collisions and mergers}
@@ -569,7 +605,7 @@ end
 	After updating the position and velocity of particle $i$, a new time step $\Delta t_i$ must be calculated. This step is crucial for controlling the integration error. A proven and stable criterion is given by the standard formula \cite{aarseth1985}:
 	
 	\begin{equation}
-		\Delta t_i = \sqrt{\eta \frac{|\mathbf{a}_{1, i}| |\mathbf{a}^{(2)}_{1, i}| + |\dot{\mathbf{a}}_{1, i}|^2}{|\dot{\mathbf{a}}_{1, i}| |\mathbf{a}^{(3)}_{1, i}| + |\mathbf{a}^{(2)}_{1, i}|^2}}
+		\Delta t_i = \sqrt{\eta \frac{|\mathbf{a}_{1, i}| |\mathbf{a}^{(2)}_{1, i}| + |\dot{\mathbf{a}}_{1, i}|^2}{|\dot{\mathbf{a}}_{1, i}| |\mathbf{a}^{(3)}_{1, i}| + |\mathbf{a}^{(2)}_{1, i}|^2}} \label{eq:ap_tstep_std}
 	\end{equation}
 	
 	The values for $\mathbf{a}_{1, i}$ and $\dot{\mathbf{a}}_{1, i}$ are known from the direct calculation in Step 3. The value of $\mathbf{a}^{(3)}(t)$ is constant, since a third-order polynomial interpolation is used. Only $\mathbf{a}^{(2)}_{1, i}$ should be calculated:
@@ -581,7 +617,7 @@ end
 	During the initialization of the algorithm, the higher-order derivatives of the acceleration are not available, so an alternative formula for time step can be used in the startup:
 	
 	\begin{equation}
-		\Delta t = \eta_s \frac{|\mathbf{a}|}{|\dot{\mathbf{a}}|}
+		\Delta t = \eta_s \frac{|\mathbf{a}|}{|\dot{\mathbf{a}}|} \label{eq:ap_tstep_ini}
 	\end{equation}
 	
 	The suggested value for the startup parameter is $\eta_s \sim 0.01$ \cite{makino1992}.
