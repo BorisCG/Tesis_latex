@@ -1,39 +1,39 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}SMBH background}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Una breve introducción}{1}{subsection.1.1.1}%
-\contentsline {section}{\numberline {1.2}Aims and objectives}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Previous work}{3}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Mathematical model}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}density criterion}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Stars and gas in equilibrium}{4}{section.2.2}%
-\contentsline {chapter}{\numberline {3}A method for coupling gas and stars}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}N-body code: Ph4}{5}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Hermite integrator}{5}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Block Time Steps}{7}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Collisions and mergers}{8}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Escaping stars}{8}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}Smoothed particles hydrodynamics: Fi}{8}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Coupling strategy: Bridge}{8}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Results and analysis}{9}{chapter.4}%
-\contentsline {chapter}{\numberline {5}El desarrollo de la tesis}{10}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Aquí una nueva sección}{10}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Haciendo una tesis como un profesional}{10}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Otros párrafos más normales}{11}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Ejemplos de inserción de código fuente}{12}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Agregando múltiples imágenes}{13}{subsection.5.1.4}%
-\contentsline {section}{Más ejemplos}{14}{section*.17}%
-\contentsline {subsection}{Listas y Enumeraciones}{14}{section*.17}%
-\contentsline {chapter}{\numberline {6}Conclusions}{15}{chapter.6}%
-\contentsline {chapter}{References}{16}{section*.18}%
-\contentsline {chapter}{Appendices}{17}{appendix*.21}%
-\contentsline {section}{\numberline {A}Fourth-Order Hermite Integration Scheme}{17}{section.Alph0.1}%
-\contentsline {subsection}{\numberline {A.1}Step 1: Particle selection}{17}{subsection.Alph0.1.1}%
-\contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{17}{subsection.Alph0.1.2}%
-\contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{18}{subsection.Alph0.1.3}%
-\contentsline {subsection}{\numberline {A.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{18}{subsection.Alph0.1.4}%
-\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{19}{subsection.Alph0.1.5}%
-\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{20}{subsection.Alph0.1.6}%
-\contentsline {section}{\numberline {B}Cálculos realizados}{20}{section.Alph0.2}%
-\contentsline {subsection}{\numberline {B.1}Metodología}{21}{subsection.Alph0.2.1}%
-\contentsline {subsection}{\numberline {B.2}Resultados}{21}{subsection.Alph0.2.2}%
+\contentsline {section}{\numberline {1.1}SMBH Formation Channels and the Collisional Paradigm}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}The Role of Gas in Dense Stellar Systems}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Research Objectives and Thesis Outline}{1}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Theoretical Framework}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Density criterion for stellar collisions}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Stars and gas in equilibrium}{2}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Numerical Methods}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}The AMUSE Framework}{3}{section.3.1}%
+\contentsline {section}{\numberline {3.2}N-body code: Ph4}{3}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Hermite integrator}{4}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Block Time Steps}{5}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Collisions and mergers}{6}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Escaping stars}{7}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}SPH code: Fi}{8}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Coupling strategy: Bridge}{8}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Initial Conditions and Setup}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stellar Cluster Models}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Gas Configurations}{9}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Numerical Parameters}{9}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Results and analysis}{10}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gas-Free Baseline Simulations}{10}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Effects of Gas Fraction on Collision Rates}{10}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mass Spectrum Evolution and Massive Object Formation}{10}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Comparative Analysis Across Gas Fractions}{10}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Interpretation of Gas-Induced Enhancements}{11}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Implications for SMBH Seed Formation}{11}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Limitations and Future Work}{11}{section.6.3}%
+\contentsline {chapter}{References}{12}{section*.10}%
+\contentsline {chapter}{Appendices}{13}{appendix*.13}%
+\contentsline {section}{\numberline {A}Fourth-Order Hermite Integration Scheme}{13}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {A.1}Step 1: Particle selection}{13}{subsection.Alph0.1.1}%
+\contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{13}{subsection.Alph0.1.2}%
+\contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{14}{subsection.Alph0.1.3}%
+\contentsline {subsection}{\numberline {A.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{14}{subsection.Alph0.1.4}%
+\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{15}{subsection.Alph0.1.5}%
+\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{16}{subsection.Alph0.1.6}%

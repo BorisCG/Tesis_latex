@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apalike2.bst
 Database file #1: library.bib
-You've used 7 entries,
+Warning--I didn't find a database entry for "excel2latex"
+Warning--I didn't find a database entry for "tablesgenerator"
+You've used 5 entries,
             2229 wiz_defined-function locations,
-            548 strings with 4613 characters,
-and the built_in function-call counts, 2267 in all, are:
-= -- 232
-> -- 63
-< -- 8
-+ -- 18
-- -- 18
-* -- 164
-:= -- 407
-add.period$ -- 18
-call.type$ -- 7
-change.case$ -- 43
-chr.to.int$ -- 7
-cite$ -- 7
-duplicate$ -- 95
-empty$ -- 166
-format.name$ -- 27
-if$ -- 444
+            543 strings with 4575 characters,
+and the built_in function-call counts, 1785 in all, are:
+= -- 181
+> -- 49
+< -- 6
++ -- 14
+- -- 14
+* -- 133
+:= -- 312
+add.period$ -- 14
+call.type$ -- 5
+change.case$ -- 31
+chr.to.int$ -- 5
+cite$ -- 5
+duplicate$ -- 75
+empty$ -- 136
+format.name$ -- 21
+if$ -- 358
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 3
-newline$ -- 34
-num.names$ -- 23
-pop$ -- 31
+newline$ -- 26
+num.names$ -- 17
+pop$ -- 23
 preamble$ -- 1
-purify$ -- 43
+purify$ -- 31
 quote$ -- 0
-skip$ -- 82
+skip$ -- 64
 stack$ -- 0
-substring$ -- 166
+substring$ -- 138
 swap$ -- 12
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 42
+type$ -- 30
 warning$ -- 0
-while$ -- 22
+while$ -- 17
 width$ -- 0
-write$ -- 82
+write$ -- 62
+(There were 2 warnings)
