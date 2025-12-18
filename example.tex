@@ -169,7 +169,7 @@ Finally, the other particle is removed from the simulation.
 
 After each analysis time step, potential escapers are identified through a multi-stage detection algorithm. To maintain mass and energy conservation, escaped stars are not removed from the simulation. Instead we add an extra attribute, \texttt{escaped} (all stars begin with \texttt{particles.escaped = False}), to track bound and unbound stars for subsequent analysis. The process begins with defining an appropriate length scale.
 
-During initialization, the escape scale is defined as the minimum between ten times the virial radius and the Lagrangian radius containing the total mass:
+During initialization, the escape scale is defined as the minimum between ten times the virial radius and the Lagrangian radius containing the total mass: 
 
 \begin{equation}
 	r_{0, \text{esc}} = \min (10 \times r_{\text{vir}}, r_{100})
