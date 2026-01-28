@@ -13,7 +13,7 @@
 % NUEVO CAPÍTULO
 % ------------------------------------------------------------------------------
 % A diferencia de Template-Informe, Template-Tesis requiere el uso de capítulos; las secciones, subsecciones, etc son parte de un capítulo. Se recomienda el uso de un capítulo en un archivo distinto
-\chapter{Introducción}
+\chapter{Introduction}
 
 \section{SMBH Formation Channels and the Collisional Paradigm}
 \section{The Role of Gas in Dense Stellar Systems}
@@ -130,7 +130,7 @@ During initialization, the time step is calculated using Equation (\ref{eq:3.13}
 	0.5 < \frac{\tau 2^{n}}{\Delta t_{0, j}} < 1
 \end{equation}
 
-The time step is then set to $\tau 2^{n}$
+The time step is then set to $\tau 2^{n}$, with $n$ being able to be positive or negative.
 
 As the model evolves, the new time step is computed using (\ref{eq:3.11}). The time step is halved if the calculated time step is smaller than the current time step, and doubled if it is larger than twice the current time step.
 
