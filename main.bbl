@@ -6,12 +6,35 @@ Aarseth, S.~J. (1985).
 \newblock In J.~U. Brackbill \& B.~I. Cohen (Eds.), {\em Multiple Time Scales}
   (pp.\ 377--418). Academic Press.
 
+\bibitem[Barnes \& Hut, 1986]{barnes1986hierarchical}
+Barnes, J. \& Hut, P. (1986).
+\newblock A hierarchical o (n log n) force-calculation algorithm.
+\newblock {\em nature}, 324(6096), 446--449.
+
 \bibitem[Makino \& Aarseth, 1992]{makino1992}
 Makino, J. \& Aarseth, S.~J. (1992).
 \newblock On a hermite integrator with ahmad-cohen scheme for gravitational
   many-body problems.
 \newblock {\em Publications of the Astronomical Society of Japan}, 44(2),
   141--151.
+
+\bibitem[Pelupessy, 2005]{pelupessy2005numerical}
+Pelupessy, F.~I. (2005).
+\newblock {\em Numerical studies of the interstellar medium on galactic
+  scales}.
+\newblock PhD thesis, {\'e}diteur non identifi{\'e}.
+
+\bibitem[Salmon \& Warren, 1994]{salmon1994skeletons}
+Salmon, J.~K. \& Warren, M.~S. (1994).
+\newblock Skeletons from the treecode closet.
+\newblock {\em Journal of Computational Physics}, 111(1), 136--155.
+
+\bibitem[Springel \& Hernquist, 2002]{springel2002cosmological}
+Springel, V. \& Hernquist, L. (2002).
+\newblock Cosmological smoothed particle hydrodynamics simulations: the entropy
+  equation.
+\newblock {\em Monthly Notices of the Royal Astronomical Society}, 333(3),
+  649--664.
 
 \bibitem[{Sweatman}, 1993]{1993MNRAS.261..497S}
 {Sweatman}, W.~L. (1993).

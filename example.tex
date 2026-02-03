@@ -227,6 +227,40 @@ The final validation step quantifies the gravitational influence on neighboring 
 Stars satisfying $X_E < 0.01$ are confirmed as escapers, ensuring minimal gravitational perturbation to neighboring stars. These stars are tagged as escapers (\texttt{particles.escaped = True}).
 
 \section{SPH code: Fi}
+
+For the gas dynamics we use the Fi code, which is an MPI-parallel smoothed-particle hydrodynamics (SPH) code implemented in the Amuse interface. Here we describe the most important features, but a more detailed description is given in \cite{pelupessy2005numerical}.
+
+\subsection{Barnes-Hut tree}
+
+One important characteristic of the Fi code, is that compute the self gravity of the system. For particles codes, there are bunch of methods for calculating the gravity of the system. The most precise solutions calculates one-vs-all interactions. This kind of solutions has high precision, but are costly, as they need $\order{N^2}$ operations per step in each force evaluation. As this kind of precision is usually required for collisional scenarios, in the case of collisionless simulations approximate methods are used instead, scarifying accuracy for speed.
+
+In the case of Fi, the force is compute using the Barnes-Hut (BH) method \cite{barnes1986hierarchical}. The basis of this method is the use of an hierarchical organization of particles on oct-tree cells, and a distance criteria for force calculation.
+
+First, an initial cell is defined as a physical cube that contains all particles, and is represented as a node in a tree. If the initial cell (cube) contains more than one particle, is divided into eight new cells, of equal size. Each cell is linked to the progenitor node. Now, each new cell is iteratively divided into eight cells, until contains exactly one particle (leaf cell). The figure \ref{img:oct_tree} represent an oct-tree in two dimensions.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Esquemas/BHtree_plot.png}
+	\caption{Representation of an oct tree}
+	\label{img:oct_tree}
+\end{figure}
+
+Once the oct-tree is setted, an opening criteria is computed for calculating the  gravitational force. Given a particle, the nodes are iteratively opened until a leaf is reached in the tree or the opening criteria is fulfilled:
+  
+\begin{equation}
+	l/d < \theta
+\end{equation}
+
+where $l$ is the size of the cell, $d$ is the distance between the particle and the center of mass of the particles into the cell, and $\theta$ the parameter of the cell opening criteria that controls the accuracy. If the criteria is fulfilled, the particles in the cell are approximated as one particle, which mass is the total mass of the particle, and with the center of mass as the position. The principle of the criteria is that for a system of particles which size is small enough compared with the distance, can be approximated as a point. One of the advantages of this criteria is that the force calculus scale as $\order{N \log N}$, and can work efficiently with different mass distributions. It has been shown that it is acceptable to use BH tree method for collisionless N-body dynamics \cite{barnes1986hierarchical}. The implementation of BH method in Fi has a modified cell opening criteria. As the classical BH opening criterion can fail in some circumstances \cite{salmon1994skeletons}, the criterion of \cite{springel2002cosmological} is used instead:
+
+\begin{equation}
+	M_n l^4 < \alpha |\mathbf{a}| d^6
+\end{equation}
+
+where $M_n$ is the total mass contained in the node, $\mathbf{a}$ is an estimation of the acceleration (generally the acceleration of the previous step), and $\alpha$ is a parameter to control accuracy.
+
+\subsection{Smoothed Particle Hydrodynamics}
+
 \section{Coupling strategy: Bridge}
 
 \chapter{Initial Conditions and Setup}             % ← NUEVO capítulo

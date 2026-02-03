@@ -14,26 +14,28 @@
 \contentsline {subsection}{\numberline {3.2.3}Collisions and mergers}{6}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Escaping stars}{7}{subsection.3.2.4}%
 \contentsline {section}{\numberline {3.3}SPH code: Fi}{8}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Coupling strategy: Bridge}{8}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Initial Conditions and Setup}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stellar Cluster Models}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Gas Configurations}{9}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Numerical Parameters}{9}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Results and analysis}{10}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gas-Free Baseline Simulations}{10}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Effects of Gas Fraction on Collision Rates}{10}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mass Spectrum Evolution and Massive Object Formation}{10}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Comparative Analysis Across Gas Fractions}{10}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{11}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Interpretation of Gas-Induced Enhancements}{11}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Implications for SMBH Seed Formation}{11}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Limitations and Future Work}{11}{section.6.3}%
-\contentsline {chapter}{References}{12}{section*.10}%
-\contentsline {chapter}{Appendices}{13}{appendix*.13}%
-\contentsline {section}{\numberline {A}Fourth-Order Hermite Integration Scheme}{13}{section.Alph0.1}%
-\contentsline {subsection}{\numberline {A.1}Step 1: Particle selection}{13}{subsection.Alph0.1.1}%
-\contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{13}{subsection.Alph0.1.2}%
-\contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{14}{subsection.Alph0.1.3}%
-\contentsline {subsection}{\numberline {A.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{14}{subsection.Alph0.1.4}%
-\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{15}{subsection.Alph0.1.5}%
-\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{16}{subsection.Alph0.1.6}%
+\contentsline {subsection}{\numberline {3.3.1}Barnes-Hut tree}{8}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Smoothed Particle Hydrodynamics}{9}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Coupling strategy: Bridge}{9}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Initial Conditions and Setup}{10}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stellar Cluster Models}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Gas Configurations}{10}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Numerical Parameters}{10}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Results and analysis}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gas-Free Baseline Simulations}{11}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Effects of Gas Fraction on Collision Rates}{11}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mass Spectrum Evolution and Massive Object Formation}{11}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Comparative Analysis Across Gas Fractions}{11}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{12}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Interpretation of Gas-Induced Enhancements}{12}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Implications for SMBH Seed Formation}{12}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Limitations and Future Work}{12}{section.6.3}%
+\contentsline {chapter}{References}{13}{section*.11}%
+\contentsline {chapter}{Appendices}{14}{appendix*.14}%
+\contentsline {section}{\numberline {A}Fourth-Order Hermite Integration Scheme}{14}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {A.1}Step 1: Particle selection}{14}{subsection.Alph0.1.1}%
+\contentsline {subsection}{\numberline {A.2}Step 2: Calculate the predicted position and velocities for all particles}{14}{subsection.Alph0.1.2}%
+\contentsline {subsection}{\numberline {A.3}Step 3: Calculate acceleration and jerk for particle $i$}{15}{subsection.Alph0.1.3}%
+\contentsline {subsection}{\numberline {A.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{15}{subsection.Alph0.1.4}%
+\contentsline {subsection}{\numberline {A.5}Step 5: Add corrections}{16}{subsection.Alph0.1.5}%
+\contentsline {subsection}{\numberline {A.6}Step 6: Time step update}{17}{subsection.Alph0.1.6}%
