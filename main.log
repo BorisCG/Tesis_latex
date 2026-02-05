@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  2 FEB 2026 21:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  4 FEB 2026 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2499,7 +2499,7 @@ Chapter 2.
 
 ]
 Chapter 3.
-<./img//Esquemas/Codes_scheme.png, id=159, 727.71875pt x 276.03125pt>
+<./img//Esquemas/Codes_scheme.png, id=164, 727.71875pt x 276.03125pt>
 File: ./img//Esquemas/Codes_scheme.png Graphic file (type png)
 <use ./img//Esquemas/Codes_scheme.png>
 Package pdftex.def Info: ./img//Esquemas/Codes_scheme.png  used on input line 4
@@ -2510,11 +2510,11 @@ Package pdftex.def Info: ./img//Esquemas/Codes_scheme.png  used on input line 4
  <./img//Esquemas/Codes_scheme.png>] [4{/usr/share/texmf/fonts/enc/dvips/lm/lm-
 rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fon
 ts/enc/dvips/lm/lm-mathex.enc}] [5] [6] [7]
-<./img//Esquemas/BHtree_plot.png, id=253, 859.86845pt x 422.49042pt>
+<./img//Esquemas/BHtree_plot.png, id=259, 859.86845pt x 422.49042pt>
 File: ./img//Esquemas/BHtree_plot.png Graphic file (type png)
 <use ./img//Esquemas/BHtree_plot.png>
 Package pdftex.def Info: ./img//Esquemas/BHtree_plot.png  used on input line 24
-3.
+4.
 (pdftex.def)             Requested size: 377.62642pt x 185.54823pt.
  [8] [9 <./img//Esquemas/BHtree_plot.png>]
 Chapter 4.
@@ -2535,21 +2535,21 @@ Chapter 6.
 
 ]
 LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 34
-6.
+9.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.39996> on input line 346.
+(Font)              <14.39996> on input line 349.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.07993> on input line 346.
+(Font)              <10.07993> on input line 349.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.19998> on input line 346.
+(Font)              <7.19998> on input line 349.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 346.
+(hyperref)                removing `math shift' on input line 349.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 346.
+(hyperref)                removing `math shift' on input line 349.
 
 [15] [16]) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
@@ -2561,11 +2561,11 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 32500 strings out of 474222
- 540025 string characters out of 5748733
+ 32504 strings out of 474222
+ 540106 string characters out of 5748733
  1944975 words of memory out of 5000000
- 53966 multiletter control sequences out of 15000+600000
- 671927 words of font info for 143 fonts, out of 8000000 for 9000
+ 53969 multiletter control sequences out of 15000+600000
+ 674909 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,12n,110p,2881b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
@@ -2577,10 +2577,10 @@ m/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmvtt10.pfb>
-Output written on main.pdf (24 pages, 482457 bytes).
+Output written on main.pdf (24 pages, 485879 bytes).
 PDF statistics:
- 610 PDF objects out of 1000 (max. 8388607)
- 543 compressed objects within 6 object streams
- 166 named destinations out of 1000 (max. 500000)
+ 616 PDF objects out of 1000 (max. 8388607)
+ 549 compressed objects within 6 object streams
+ 167 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

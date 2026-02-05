@@ -42,4 +42,9 @@ Springel, V. \& Hernquist, L. (2002).
   N-body simulations}.
 \newblock {\em MNRAS}, 261(3), 497--512.
 
+\bibitem[Zwart \& McMillan, 2018]{zwart2018astrophysical}
+Zwart, S.~P. \& McMillan, S. (2018).
+\newblock {\em Astrophysical Recipes: the art of AMUSE}.
+\newblock IOP Publishing.
+
 \end{thebibliography}

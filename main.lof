@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic representation of the code coupling framework}}{3}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the coupled numerical framework. The stellar N-body system (modelled with \texttt {ph4}) and the gaseous SPH system (modelled with \texttt {Fi}) interact gravitationally through the \texttt {Bridge} coupling scheme.}}{3}{figure.caption.9}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Representation of an oct tree}}{9}{figure.caption.10}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

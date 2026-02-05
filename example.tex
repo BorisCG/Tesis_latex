@@ -15,7 +15,7 @@
 % A diferencia de Template-Informe, Template-Tesis requiere el uso de capítulos; las secciones, subsecciones, etc son parte de un capítulo. Se recomienda el uso de un capítulo en un archivo distinto
 \chapter{Introduction}
 
-\section{SMBH Formation Channels and the Collisional Paradigm}
+\section{Formation Channels for SMBHs and the Collisional Paradigm}
 \section{The Role of Gas in Dense Stellar Systems}
 \section{Research Objectives and Thesis Outline}
 
@@ -31,14 +31,14 @@
 
 \section{The AMUSE Framework}
 
-In this work, we investigate the effect of gas on the formation seeds of SMBHs. In contrast with other works, we do not take into account gas accretion by stars, since we are interested exclusively in the gravitational interaction between gas and stars.
+This thesis investigates the role of gas in the formation of supermassive black hole (SMBH) seeds via stellar collisions in dense clusters. In contrast with other works, we do not take into account gas accretion by stars, since we are interested exclusively in the gravitational interaction between gas and stars.
 
-We require, in principle, three codes: one for the stars, one for the gas and a coupling code that handles gravitational interactions between gas and stars.
+We require, in principle, three codes: 1) an N-body code to model the stellar dynamics, 2) a smoothed particle hydrodynamics (SPH) code to simulate the gas thermodynamics and self-gravity, and 3) a coupling scheme to manage the mutual gravitational interaction between these two components.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Esquemas/Codes_scheme.png} % Ruta relativa
-	\caption{Schematic representation of the code coupling framework}
+	\caption{Schematic of the coupled numerical framework. The stellar N-body system (modelled with \texttt{ph4}) and the gaseous SPH system (modelled with \texttt{Fi}) interact gravitationally through the \texttt{Bridge} coupling scheme.}
 	\label{img:codes_scheme}
 \end{figure}
 
@@ -47,9 +47,9 @@ The N-Body and SPH codes are accessed through the AMUSE interface, and coupled v
 
 \section{N-body code: Ph4}
 
-The proposed scenarios presented in (referencia a capitulo) require modeling dense stellar clusters. As we need to consider close encounters and collisions, a high-precision code is necessary.
+The proposed scenarios presented in (referencia a capitulo) require high numerical precision to accurately model close encounters and direct collisions. We therefore employ the \texttt{ph4} N-body code from the AMUSE framework \cite{zwart2018astrophysical}.
 
-The PH4 code from the AMUSE interface is used. In this section, we include a description of the code, and some external routines.
+In this section, we include a description of the code, and some external routines.
 
 \subsection{Hermite integrator}
 
@@ -228,15 +228,16 @@ Stars satisfying $X_E < 0.01$ are confirmed as escapers, ensuring minimal gravit
 
 \section{SPH code: Fi}
 
-For the gas dynamics we use the Fi code, which is an MPI-parallel smoothed-particle hydrodynamics (SPH) code implemented in the Amuse interface. Here we describe the most important features, but a more detailed description is given in \cite{pelupessy2005numerical}.
+The gas dynamics are modelled using the \texttt{Fi} code, an MPI-parallel smoothed particle hydrodynamics (SPH) implementation within the AMUSE framework. We focus on the aspects most relevant to our simulations; a comprehensive description of the code can be found in \cite{pelupessy2005numerical}.
 
 \subsection{Barnes-Hut tree}
 
-One important characteristic of the Fi code, is that compute the self gravity of the system. For particles codes, there are bunch of methods for calculating the gravity of the system. The most precise solutions calculates one-vs-all interactions. This kind of solutions has high precision, but are costly, as they need $\order{N^2}$ operations per step in each force evaluation. As this kind of precision is usually required for collisional scenarios, in the case of collisionless simulations approximate methods are used instead, scarifying accuracy for speed.
 
-In the case of Fi, the force is compute using the Barnes-Hut (BH) method \cite{barnes1986hierarchical}. The basis of this method is the use of an hierarchical organization of particles on oct-tree cells, and a distance criteria for force calculation.
+A key feature of \texttt{Fi} is its ability to compute the self-gravity of the gaseous component. Particle-based codes offer a range of methods for gravitational force calculation. The most accurate approach is the direct summation of all pairwise interactions, which scales as $\mathcal{O}(N^2)$ and is computationally expensive for large $N$. While such precision is often necessary for collisional stellar dynamics (e.g., in our N-body component), the gas system in our simulations is treated as a collisionless fluid for the purpose of gravity calculation, allowing for faster, approximate methods, sacrificing accuracy for computational efficiency.
 
-First, an initial cell is defined as a physical cube that contains all particles, and is represented as a node in a tree. If the initial cell (cube) contains more than one particle, is divided into eight new cells, of equal size. Each cell is linked to the progenitor node. Now, each new cell is iteratively divided into eight cells, until contains exactly one particle (leaf cell). The figure \ref{img:oct_tree} represent an oct-tree in two dimensions.
+\texttt{Fi} employs the Barnes-Hut (BH) tree algorithm \cite{barnes1986hierarchical}. This method uses a hierarchical oct-tree spatial decomposition and a geometric opening criterion to approximate gravitational forces.
+
+The tree is constructed by enclosing all particles within a root cell. If this cell contains more than one particle, it is subdivided into eight daughter cells of equal volume. This subdivision process repeats recursively for each cell containing multiple particles, until every cell holds at most one particle (a leaf node). Figure~\ref{img:oct_tree} illustrates this structure in two dimensions.
 
 \begin{figure}[H]
 	\centering
@@ -245,19 +246,22 @@ First, an initial cell is defined as a physical cube that contains all particles
 	\label{img:oct_tree}
 \end{figure}
 
-Once the oct-tree is setted, an opening criteria is computed for calculating the  gravitational force. Given a particle, the nodes are iteratively opened until a leaf is reached in the tree or the opening criteria is fulfilled:
-  
+Once the tree is built, the gravitational force on a given particle is calculated by going through the tree from the root. For each node encountered (linked to a cell), a decision is made: either open the node to examine its children, or accept the node as a single interacting entity. The classic Barnes-Hut opening criterion is:
+
 \begin{equation}
-	l/d < \theta
+	l/d < \theta \label{eq:3.29}
 \end{equation}
 
-where $l$ is the size of the cell, $d$ is the distance between the particle and the center of mass of the particles into the cell, and $\theta$ the parameter of the cell opening criteria that controls the accuracy. If the criteria is fulfilled, the particles in the cell are approximated as one particle, which mass is the total mass of the particle, and with the center of mass as the position. The principle of the criteria is that for a system of particles which size is small enough compared with the distance, can be approximated as a point. One of the advantages of this criteria is that the force calculus scale as $\order{N \log N}$, and can work efficiently with different mass distributions. It has been shown that it is acceptable to use BH tree method for collisionless N-body dynamics \cite{barnes1986hierarchical}. The implementation of BH method in Fi has a modified cell opening criteria. As the classical BH opening criterion can fail in some circumstances \cite{salmon1994skeletons}, the criterion of \cite{springel2002cosmological} is used instead:
+
+where $l$ is the side length of the cubic cell, $d$ is the distance from the target particle to the node's center of mass, and $\theta$ is an accuracy parameter. If this condition is met, the entire mass of the node is treated as a single point mass at its center of mass, providing an acceptable approximation when the node is sufficiently distant (i.e., appears small in angular size). The recursion stops upon reaching a leaf node, which by definition represents a single particle and is interacted with directly. This approximation reduces the computational cost of the force calculation from $\mathcal{O}(N^2)$ to $\mathcal{O}(N \log{N})$ and adapts efficiently to clustered mass distributions, making it suitable for collisionless systems \cite{barnes1986hierarchical}.
+
+The standard geometric criterion (Eq.~\ref{eq:3.29}), however, can fail in some circumstances \cite{salmon1994skeletons}. Therefore, \texttt{Fi} implements a modified criterion following \cite{springel2002cosmological}:
 
 \begin{equation}
 	M_n l^4 < \alpha |\mathbf{a}| d^6
 \end{equation}
 
-where $M_n$ is the total mass contained in the node, $\mathbf{a}$ is an estimation of the acceleration (generally the acceleration of the previous step), and $\alpha$ is a parameter to control accuracy.
+where $M_n$ is the total mass contained in the node, $\mathbf{a}$ is an estimate of the gravitational acceleration (typically from the previous timestep), and $\alpha$ is a parameter to control accuracy.
 
 \subsection{Smoothed Particle Hydrodynamics}
 
