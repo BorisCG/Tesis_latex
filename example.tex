@@ -42,18 +42,18 @@ We require, in principle, three codes: 1) an N-body code to model the stellar dy
 	\label{img:codes_scheme}
 \end{figure}
 
-The N-Body and SPH codes are accessed through the AMUSE interface, and coupled via an external code.
+The N-Body and SPH codes are accessed through the AMUSE interface \citep{zwart2018astrophysical}, and coupled via an external code.
 
 
 \section{N-body code: Ph4}
 
-The proposed scenarios presented in (referencia a capitulo) require high numerical precision to accurately model close encounters and direct collisions. We therefore employ the \texttt{ph4} N-body code from the AMUSE framework \cite{zwart2018astrophysical}.
+The proposed scenarios presented in (referencia a capitulo) require high numerical precision to accurately model close encounters and direct collisions. We therefore employ the \texttt{ph4} N-body code from the AMUSE framework \citep{zwart2018astrophysical}.
 
 In this section, we include a description of the code, and some external routines.
 
 \subsection{Hermite integrator}
 
-The Ph4 code uses a fourth-order Hermite integrator \cite{makino1992} for calculating the positions and velocities of stars due to gravity. This is a predictor-corrector method.
+The Ph4 code uses a fourth-order Hermite integrator \citep{makino1992} for calculating the positions and velocities of stars due to gravity. This is a predictor-corrector method.
 
 The fourth-order Hermite scheme is based on a precise calculation of the individual time step. Considering the particle $i$ with its own time $t_i$, time step $\Delta t_i$, position $\mathbf{x}_i$, velocity $\mathbf{v}_i$, acceleration $\mathbf{a}_i$ and jerk $\dot{\mathbf{a}}_i$, all calculated at time $t_i$. The integration algorithm proceeds as follows:
 
@@ -228,14 +228,14 @@ Stars satisfying $X_E < 0.01$ are confirmed as escapers, ensuring minimal gravit
 
 \section{SPH code: Fi}
 
-The gas dynamics are modelled using the \texttt{Fi} code, an MPI-parallel smoothed particle hydrodynamics (SPH) implementation within the AMUSE framework. We focus on the aspects most relevant to our simulations; a comprehensive description of the code can be found in \cite{pelupessy2005numerical}.
+The gas dynamics are modelled using the \texttt{Fi} code \citep{gerritsen1997star}, an MPI-parallel smoothed particle hydrodynamics (SPH) implementation within the AMUSE framework. We focus on the aspects most relevant to our simulations; a comprehensive description of the code can be found in \citep{pelupessy2005numerical}.
 
 \subsection{Barnes-Hut tree}
 
 
 A key feature of \texttt{Fi} is its ability to compute the self-gravity of the gaseous component. Particle-based codes offer a range of methods for gravitational force calculation. The most accurate approach is the direct summation of all pairwise interactions, which scales as $\mathcal{O}(N^2)$ and is computationally expensive for large $N$. While such precision is often necessary for collisional stellar dynamics (e.g., in our N-body component), the gas system in our simulations is treated as a collisionless fluid for the purpose of gravity calculation, allowing for faster, approximate methods, sacrificing accuracy for computational efficiency.
 
-\texttt{Fi} employs the Barnes-Hut (BH) tree algorithm \cite{barnes1986hierarchical}. This method uses a hierarchical oct-tree spatial decomposition and a geometric opening criterion to approximate gravitational forces.
+\texttt{Fi} employs the Barnes-Hut (BH) tree algorithm \citep{barnes1986hierarchical}. This method uses a hierarchical oct-tree spatial decomposition and a geometric opening criterion to approximate gravitational forces.
 
 The tree is constructed by enclosing all particles within a root cell. If this cell contains more than one particle, it is subdivided into eight daughter cells of equal volume. This subdivision process repeats recursively for each cell containing multiple particles, until every cell holds at most one particle (a leaf node). Figure~\ref{img:oct_tree} illustrates this structure in two dimensions.
 
@@ -253,9 +253,9 @@ Once the tree is built, the gravitational force on a given particle is calculate
 \end{equation}
 
 
-where $l$ is the side length of the cubic cell, $d$ is the distance from the target particle to the node's center of mass, and $\theta$ is an accuracy parameter. If this condition is met, the entire mass of the node is treated as a single point mass at its center of mass, providing an acceptable approximation when the node is sufficiently distant (i.e., appears small in angular size). The recursion stops upon reaching a leaf node, which by definition represents a single particle and is interacted with directly. This approximation reduces the computational cost of the force calculation from $\mathcal{O}(N^2)$ to $\mathcal{O}(N \log{N})$ and adapts efficiently to clustered mass distributions, making it suitable for collisionless systems \cite{barnes1986hierarchical}.
+where $l$ is the side length of the cubic cell, $d$ is the distance from the target particle to the node's center of mass, and $\theta$ is an accuracy parameter. If this condition is met, the entire mass of the node is treated as a single point mass at its center of mass, providing an acceptable approximation when the node is sufficiently distant (i.e., appears small in angular size). The recursion stops upon reaching a leaf node, which by definition represents a single particle and is interacted with directly. This approximation reduces the computational cost of the force calculation from $\mathcal{O}(N^2)$ to $\mathcal{O}(N \log{N})$ and adapts efficiently to clustered mass distributions, making it suitable for collisionless systems \citep{barnes1986hierarchical}.
 
-The standard geometric criterion (Eq.~\ref{eq:3.29}), however, can fail in some circumstances \cite{salmon1994skeletons}. Therefore, \texttt{Fi} implements a modified criterion following \cite{springel2002cosmological}:
+The standard geometric criterion (Eq.~\ref{eq:3.29}), however, can fail in some circumstances \citep{salmon1994skeletons}. Therefore, \texttt{Fi} implements a modified criterion following \citep{springel2002cosmological}:
 
 \begin{equation}
 	M_n l^4 < \alpha |\mathbf{a}| d^6
@@ -264,6 +264,36 @@ The standard geometric criterion (Eq.~\ref{eq:3.29}), however, can fail in some 
 where $M_n$ is the total mass contained in the node, $\mathbf{a}$ is an estimate of the gravitational acceleration (typically from the previous timestep), and $\alpha$ is a parameter to control accuracy.
 
 \subsection{Smoothed Particle Hydrodynamics}
+
+The gas dynamics are solved using the Smoothed Particle Hydrodynamics method \citep{gingold1977smoothed, lucy1977numerical}. In SPH, hydrodynamic equations are solved from a Lagrangian approach, sampling the gas by a discrete set of points, instead of the classical continuous. Consider a gas described by density $\rho$, pressure $p$ and specific internal energy $u$. For an inviscid fluid, the Lagrangian take the form:
+
+\begin{equation}
+	L = \int \left\{ \frac{1}{2} v^2 - u[\rho(\mathbf{r})] \right\} \rho d^3\mathbf{x} \label{eq:3_Lag_clasic}
+\end{equation}
+
+where the specific internal energy is related to the pressure by $\partial u / \partial \rho = p/\rho^2$, and the position vector is $\mathbf{r} = (\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3)$. The Euler equations of motion can be derived from a variational principle in the Lagrangian \citep{rasio2000particle}:
+
+\begin{align}
+	\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \vec{v}) =& 0 \label{eq:3_32} \\
+	\frac{\partial \vec{v}}{\partial t} + (\vec{v} \cdot \nabla) \vec{v} =& - \frac{\nabla p}{\rho} \label{eq:3_33} \\
+	\frac{\partial u}{\partial t} + (\vec{v} \cdot \nabla) u =& - \frac{p}{\rho} (\nabla \cdot \vec{v}) \label{eq:3_34}
+\end{align}
+
+where (\ref{eq:3_32}) is the equation of continuity, (\ref{eq:3_33}) is the equation of motion and (\ref{eq:3_34}) is the internal energy equation. In SPH, instead of (\ref{eq:3_Lag_clasic}), a discrete Lagrangian is used:
+
+\begin{equation}
+	L_{SPH} = \sum_{i=1}^{N} m_i \left[\frac{1}{2} v_i^2 - u(\rho_i)\right] \label{eq:3_lag_discrete}
+\end{equation}
+
+where $m_i$, $v_i$, $\rho_i$ are the mass, velocity and density of each particle, which represent a fluid element. In order to use (\ref{eq:3_lag_discrete}) as the Lagrangian of the system, is necessary to use a suitable expression for the density.
+
+In SPH, the density at position $\mathbf{r}$ is calculated as an average over all particles:
+
+\begin{equation}
+	\rho (\mathbf{r}) = \sum_{i} m_i W(\mathbf{r} - \mathbf{r}_i; h) \label{eq:3_dens_SPH}
+\end{equation}
+
+where $W(\mathbf{r} - \mathbf{r}_i; h)$ is a smoothing kernel of width h. The kernel has to fulfill two conditions: his integral over space should be unity and that in the limit $h \to 0$ approach to Dirac delta function. Note that with the first constrain, the integration of (\ref{eq:3_dens_SPH}) gives the total mass of the system.
 
 \section{Coupling strategy: Bridge}
 
