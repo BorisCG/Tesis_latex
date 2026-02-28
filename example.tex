@@ -226,6 +226,8 @@ The final validation step quantifies the gravitational influence on neighboring 
 
 Stars satisfying $X_E < 0.01$ are confirmed as escapers, ensuring minimal gravitational perturbation to neighboring stars. These stars are tagged as escapers (\texttt{particles.escaped = True}).
 
+
+
 \section{SPH code: Fi}
 
 The gas dynamics are modelled using the \texttt{Fi} code \citep{gerritsen1997star}, an MPI-parallel smoothed particle hydrodynamics (SPH) implementation within the AMUSE framework. We focus on the aspects most relevant to our simulations; a comprehensive description of the code can be found in \citep{pelupessy2005numerical}.
@@ -274,26 +276,109 @@ The gas dynamics are solved using the Smoothed Particle Hydrodynamics method \ci
 where the specific internal energy is related to the pressure by $\partial u / \partial \rho = p/\rho^2$, and the position vector is $\mathbf{r} = (\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3)$. The Euler equations of motion can be derived from a variational principle in the Lagrangian \citep{rasio2000particle}:
 
 \begin{align}
-	\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \vec{v}) =& 0 \label{eq:3_32} \\
-	\frac{\partial \vec{v}}{\partial t} + (\vec{v} \cdot \nabla) \vec{v} =& - \frac{\nabla p}{\rho} \label{eq:3_33} \\
-	\frac{\partial u}{\partial t} + (\vec{v} \cdot \nabla) u =& - \frac{p}{\rho} (\nabla \cdot \vec{v}) \label{eq:3_34}
+	\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \vec{\mathbf{v}}) =& 0 \label{eq:3_32} \\
+	\frac{\partial \vec{\mathbf{v}}}{\partial t} + (\vec{\mathbf{v}} \cdot \nabla) \vec{\mathbf{v}} =& - \frac{\nabla p}{\rho} \label{eq:3_33} \\
+	\frac{\partial u}{\partial t} + (\vec{\mathbf{v}} \cdot \nabla) u =& - \frac{p}{\rho} (\nabla \cdot \vec{\mathbf{v}}) \label{eq:3_34}
 \end{align}
 
 where (\ref{eq:3_32}) is the equation of continuity, (\ref{eq:3_33}) is the equation of motion and (\ref{eq:3_34}) is the internal energy equation. In SPH, instead of (\ref{eq:3_Lag_clasic}), a discrete Lagrangian is used:
 
 \begin{equation}
-	L_{SPH} = \sum_{i=1}^{N} m_i \left[\frac{1}{2} v_i^2 - u(\rho_i)\right] \label{eq:3_lag_discrete}
+	L_{SPH} = \sum_{i=1}^{N} m_i \left[\frac{1}{2} \mathbf{v}_i^2 - u(\rho_i)\right] \label{eq:3_lag_discrete}
 \end{equation}
 
-where $m_i$, $v_i$, $\rho_i$ are the mass, velocity and density of each particle, which represent a fluid element. In order to use (\ref{eq:3_lag_discrete}) as the Lagrangian of the system, is necessary to use a suitable expression for the density.
+where $m_i$, $v_i$, $\rho_i$ are the mass, velocity and density of each particle, which represent a fluid element. $u(\rho_i) = u_i$ is the specific internal energy. In order to use (\ref{eq:3_lag_discrete}) as the Lagrangian of the system, is necessary to use a suitable expression for the density.
 
 In SPH, the density at position $\mathbf{r}$ is calculated as an average over all particles:
 
 \begin{equation}
-	\rho (\mathbf{r}) = \sum_{i} m_i W(\mathbf{r} - \mathbf{r}_i; h) \label{eq:3_dens_SPH}
+	\rho (\mathbf{r}) = \sum_{j} m_j W(\mathbf{r} - \mathbf{r}_j; h) \label{eq:3_dens_SPH}
 \end{equation}
 
-where $W(\mathbf{r} - \mathbf{r}_i; h)$ is a smoothing kernel of width h. The kernel has to fulfill two conditions: his integral over space should be unity and that in the limit $h \to 0$ approach to Dirac delta function. Note that with the first constrain, the integration of (\ref{eq:3_dens_SPH}) gives the total mass of the system.
+where $W(\mathbf{r} - \mathbf{r}_i; h)$ is a smoothing kernel of width h (smoothing length). The kernel has to fulfill two conditions: his integral over space should be unity and that in the limit $h \to 0$ approach to Dirac delta function. Note that with the first constrain, the integration of (\ref{eq:3_dens_SPH}) gives the total mass of the system.
+
+In the case of FI, the cubic spline kernel is used \citep{pelupessy2005numerical,monaghan1992smoothed}:
+
+\begin{equation}
+	W(r,h) = \frac{1}{\pi h^3}
+	\begin{cases}
+		1 - \frac{3}{2}\left(\frac{r}{h}\right)^2 + \frac{3}{4}\left(\frac{r}{h}\right)^3, & 0 \leq \frac{r}{h} \leq 1, \\[2ex]
+		\frac{1}{4}\left(2 - \frac{r}{h}\right)^3, & 1 \leq \frac{r}{h} \leq 2, \\[2ex]
+		0, & \text{otherwise}.
+	\end{cases}
+	\label{eq:monaghan_lattanzio_kernel}
+\end{equation}
+
+The last ingredient before deriving the equations of the gas is the smoothing parameter $h$. The dynamic range is controlled for the smoothing parameter. In actual codes is common to use an adaptive parameter $h_i$ for each particle, which adapts for the local density of particles, being common to set $h_i$ such that the number of neighbors for each particle $i$ is constant. The use of adaptive $h_i$ introduce errors in conservation of energy and entropy since $\nabla h_i$ terms are introduced. Including this extra terms can be cumbersome \citep{nelson1994variable}. Another approach is to consider $h_i$ as variables in the Lagrangian \citep{springel2002cosmological}. The conditions over $h_i$:
+
+\begin{equation}
+	\frac{4 \pi}{3} h_i^3(\rho_i + \tilde{\rho}) = M_{SPH}
+\end{equation}
+
+can be included as constrains through Lagrangian multipliers. Here $M_{SPH} = \bar{m} N_{nb}$, $\bar{m}$ is the mean mass of SPH particles and $N_{nb}$ is the number of neighbors. The extra term $\tilde{\rho}$ is to avoid numerical problems ($h_i \to \infty$ as $\rho_i \to 0$) \citep{pelupessy2005numerical}.
+
+With the notation $W_{ij}(h_i) = W(|r_i - r_j|, h_i)$ and considering the symmetrized kernel $\bar{W}_{ij} = [W_{ij}(h_i) + W_{ij}(h_j)]/2$, the equation of motion is:
+
+\begin{equation}
+	\frac{d\mathbf{v}_i}{dt} = -\sum_{j=1}^N m_j \left\{
+	f_i \frac{P_i}{\rho_i^2} \nabla_i W_{ij}(h_i) +
+	f_j \frac{P_j}{\rho_j^2} \nabla_i W_{ij}(h_j) +
+	\Pi_{ij} \nabla_i \bar{W}_{ij}
+	\right\}
+	\label{eq:3.42}
+\end{equation}
+
+with
+
+\begin{equation}
+	f_i = \left( 1 + \frac{h_i}{3(\rho_i + \tilde{\rho})} \frac{\partial \rho_i}{\partial h_i} \right)^{-1}
+\end{equation}
+
+The artificial viscosity (AV) $\Pi_{ij}$ is necessary to smooth out discontinuities. Entropy is only generated in shocks through this artificial viscosity. The expression for the AV used in Fi \citep{pelupessy2005numerical,monaghan1992smoothed} is:
+
+\begin{equation}
+	\Pi_{ij} = \frac{-\alpha \mu_{ij} \bar{c}_{ij} + \beta \mu_{ij}^2}{\bar{\rho}_{ij}}
+	\label{eq:3.AV}
+\end{equation}
+
+where
+
+\begin{equation}
+	\mu_{ij} = 
+	\begin{cases}
+		\frac{\mathbf{v}_{ij} \cdot \mathbf{r}_{ij}}{\bar{h}_{ij}(\mathbf{r}_{ij}^2/\bar{h}_{ij}^2 + \eta^2)}, & \text{for~} \mathbf{v}_{ij} \cdot \mathbf{r}_{ij} < 0, \\
+		0, & \text{for~} \mathbf{v}_{ij} \cdot \mathbf{r}_{ij} \geq 0
+	\end{cases}
+	\label{eq:3.45}
+\end{equation}
+
+with $\mathbf{v}_{ij} = \mathbf{v}_i - \mathbf{v}_j$ and $\mathbf{r}_{ij} = \mathbf{r}_i - \mathbf{r}_j$. The constants $\alpha$ and $\beta$ are of order one (with default values $\alpha = 0.5$, $\beta = 1$), and the parameter $\eta$ is to prevent numerical divergences. The quantities overlaid with a bar are symmetrized. In particular, $\bar{c}_{ij} = (c_i + c_j)/2$ is the average sound speed between particles $i$ and $j$. The conditions in the cases of eq~\ref{eq:3.45} ensures that the AV is only activated when particles $i$ and $j$ are getting closer. Moreover, as $\mu_{ij}$ is always negative, then $\Pi_{ij} \geq 0$. As is shown in eq (apendice por hacer), the term $-\nabla_i W_{ij}(h_i) \propto (\mathbf{r}_i - \mathbf{r}_i)$ implies that the AV only decrease the kinetic energy. By conservation, thermal energy is increased.
+
+Finally, is necessary the evolution of the thermal state of the system. FI has the possibility of evolve the entropic function or internal energy. Considering an adiabatic evolution of gas, the pressure for particle $i$ is:
+
+\begin{equation}
+	P_i = A_i \rho_i ^{\gamma}
+\end{equation} 
+
+with $A_i$ the entropic function, $\rho_i = \rho (\mathbf{r}_i)$ and adiabatic index $\gamma$. The internal energy is related to the entropic function and pressure:
+
+\begin{align}
+	u_i =& \frac{A_i}{\gamma - 1} \rho_i^{\gamma - 1} \\
+	P_i =& u_i (\gamma - 1) \rho_i
+\end{align}
+
+The entropic function is evolved by
+
+\begin{equation}
+	\frac{dA_i}{dt} = -\frac{\gamma-1}{\rho_i^\gamma} (\Gamma - \Lambda) + \frac{1}{2} \frac{\gamma-1}{\rho_i^{\gamma-1}} \sum_{j=1}^N m_j \Pi_{ij} \mathbf{v}_{ij} \cdot \nabla_i \bar{W}_{ij}
+\end{equation}
+
+where $\Gamma$ and $\Lambda$ are external heating and cooling terms. On the other hand, the system can evolve following the internal energy equation:
+
+
+
+
+
 
 \section{Coupling strategy: Bridge}
 
