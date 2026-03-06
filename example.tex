@@ -23,15 +23,14 @@
 % ------------------------------------------------------------------------------
 % NUEVO CAPÍTULO
 % ------------------------------------------------------------------------------
-\chapter{Theoretical Framework}
+\chapter{A scenario for SMBH formation}
 \section{Density criterion for stellar collisions}
 \section{Stars and gas in equilibrium}
 
 \chapter{Numerical Methods}
+\label{cap:3}
 
-\section{The AMUSE Framework}
-
-This thesis investigates the role of gas in the formation of supermassive black hole (SMBH) seeds via stellar collisions in dense clusters. In contrast with other works, we do not take into account gas accretion by stars, since we are interested exclusively in the gravitational interaction between gas and stars.
+This thesis investigates the role of gas in the formation of supermassive black hole (SMBH) seeds via stellar collisions in dense clusters. n contrast to previous studies, we do not include gas accretion onto stars, since we are interested exclusively in the gravitational interaction between gas and stars.
 
 We require, in principle, three codes: 1) an N-body code to model the stellar dynamics, 2) a smoothed particle hydrodynamics (SPH) code to simulate the gas thermodynamics and self-gravity, and 3) a coupling scheme to manage the mutual gravitational interaction between these two components.
 
@@ -43,6 +42,31 @@ We require, in principle, three codes: 1) an N-body code to model the stellar dy
 \end{figure}
 
 The N-Body and SPH codes are accessed through the AMUSE interface \citep{zwart2018astrophysical}, and coupled via an external code.
+
+
+\section{The AMUSE Framework}
+
+The numerical codes used in this work are accessed through the Astrophysical Multipurpose Software Environment (AMUSE) \citep{zwart2018astrophysical}. The AMUSE project aims to provide a flexible and modular framework for solving multi-physics problems in astrophysics. It offers a variety of community codes, classified into four main domains: gravitational dynamics, hydrodynamics, stellar evolution, and radiative transfer (Fig.~\ref{img:amuse_domains}). Some codes, such as GADGET-2 \citep{springel2005cosmological}, can cover more than one domaine.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Esquemas/amuse_domains.png}
+	\caption{Principal domains in AMUSE framework. Multiple physical problems can be solved coupling codes from different domains}
+	\label{img:amuse_domains}
+\end{figure}
+
+The structure of amuse is composed of three principal layers (Fig.~\ref{img:amuse_structure}). The top layer is the user interface, where a Python script is written to set up and run a specific scientific problem. In this script, codes are initialized, and additional routines (e.g., for handling stellar collisions) can be implemented. This layer also contains the manager, whose primary functions are to provide data structures and methods for communication between the user script and the community codes, as well as to handle unit conversions.
+
+The middle layer provides the interfaces to the community codes. It facilitates bidirectional communication between the manager and the underlying code layer. Each interface consists of two components: a proxy, written in Python, which initializes the necessary functions and parameters, and a partner, written in the code's native language (e.g., C++, CUDA, or Fortran). The proxy and partner communicate via the Message Passing Interface (MPI).
+
+The bottom layer contains the community codes themselves, implemented in their native languages (e.g., C++, CUDA, Fortran).
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Esquemas/amuse_layers.png}
+	\caption{Schematic representation of the three-layer architecture of the AMUSE framework. The user interacts with the system via a Python script (top layer), which communicates through interfaces (middle layer) with the community codes (bottom layer).}
+	\label{img:amuse_structure}
+\end{figure}
 
 
 \section{N-body code: Ph4}
@@ -267,37 +291,41 @@ where $M_n$ is the total mass contained in the node, $\mathbf{a}$ is an estimate
 
 \subsection{Smoothed Particle Hydrodynamics}
 
-The gas dynamics are solved using the Smoothed Particle Hydrodynamics method \citep{gingold1977smoothed, lucy1977numerical}. In SPH, hydrodynamic equations are solved from a Lagrangian approach, sampling the gas by a discrete set of points, instead of the classical continuous. Consider a gas described by density $\rho$, pressure $p$ and specific internal energy $u$. For an inviscid fluid, the Lagrangian take the form:
+The gas dynamics are solved using the Smoothed Particle Hydrodynamics (SPH) method \citep{gingold1977smoothed, lucy1977numerical}. In SPH, the hydrodynamic equations are solved from a Lagrangian perspective, representing the fluid with a discrete set of particles rather than a continuous medium. For an inviscid fluid described by density $\rho$, pressure $p$, and specific internal energy $u$, the Lagrangian takes the form:
 
 \begin{equation}
-	L = \int \left\{ \frac{1}{2} v^2 - u[\rho(\mathbf{r})] \right\} \rho d^3\mathbf{x} \label{eq:3_Lag_clasic}
+	L = \int \left[ \frac{1}{2} v^2 - u(\rho) \right] \rho d^3\mathbf{x},
+	\label{eq:3_Lag_clasic}
 \end{equation}
-
-where the specific internal energy is related to the pressure by $\partial u / \partial \rho = p/\rho^2$, and the position vector is $\mathbf{r} = (\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3)$. The Euler equations of motion can be derived from a variational principle in the Lagrangian \citep{rasio2000particle}:
+where the specific internal energy satisfies $\partial u / \partial \rho = p/\rho^2$, and $\mathbf{r} = (x_1, x_2, x_3)$ is the position vector. From this Lagrangian, the Euler equations of motion can be derived via a variational principle \citep{rasio2000particle}:
 
 \begin{align}
-	\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \vec{\mathbf{v}}) =& 0 \label{eq:3_32} \\
-	\frac{\partial \vec{\mathbf{v}}}{\partial t} + (\vec{\mathbf{v}} \cdot \nabla) \vec{\mathbf{v}} =& - \frac{\nabla p}{\rho} \label{eq:3_33} \\
-	\frac{\partial u}{\partial t} + (\vec{\mathbf{v}} \cdot \nabla) u =& - \frac{p}{\rho} (\nabla \cdot \vec{\mathbf{v}}) \label{eq:3_34}
+	\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) &= 0 \label{eq:3_32} \\
+	\frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot \nabla) \mathbf{v} &= -\frac{\nabla p}{\rho} \label{eq:3_33} \\
+	\frac{\partial u}{\partial t} + (\mathbf{v} \cdot \nabla) u &= -\frac{p}{\rho} (\nabla \cdot \mathbf{v}) \label{eq:3_34}
 \end{align}
 
-where (\ref{eq:3_32}) is the equation of continuity, (\ref{eq:3_33}) is the equation of motion and (\ref{eq:3_34}) is the internal energy equation. In SPH, instead of (\ref{eq:3_Lag_clasic}), a discrete Lagrangian is used:
+Equations \eqref{eq:3_32}, \eqref{eq:3_33}, and \eqref{eq:3_34} are the continuity, momentum, and energy equations, respectively. 
+
+To obtain a discrete representation, the continuous Lagrangian is replaced by a particle-based analogue:
 
 \begin{equation}
-	L_{SPH} = \sum_{i=1}^{N} m_i \left[\frac{1}{2} \mathbf{v}_i^2 - u(\rho_i)\right] \label{eq:3_lag_discrete}
+	L_{\mathrm{SPH}} = \sum_{i=1}^{N} m_i \left[ \frac{1}{2} \mathbf{v}_i^2 - u_i \right],
+	\label{eq:3_lag_discrete}
 \end{equation}
+where $m_i$, $\mathbf{v}_i$, and $\rho_i$ are the mass, velocity, and density of each particle (representing a fluid element), and $u_i = u(\rho_i)$ is the specific internal energy. To use Eq.~\eqref{eq:3_lag_discrete} as the system's Lagrangian, a suitable expression for the density in terms of the particle coordinates is required.
 
-where $m_i$, $v_i$, $\rho_i$ are the mass, velocity and density of each particle, which represent a fluid element. $u(\rho_i) = u_i$ is the specific internal energy. In order to use (\ref{eq:3_lag_discrete}) as the Lagrangian of the system, is necessary to use a suitable expression for the density.
-
-In SPH, the density at position $\mathbf{r}$ is calculated as an average over all particles:
+A key ingredient of the method is the density estimate. At any point $\mathbf{r}$, the density is computed by interpolating over neighboring particles:
 
 \begin{equation}
-	\rho (\mathbf{r}) = \sum_{j} m_j W(\mathbf{r} - \mathbf{r}_j; h) \label{eq:3_dens_SPH}
+	\rho(\mathbf{r}) = \sum_{j} m_j W(\mathbf{r} - \mathbf{r}_j; h),
+	\label{eq:3_dens_SPH}
 \end{equation}
 
-where $W(\mathbf{r} - \mathbf{r}_i; h)$ is a smoothing kernel of width h (smoothing length). The kernel has to fulfill two conditions: his integral over space should be unity and that in the limit $h \to 0$ approach to Dirac delta function. Note that with the first constrain, the integration of (\ref{eq:3_dens_SPH}) gives the total mass of the system.
+where $W(\mathbf{r} - \mathbf{r}_j; h)$ is a smoothing kernel of characteristic width $h$ (the smoothing length). The kernel must satisfy two conditions: its integral over all space must be unity, and it should approach a Dirac delta function in the limit $h \to 0$. The first condition ensures that integrating Eq.~\eqref{eq:3_dens_SPH} over space recovers the total mass of the system.
 
-In the case of FI, the cubic spline kernel is used \citep{pelupessy2005numerical,monaghan1992smoothed}:
+
+In the case of \texttt{Fi}, the cubic spline kernel is adopted \citep{pelupessy2005numerical,monaghan1992smoothed}:
 
 \begin{equation}
 	W(r,h) = \frac{1}{\pi h^3}
@@ -309,39 +337,42 @@ In the case of FI, the cubic spline kernel is used \citep{pelupessy2005numerical
 	\label{eq:monaghan_lattanzio_kernel}
 \end{equation}
 
-The last ingredient before deriving the equations of the gas is the smoothing parameter $h$. The dynamic range is controlled for the smoothing parameter. In actual codes is common to use an adaptive parameter $h_i$ for each particle, which adapts for the local density of particles, being common to set $h_i$ such that the number of neighbors for each particle $i$ is constant. The use of adaptive $h_i$ introduce errors in conservation of energy and entropy since $\nabla h_i$ terms are introduced. Including this extra terms can be cumbersome \citep{nelson1994variable}. Another approach is to consider $h_i$ as variables in the Lagrangian \citep{springel2002cosmological}. The conditions over $h_i$:
+With the density estimation and kernel defined, we now turn to the treatment of the smoothing length $h$. In modern SPH implementations, it is common to use an adaptive smoothing length $h_i$ for each particle, adjusted to keep the number of neighboring particles approximately constant. However, the use of adaptive smoothing lengths introduces $\nabla h$ terms in the equations, which can lead to violations of energy and entropy conservation if not properly accounted for \citep{nelson1994variable}. A rigorous way to incorporate variable smoothing lengths is to treat $h_i$ as additional variables in the Lagrangian formulation, subject to constraints \citep{springel2002cosmological}. In \texttt{Fi}, the following constraint is imposed:
 
 \begin{equation}
-	\frac{4 \pi}{3} h_i^3(\rho_i + \tilde{\rho}) = M_{SPH}
+	\frac{4\pi}{3} h_i^3 (\rho_i + \tilde{\rho}) = M_{\mathrm{SPH}},
+	\label{eq:3_sph_h_constraint}
 \end{equation}
 
-can be included as constrains through Lagrangian multipliers. Here $M_{SPH} = \bar{m} N_{nb}$, $\bar{m}$ is the mean mass of SPH particles and $N_{nb}$ is the number of neighbors. The extra term $\tilde{\rho}$ is to avoid numerical problems ($h_i \to \infty$ as $\rho_i \to 0$) \citep{pelupessy2005numerical}.
+where $M_{\mathrm{SPH}} = \bar{m} N_{\mathrm{nb}}$, with $\bar{m}$ the mean particle mass and $N_{\mathrm{nb}}$ the target number of neighbors. The term $\tilde{\rho}$ is an extra density introduced to prevent $h_i$ from diverging as $\rho_i \to 0$ \citep{pelupessy2005numerical}. This constraint can be incorporated into the variational principle via Lagrangian multipliers, yielding correction factors in the equations of motion (see AppendixB for the full derivation).
 
-With the notation $W_{ij}(h_i) = W(|r_i - r_j|, h_i)$ and considering the symmetrized kernel $\bar{W}_{ij} = [W_{ij}(h_i) + W_{ij}(h_j)]/2$, the equation of motion is:
+With the notation $W_{ij}(h_i) \equiv W(|\mathbf{r}_i - \mathbf{r}_j|, h_i)$ and the symmetrized kernel $\bar{W}_{ij} = [W_{ij}(h_i) + W_{ij}(h_j)]/2$, the equation of motion for particle $i$ becomes:
 
 \begin{equation}
-	\frac{d\mathbf{v}_i}{dt} = -\sum_{j=1}^N m_j \left\{
+	\frac{d\mathbf{v}_i}{dt} = -\sum_{j=1}^N m_j \left[
 	f_i \frac{P_i}{\rho_i^2} \nabla_i W_{ij}(h_i) +
 	f_j \frac{P_j}{\rho_j^2} \nabla_i W_{ij}(h_j) +
 	\Pi_{ij} \nabla_i \bar{W}_{ij}
-	\right\}
+	\right],
 	\label{eq:3.42}
 \end{equation}
 
-with
+where the correction factor $f_i$ accounts for the variability of the smoothing length:
 
 \begin{equation}
-	f_i = \left( 1 + \frac{h_i}{3(\rho_i + \tilde{\rho})} \frac{\partial \rho_i}{\partial h_i} \right)^{-1}
+	f_i = \left( 1 + \frac{h_i}{3(\rho_i + \tilde{\rho})} \frac{\partial \rho_i}{\partial h_i} \right)^{-1}.
+	\label{eq:sph_fi_factor}
 \end{equation}
 
-The artificial viscosity (AV) $\Pi_{ij}$ is necessary to smooth out discontinuities. Entropy is only generated in shocks through this artificial viscosity. The expression for the AV used in Fi \citep{pelupessy2005numerical,monaghan1992smoothed} is:
+
+To handle discontinuities such as shocks, an artificial viscosity (AV) term $\Pi_{ij}$ is included. In SPH, entropy generation is confined to shocks through this viscous term. \texttt{Fi} implements the standard Monaghan artificial viscosity \citep{monaghan1992smoothed, pelupessy2005numerical}:
 
 \begin{equation}
 	\Pi_{ij} = \frac{-\alpha \mu_{ij} \bar{c}_{ij} + \beta \mu_{ij}^2}{\bar{\rho}_{ij}}
 	\label{eq:3.AV}
 \end{equation}
 
-where
+with
 
 \begin{equation}
 	\mu_{ij} = 
@@ -352,45 +383,166 @@ where
 	\label{eq:3.45}
 \end{equation}
 
-with $\mathbf{v}_{ij} = \mathbf{v}_i - \mathbf{v}_j$ and $\mathbf{r}_{ij} = \mathbf{r}_i - \mathbf{r}_j$. The constants $\alpha$ and $\beta$ are of order one (with default values $\alpha = 0.5$, $\beta = 1$), and the parameter $\eta$ is to prevent numerical divergences. The quantities overlaid with a bar are symmetrized. In particular, $\bar{c}_{ij} = (c_i + c_j)/2$ is the average sound speed between particles $i$ and $j$. The conditions in the cases of eq~\ref{eq:3.45} ensures that the AV is only activated when particles $i$ and $j$ are getting closer. Moreover, as $\mu_{ij}$ is always negative, then $\Pi_{ij} \geq 0$. As is shown in eq (apendice por hacer), the term $-\nabla_i W_{ij}(h_i) \propto (\mathbf{r}_i - \mathbf{r}_i)$ implies that the AV only decrease the kinetic energy. By conservation, thermal energy is increased.
+where $\mathbf{v}_{ij} = \mathbf{v}_i - \mathbf{v}_j$ and $\mathbf{r}_{ij} = \mathbf{r}_i - \mathbf{r}_j$. The dimensionless parameters $\alpha$ and $\beta$ control the strength of the viscosity (default values are $\alpha = 0.5$, $\beta = 1.0$), and $\eta \ll 1$ prevents numerical divergences. Quantities overlaid with a bar are symmetrized averages (e.g., $\bar{c}_{ij} = (c_i + c_j)/2$ is the average sound speed). The AV is only activated when particles are approaching each other ($\mathbf{v}_{ij} \cdot \mathbf{r}_{ij} < 0$), ensuring that $\mu_{ij} \leq 0$ and therefore $\Pi_{ij} \geq 0$. As the term $-\nabla_i W_{ij}(h_i)$ is proportional to $(\mathbf{r}_i - \mathbf{r}_j) = \mathbf{r}_{ij}$ (see AppendixB), the AV acts to decrease kinetic energy, with the dissipated energy converted into thermal energy, thereby increasing the internal energy (or entropy) of the particles.
 
-Finally, is necessary the evolution of the thermal state of the system. FI has the possibility of evolve the entropic function or internal energy. Considering an adiabatic evolution of gas, the pressure for particle $i$ is:
-
-\begin{equation}
-	P_i = A_i \rho_i ^{\gamma}
-\end{equation} 
-
-with $A_i$ the entropic function, $\rho_i = \rho (\mathbf{r}_i)$ and adiabatic index $\gamma$. The internal energy is related to the entropic function and pressure:
+Finally, the thermodynamic evolution of the gas must be specified. \texttt{Fi} offers two formulations: evolving either the specific internal energy $u_i$ or the entropic function $A_i$ (related to the specific entropy). For an ideal gas with adiabatic index $\gamma$, these quantities are related through
 
 \begin{align}
-	u_i =& \frac{A_i}{\gamma - 1} \rho_i^{\gamma - 1} \\
-	P_i =& u_i (\gamma - 1) \rho_i
+	P_i &= A_i \rho_i^{\gamma}, \\
+	u_i &= \frac{A_i}{\gamma - 1} \rho_i^{\gamma - 1} = \frac{P_i}{(\gamma - 1)\rho_i},
 \end{align}
 
-The entropic function is evolved by
+where $A_i$ is the entropic function, which remains constant for adiabatic processes in the absence of shocks.
+
+The evolution equation for the entropic function is
 
 \begin{equation}
 	\frac{dA_i}{dt} = -\frac{\gamma-1}{\rho_i^\gamma} (\Gamma - \Lambda) + \frac{1}{2} \frac{\gamma-1}{\rho_i^{\gamma-1}} \sum_{j=1}^N m_j \Pi_{ij} \mathbf{v}_{ij} \cdot \nabla_i \bar{W}_{ij}
 \end{equation}
 
-where $\Gamma$ and $\Lambda$ are external heating and cooling terms. On the other hand, the system can evolve following the internal energy equation:
+where $\Gamma$ and $\Lambda$ represent external heating and cooling rates (both set to zero in our simulations). Alternatively, the internal energy equation can be integrated:
+
+\begin{equation}
+	\frac{d u_i}{d t} = \sum_{j=1}^N m_j \left[ \frac{f_i}{2} \frac{p_i}{\rho_i^2} \nabla_i W_{ij}(h_i) +  \frac{f_j}{2} \frac{p_j}{\rho_j^2} \nabla_i W_{ij}(h_j)  + \Pi_{ij} \nabla_i \bar{W}_{ij}\right] \mathbf{v}_{ij} \label{eq:sph_energy_eq}
+\end{equation}
+
+For our simulations, we adopt the energy equation (Eq.~\eqref{eq:sph_energy_eq}), as it provides better numerical stability in the coupled stellar-gas framework (see Section (por hacer) for a detailed discussion).
+
+\section{Coupling Strategy: The Bridge Method}
+
+The N-body and SPH codes operate as independent modules and must be coupled for mixed star-gas simulations. A key advantage of using SPH for the gas component is that both systems are represented by particles, which simplifies the implementation of gravitational interactions. In this section, we describe the coupling scheme employed in this work, based on the Bridge method \citep{fujii2007bridge} and follows the implementation of \citet{reinoso2024formation}.
+
+\subsection{Symplectic Integrator}
+
+The Bridge method \citep{fujii2007bridge} employs a symplectic integrator, specifically the second-order leapfrog scheme. The evolution of a dynamical system can be described by Hamilton's equations:
+
+\begin{equation}
+	\frac{df}{dt} = \{f, H\},
+\end{equation}
+
+where ${f, H}$ denotes the Poisson bracket:
+
+\begin{equation}
+	\{f, H\} = \sum_{i} \left(\frac{\partial f}{\partial q_i} \frac{\partial H}{\partial p_i}  - \frac{\partial f}{\partial p_i} \frac{\partial H}{\partial q_i}\right) = D_H f(t)
+\end{equation}
+
+with $(q_i, p_i)$ being the canonical coordinates. The formal solution of this equation is given by the exponential operator:
+
+\begin{equation}
+	f(t) = e^{tD_H}f(0)
+\end{equation}
+
+For a gravitational Hamiltonian of the form
+
+\begin{equation}
+	H(\mathbf{x}, \mathbf{p}) = \frac{\mathbf{p}^2}{2m} + \Phi(\mathbf{x}) \equiv H_{\mathrm{kin}}(\mathbf{p}) + H_{\mathrm{pot}}(\mathbf{x}),
+\end{equation}
+
+the Liouville operator $D_H$ can be decomposed as:
+
+\begin{align} 
+	D_H &= \frac{\partial H}{\partial \mathbf{p}} \cdot \frac{\partial}{\partial \mathbf{x}} - \frac{\partial H}{\partial \mathbf{x}} \cdot \frac{\partial}{\partial \mathbf{p}} \\ 
+	&= \frac{\mathbf{p}}{m} \cdot \frac{\partial}{\partial \mathbf{x}} + (-\nabla \Phi(\mathbf{x})) \cdot \frac{\partial}{\partial \mathbf{p}} \\ 
+	&\equiv D_{\mathrm{drift}} + D_{\mathrm{kick}}. 
+\end{align}
+
+The solution after a time step $\Delta t$ is then:
+
+\begin{equation}
+	f(t+\delta t) = e^{\delta t D_H}f(t) \label{eq:3.51}
+\end{equation}
+
+When applied to the phase-space coordinates $(\mathbf{x}, \mathbf{v})$, the exponential operator $e^{\delta t D_H}$ has no closed-form expression due to the coupling between position and velocity \citep{zwart2018astrophysical}. However, the individual operators $D_{\mathrm{drift}}$ and $D_{\mathrm{kick}}$ have simple actions:
+
+\begin{align} 
+	D_{\mathrm{drift}}(\mathbf{x}, \mathbf{v}) &= (\mathbf{v}, \mathbf{0}), \\ 
+	D_{\mathrm{kick}}(\mathbf{x}, \mathbf{v}) &= (\mathbf{0}, -\nabla \Phi(\mathbf{x})). 
+\end{align}
+
+The drift operator advances positions at constant velocity, while the kick operator updates velocities at constant position. Importantly, these operators do not commute: $[D_{\mathrm{drift}}, D_{\mathrm{kick}}] \neq 0$. However, the exponential operator can be approximated using an operator splitting technique \citep{fujii2007bridge}:
+
+\begin{equation} 
+	e^{\Delta t D_H} = e^{\delta t (D_{\mathrm{kick}} + D_{\mathrm{drift}})} = \prod_{i=1}^{k} e^{a_i \delta t D_{\mathrm{kick}}} e^{b_i \delta t D_{\mathrm{drift}}} + \mathcal{O}(\Delta t^{k+1}). 
+\end{equation}
+
+For $k=2$ with coefficients $a_1 = a_2 = 1/2$, $b_1 = 1$, $b_2 = 0$, we obtain the second-order accurate approximation:
+
+\begin{equation} 
+	e^{\delta t (D_{\mathrm{kick}} + D_{\mathrm{drift}})} \approx e^{(\delta t/2) D_{\mathrm{kick}}} e^{\delta t D_{\mathrm{drift}}} e^{(\delta t/2) D_{\mathrm{kick}}} + \mathcal{O}(\delta t^3).
+\end{equation}
 
 
+This leads to the kick-drift-kick leapfrog integrator, which proceeds as follows for a time step $\Delta t$:
 
+\begin{enumerate}
+	\item Kick: Advance velocities by $\Delta t/2$ using accelerations computed at the current positions:
+	\[
+	\mathbf{v}_0 \to \mathbf{v}_{1/2} = \mathbf{v}_0 + \frac{\Delta t}{2}\mathbf{a}_0
+	\]
+	\item Drift: Advance positions by $\Delta t$ using the new half-step velocities:
+	\[
+	\mathbf{x}_0 \to \mathbf{x}_1 = \mathbf{x}_0 + \Delta t \mathbf{v}_{1/2}
+	\]
+	\item Kick: Advance velocities by another $\Delta t/2$ using accelerations computed at the updated positions:
+	\[
+	\mathbf{v}_{1/2} \to \mathbf{v}_1 = \mathbf{v}_{1/2} + \frac{\Delta t}{2}\mathbf{a}_1
+	\]
+\end{enumerate}
 
+where $\mathbf{a}_0 = \mathbf{a}(\mathbf{x}_0)$ and $\mathbf{a}_1 = \mathbf{a}(\mathbf{x}_1)$ are the accelerations due to the gravitational potential. The subscripts $0$, $1/2$, and $1$ denote quantities evaluated at times $t$, $t + \Delta t/2$, and $t + \Delta t$, respectively.
 
+\subsection{Bridge}
 
-\section{Coupling strategy: Bridge}
+AMUSE includes an implementation of the original Bridge scheme. An example coupling an N-body code with an SPH code can be found in the AMUSE distribution at:
 
-\chapter{Initial Conditions and Setup}             % ← NUEVO capítulo
-\section{Stellar Cluster Models}
+\path{amuse/examples/simple/gas_in_cluster.py}
+
+This example models a star cluster with an embedded gas component, coupling GADGET-2 (SPH) and HERMITE (N-body). In this implementation, each code performs its own drift step internally. The kick step, however, is handled externally as follows:
+
+\begin{itemize}
+	\item Accelerations $\mathbf{a}_{\mathrm{NB},i}$ for each N-body particle due to all SPH particles are computed using the SPH code's \pythonfunc{get\_gravity\_at\_point}(\pythonarg{eps}, \pythonarg{$x$}, \pythonarg{$y$}, \pythonarg{$z$}) method, which returns the gravitational acceleration at a given point $(x,y,z)$ with softening length \pythonarg{eps}. The velocities of N-body particles are then kicked using these accelerations.
+	\item Similarly, accelerations $\mathbf{a}_{\mathrm{SPH},i}$ for each SPH particle due to all N-body particles are computed using the \pythonfunc{get\_gravity\_at\_point}(\pythonarg{eps}, \pythonarg{$x$}, \pythonarg{$y$}, \pythonarg{$z$}) method of a tree code (BHTree in the example), with the softening length set to the SPH smoothing length $h_i$. The velocities of SPH particles are then kicked accordingly.
+\end{itemize}
+
+As identified by \citet{reinoso2024formation}, this implementation has two main issues, both related to the kick steps. First, SPH and N-body particles use different gravitational softening lengths ($h$ and $\epsilon$, respectively), leading to asymmetric forces:
+
+\begin{equation} 
+	F_{\mathrm{NB}} = \frac{G m_{\mathrm{NB}} m_{\mathrm{SPH}}}{(r^2 + \epsilon^2)^{3/2}} r \neq F_{\mathrm{SPH}} = \frac{G m_{\mathrm{NB}} m_{\mathrm{SPH}}}{(r^2 + h^2)^{3/2}} r, 
+\end{equation}
+
+where $r = |\mathbf{r}_{\mathrm{NB}} - \mathbf{r}_{\mathrm{SPH}}|$. This asymmetry can be resolved by introducing an effective softening length $\bar{\epsilon}$ for the mutual gravitational interaction during the kick steps.
+
+Second, the force calculation may use different softening kernels: SPH codes often employ a cubic spline softening, while N-body codes typically use a Plummer (or similar) softening. The difference between these softening formulations is illustrated in Figure~\ref{img:softening_force_comparison}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Plots/force_comparison_1.png}
+	\caption{Comparison of force calculation normalized (masses and gravitational constant set to 1). In dashed green, the exact gravitational force. In blue, the force with plummer softening, and in red, the force calculated with cubic spline softening.}
+	\label{img:softening_force_comparison}
+\end{figure}
+
+To handle these issues, \cite{reinoso2024formation} developed a modified Bridge implementation that uses the \texttt{FASTKICK} code to compute gravitational interactions between SPH and N-body particles. \texttt{FASTKICK} computes forces using a Plummer softening with a constant softening length $\bar{\epsilon}$, ensuring symmetry and consistency. The code provides a Python interface, making it compatible with AMUSE simulation scripts, with the computationally intensive force calculations performed in compiled languages (C/Fortran), and a GPU-accelerated version (C++/CUDA) is also available.
+
+The modified Bridge algorithm proceeds as follows for each global time step $\Delta t$:
+
+\begin{enumerate}
+	\item At time $t$, compute accelerations $\mathbf{a}_{\mathrm{NB},i}$ for all N-body particles due to SPH particles, and $\mathbf{a}_{\mathrm{SPH},i}$ for all SPH particles due to N-body particles, using \texttt{FASTKICK} with softening length $\bar{\epsilon}$. Kick velocities by $\Delta t/2$.
+	\item Evolve each code independently for a full time step $\Delta t$ (drift), updating positions via their own internal integrators.
+	\item Recompute accelerations using \texttt{FASTKICK} with the updated positions, and apply a second velocity kick of $\Delta t/2$.
+\end{enumerate}
+
+\chapter{Initial Conditions and Setup}
+
+In chapter \ref{cap:3} a description of the numerical method is provided, including the SPH code for gas, the N-body code for stars and the coupling method adopted. In order to have a full specification of the simulations, this chapter provides a description of the parameters used in the codes initialization, and the initial conditions for gas and stars systems.
+ 
+\section{Plummer distribution}
 \section{Gas Configurations}
 \section{Numerical Parameters}
 
 \chapter{Results and analysis}
 \section{Gas-Free Baseline Simulations}
 \section{Effects of Gas Fraction on Collision Rates}
-\section{Mass Spectrum Evolution and Massive Object Formation}
+\section{Massive Object Formation}
 \section{Comparative Analysis Across Gas Fractions}
 
 \chapter{Discussion and Conclusions}

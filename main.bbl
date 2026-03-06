@@ -11,6 +11,13 @@ Barnes, J. and Hut, P. (1986).
 \newblock A hierarchical o (n log n) force-calculation algorithm.
 \newblock {\em nature}, 324(6096):446--449.
 
+\bibitem[Fujii et~al., 2007]{fujii2007bridge}
+Fujii, M., Iwasawa, M., Funato, Y., and Makino, J. (2007).
+\newblock Bridge: A direct-tree hybrid-body algorithm for fully self-consistent
+  simulations of star clusters and their parent galaxies.
+\newblock {\em Publications of the Astronomical Society of Japan},
+  59(6):1095--1106.
+
 \bibitem[Gerritsen et~al., 1997]{gerritsen1997star}
 Gerritsen, J., Icke, V., et~al. (1997).
 \newblock Star formation in n-body simulation, i.
@@ -60,10 +67,22 @@ Rasio, F.~A. (2000).
 \newblock Particle methods in astrophysical fluid dynamics.
 \newblock {\em Progress of Theoretical Physics Supplement}, 138:609--621.
 
+\bibitem[Reinoso~Reinoso, 2024]{reinoso2024formation}
+Reinoso~Reinoso, B.~A. (2024).
+\newblock {\em Formation of massive black hole seeds through runaway stellar
+  collisions and gas accretion in dense stellar systems}.
+\newblock PhD thesis.
+
 \bibitem[Salmon and Warren, 1994]{salmon1994skeletons}
 Salmon, J.~K. and Warren, M.~S. (1994).
 \newblock Skeletons from the treecode closet.
 \newblock {\em Journal of Computational Physics}, 111(1):136--155.
+
+\bibitem[Springel, 2005]{springel2005cosmological}
+Springel, V. (2005).
+\newblock The cosmological simulation code gadget-2.
+\newblock {\em Monthly notices of the royal astronomical society},
+  364(4):1105--1134.
 
 \bibitem[Springel and Hernquist, 2002]{springel2002cosmological}
 Springel, V. and Hernquist, L. (2002).
