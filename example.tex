@@ -14,21 +14,32 @@
 % ------------------------------------------------------------------------------
 % A diferencia de Template-Informe, Template-Tesis requiere el uso de capítulos; las secciones, subsecciones, etc son parte de un capítulo. Se recomienda el uso de un capítulo en un archivo distinto
 \chapter{Introduction}
+\label{cap:1_Introduction}
 
 \section{Formation Channels for SMBHs and the Collisional Paradigm}
+\label{sec:1.1_SMBH_formation}
+
 \section{The Role of Gas in Dense Stellar Systems}
+\label{sec:1.2_gas_role}
+
 \section{Research Objectives and Thesis Outline}
+\label{sec:1.3_Objetcives}
 
 
 % ------------------------------------------------------------------------------
 % NUEVO CAPÍTULO
 % ------------------------------------------------------------------------------
 \chapter{A scenario for SMBH formation}
+\label{cap:2_SMBH_formation_scenario}
+
 \section{Density criterion for stellar collisions}
+\label{sec:2.1_collisions_criterion}
+
 \section{Stars and gas in equilibrium}
+\label{sec:2.2_star_gas_eq}
 
 \chapter{Numerical Methods}
-\label{cap:3}
+\label{cap:3_Numerical_Methods}
 
 This thesis investigates the role of gas in the formation of supermassive black hole (SMBH) seeds via stellar collisions in dense clusters. n contrast to previous studies, we do not include gas accretion onto stars, since we are interested exclusively in the gravitational interaction between gas and stars.
 
@@ -45,6 +56,7 @@ The N-Body and SPH codes are accessed through the AMUSE interface \citep{zwart20
 
 
 \section{The AMUSE Framework}
+\label{sec:3.1_AMUSE}
 
 The numerical codes used in this work are accessed through the Astrophysical Multipurpose Software Environment (AMUSE) \citep{zwart2018astrophysical}. The AMUSE project aims to provide a flexible and modular framework for solving multi-physics problems in astrophysics. It offers a variety of community codes, classified into four main domains: gravitational dynamics, hydrodynamics, stellar evolution, and radiative transfer (Fig.~\ref{img:amuse_domains}). Some codes, such as GADGET-2 \citep{springel2005cosmological}, can cover more than one domaine.
 
@@ -70,12 +82,14 @@ The bottom layer contains the community codes themselves, implemented in their n
 
 
 \section{N-body code: Ph4}
+\label{sec:3.2_NBody}
 
 The proposed scenarios presented in (referencia a capitulo) require high numerical precision to accurately model close encounters and direct collisions. We therefore employ the \texttt{ph4} N-body code from the AMUSE framework \citep{zwart2018astrophysical}.
 
 In this section, we include a description of the code, and some external routines.
 
 \subsection{Hermite integrator}
+\label{subsec:3.2.1_Hermite}
 
 The Ph4 code uses a fourth-order Hermite integrator \citep{makino1992} for calculating the positions and velocities of stars due to gravity. This is a predictor-corrector method.
 
@@ -125,6 +139,7 @@ The final corrected position and velocity of particle $i$ are then given by:
 These corrections incorporate terms up to fourth order. The main advantage of this method is that it only requires the explicit calculation of the acceleration and jerk at each step, with higher-order derivatives being obtained through the interpolation scheme.
 
 \subsection{Block Time Steps}
+\label{subsec:3.2.2_Block_Tstep}
 
 An important part of the Hermite integrator is the time step calculation. The time step controls precision, energy conservation and integration time. While time steps are individual (each particle has its own), they are grouped into blocks for efficiency.
 
@@ -161,6 +176,7 @@ As the model evolves, the new time step is computed using (\ref{eq:3.11}). The t
 The advantage of this time step criterion is that the time step in the code is equal to or lower than that required by the dynamics. Moreover, since particles share the same time steps, they can be integrated simultaneously. Additionally, all particles can be synchronized, as their times are multiples of powers of two of the same time unit.
 
 \subsection{Collisions and mergers}
+\label{subsec:3.2.3_Collisions_mergers}
 
 Stellar collisions occur in two steps. First, the collision is detected by the AMUSE routines in PH4, and then it is handled externally. PH4 has support for stopping conditions, specifically for collision detection.
 
@@ -190,6 +206,7 @@ The stopping conditions allow the user to implement custom handling routines. Fo
 Finally, the other particle is removed from the simulation.
 
 \subsection{Escaping stars}
+\label{subsec:3.2.4_Escapers}
 
 After each analysis time step, potential escapers are identified through a multi-stage detection algorithm. To maintain mass and energy conservation, escaped stars are not removed from the simulation. Instead we add an extra attribute, \texttt{escaped} (all stars begin with \texttt{particles.escaped = False}), to track bound and unbound stars for subsequent analysis. The process begins with defining an appropriate length scale.
 
@@ -253,10 +270,12 @@ Stars satisfying $X_E < 0.01$ are confirmed as escapers, ensuring minimal gravit
 
 
 \section{SPH code: Fi}
+\label{sec:3.3}
 
 The gas dynamics are modelled using the \texttt{Fi} code \citep{gerritsen1997star}, an MPI-parallel smoothed particle hydrodynamics (SPH) implementation within the AMUSE framework. We focus on the aspects most relevant to our simulations; a comprehensive description of the code can be found in \citep{pelupessy2005numerical}.
 
 \subsection{Barnes-Hut tree}
+\label{subsec:3.3.1_BHTree}
 
 
 A key feature of \texttt{Fi} is its ability to compute the self-gravity of the gaseous component. Particle-based codes offer a range of methods for gravitational force calculation. The most accurate approach is the direct summation of all pairwise interactions, which scales as $\mathcal{O}(N^2)$ and is computationally expensive for large $N$. While such precision is often necessary for collisional stellar dynamics (e.g., in our N-body component), the gas system in our simulations is treated as a collisionless fluid for the purpose of gravity calculation, allowing for faster, approximate methods, sacrificing accuracy for computational efficiency.
@@ -290,6 +309,7 @@ The standard geometric criterion (Eq.~\ref{eq:3.29}), however, can fail in some 
 where $M_n$ is the total mass contained in the node, $\mathbf{a}$ is an estimate of the gravitational acceleration (typically from the previous timestep), and $\alpha$ is a parameter to control accuracy.
 
 \subsection{Smoothed Particle Hydrodynamics}
+\label{subsec:3.3.2_SPH}
 
 The gas dynamics are solved using the Smoothed Particle Hydrodynamics (SPH) method \citep{gingold1977smoothed, lucy1977numerical}. In SPH, the hydrodynamic equations are solved from a Lagrangian perspective, representing the fluid with a discrete set of particles rather than a continuous medium. For an inviscid fluid described by density $\rho$, pressure $p$, and specific internal energy $u$, the Lagrangian takes the form:
 
@@ -409,10 +429,12 @@ where $\Gamma$ and $\Lambda$ represent external heating and cooling rates (both 
 For our simulations, we adopt the energy equation (Eq.~\eqref{eq:sph_energy_eq}), as it provides better numerical stability in the coupled stellar-gas framework (see Section (por hacer) for a detailed discussion).
 
 \section{Coupling Strategy: The Bridge Method}
+\label{sec:3.4_Coupling_codes}
 
 The N-body and SPH codes operate as independent modules and must be coupled for mixed star-gas simulations. A key advantage of using SPH for the gas component is that both systems are represented by particles, which simplifies the implementation of gravitational interactions. In this section, we describe the coupling scheme employed in this work, based on the Bridge method \citep{fujii2007bridge} and follows the implementation of \citet{reinoso2024formation}.
 
 \subsection{Symplectic Integrator}
+\label{subsec:3.4.1_Symplectic_integrator}
 
 The Bridge method \citep{fujii2007bridge} employs a symplectic integrator, specifically the second-order leapfrog scheme. The evolution of a dynamical system can be described by Hamilton's equations:
 
@@ -492,6 +514,7 @@ This leads to the kick-drift-kick leapfrog integrator, which proceeds as follows
 where $\mathbf{a}_0 = \mathbf{a}(\mathbf{x}_0)$ and $\mathbf{a}_1 = \mathbf{a}(\mathbf{x}_1)$ are the accelerations due to the gravitational potential. The subscripts $0$, $1/2$, and $1$ denote quantities evaluated at times $t$, $t + \Delta t/2$, and $t + \Delta t$, respectively.
 
 \subsection{Bridge}
+\label{sec:3.4.2_Bridge}
 
 AMUSE includes an implementation of the original Bridge scheme. An example coupling an N-body code with an SPH code can be found in the AMUSE distribution at:
 
@@ -532,23 +555,81 @@ The modified Bridge algorithm proceeds as follows for each global time step $\De
 \end{enumerate}
 
 \chapter{Initial Conditions and Setup}
+\label{sec:4_Initial_conditions}
 
-In chapter \ref{cap:3} a description of the numerical method is provided, including the SPH code for gas, the N-body code for stars and the coupling method adopted. In order to have a full specification of the simulations, this chapter provides a description of the parameters used in the codes initialization, and the initial conditions for gas and stars systems.
+In chapter \ref{cap:3_Numerical_Methods} a description of the numerical method is provided, including the SPH code for gas, the N-body code for stars and the coupling method adopted. In order to have a full specification of the simulations, this chapter provides a description of the parameters used in the codes initialization, and the initial conditions for gas and stars systems.
  
 \section{Plummer distribution}
+\label{sec:4.1_Plummer_dist}
+
+The scenario presented in section \ref{sec:2.1_collisions_criterion} and proposed by \cite{escala2021observational} has been tested in \citep{vergara2023global}, sampling models from different regimes. The models represent systems that are characterized by its initial mass and size. The stars clusters are initialized using a Plummer \citep{plummer1911problem} distribution. The Plummer model is characterized by the potential \citep{binney2011galactic}:
+
+\begin{equation}
+	\Phi_p(\mathbf{r}) = -\frac{GM}{\sqrt{\mathbf{r}^2 + b^2}}
+\end{equation}
+
+where $b$ is the Plummer scale. From the Poisson equation, the associated density is
+
+\begin{equation}
+	\rho_p(\mathbf{r}) = \frac{3M}{4\pi b^3} \left(1+\frac{\mathbf{r}^2}{b^2}\right)^{-5/2}
+\end{equation}
+
+The potential energy of a Plummer model is:
+
+\begin{equation}
+	U_p = - \frac{3 \pi G M^2}{32b}
+\end{equation}
+
+Now we need a description for velocity. The velocity dispersion $\sigma$ for an isotropic spherical stellar system can be obtained through the Jeans equation \citep{binney2011galactic}:
+
+\begin{equation}
+	\frac{d(\rho \sigma^2)}{d \mathbf{r}} = -\rho \frac{d \Phi}{d \mathbf{r}}
+\end{equation}
+
+Solving for the Plummer model we have the dispersion velocity:
+
+\begin{equation}
+	\sigma_p(\mathbf{r}) = \frac{GM}{6\sqrt{\mathbf{r}^2 + b^2}}
+\end{equation}
+
+\subsection{N-body units}
+\label{sec:4.2_Nbody_units}
+
 \section{Gas Configurations}
+\label{sec:4.2_Gas_config}
+
+\section{Stars and gas initial conditions}
+\label{sec:4.3_stars_gas_IC}
+
 \section{Numerical Parameters}
+\label{sec:4.4_Numerical_parameters}
 
 \chapter{Results and analysis}
+\label{cap:5_results_analysis}
+
 \section{Gas-Free Baseline Simulations}
+\label{sec:5.1_gas_free_sim}
+
 \section{Effects of Gas Fraction on Collision Rates}
+\label{sec:5.2_gas_effect}
+
 \section{Massive Object Formation}
+\label{sec:5.3_MO_formation}
+
 \section{Comparative Analysis Across Gas Fractions}
+\label{sec:5.4_comparisson_gas_frac}
 
 \chapter{Discussion and Conclusions}
+\label{sec:cap.6_discussion}
+
 \section{Interpretation of Gas-Induced Enhancements}
+\label{sec:6.1_gasind_enh}
+
 \section{Implications for SMBH Seed Formation}
+\label{sec:6.2_implications}
+
 \section{Limitations and Future Work}
+\label{sec:6.3_Limitations_and_future_work}
 
 
 
@@ -565,11 +646,14 @@ In chapter \ref{cap:3} a description of the numerical method is provided, includ
 % el cual acepta \chapter y escribe el título de anexos encima
 % ------------------------------------------------------------------------------
 \begin{appendixs}
-	\section{Fourth-Order Hermite Integration Scheme} \label{ap:A}
+	\section{Fourth-Order Hermite Integration Scheme} 
+	\label{ap:A}
+	
 	The N-body code used in this work, \texttt{ph4}, is based on a fourth-order Hermite integrator. The following subsections describe in detail the individual time step scheme (ITS) from \cite{makino1992}, including the time step criterion in the N-body code.
 	
 	% Primer paso
 	\subsection{Step 1: Particle selection}
+	\label{ap:A.1}
 	The first step is to select the next particle to be advanced. At any given time, each particle $j$ has its own mass $m_j$, time $t_j$, time step $\Delta t_j$, coordinates $\mathbf{x}_j$ and $\mathbf{v}_j$, acceleration $\mathbf{a}_j$ and jerk $\dot{\mathbf{a}}_j$ (with $\dot{\mathbf{a}}_j = \partial \mathbf{a}_j / \partial t$). The selected particle $i$ is the one satisfying the condition:
 	
 	\begin{equation}
@@ -580,6 +664,7 @@ In chapter \ref{cap:3} a description of the numerical method is provided, includ
 	
 	% Segundo paso
 	\subsection{Step 2: Calculate the predicted position and velocities for all particles}
+	\label{ap:A.2}
 	
 	The positions and velocities of all particles are predicted at time $t$, using a Taylor expansion up to third-order (jerk):
 	\begin{align}
@@ -615,6 +700,7 @@ In chapter \ref{cap:3} a description of the numerical method is provided, includ
 	
 	% Tercer paso
 	\subsection{Step 3: Calculate acceleration and jerk for particle $i$}
+	\label{ap:A.3}
 	
 	Similar to equations (\ref{eq:ap_accel}) and (\ref{eq:ap_jerk}), the acceleration and jerk are calculated using the predicted positions and velocity:
 	
@@ -629,6 +715,7 @@ In chapter \ref{cap:3} a description of the numerical method is provided, includ
 	
 	% Cuarto Paso
 	\subsection{Step 4: Second and third time derivative of acceleration, using Hermite interpolation}
+	\label{ap:A.4}
 	
 	To obtain a high-order correction of $\mathbf{x}$ and $\mathbf{v}$, the acceleration of particle $i$ is modeled as a third-order polynomial in time:
 	
@@ -695,6 +782,7 @@ In chapter \ref{cap:3} a description of the numerical method is provided, includ
 	
 	% Quinto Paso
 	\subsection{Step 5: Add corrections}
+	\label{ap:A.5}
 	
 	The next step in the scheme is to correct position and velocity of particle $i$ at time $t$. Using a higher-order Taylor expansion around $t_i$:
 	
@@ -718,6 +806,7 @@ In chapter \ref{cap:3} a description of the numerical method is provided, includ
 	The advantage of this scheme is that achieving high integration accuracy only requires the explicit calculation of the acceleration and jerk for all particles, and the predicted acceleration and jerk for the particle being advanced. This results in an integration scheme that is fourth-order accurate in time ($\mathcal{O}(a^{(3)})$).
 	
 	\subsection{Step 6: Time step update}
+	\label{ap:A.6}
 	
 	After updating the position and velocity of particle $i$, a new time step $\Delta t_i$ must be calculated. This step is crucial for controlling the integration error. A proven and stable criterion is given by the standard formula \cite{aarseth1985}:
 	
@@ -738,5 +827,9 @@ In chapter \ref{cap:3} a description of the numerical method is provided, includ
 	\end{equation}
 	
 	The suggested value for the startup parameter is $\eta_s \sim 0.01$ \cite{makino1992}.
+	
+	\section{SPH equations}
+	\label{ap:B}
+	
 
 \end{appendixs}

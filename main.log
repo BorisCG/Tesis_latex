@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  5 MAR 2026 21:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  8 MAR 2026 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2512,17 +2512,17 @@ Chapter 2.
 
 ]
 Chapter 3.
-<./img//Esquemas/Codes_scheme.png, id=180, 727.71875pt x 276.03125pt>
+<./img//Esquemas/Codes_scheme.png, id=186, 727.71875pt x 276.03125pt>
 File: ./img//Esquemas/Codes_scheme.png Graphic file (type png)
 <use ./img//Esquemas/Codes_scheme.png>
-Package pdftex.def Info: ./img//Esquemas/Codes_scheme.png  used on input line 3
-9.
+Package pdftex.def Info: ./img//Esquemas/Codes_scheme.png  used on input line 5
+0.
 (pdftex.def)             Requested size: 377.62642pt x 143.24223pt.
-<./img//Esquemas/amuse_domains.png, id=189, 728.7225pt x 735.74875pt>
+<./img//Esquemas/amuse_domains.png, id=195, 728.7225pt x 735.74875pt>
 File: ./img//Esquemas/amuse_domains.png Graphic file (type png)
 <use ./img//Esquemas/amuse_domains.png>
 Package pdftex.def Info: ./img//Esquemas/amuse_domains.png  used on input line 
-53.
+65.
 (pdftex.def)             Requested size: 377.62642pt x 381.26682pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2530,11 +2530,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [3
 
  <./img//Esquemas/Codes_scheme.png>]
-<./img//Esquemas/amuse_layers.png, id=200, 643.40375pt x 743.77875pt>
+<./img//Esquemas/amuse_layers.png, id=206, 643.40375pt x 743.77875pt>
 File: ./img//Esquemas/amuse_layers.png Graphic file (type png)
 <use ./img//Esquemas/amuse_layers.png>
-Package pdftex.def Info: ./img//Esquemas/amuse_layers.png  used on input line 6
-6.
+Package pdftex.def Info: ./img//Esquemas/amuse_layers.png  used on input line 7
+8.
 (pdftex.def)             Requested size: 424.82523pt x 491.11113pt.
 
 
@@ -2544,84 +2544,84 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [6{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 [7] [8] [9]
-<./img//Esquemas/BHtree_plot.png, id=308, 859.86845pt x 422.49042pt>
+<./img//Esquemas/BHtree_plot.png, id=314, 859.86845pt x 422.49042pt>
 File: ./img//Esquemas/BHtree_plot.png Graphic file (type png)
 <use ./img//Esquemas/BHtree_plot.png>
-Package pdftex.def Info: ./img//Esquemas/BHtree_plot.png  used on input line 27
-0.
+Package pdftex.def Info: ./img//Esquemas/BHtree_plot.png  used on input line 28
+9.
 (pdftex.def)             Requested size: 377.62642pt x 185.54823pt.
  [10] [11 <./img//Esquemas/BHtree_plot.png>] [12] [13] [14] [15]
-LaTeX Font Info:    Calculating math sizes for size <8.00006> on input line 503
+LaTeX Font Info:    Calculating math sizes for size <8.00006> on input line 526
 .
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.00006> on input line 503.
+(Font)              <8.00006> on input line 526.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.6> on input line 503.
+(Font)              <5.6> on input line 526.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.00003> on input line 503.
+(Font)              <4.00003> on input line 526.
 
 
 LaTeX Font Warning: Font shape `T1/lmvtt/m/it' in size <12> not available
-(Font)              Font shape `T1/lmvtt/m/sl' tried instead on input line 503.
+(Font)              Font shape `T1/lmvtt/m/sl' tried instead on input line 526.
 
 
-<./img//Plots/force_comparison_1.png, id=440, 462.528pt x 346.896pt>
+<./img//Plots/force_comparison_1.png, id=446, 462.528pt x 346.896pt>
 File: ./img//Plots/force_comparison_1.png Graphic file (type png)
 <use ./img//Plots/force_comparison_1.png>
 Package pdftex.def Info: ./img//Plots/force_comparison_1.png  used on input lin
-e 519.
+e 542.
 (pdftex.def)             Requested size: 377.62642pt x 283.23383pt.
 [16] [17 <./img//Plots/force_comparison_1.png>]
 Chapter 4.
 [18
 
-]
+] [19]
 Chapter 5.
-[19
+[20
 
 ]
 Chapter 6.
-(./main.bbl [20
+(./main.bbl [21
 
-] [21
+] [22
 
-]) [22] [23
+]) [23] [24
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 61
-7.
+LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 70
+2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.39996> on input line 617.
+(Font)              <14.39996> on input line 702.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.07993> on input line 617.
+(Font)              <10.07993> on input line 702.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.19998> on input line 617.
+(Font)              <7.19998> on input line 702.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 617.
+(hyperref)                removing `math shift' on input line 702.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 617.
+(hyperref)                removing `math shift' on input line 702.
 
-[24] [25]) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
+[25] [26]) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 )
-[26] (./main.aux)
+[27] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33129 strings out of 474222
- 550446 string characters out of 5748733
+ 33198 strings out of 474222
+ 551859 string characters out of 5748733
  1945975 words of memory out of 5000000
- 54522 multiletter control sequences out of 15000+600000
+ 54578 multiletter control sequences out of 15000+600000
  707607 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,12n,110p,2881b,2486s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,12n,110p,2881b,2504s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/p
@@ -2633,10 +2633,10 @@ b></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmvtk10.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmvtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmvtto10.pfb>
-Output written on main.pdf (33 pages, 747640 bytes).
+Output written on main.pdf (34 pages, 752119 bytes).
 PDF statistics:
- 838 PDF objects out of 1000 (max. 8388607)
- 746 compressed objects within 8 object streams
- 224 named destinations out of 1000 (max. 500000)
- 403 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 880 PDF objects out of 1000 (max. 8388607)
+ 787 compressed objects within 8 object streams
+ 237 named destinations out of 1000 (max. 500000)
+ 427 words of extra memory for PDF output out of 10000 (max. 10000000)
 
