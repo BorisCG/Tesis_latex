@@ -408,8 +408,8 @@ where $\mathbf{v}_{ij} = \mathbf{v}_i - \mathbf{v}_j$ and $\mathbf{r}_{ij} = \ma
 Finally, the thermodynamic evolution of the gas must be specified. \texttt{Fi} offers two formulations: evolving either the specific internal energy $u_i$ or the entropic function $A_i$ (related to the specific entropy). For an ideal gas with adiabatic index $\gamma$, these quantities are related through
 
 \begin{align}
-	P_i &= A_i \rho_i^{\gamma}, \\
-	u_i &= \frac{A_i}{\gamma - 1} \rho_i^{\gamma - 1} = \frac{P_i}{(\gamma - 1)\rho_i},
+	P_i &= A_i \rho_i^{\gamma}, \label{eq:3.43_poly_eq_state}\\
+	u_i &= \frac{A_i}{\gamma - 1} \rho_i^{\gamma - 1} = \frac{P_i}{(\gamma - 1)\rho_i} \label{eq:3.44_int_energy},
 \end{align}
 
 where $A_i$ is the entropic function, which remains constant for adiabatic processes in the absence of shocks.
@@ -557,52 +557,245 @@ The modified Bridge algorithm proceeds as follows for each global time step $\De
 \chapter{Initial Conditions and Setup}
 \label{sec:4_Initial_conditions}
 
-In chapter \ref{cap:3_Numerical_Methods} a description of the numerical method is provided, including the SPH code for gas, the N-body code for stars and the coupling method adopted. In order to have a full specification of the simulations, this chapter provides a description of the parameters used in the codes initialization, and the initial conditions for gas and stars systems.
+Chapter \ref{cap:3_Numerical_Methods} described the numerical methods used in this work, including the SPH code for the gas component, the N-body code for the stellar component, and the coupling scheme. This chapter provides a complete specification of the simulations, detailing the initial conditions for both the stellar and gaseous systems, as well as the numerical parameters used in the code initialization.
  
 \section{Plummer distribution}
 \label{sec:4.1_Plummer_dist}
 
-The scenario presented in section \ref{sec:2.1_collisions_criterion} and proposed by \cite{escala2021observational} has been tested in \citep{vergara2023global}, sampling models from different regimes. The models represent systems that are characterized by its initial mass and size. The stars clusters are initialized using a Plummer \citep{plummer1911problem} distribution. The Plummer model is characterized by the potential \citep{binney2011galactic}:
+The scenario presented in Section \ref{sec:2.1_collisions_criterion} and proposed by \citet{escala2021observational} was previously explored by \citet{vergara2023global} through simulations sampling different collisional regimes. These models represent stellar systems characterized by their initial mass and size scale. The stellar clusters are initialized using a Plummer distribution \citep{plummer1911problem}. The Plummer model is characterized by the potential \citep{binney2011galactic}:
 
 \begin{equation}
-	\Phi_p(\mathbf{r}) = -\frac{GM}{\sqrt{\mathbf{r}^2 + b^2}}
+	\Phi_p(r) = -\frac{GM}{\sqrt{r^2 + b^2}},\quad \text{with } r = |\mathbf{r}|
 \end{equation}
 
 where $b$ is the Plummer scale. From the Poisson equation, the associated density is
 
 \begin{equation}
-	\rho_p(\mathbf{r}) = \frac{3M}{4\pi b^3} \left(1+\frac{\mathbf{r}^2}{b^2}\right)^{-5/2}
+	\rho_p(r) = \frac{3M}{4\pi b^3} \left(1+\frac{r^2}{b^2}\right)^{-5/2}
 \end{equation}
 
 The potential energy of a Plummer model is:
 
 \begin{equation}
 	U_p = - \frac{3 \pi G M^2}{32b}
+	\label{eq:4.3_Upl}
 \end{equation}
 
 Now we need a description for velocity. The velocity dispersion $\sigma$ for an isotropic spherical stellar system can be obtained through the Jeans equation \citep{binney2011galactic}:
 
 \begin{equation}
-	\frac{d(\rho \sigma^2)}{d \mathbf{r}} = -\rho \frac{d \Phi}{d \mathbf{r}}
+	\frac{d(\rho \sigma^2)}{d r} = -\rho \frac{d \Phi}{d r}
 \end{equation}
 
 Solving for the Plummer model we have the dispersion velocity:
 
 \begin{equation}
-	\sigma_p(\mathbf{r}) = \frac{GM}{6\sqrt{\mathbf{r}^2 + b^2}}
+	\sigma_p(r) = \frac{GM}{6\sqrt{r^2 + b^2}}
 \end{equation}
+
+We can relate the Plummer scale parameter $b$ with a physical scale. First, we define a characteristic system radius $R$ via the potential energy:
+
+\begin{align}
+	-\frac{GM^2}{2R} =& U \\
+	\frac{1}{R} =& -\frac{2}{GM^2}U
+	\label{eq:4.7_virial_radius}
+\end{align}
+
+Where $U$ is the total gravitational potential energy. In the case of a system of $N$ particles, this radius is defined as:
+
+\begin{equation}
+	R = \left(\frac{1}{M^2} \sum_{i,j \neq i}^{N}\frac{m_i m_j}{|\mathbf{r}_i - \mathbf{r_j}|}\right)^{-1}
+\end{equation}
+
+In the case of a Plummer model, replacing Eq.~\ref{eq:4.3_Upl} into Eq.~\ref{eq:4.7_virial_radius}, this radius can be expressed in function of the Plummer scale parameter $b$:
+
+\begin{align}
+	\frac{1}{R} =& \left(-\frac{2}{GM^2}\right) \left(-\frac{3\pi GM^2}{32b}\right) \\
+	R =& \frac{16b}{3\pi}
+\end{align}
+
+Once the physical scale of the system is defined via $b$ (or equivalently $R$), we need to generate the actual particle distribution. This is typically done in a dimensionless system of units, which we now describe.
 
 \subsection{N-body units}
 \label{sec:4.2_Nbody_units}
 
-\section{Gas Configurations}
-\label{sec:4.2_Gas_config}
+Most gravitational N-body codes employ a dimensionless system of units, known as N-body units or Hénon units (see \cite{10.1007/BFb0116419}). In this system, physical quantities are scaled to be of order unity, which brings two main benefits: (i) it eliminates the need to multiply by $G$ in every force calculation, and (ii) it improves numerical precision by keeping variables close to unity, thereby minimizing round-off errors that would otherwise arise when working with astrophysical scales spanning many orders of magnitude. Additionally, N-body units facilitate comparison between results obtained with different codes.
 
-\section{Stars and gas initial conditions}
-\label{sec:4.3_stars_gas_IC}
+N-body units are defined by setting the gravitational constant, total mass, and total energy to convenient values:
+
+\begin{align}
+	G =& 1 \\
+	M =& 1 \\
+	E =& -\frac{1}{4} \\
+\end{align}
+
+With this, the unit of mass, length and time can been defined. The mass unit is simply the total mass:
+
+\begin{equation}
+	u_m = M
+\end{equation}
+
+Assuming virial equilibrium ($2T + U = 0$), the kinetic and potential energies become:
+
+\begin{align}
+	T =& \frac{1}{4} = - E \\
+	U =& -\frac{1}{2} = 2E \label{eq:4.17_pot_en}
+\end{align}
+
+From the equation of virial radius (Eq.~\ref{eq:4.7_virial_radius}), we can replace the potential energy from Eq.~\ref{eq:4.17_pot_en}:
+
+\begin{equation}
+	R = -\frac{GM^2}{4E}
+\end{equation}
+
+Using $G=1$, $M=1$ and $E=-1/4$ we can check that $R=1$, so the length unit $u_l$ is:
+
+\begin{equation}
+	u_l = R = -\frac{GM^2}{4E}
+\end{equation}
+
+Finally, we derive the time unit. A characteristic velocity follows from the kinetic energy:
+
+\begin{align}
+	T =& \frac{M \sigma^2}{2} \\
+	\sigma^2 =& \frac{2T}{M} = \frac{-2E}{M}
+\end{align}
+
+The crossing time is defined as:
+
+\begin{equation}
+	t_{cross} = \frac{2R}{\sigma} = \frac{GM^{5/2}}{(-2E)^{3/2}}
+\end{equation}
+
+With $G=1$, $M=1$, and $E=-1/4$, we obtain $t_{\mathrm{cross}} = 2^{3/2}$. The standard N-body time unit is then defined as:
+
+\begin{equation}
+	u_t = t_{cross}2^{-2/3} = \frac{GM^{5/2}}{(-4E)^{3/2}}
+\end{equation}
+
+which indeed yields $u_t = 1$ for $G=1$, $M=1$ and $E=-1/4$. Note that defining the unit system requires only a scale radius and the total mass of the system. AMUSE provides its own physical units system, which can be converted to N-body units using a converter. In AMUSE, N-body units are handled through the \pythonfunc{nbody\_system} class, which requires at least two physical quantities—typically the total mass and the virial radius. The following example illustrates how to initialize a converter:
+
+\begin{lstlisting}[caption=How to define a converter in AMUSE, label=lst:create_converter]
+	from amuse.units import units, nbody_system
+	
+	R_vir = 1 | units.pc          # Define a scale radius
+	M_tot = 1e4 | units.MSun  # Define the total mass
+	
+	converter = nbody_system.nbody_to_si(R_vir, M_tot)
+\end{lstlisting}
+
+The converter serves a bidirectional role: it translates physical quantities (e.g., positions, velocities, masses) into dimensionless N-body units for the numerical calculations, and converts the simulation output back to dimensional physical units for subsequent analysis.
+
+\section{Stars and Gas Initial Conditions}
+\label{sec:4.2_stars_gas_IC}
+
+For the results presented in Chapter \ref{cap:5_results_analysis}, we adopt the same initial conditions as the models in \citet{vergara2023global}. For each model, we consider four variations: one with stars only, and three with gas fractions of $5\%$, $10\%$, and $20\%$ added. The initial conditions for models with stars only (we use the same notation for letters in \cite{vergara2023global}) are presented in table \ref{tab:4.1_models_IC}:
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|clrrrll|}
+		\hline
+		\rowcolor[gray]{0.8}
+		\textbf{Models ID} & $R_v$ [pc] & $M$ [$M_\odot$] & $N$ & $m_s$ [$M_\odot$] & $r_s$ [$R_\odot$] & $\sigma$ [$km/s$]\\
+		\hline
+		
+		\rowcolor[gray]{1}
+		A & 0.005  & $5 \times 10^4$  & $10^3$  & 50  & 11.7  & ?? \\
+		
+		\rowcolor[gray]{0.9}
+		B & 0.005  & $2.5 \times 10^4$  & $5 \times 10^2$  & 50  & 11.7  & ?? \\
+		
+		\rowcolor[gray]{1}
+		C & 0.005  & $10^4$  & $10^3$  & 10  & 4.7  & ?? \\
+		
+		\rowcolor[gray]{0.9}
+		D & 0.005  & $5 \times 10^3$  & $5 \times 10^2$  & 10  & 4.7  & ?? \\
+		
+		\rowcolor[gray]{1}
+		F & 0.005  & $10^3$  & $10^3$  & 1  & 1  & ?? \\
+		
+		\rowcolor[gray]{0.9}
+		H & 0.01  & $5 \times 10^4$  & $5 \times 10^3$  & 10  & 4.7  & ?? \\
+		
+		\rowcolor[gray]{1}
+		I & 0.01  & $10^4$  & $10^3$  & 10  & 4.7  & ?? \\
+		
+		\rowcolor[gray]{0.9}
+		J & 0.01  & $5 \times 10^3$  & $5 \times 10^3$  & 1  & 1  & ?? \\
+		
+		\rowcolor[gray]{1}
+		K & 0.01  & $10^3$  & $10^3$  & 1  & 1  & ?? \\
+		
+		\rowcolor[gray]{0.9}
+		L & 0.1  & $5 \times 10^5$  & $10^4$  & 50  & 11.7  & ?? \\
+		
+		\rowcolor[gray]{1}
+		M & 0.1  & $10^5$  & $10^4$  & 10  & 4.7  & ?? \\
+		
+		\rowcolor[gray]{0.9}
+		N & 0.1  & $10^4$  & $10^4$  & 1  & 1  & ?? \\
+		\hline
+	\end{tabular}
+	\caption{Initial conditions for stars systems}
+	\label{tab:4.1_models_IC}
+\end{table}
+
+In the table, $R_v$, $M$, $N$, and $\sigma$ denote the virial radius, total mass, number of stars, and velocity dispersion of the stellar system, respectively. The initial mass and radius of each star are given by $m_s$ and $r_s$. A full description of each model with their variations can be found in Appendix \ref{ap:C}. Both the stellar and gaseous systems are generated using the AMUSE implementation of the Plummer model. For example, to generate a stellar system with the initial conditions of model A, we first initialize a converter:
+
+\begin{lstlisting}[caption=Converter example for model A, label=lst:conv_model_A]
+	from amuse.units import units, nbody_system
+	
+	M_stars = 5e4 | units.MSun
+	R_vir = 0.005 | units.pc
+	converter = nbody_system.nbody_to_si(R_vir, M_stars)
+\end{lstlisting}
+
+After importing the \pythonfunc{plummer} module, the stellar particles are generated by calling \pythonfunc{new\_plummer\_model} with the converter and number of particles:
+
+\begin{lstlisting}[caption=Stars particles in model A, label=lst:stars_part_A]
+	from amuse.ic import plummer
+	
+	N = 1000
+	stars = plummer.new_plummer_model(N, converter, radius_cutoff=5., do_scale=True)
+	stars.radius = 11.7 | units.RSun
+\end{lstlisting}
+
+The \pythonfunc{radius\_cutoff} parameter truncates the distribution at $5b$, where $b$ is the Plummer scale parameter (here corresponding to a virial radius $R_v = 0.005$ pc). Setting \pythonfunc{do\_scale=True} ensures that the generated particles are scaled to N-body units, satisfying the virial conditions described in Section \ref{sec:4.2_Nbody_units} (total mass $M=1$, total energy $E=-1/4$, kinetic energy $T=1/4$, and potential energy $U=-1/2$).
+
+For the gaseous component, we use AMUSE's \pythonfunc{gasplummer} module to generate the SPH particles. The number of gas particles is chosen such that the mass ratio $m_{\mathrm{SPH}} / m_{\mathrm{NB}} = 0.01$, where $m_{\mathrm{SPH}}$ is the (equal) mass of each SPH particle and $m_{\mathrm{NB}}$ is the mass of each N-body particle. For example, for the variation with $20\%$ of gas for model A, denoted $\text{A}_{20}$, the gas particles are generated as follows:
+
+\begin{lstlisting}[caption=Gas particles in model A, label=lst:gas_part_A]
+	from amuse.ic import gasplummer
+	
+	f_gas = 0.2
+	N_gas = N*100
+	N_gas = int(N_gas*f_gas)
+	
+	gas = gasplummer.new_plummer_gas_model(N_gas, 
+	                                                             convert_nbody=converter, 
+	                                                             do_scale=True, 
+	                                                             mass_cutoff=0.95535)
+	gas.mass = (M_stars*f_gas / N_gas)
+\end{lstlisting}
+
+While the stellar component is initialized in virial equilibrium (with velocities scaled accordingly), the gas particles are generated with zero initial velocity. Instead, their internal energy is adjusted to achieve hydrostatic equilibrium. For a fluid in hydrostatic equilibrium,
+
+\begin{equation}
+	\nabla p = - \rho \nabla \Phi
+\end{equation}
+
+where $p$, $\rho$, $\Phi$ stand for the pressure, density and gravitational potential. Assuming a polytropic equation of state (Eqs.~\ref{eq:3.43_poly_eq_state} and \ref{eq:3.44_int_energy}), this condition gives a relation for the specific internal energy $u$:
+
+\begin{equation}
+	u = - \frac{\Phi}{\gamma}
+\end{equation}
+
+where $\gamma$ is the polytropic index. 
+
+The initialization described in Listing~\ref{lst:gas_part_A} raises a potential issue. The gas particles are generated using a converter scaled to the total stellar mass ($M = 5\times10^4\,\mathrm{M_\odot}$), and their internal energy is set accordingly to achieve hydrostatic equilibrium in the combined potential. However, after generation, we explicitly reduce the gas mass to $f_{\mathrm{gas}} M$ (in this case, $20\%$ of the stellar mass). In isolation, this reduction would lead to an imbalance: the gravitational force from the gas diminishes, while the internal pressure remains unchanged, causing the gaseous component to expand. However, because the gas is embedded in and gravitationally coupled to the stellar system, the dominant contribution to the potential comes from the stars. We therefore expect the gas to remain near dynamical equilibrium, with any minor adjustments occurring on a dynamical timescale as the simulation evolves. 
 
 \section{Numerical Parameters}
-\label{sec:4.4_Numerical_parameters}
+\label{sec:4.3_Numerical_parameters}
 
 \chapter{Results and analysis}
 \label{cap:5_results_analysis}
@@ -830,6 +1023,9 @@ Solving for the Plummer model we have the dispersion velocity:
 	
 	\section{SPH equations}
 	\label{ap:B}
+	
+	\section{Initial conditions for Stars and Gas particles} 
+	\label{ap:C}
 	
 
 \end{appendixs}

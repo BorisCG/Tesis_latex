@@ -41,6 +41,13 @@ Gingold, R.~A. and Monaghan, J.~J. (1977).
 \newblock {\em Monthly notices of the royal astronomical society},
   181(3):375--389.
 
+\bibitem[Heggie and Mathieu, 1986]{10.1007/BFb0116419}
+Heggie, D.~C. and Mathieu, R.~D. (1986).
+\newblock Standardised units and time scales.
+\newblock In Hut, P. and McMillan, S. L.~W., editors, {\em The Use of
+  Supercomputers in Stellar Dynamics}, pages 233--235, Berlin, Heidelberg.
+  Springer Berlin Heidelberg.
+
 \bibitem[Lucy, 1977]{lucy1977numerical}
 Lucy, L.~B. (1977).
 \newblock A numerical approach to the testing of the fission hypothesis.

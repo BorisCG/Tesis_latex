@@ -4,45 +4,45 @@ The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: library.bib
 Warning--empty school in reinoso2024formation
-You've used 21 entries,
+You've used 22 entries,
             1935 wiz_defined-function locations,
-            613 strings with 7275 characters,
-and the built_in function-call counts, 7905 in all, are:
-= -- 800
-> -- 246
-< -- 19
-+ -- 82
-- -- 76
-* -- 661
-:= -- 1373
-add.period$ -- 64
-call.type$ -- 21
-change.case$ -- 137
-chr.to.int$ -- 21
-cite$ -- 22
-duplicate$ -- 302
-empty$ -- 592
-format.name$ -- 113
-if$ -- 1543
+            622 strings with 7511 characters,
+and the built_in function-call counts, 8483 in all, are:
+= -- 861
+> -- 267
+< -- 21
++ -- 88
+- -- 82
+* -- 703
+:= -- 1461
+add.period$ -- 68
+call.type$ -- 22
+change.case$ -- 144
+chr.to.int$ -- 22
+cite$ -- 23
+duplicate$ -- 329
+empty$ -- 635
+format.name$ -- 122
+if$ -- 1671
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 108
-num.names$ -- 65
-pop$ -- 99
+missing$ -- 22
+newline$ -- 113
+num.names$ -- 70
+pop$ -- 107
 preamble$ -- 1
-purify$ -- 141
+purify$ -- 148
 quote$ -- 0
-skip$ -- 239
+skip$ -- 262
 stack$ -- 0
-substring$ -- 657
-swap$ -- 30
-text.length$ -- 1
+substring$ -- 701
+swap$ -- 40
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 122
+type$ -- 128
 warning$ -- 1
-while$ -- 74
+while$ -- 80
 width$ -- 0
-write$ -- 273
+write$ -- 288
 (There was 1 warning)

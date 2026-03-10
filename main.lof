@@ -2,11 +2,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the coupled numerical framework. The stellar N-body system (modelled with \texttt {ph4}) and the gaseous SPH system (modelled with \texttt {Fi}) interact gravitationally through the \texttt {Bridge} coupling scheme.}}{3}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Principal domains in AMUSE framework. Multiple physical problems can be solved coupling codes from different domains}}{4}{figure.caption.10}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Schematic representation of the three-layer architecture of the AMUSE framework. The user interacts with the system via a Python script (top layer), which communicates through interfaces (middle layer) with the community codes (bottom layer).}}{5}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Representation of an oct tree}}{11}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Comparison of force calculation normalized (masses and gravitational constant set to 1). In dashed green, the exact gravitational force. In blue, the force with plummer softening, and in red, the force calculated with cubic spline softening.}}{17}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the coupled numerical framework. The stellar N-body system (modelled with \texttt {ph4}) and the gaseous SPH system (modelled with \texttt {Fi}) interact gravitationally through the \texttt {Bridge} coupling scheme.}}{3}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Principal domains in AMUSE framework. Multiple physical problems can be solved coupling codes from different domains}}{4}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Schematic representation of the three-layer architecture of the AMUSE framework. The user interacts with the system via a Python script (top layer), which communicates through interfaces (middle layer) with the community codes (bottom layer).}}{5}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Representation of an oct tree}}{11}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Comparison of force calculation normalized (masses and gravitational constant set to 1). In dashed green, the exact gravitational force. In blue, the force with plummer softening, and in red, the force calculated with cubic spline softening.}}{17}{figure.caption.15}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
