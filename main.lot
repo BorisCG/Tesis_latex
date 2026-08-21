@@ -3,6 +3,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Initial conditions for stars systems}}{21}{table.caption.16}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Initial conditions for stars systems.}}{32}{table.caption.17}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Initial conditions for gas systems}}{34}{table.caption.19}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Key runtime parameters for the PH4 N-body code. Parameters shown with their default and the values used in this work.}}{38}{table.caption.20}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Key runtime parameters for the FI SPH code. Parameters shown with their default and the values used in this work.}}{39}{table.caption.22}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Key runtime parameters for the \texttt {BRIDGE} coupling scheme.}}{40}{table.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

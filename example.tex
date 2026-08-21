@@ -16,11 +16,11 @@
 \chapter{Introduction}
 \label{cap:1_Introduction}
 
-\section{Formation Channels for SMBHs and the Collisional Paradigm}
-\label{sec:1.1_SMBH_formation}
+\section{Formation Channels for SMBHs}
+\label{sec:1.1_SMBH_formation_chanels}
 
-\section{The Role of Gas in Dense Stellar Systems}
-\label{sec:1.2_gas_role}
+\section{A route for SMBH formation}
+\label{sec:1.2_SMBH_formation}
 
 \section{Research Objectives and Thesis Outline}
 \label{sec:1.3_Objetcives}
@@ -30,70 +30,150 @@
 % NUEVO CAPÍTULO
 % ------------------------------------------------------------------------------
 \chapter{A scenario for SMBH formation}
-\label{cap:2_SMBH_formation_scenario}
+\label{chap:2_SMBH_formation_scenario}
 
-\section{Density criterion for stellar collisions}
-\label{sec:2.1_collisions_criterion}
+In this section we describe the scenario proposed by \citet{escala2021observational} extended to include an external potential. The scenario explores the role of collisional and relaxation timescales ($t_{\rm coll}$ and $t_{\rm relax}$) in determining the global stability of stellar systems. 
 
-\section{Stars and gas in equilibrium}
-\label{sec:2.2_star_gas_eq}
+As stars move in a cluster, gravitational interactions redistribute kinetic and potential energy through two-body encounters. Strong encounters can lead to the formation or disruption of binaries, the ejection of stars, or stellar mergers when stars physically overlap \citep{2008gady.book.....B,1987degc.book.....S}. Mass segregation drives massive stars toward the centre, increasing the central density and accelerating core collapse. When the density becomes sufficiently high, stellar collisions become frequent, potentially triggering a runaway phase that can lead to a global instability \citep{escala2021observational}. 
+
+Weak encounters produce small, gradual changes in stellar velocities, but their cumulative effect leads to two-body relaxation, which drives mass segregation and can bring the system toward a state of partial energy equipartition \citep{trenti2013no,bianchini2016novel}. The relevant timescales for describing these processes are the collisional timescale and the relaxation timescale.
+
+The collisional timescale $t_{\rm coll}$ provides an estimate of the collision rate between particles in a system. For a stellar system of identical stars, a first estimate of the collision rate $1/t_{\rm coll}$ is given by \citet{2008gady.book.....B}:
+
+\begin{equation}
+	\label{eq:coll_rate}
+	\frac{1}{t_{\rm coll}} = 16\sqrt{\pi} n \sigma r_{\star}^2(1 + \Theta)~,
+\end{equation}
+
+where $r_{\star}$ is the stellar radius, $\sigma$ is the velocity dispersion of the system, $n$ is the number density of stars, and
+
+\begin{equation}
+	\label{eq:safronov_number}
+	\Theta \equiv \frac{v_{\star}^2}{4 \sigma^2} = 9.54 \frac{m}{M_{\odot}} \frac{R_{\odot}}{r_{\star}} \left(\frac{100~{\rm km}~{\rm s}^{-1}}{\sigma}\right)^2~,
+\end{equation}
+
+is the Safronov number, with $m$ the mass of each star and $v_{\star} = \sqrt{2Gm/r_{\star}}$ the escape speed from the stellar surface. This derivation assumes a Maxwellian velocity distribution with dispersion $\sigma$. Equation~\eqref{eq:coll_rate} gives the global collision rate for the system, from typical stellar properties ($m$, $r_{\star}$, and $\sigma$).
+
+The other relevant timescale is the relaxation time. As a system evolves, two-body relaxation can alter its initial conditions. Close encounters and mass segregation redistribute energy and mass, changing the system's initial global properties (e.g., radius and velocity dispersion). Although strong encounters can significantly change a star's velocity, they are less frequent than weak encounters. The relaxation timescale $t_{\rm relax}$ is the time required for a typical star to change its velocity significantly through the cumulative effect of weak encounters. From \citet{2008gady.book.....B},
+
+\begin{equation}
+	\label{eq:trelax}
+	t_{\rm relax} = n_{\rm relax}t_{\rm cross},
+\end{equation}
+
+where $t_{\rm cross}$ is the crossing time of a typical star, and $n_{\rm relax}$ is the number of crossings needed for the cumulative change in velocity $\Delta v$ to become comparable to the star's velocity ($dv = \sum \delta v \sim v$). For a system of $N$ identical stars, $n_{\rm relax} \sim 0.1N/\log N$ (see Appendix). Thus,
+
+\begin{equation}
+	\label{eq:trelax_2}
+	t_{\rm relax} = \frac{0.1N}{\log(N)}t_{\rm cross}.
+\end{equation}
+
+\section{Critical mass}
+\label{sec:2.1_Mcrit}
+
+The relevance of the relaxation and collision timescales depends on the characteristic timescale of the system, $t_{\rm H}$, typically taken as the age of the system. If $t_{\rm coll} \lesssim t_{\rm H}$, collisions are expected to be dynamically relevant. For a virialized system of total mass $M$ and radius $R$, Equation~\eqref{eq:coll_rate} can be rearranged \citep{escala2021observational}:
+
+\begin{equation}
+	\label{eq:tcoll_escala}
+	t_{\rm coll} = \frac{1}{n \Sigma_0}\sqrt{\frac{R}{GM}}~,
+\end{equation}
+
+where $\Sigma_0=16\sqrt{\pi}r_{\star}^2(1+\Theta)$ is the effective cross-section, and $\sigma = \sqrt{GM/R}$ for a virialized system. The Safronov number can be simplified to $\Theta \sim 9.54 (m/M_{\odot})(R_{\odot}/r_{\star})$ if we assume $\sigma \sim 100~{\rm km}~{\rm s}^{-1}$. Assuming a homogeneous density distribution as a first approximation, the number density is $n=3M/(4\pi R^3m)$. Imposing $t_{\rm coll} \leq t_{\rm H}$ and solving for the mass yields a critical mass \citep{escala2021observational,vergara2023global}:
+
+\begin{equation}
+	M \geq \left(\frac{4 \pi m}{3 \Sigma_0 t_{\rm H} G^{1/2}}\right)^{2/3} R^{7/3}=M_{\rm crit}~.
+\end{equation}
+
+The condition $t_{\rm coll} \leq t_{\rm H}$ is equivalent to $M \geq M_{\rm crit}$. Thus, $M_{\rm crit}$ is the mass of a virialized system of radius $R$ and equal-mass stars whose collision timescale equals $t_{\rm coll} = t_{\rm H}$. Including gravitational focusing and an external potential of mass $M_{\rm ext} = qM$, the critical mass can be written as (see Appendix~):
+
+\begin{equation}
+	M_{\rm crit} = \left(\frac{\beta R^{7/2}}{2}+\sqrt{\frac{\beta^2 R^7}{4} + \frac{\alpha^3 R^3}{27}}\right)^{2/3} + \left(\frac{\beta R^{7/2}}{2}-\sqrt{\frac{\beta^2 R^7}{4} + \frac{\alpha^3 R^3}{27}}\right)^{2/3} - \frac{2\alpha R}{3}~,
+	\label{eq:Mcrit_ext}
+\end{equation}
+
+with
+
+\begin{align}
+	\alpha &= \frac{9.54 ~ mR_\odot v_{100}^2}{r_\star G M_\odot (1+q)^2} \\
+	\beta &= \frac{\sqrt{\pi} m}{12 G^{1/2}t_H r_\star^2 (1+q)}~. 
+\end{align}
+
+\section{Relaxation mass}
+\label{sec:2.1_Mrelax}
+
+Similarly, we can obtain a condition using the relaxation time. From Appendix~\ref{sec:app_Mrelax}, including an external potential, the relaxation timescale (Equation~\eqref{eq:trelax_ext}) yields
+
+\begin{equation}
+	t_{\rm relax} = \frac{0.1 N(1+q)^3}{\ln(N(1+q)^2)} \frac{R^{3/2}}{\sqrt{GM}}~.
+\end{equation}
+
+Replacing $N=M/m$, and solving $t_{\rm relax} \leq t_{\rm H}$ for the characteristic radius $R$:
+
+\begin{equation}
+	R \leq \left(\frac{t_{\rm H}m}{0.1(1+q)^3} \ln(\frac{M(1+q)^2}{m})\right)^{2/3} \left(\frac{G}{M}\right)^{1/3}~.
+	\label{eq:r_relax}
+\end{equation}
+
+This equation gives a condition for the radius, such that the system evolves changing due to two-body relaxation. We can rewrite Equation~\eqref{eq:r_relax} by solving for the mass,
+
+\begin{equation}
+	M \leq M_{\rm relax} = \frac{m}{(1+q)^2}\exp(-2 W_{-1}\left(\frac{-1}{2\lambda}\right))~,
+	\label{eq:M_relax_ext}
+\end{equation}
+
+where $W_{-1}(z)$ is the lower branch of the Lambert function, and $\lambda = (t_{\rm H}\sqrt{Gm})/(0.1(1+q)^2R^{3/2})$. In such systems, two-body relaxation does not significantly alter the initial conditions over the characteristic timescale $t_{\rm H}$. If, in addition, $t_{\rm coll} \ll t_{\rm H}$, the system remains approximately in virial equilibrium. The case where $t_{\rm coll} \leq t_{\rm H}$ despite $t_{\rm relax} \geq t_{\rm H}$ corresponds to a different regime, which we discuss in the following section.
+
+\section{Global instability scenario}
+\label{sec:instability_scenario}
+
+In this section, we analyze the scenario for supermassive black hole (SMBH) formation from NSCs proposed by \citet{escala2021observational}. The critical mass $M_{\rm crit}$ from Equation~\eqref{eq:Mcrit_ext} gives a threshold for the condition $t_{\rm coll} = t_{\rm H}$. For stellar clusters where $t_{\rm coll} \leq t_{\rm H}$ ($M \geq M_{\rm crit}$), the onset of runaway collisions is expected, eventually forming a BH at the centre.  On the other hand, when $t_{\rm relax} \leq t_{\rm H}$ (which is equivalent to Equation~\eqref{eq:M_relax_ext}, where $M_{\rm relax}$ is the limiting case), two-body interactions could expand the cluster, modifying its initial conditions. \citet{escala2021observational} proposed a new regime of global instability, given by $t_{\rm coll} \leq t_{\rm H} \leq t_{\rm relax}$. The two important aspects that describe this regime are: as $t_{\rm coll} \leq t_{\rm H}$, collisions occur on a timescale $t_{\rm H}$, as described above; the condition $t_{\rm coll} \leq t_{\rm relax}$ implies that two-body relaxation is unable to reverse the global collapse, and the onset of runaway collisions leads to the formation of a massive black hole (MBH). There is a second scenario that could form a central BH. We define an intermediate regime, given by clusters where $t_{\rm relax} \leq t_{\rm coll} \leq t_{\rm H}$. In this regime, the system could begin to expand on a timescale comparable to $t_{\rm relax}$. However, this does not necessarily prevent the onset of a collisional runaway in the core. Since the central density is significantly higher than the global average, the local collision time $t_{\rm coll, core}$ is considerably shorter than the global collision time $t_{\rm coll}$. If $t_{\rm coll, core} \leq t_{\rm relax, core}$, the core could contract and decouple dynamically from the expanding envelope, which could be compatible with a gravothermal instability scenario \citep{1987degc.book.....S, cohn1980late}. Then, the core could undergo runaway collisions, forming a central BH coexisting with a surrounding star cluster, while the outer stars, heated by two-body relaxation and dynamical encounters, expand. Finally, a stable regime is defined by $t_{\rm relax} \leq t_{\rm H} \leq t_{\rm coll}$. In this stable regime, clusters can expand due to two-body relaxation, which further decreases the collision rate. Although a BH can form via collisions in the core, most of the mass could remain in the stellar cluster.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Plots/Scenario_Mcrit_Mrelax.png} % Ruta relativa
+	\caption{Collision and relaxation timescales in a mass versus radius diagram. Dashed lines correspond to the critical mass $M_{\rm crit}$, while solid lines correspond to the relaxation mass $M_{\rm relax}$, both calculated for solar-mass clusters. The colours represent two different characteristic timescales: blue for $t_{\rm H}=5 \times 10^6~{\rm yr}$, and red for $t_{\rm H}=10^{10}~{\rm yr}$. The black dash-dotted line represents $t_{\rm coll} = t_{\rm relax}$, with $t_{\rm H}$ varying from $10^2$ yr to $10^{10}$ yr. Clusters above the black dash-dotted line satisfy $t_{\rm coll} \leq t_{\rm relax}$. For each color, the collisional regime (CR) is defined by $t_{\rm coll} \leq t_{\rm H} \leq t_{\rm relax}$ (green colored zone); the stable regime is where $t_{\rm relax} \leq t_{\rm H} \leq t_{\rm coll}$; and the intermediate regime (IR) fulfils $t_{\rm relax} \leq t_{\rm coll} \leq t_{\rm H}$.}
+	\label{img:Collisional_regime}
+\end{figure}
+
+The final fate of the CMO is conveniently explained in terms of the black hole formation efficiency, defined as $\epsilon_{\rm BH} = M_{\rm BH}/M_{\rm CMO}$ \citep{escala2021observational,vergara2023global}, where $M_{\rm BH}$ is the mass of the central black hole, and $M_{\rm CMO} = M_{\rm BH} + M_{\rm NSC}$ is the mass of the central massive object, composed of a central BH and/or a surrounding nuclear stellar cluster. In Figure~\ref{img:Collisional_regime}, critical mass and relaxation mass are displayed (dashed and solid curves, respectively), for solar-mass clusters. Two characteristic timescales are used, with $t_{\rm H} = 5 \times 10^6~{\rm yr}$ for blue curves, and $t_{\rm H} = 10^{10}~{\rm yr}$ for red curves. The stable and unstable regimes are separated at the intersection of the solid, dashed and black dot-dashed lines, where $t_{\rm coll} = t_{\rm relax} = t_{\rm H}$. The collisional regime (CR), characterized by $t_{\rm coll} \leq t_{\rm H} \leq t_{\rm relax}$, is in the zone where the mass of the system is simultaneously larger than the critical and the relaxation mass. In this regime, the system is unable to expand via two-body relaxation before collisions become relevant. Although binary heating can, in principle, oppose core contraction, in systems with masses larger than $10^7~M_{\odot}$ binary heating cannot reverse core collapse, and the system can suffer a merger instability, which may lead to the formation of a central BH \citep{lee1987dynamical}. The dissipative nature of collisions thus drives a net contraction of the cluster. Then, most of the mass could remain in the central BH, having efficiencies $\epsilon_{\rm BH} \sim 1$. In contrast, in the stable regime the dynamics are dominated by two-body relaxation over collisions. In those systems, the mass occupies the region where $M \leq M_{\rm crit}$ and $M \leq M_{\rm relax}$ simultaneously. The expansion of the cluster moves it to the right in a M--R diagram, being possible to cross to the right side of the solid line. Although a central black hole could form, most of the mass remains in the stellar cluster, resulting in an NSC. Consequently, efficiencies are $\epsilon_{\rm BH} \ll 1$. The intermediate regime (IR) corresponds to the region where $t_{\rm relax} \leq t_{\rm coll} \leq t_{\rm H}$. In the diagram, this is the area where $M_{\rm crit} \leq M \leq M_{\rm relax}$. As described above, the system could expand while the core undergoes a runaway collision process, forming a central BH. These systems eventually move to the right as their radius increases, crossing into the stable regime (right side of the dashed curve), with efficiencies spanning a wider range $\epsilon_{\rm BH} \leq 1$. As noted by \citet{escala2021observational}, the observed BH formation efficiency as a function of $M_{\rm CMO}$ shows a step-like form that clearly separates NSCs from SMBHs. A possible explanation for this observational gap is that systems in the intermediate regime may form IMBHs; however, an important fraction of the mass could remain in the surrounding stellar cluster. Consequently, their gravitational sphere of influence is small and challenging to resolve \citep{trenti2006dynamical}, making them difficult to detect. This would naturally contribute to the lack of IMBH detections in NSC-dominated systems.
 
 \chapter{Numerical Methods}
 \label{cap:3_Numerical_Methods}
 
-This thesis investigates the role of gas in the formation of supermassive black hole (SMBH) seeds via stellar collisions in dense clusters. n contrast to previous studies, we do not include gas accretion onto stars, since we are interested exclusively in the gravitational interaction between gas and stars.
-
-We require, in principle, three codes: 1) an N-body code to model the stellar dynamics, 2) a smoothed particle hydrodynamics (SPH) code to simulate the gas thermodynamics and self-gravity, and 3) a coupling scheme to manage the mutual gravitational interaction between these two components.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Esquemas/Codes_scheme.png} % Ruta relativa
-	\caption{Schematic of the coupled numerical framework. The stellar N-body system (modelled with \texttt{ph4}) and the gaseous SPH system (modelled with \texttt{Fi}) interact gravitationally through the \texttt{Bridge} coupling scheme.}
-	\label{img:codes_scheme}
-\end{figure}
-
-The N-Body and SPH codes are accessed through the AMUSE interface \citep{zwart2018astrophysical}, and coupled via an external code.
+In this chapter, we describe the numerical methods employed to model the coupled evolution of stars and gas in dense stellar clusters. We require three principal components: (i) an N-body code (\texttt{ph4}) to model stellar dynamics, (ii) a smoothed particle hydrodynamics (SPH) code (\texttt{Fi}) to simulate the gas, and (iii) a coupling scheme (\texttt{BRIDGE}) to handle their mutual gravitational interaction. The N-body and SPH codes used are accessed through the Astrophysical Multipurpose Software Environment (AMUSE; \citet{zwart2018astrophysical}), which provides a modular framework for solving multi-physics problems. We do not include gas accretion onto stars, as our focus is exclusively on the gravitational interaction between the two components.
 
 
 \section{The AMUSE Framework}
 \label{sec:3.1_AMUSE}
 
-The numerical codes used in this work are accessed through the Astrophysical Multipurpose Software Environment (AMUSE) \citep{zwart2018astrophysical}. The AMUSE project aims to provide a flexible and modular framework for solving multi-physics problems in astrophysics. It offers a variety of community codes, classified into four main domains: gravitational dynamics, hydrodynamics, stellar evolution, and radiative transfer (Fig.~\ref{img:amuse_domains}). Some codes, such as GADGET-2 \citep{springel2005cosmological}, can cover more than one domaine.
+The numerical codes used in this work are accessed through the Astrophysical Multipurpose Software Environment (AMUSE; \citet{zwart2018astrophysical}). The AMUSE project aims to provide a flexible and modular framework for solving multi-physics problems in astrophysics. It offers a variety of community codes, classified into four main domains: gravitational dynamics, hydrodynamics, stellar evolution, and radiative transfer (Figure~\ref{img:amuse_domains}). Some codes, such as GADGET-2 \citep{springel2005cosmological}, can cover more than one domaine.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Esquemas/amuse_domains.png}
-	\caption{Principal domains in AMUSE framework. Multiple physical problems can be solved coupling codes from different domains}
+	\caption{Principal domains in AMUSE framework. Multiple physical problems can be solved coupling codes from different domains. Credits: \citet{zwart2018astrophysical}.}
 	\label{img:amuse_domains}
 \end{figure}
 
-The structure of amuse is composed of three principal layers (Fig.~\ref{img:amuse_structure}). The top layer is the user interface, where a Python script is written to set up and run a specific scientific problem. In this script, codes are initialized, and additional routines (e.g., for handling stellar collisions) can be implemented. This layer also contains the manager, whose primary functions are to provide data structures and methods for communication between the user script and the community codes, as well as to handle unit conversions.
-
-The middle layer provides the interfaces to the community codes. It facilitates bidirectional communication between the manager and the underlying code layer. Each interface consists of two components: a proxy, written in Python, which initializes the necessary functions and parameters, and a partner, written in the code's native language (e.g., C++, CUDA, or Fortran). The proxy and partner communicate via the Message Passing Interface (MPI).
-
-The bottom layer contains the community codes themselves, implemented in their native languages (e.g., C++, CUDA, Fortran).
+The structure of amuse is composed of three principal layers (Figure~\ref{img:amuse_structure}). The top layer is the user interface, where a Python script is written to set up and run a specific scientific problem. In this script, codes are initialized, and additional routines (e.g., for handling stellar collisions) can be implemented. This layer also contains the manager, whose primary functions are to provide data structures and methods for communication between the user script and the community codes, as well as to handle unit conversions. The middle layer provides the interfaces to the community codes. It facilitates bidirectional communication between the manager and the underlying code layer. Each interface consists of two components: a proxy, written in Python, which initializes the necessary functions and parameters, and a partner, written in the code's native language (e.g., C++, CUDA, or Fortran). The proxy and partner communicate via the Message Passing Interface (MPI). Finally, the bottom layer contains the community codes themselves.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{Esquemas/amuse_layers.png}
-	\caption{Schematic representation of the three-layer architecture of the AMUSE framework. The user interacts with the system via a Python script (top layer), which communicates through interfaces (middle layer) with the community codes (bottom layer).}
+	\caption{Schematic representation of the three-layer architecture of the AMUSE framework. The user interacts with the system via a Python script (top layer), which communicates through interfaces (middle layer) with the community codes (bottom layer). Credits: \citet{zwart2018astrophysical}.}
 	\label{img:amuse_structure}
 \end{figure}
 
 
-\section{N-body code: Ph4}
+\section{N-body code: PH4}
 \label{sec:3.2_NBody}
 
-The proposed scenarios presented in (referencia a capitulo) require high numerical precision to accurately model close encounters and direct collisions. We therefore employ the \texttt{ph4} N-body code from the AMUSE framework \citep{zwart2018astrophysical}.
-
-In this section, we include a description of the code, and some external routines.
+The proposed scenarios presented in Section~\ref{chap:2_SMBH_formation_scenario} requires high numerical precision to accurately model close encounters and direct collisions. We therefore employ the \texttt{ph4} N-body code from the AMUSE framework \citep{zwart2018astrophysical}. In this section, we include a description of the code, and the external routines implemented to handle collisions.
 
 \subsection{Hermite integrator}
 \label{subsec:3.2.1_Hermite}
 
-The Ph4 code uses a fourth-order Hermite integrator \citep{makino1992} for calculating the positions and velocities of stars due to gravity. This is a predictor-corrector method.
-
-The fourth-order Hermite scheme is based on a precise calculation of the individual time step. Considering the particle $i$ with its own time $t_i$, time step $\Delta t_i$, position $\mathbf{x}_i$, velocity $\mathbf{v}_i$, acceleration $\mathbf{a}_i$ and jerk $\dot{\mathbf{a}}_i$, all calculated at time $t_i$. The integration algorithm proceeds as follows:
+The \texttt{ph4} code uses a fourth-order Hermite integrator \citep{makino1992} to compute the positions and velocities of stars under gravity. This predictor-corrector method employs adaptive individual time steps, ensuring high accuracy in regions of strong gravitational interactions. Considering the particle $i$ with its own time $t_i$, time step $\Delta t_i$, position $\mathbf{x}_i$, velocity $\mathbf{v}_i$, acceleration $\mathbf{a}_i$ and jerk $\dot{\mathbf{a}}_i$, all calculated at time $t_i$. The integration algorithm proceeds as follows:
 
 \begin{enumerate}
 	\item Select the particle with the minimum $t_i + \Delta t_i$. Set the global time to $t=t_i + \Delta t_i$.
@@ -105,7 +185,7 @@ The fourth-order Hermite scheme is based on a precise calculation of the individ
 	\item Repeat the algorithm.
 \end{enumerate}
 
-A detailed derivation of the algorithm and the full set of equations are provided in Appendix~\ref{ap:A}. From Eqs.~(\ref{eq:ap_xpred}) and (\ref{eq:ap_velpred}), the predicted positions and velocities are:
+The interpolation uses the acceleration and jerk at the beginning and end of the time step, allowing the scheme to achieve fourth-order accuracy without explicitly computing higher-order derivatives. A detailed derivation of the algorithm and the full set of equations are provided in Appendix~\ref{ap:A}. From Eqs.~(\ref{eq:ap_xpred}) and (\ref{eq:ap_velpred}), the predicted positions and velocities are:
 
 \begin{align}
 	\mathbf{x}_{p, j} &= \mathbf{x}_j + \mathbf{v}_j (t - t_j) + \frac{\mathbf{a}_{0,j}}{2} (t - t_j)^2 + \frac{\dot{\mathbf{a}}_{0,j}}{3!} (t - t_j)^3 \\
@@ -138,18 +218,18 @@ The final corrected position and velocity of particle $i$ are then given by:
 
 These corrections incorporate terms up to fourth order. The main advantage of this method is that it only requires the explicit calculation of the acceleration and jerk at each step, with higher-order derivatives being obtained through the interpolation scheme.
 
-\subsection{Block Time Steps}
+\subsection{Block time steps}
 \label{subsec:3.2.2_Block_Tstep}
 
-An important part of the Hermite integrator is the time step calculation. The time step controls precision, energy conservation and integration time. While time steps are individual (each particle has its own), they are grouped into blocks for efficiency.
+While the Hermite integrator computes individual time steps for each particle, evolving particles one by one is computationally expensive. \texttt{ph4} therefore groups particles into block time steps, which are powers of two of the N-body time unit. This allows particles with the same time step to be integrated simultaneously, improving efficiency while maintaining synchronization. The choice of time step directly affects the accuracy of the integration, the conservation of energy, and the total computational cost.
 
-Time steps are set in two steps. First, a dynamic time step is calculated. Then, the time step is assigned using a block scheme. For the dynamical time step, the standard formula (\ref{eq:ap_tstep_std}) is used:
+In the block scheme, time steps are set in two steps. First, a dynamic time step is calculated. Then, the time step is assigned using a block scheme. For the dynamical time step, the standard formula (\ref{eq:ap_tstep_std}) is used:
 
 \begin{align}
 	\Delta t_i = \sqrt{\eta \frac{|\mathbf{a}_{1, i}| |\mathbf{a}^{(2)}_{1, i}| + |\dot{\mathbf{a}}_{1, i}|^2}{|\dot{\mathbf{a}}_{1, i}| |\mathbf{a}^{(3)}_{1, i}| + |\mathbf{a}^{(2)}_{1, i}|^2}} \label{eq:3.11}
 \end{align}
 
-As can be seen, $\mathbf{a}_{1, i}$ and $\dot{\mathbf{a}}_{1, i}$ are calculated in each step, while $\mathbf{a}^{(3)}_{1, i}$ is constant. Only $\mathbf{a}^{(2)}_{1, i}$ needs to be estimated:
+As can be noted, $\mathbf{a}_{1, i}$ and $\dot{\mathbf{a}}_{1, i}$ are calculated in each step, while $\mathbf{a}^{(3)}_{1, i}$ is constant. Only $\mathbf{a}^{(2)}_{1, i}$ needs to be estimated:
 
 \begin{align}
 	\mathbf{a}^{(2)}_{1, i} = \mathbf{a}^{(2)}_{0, i} + \Delta t_i \mathbf{a}^{(3)}_{1, i}
@@ -161,56 +241,34 @@ When the simulation begins, the initial time steps are calculated using (\ref{eq
 	\Delta t = \eta_s \frac{|\mathbf{a}|}{|\dot{\mathbf{a}}|} \label{eq:3.13}
 \end{align}
 
-The main algorithm of the Hermite 4th-order scheme evolves the particle with the minimum $t_j + \Delta t_j$. As it is expensive to evolve particles one by one, the goal is to assign particles to discrete time steps. In Ph4, time steps are set to powers of two of the N-body time units.
-
-During initialization, the time step is calculated using Equation (\ref{eq:3.13}), and then set. Given the initial time step $\Delta t_{0, j}$, the N-body time $\tau$, and an integer $n$:
+To avoid the computational cost of evolving particles individually, \texttt{ph4} assigns particles to discrete block time steps that are powers of two of the N-body time unit. Given the initial time step $\Delta t_{0, j}$ (calculated from Equation~\eqref{eq:3.13}), the N-body time $\tau$, and an integer $n$ is adjusted to the condition:
 
 \begin{equation}
 	0.5 < \frac{\tau 2^{n}}{\Delta t_{0, j}} < 1
 \end{equation}
 
-The time step is then set to $\tau 2^{n}$, with $n$ being able to be positive or negative.
-
-As the model evolves, the new time step is computed using (\ref{eq:3.11}). The time step is halved if the calculated time step is smaller than the current time step, and doubled if it is larger than twice the current time step.
-
-The advantage of this time step criterion is that the time step in the code is equal to or lower than that required by the dynamics. Moreover, since particles share the same time steps, they can be integrated simultaneously. Additionally, all particles can be synchronized, as their times are multiples of powers of two of the same time unit.
+Then, the initial time step of particles is then set to $\tau 2^{n}$, with $n$ being able to be positive or negative. As the model evolves, the new time step is computed using (\ref{eq:3.11}). The time step is halved if the calculated time step is smaller than the current time step, and doubled if it is larger than twice the current time step. The advantage of this time step criterion is that the time step in the code is equal to or lower than that required by the dynamics. Moreover, since particles share the same time steps, they can be integrated simultaneously. Additionally, all particles can be synchronized, as their times are multiples of powers of two of the same time unit.
 
 \subsection{Collisions and mergers}
 \label{subsec:3.2.3_Collisions_mergers}
 
-Stellar collisions occur in two steps. First, the collision is detected by the AMUSE routines in PH4, and then it is handled externally. PH4 has support for stopping conditions, specifically for collision detection.
-
-All particles in AMUSE have different properties: position, velocity, mass, radius, among others. When \texttt{collision\_detection} is enabled in PH4, the first filter is to check if two particles are closer than the sum of their radii:
-
-\begin{equation}
-	|\Delta \mathbf{x}| < r_i + r_j
-\end{equation}
-
-where $\Delta \mathbf{x}$ is the relative position vector between particles $i$ and $j$, and $r_i$, $r_j$ their respective radii. A second filter then verifies close encounters:
-
-\begin{equation}
-	\epsilon |\Delta \mathbf{x}| |\Delta \mathbf{v}| > \Delta \mathbf{x} \cdot \Delta \mathbf{v} 
-\end{equation}
-
-where $\Delta \mathbf{v}$ is the relative velocity vector and $\epsilon = 0.001$. This avoids cases where particle superposition results from hyperbolic encounters with predominantly tangential relative velocities.
-
-The stopping conditions allow the user to implement custom handling routines. For these simulations, we simply conserve linear momentum. When \texttt{collision\_detection} is triggered, the code modifies the properties of one particle (preferentially the more massive one), setting its mass to the sum of the masses, its position to the center of mass, its velocity to the center-of-mass velocity, and its radius to conserve mass density:
+Stellar collisions are detected through a two-stage filter. First, \texttt{ph4} checks whether two particles are closer than the sum of their radii: $|\Delta \mathbf{x}| < r_i + r_j$. A second filter then verifies close encounters using the criterion $ \epsilon |\Delta \mathbf{x}| |\Delta \mathbf{v}| > \Delta \mathbf{x} \cdot \Delta \mathbf{v}$, where $\epsilon = 0.001$. This avoids false detections caused by hyperbolic encounters with predominantly tangential relative velocities. Once a collision is detected, the flag \texttt{collision\_detection} in the code is activated, and a custom handling routine is executed. In our implementation, both particles involved in the collision are identified as particles $i$ and $j$, for the most and less massive between them, respectively. For particle $i$ their properties are modified, setting its mass to the sum of the masses, its position to the center of mass, its velocity to the center-of-mass velocity, and its radius to conserve mass density:
 
 \begin{align}
-	m_{\text{new}} &= m_i + m_j \\
-	\mathbf{x}_{\text{new}} &= \frac{m_i \mathbf{x}_{i} + m_j \mathbf{x}_{j}}{m_i + m_j} \\
-	\mathbf{v}_{\text{new}} &= \frac{m_i \mathbf{v}_{i} + m_j \mathbf{v}_{j}}{m_i + m_j} \\
-	r_{\text{new}} &= r_i \left(\frac{m_i + m_j}{m_i}\right)^{1/3} \\	
+	m_{i, \text{new}} &= m_i + m_j \\
+	\mathbf{x}_{i, \text{new}} &= \frac{m_i \mathbf{x}_{i} + m_j \mathbf{x}_{j}}{m_i + m_j} \\
+	\mathbf{v}_{i, \text{new}} &= \frac{m_i \mathbf{v}_{i} + m_j \mathbf{v}_{j}}{m_i + m_j} \\
+	r_{i, \text{new}} &= r_i \left(\frac{m_i + m_j}{m_i}\right)^{1/3}~. \\	
 \end{align}
 
-Finally, the other particle is removed from the simulation.
+Finally, particle $j$ is removed from the simulation.
 
 \subsection{Escaping stars}
 \label{subsec:3.2.4_Escapers}
 
-After each analysis time step, potential escapers are identified through a multi-stage detection algorithm. To maintain mass and energy conservation, escaped stars are not removed from the simulation. Instead we add an extra attribute, \texttt{escaped} (all stars begin with \texttt{particles.escaped = False}), to track bound and unbound stars for subsequent analysis. The process begins with defining an appropriate length scale.
+After each time step, potential escapers are identified through a multi-stage detection algorithm. To maintain mass and energy conservation, escaped stars are not removed from the simulation. Instead we add an extra attribute, \texttt{escaped} (all stars begin with \texttt{particles.escaped = False}), to track bound and unbound stars for subsequent analysis. 
 
-During initialization, the escape scale is defined as the minimum between ten times the virial radius and the Lagrangian radius containing the total mass: 
+To detect escaping stars, the first step is to define an appropriate length scale. In the initialization, the escape scale is defined as the minimum between ten times the virial radius and the Lagrangian radius containing the total mass: 
 
 \begin{equation}
 	r_{0, \text{esc}} = \min (10 \times r_{\text{vir}}, r_{100})
@@ -222,15 +280,13 @@ where $r_{100}$ represents the Lagrangian radius containing the total stellar ma
 	r_{\text{esc}} = \max (r_{\text{esc}}, 10 \times r_{b, \text{vir}})
 \end{equation}
 
-where $r_{b, \text{vir}}$ denotes the virial radius of bound stars.
-
-The escape detection algorithm, executed at each time step, proceeds as follows:
+where $r_{b, \text{vir}}$ denotes the virial radius of bound stars. The escape detection algorithm, executed at the end of each time step, proceeds as follows:
 
 \begin{enumerate}
-	\item Compute the core center and identify stars beyond the escape radius
-	\item Select gravitationally unbound stars
-	\item Identify stars with outward radial motion
-	\item Verify minimal gravitational influence on nearest neighbors
+	\item Compute the core center and identify stars beyond the escape radius.
+	\item Select gravitationally unbound stars.
+	\item Identify stars with outward radial motion.
+	\item Verify minimal gravitational influence on nearest neighbor.
 \end{enumerate}
 
 The core center location is determined using a density-weighted scheme following \cite{1993MNRAS.261..497S}. For each star, the distance to its 7th nearest neighbor ($r_{i,7}$) is computed, and the density center is calculated as:
@@ -245,9 +301,7 @@ This formulation resembles a center of mass calculation but uses local stellar d
 	|\mathbf{x}_i - \mathbf{x}_c| > r_{\text{esc}}
 \end{equation}
 
-are identified as potential escapers.
-
-Gravitational unbinding is evaluated using the total energy $E_i = E_{p,i} + E_{k,i}$, where $E_{p,i}$ is the gravitational potential energy (including contributions from both stars and gas) and $E_{k,i}$ is the kinetic energy. Stars with $E_i \leq 0$ are considered bound, while those with $E_i > 0$ are classified as unbound. Among unbound stars, outward-moving candidates are identified through the condition:
+are identified as potential escapers. Gravitational unbinding is evaluated using the total energy $E_i = E_{p,i} + E_{k,i}$, where $E_{p,i}$ is the gravitational potential energy (including contributions from both stars and gas) and $E_{k,i}$ is the kinetic energy. Stars with $E_i \leq 0$ are considered bound, while those with $E_i > 0$ are classified as unbound. Among unbound stars, outward-moving candidates are identified through the condition:
 
 \begin{equation}
 	\Delta\mathbf{x}_i \cdot \Delta\mathbf{v}_i > 0
@@ -265,9 +319,7 @@ The final validation step quantifies the gravitational influence on neighboring 
 	X_E := \frac{|e_{p,i}|}{e_{k,i}}
 \end{equation}
 
-Stars satisfying $X_E < 0.01$ are confirmed as escapers, ensuring minimal gravitational perturbation to neighboring stars. These stars are tagged as escapers (\texttt{particles.escaped = True}).
-
-
+Stars satisfying $X_E < 0.01$ are confirmed as escapers, ensuring minimal gravitational perturbation to neighboring stars. These stars are tagged as escapers (\texttt{particles.escaped = True}). Tagged escapers are excluded from subsequent dynamical calculations (e.g., core radius, density profiles), but they are not removed from the simulation, ensuring mass and energy conservation.
 
 \section{SPH code: Fi}
 \label{sec:3.3}
@@ -286,7 +338,7 @@ The tree is constructed by enclosing all particles within a root cell. If this c
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Esquemas/BHtree_plot.png}
+	\includegraphics[width=1\textwidth]{Esquemas/BHtree_plot.png}
 	\caption{Representation of an oct tree}
 	\label{img:oct_tree}
 \end{figure}
@@ -335,7 +387,7 @@ To obtain a discrete representation, the continuous Lagrangian is replaced by a 
 \end{equation}
 where $m_i$, $\mathbf{v}_i$, and $\rho_i$ are the mass, velocity, and density of each particle (representing a fluid element), and $u_i = u(\rho_i)$ is the specific internal energy. To use Eq.~\eqref{eq:3_lag_discrete} as the system's Lagrangian, a suitable expression for the density in terms of the particle coordinates is required.
 
-A key ingredient of the method is the density estimate. At any point $\mathbf{r}$, the density is computed by interpolating over neighboring particles:
+A key ingredient of the method is the density estimate. In SPH, the density at any point $\mathbf{r}$ is estimated by interpolating over neighboring particles:
 
 \begin{equation}
 	\rho(\mathbf{r}) = \sum_{j} m_j W(\mathbf{r} - \mathbf{r}_j; h),
@@ -364,7 +416,7 @@ With the density estimation and kernel defined, we now turn to the treatment of 
 	\label{eq:3_sph_h_constraint}
 \end{equation}
 
-where $M_{\mathrm{SPH}} = \bar{m} N_{\mathrm{nb}}$, with $\bar{m}$ the mean particle mass and $N_{\mathrm{nb}}$ the target number of neighbors. The term $\tilde{\rho}$ is an extra density introduced to prevent $h_i$ from diverging as $\rho_i \to 0$ \citep{pelupessy2005numerical}. This constraint can be incorporated into the variational principle via Lagrangian multipliers, yielding correction factors in the equations of motion (see AppendixB for the full derivation).
+where $M_{\mathrm{SPH}} = \bar{m} N_{\mathrm{nb}}$, with $\bar{m}$ the mean particle mass and $N_{\mathrm{nb}}$ the target number of neighbors. The term $\tilde{\rho}$ is an extra density introduced to prevent $h_i$ from diverging as $\rho_i \to 0$ \citep{pelupessy2005numerical}. This constraint can be incorporated into the variational principle via Lagrangian multipliers, yielding correction factors in the equations of motion (referencia a futuro).
 
 With the notation $W_{ij}(h_i) \equiv W(|\mathbf{r}_i - \mathbf{r}_j|, h_i)$ and the symmetrized kernel $\bar{W}_{ij} = [W_{ij}(h_i) + W_{ij}(h_j)]/2$, the equation of motion for particle $i$ becomes:
 
@@ -385,7 +437,9 @@ where the correction factor $f_i$ accounts for the variability of the smoothing 
 \end{equation}
 
 
-To handle discontinuities such as shocks, an artificial viscosity (AV) term $\Pi_{ij}$ is included. In SPH, entropy generation is confined to shocks through this viscous term. \texttt{Fi} implements the standard Monaghan artificial viscosity \citep{monaghan1992smoothed, pelupessy2005numerical}:
+To handle discontinuities such as shocks, an artificial viscosity (AV) term $\Pi_{ij}$ is included. In SPH, entropy generation is confined to shocks through this viscous term, which also prevents unphysical particle interpenetration. 
+
+\texttt{Fi} implements the standard Monaghan artificial viscosity \citep{monaghan1992smoothed, pelupessy2005numerical}:
 
 \begin{equation}
 	\Pi_{ij} = \frac{-\alpha \mu_{ij} \bar{c}_{ij} + \beta \mu_{ij}^2}{\bar{\rho}_{ij}}
@@ -403,7 +457,9 @@ with
 	\label{eq:3.45}
 \end{equation}
 
-where $\mathbf{v}_{ij} = \mathbf{v}_i - \mathbf{v}_j$ and $\mathbf{r}_{ij} = \mathbf{r}_i - \mathbf{r}_j$. The dimensionless parameters $\alpha$ and $\beta$ control the strength of the viscosity (default values are $\alpha = 0.5$, $\beta = 1.0$), and $\eta \ll 1$ prevents numerical divergences. Quantities overlaid with a bar are symmetrized averages (e.g., $\bar{c}_{ij} = (c_i + c_j)/2$ is the average sound speed). The AV is only activated when particles are approaching each other ($\mathbf{v}_{ij} \cdot \mathbf{r}_{ij} < 0$), ensuring that $\mu_{ij} \leq 0$ and therefore $\Pi_{ij} \geq 0$. As the term $-\nabla_i W_{ij}(h_i)$ is proportional to $(\mathbf{r}_i - \mathbf{r}_j) = \mathbf{r}_{ij}$ (see AppendixB), the AV acts to decrease kinetic energy, with the dissipated energy converted into thermal energy, thereby increasing the internal energy (or entropy) of the particles.
+where $\mathbf{v}_{ij} = \mathbf{v}_i - \mathbf{v}_j$ and $\mathbf{r}_{ij} = \mathbf{r}_i - \mathbf{r}_j$. The dimensionless parameters $\alpha$ and $\beta$ control the strength of the viscosity (default values are $\alpha = 0.5$, $\beta = 1.0$), and $\eta \ll 1$ prevents numerical divergences. Quantities overlaid with a bar are symmetrized averages, e.g., $\bar{c}_{ij} = (c_i + c_j)/2$. 
+
+The AV is only activated when particles are approaching each other ($\mathbf{v}_{ij} \cdot \mathbf{r}_{ij} < 0$), ensuring that $\mu_{ij} \leq 0$ and therefore $\Pi_{ij} \geq 0$. As the term $-\nabla_i W_{ij}(h_i)$ is proportional to $(\mathbf{r}_i - \mathbf{r}_j) = \mathbf{r}_{ij}$ (referencia a futuro), the AV acts to decrease kinetic energy, with the dissipated energy converted into thermal energy, thereby increasing the internal energy (or, equivalently, the entropic function, depending on the thermodynamic formulation chosen) of the particles.
 
 Finally, the thermodynamic evolution of the gas must be specified. \texttt{Fi} offers two formulations: evolving either the specific internal energy $u_i$ or the entropic function $A_i$ (related to the specific entropy). For an ideal gas with adiabatic index $\gamma$, these quantities are related through
 
@@ -412,9 +468,7 @@ Finally, the thermodynamic evolution of the gas must be specified. \texttt{Fi} o
 	u_i &= \frac{A_i}{\gamma - 1} \rho_i^{\gamma - 1} = \frac{P_i}{(\gamma - 1)\rho_i} \label{eq:3.44_int_energy},
 \end{align}
 
-where $A_i$ is the entropic function, which remains constant for adiabatic processes in the absence of shocks.
-
-The evolution equation for the entropic function is
+where $A_i$ is the entropic function, which remains constant for adiabatic processes in the absence of shocks. The evolution equation for the entropic function is
 
 \begin{equation}
 	\frac{dA_i}{dt} = -\frac{\gamma-1}{\rho_i^\gamma} (\Gamma - \Lambda) + \frac{1}{2} \frac{\gamma-1}{\rho_i^{\gamma-1}} \sum_{j=1}^N m_j \Pi_{ij} \mathbf{v}_{ij} \cdot \nabla_i \bar{W}_{ij}
@@ -426,17 +480,17 @@ where $\Gamma$ and $\Lambda$ represent external heating and cooling rates (both 
 	\frac{d u_i}{d t} = \sum_{j=1}^N m_j \left[ \frac{f_i}{2} \frac{p_i}{\rho_i^2} \nabla_i W_{ij}(h_i) +  \frac{f_j}{2} \frac{p_j}{\rho_j^2} \nabla_i W_{ij}(h_j)  + \Pi_{ij} \nabla_i \bar{W}_{ij}\right] \mathbf{v}_{ij} \label{eq:sph_energy_eq}
 \end{equation}
 
-For our simulations, we adopt the energy equation (Eq.~\eqref{eq:sph_energy_eq}), as it provides better numerical stability in the coupled stellar-gas framework (see Section (por hacer) for a detailed discussion).
+For our simulations, we adopt the energy equation (Eq.~\eqref{eq:sph_energy_eq}), as it provides better numerical stability in the coupled stellar-gas framework (referencia a futuro).
 
-\section{Coupling Strategy: The Bridge Method}
+\section{Coupling Strategy: The BRIDGE Method}
 \label{sec:3.4_Coupling_codes}
 
-The N-body and SPH codes operate as independent modules and must be coupled for mixed star-gas simulations. A key advantage of using SPH for the gas component is that both systems are represented by particles, which simplifies the implementation of gravitational interactions. In this section, we describe the coupling scheme employed in this work, based on the Bridge method \citep{fujii2007bridge} and follows the implementation of \citet{reinoso2024formation}.
+The N-body and SPH codes operate as independent modules and must be coupled for mixed star-gas simulations. A key advantage of using SPH for the gas component is that both systems are represented by particles, which simplifies the implementation of gravitational interactions. In this section, we describe the coupling scheme employed in this work, based on the \texttt{BRIDGE} method \citep{fujii2007bridge} and following the implementation of \citet{reinoso2024formation}.
 
 \subsection{Symplectic Integrator}
 \label{subsec:3.4.1_Symplectic_integrator}
 
-The Bridge method \citep{fujii2007bridge} employs a symplectic integrator, specifically the second-order leapfrog scheme. The evolution of a dynamical system can be described by Hamilton's equations:
+The \texttt{BRIDGE} method \citep{fujii2007bridge} employs a symplectic integrator, specifically the second-order leapfrog scheme. The evolution of a dynamical system can be described by Hamilton's equations:
 
 \begin{equation}
 	\frac{df}{dt} = \{f, H\},
@@ -513,10 +567,10 @@ This leads to the kick-drift-kick leapfrog integrator, which proceeds as follows
 
 where $\mathbf{a}_0 = \mathbf{a}(\mathbf{x}_0)$ and $\mathbf{a}_1 = \mathbf{a}(\mathbf{x}_1)$ are the accelerations due to the gravitational potential. The subscripts $0$, $1/2$, and $1$ denote quantities evaluated at times $t$, $t + \Delta t/2$, and $t + \Delta t$, respectively.
 
-\subsection{Bridge}
+\subsection{BRIDGE}
 \label{sec:3.4.2_Bridge}
 
-AMUSE includes an implementation of the original Bridge scheme. An example coupling an N-body code with an SPH code can be found in the AMUSE distribution at:
+AMUSE includes an implementation of the original \texttt{BRIDGE} scheme. An example coupling an N-body code with an SPH code can be found in the AMUSE distribution at:
 
 \path{amuse/examples/simple/gas_in_cluster.py}
 
@@ -544,15 +598,56 @@ Second, the force calculation may use different softening kernels: SPH codes oft
 	\label{img:softening_force_comparison}
 \end{figure}
 
-To handle these issues, \cite{reinoso2024formation} developed a modified Bridge implementation that uses the \texttt{FASTKICK} code to compute gravitational interactions between SPH and N-body particles. \texttt{FASTKICK} computes forces using a Plummer softening with a constant softening length $\bar{\epsilon}$, ensuring symmetry and consistency. The code provides a Python interface, making it compatible with AMUSE simulation scripts, with the computationally intensive force calculations performed in compiled languages (C/Fortran), and a GPU-accelerated version (C++/CUDA) is also available.
+To handle these issues, \citet{reinoso2024formation} developed a modified \texttt{BRIDGE} implementation that uses the \texttt{FASTKICK} code to compute gravitational interactions between SPH and N-body particles. \texttt{FASTKICK} computes forces using a Plummer softening with a constant softening length $\bar{\epsilon}$, ensuring symmetry and consistency. The code provides a Python interface, making it compatible with AMUSE simulation scripts, with the computationally intensive force calculations performed in compiled languages (C/Fortran), and a GPU-accelerated version (C++/CUDA) is also available.
 
-The modified Bridge algorithm proceeds as follows for each global time step $\Delta t$:
+The modified \texttt{BRIDGE} algorithm proceeds as follows for each global time step $\Delta t$:
 
 \begin{enumerate}
 	\item At time $t$, compute accelerations $\mathbf{a}_{\mathrm{NB},i}$ for all N-body particles due to SPH particles, and $\mathbf{a}_{\mathrm{SPH},i}$ for all SPH particles due to N-body particles, using \texttt{FASTKICK} with softening length $\bar{\epsilon}$. Kick velocities by $\Delta t/2$.
 	\item Evolve each code independently for a full time step $\Delta t$ (drift), updating positions via their own internal integrators.
 	\item Recompute accelerations using \texttt{FASTKICK} with the updated positions, and apply a second velocity kick of $\Delta t/2$.
 \end{enumerate}
+
+\subsection{Adaptive timestep}
+\label{sec:3.4.3_Adaptive_tstep}
+
+The evolution of the coupled system is controlled by the \texttt{BRIDGE} time step. At the end of each \texttt{BRIDGE} step, the time step is adjusted to accurately resolve the physics of the gas and the star-gas interaction. For the gas, the minimum free-fall time is calculated:
+
+\begin{equation}
+	t_{\rm ff} = \sqrt{\frac{3 \pi}{32 G \rho_{\max}}}~,
+\end{equation}
+
+where $\rho_{\max}$ is the maximum density among all SPH particles. For the gas-stars interaction, Courant-type time steps that depend on the acceleration between gas and star particles are calculated:
+
+\begin{align}
+	\Delta t_{\rm coup, gas} =& \min_i \left(f_{\rm coup} \sqrt{\frac{2h_i}{\mathbf{a}_{\mathrm{SPH}, i}}}\right) \label{eq:delta_t_coup:gas} \\
+	\Delta t_{\rm coup, stars} =& \min_i \left(f_{\rm coup} \sqrt{\frac{\epsilon_{\rm coup}}{\mathbf{a}_{\mathrm{NB, i}}}}\right)~,
+	\label{eq:delta_t_coup:stars}
+\end{align}
+
+where $h_i$ is the softening length of SPH particles, $\mathbf{a}_{\mathrm{SPH}, i}$ and $\mathbf{a}_{\mathrm{NB, i}}$ are the forces calculated by \texttt{FASTKICK} in the kick step, and $\epsilon_{\rm coup}$ is the softening length used by \texttt{FASTKICK} in the calculation of gravitational interactions. For $f_{\rm coup}=1$, Equations~\eqref{eq:delta_t_coup:gas} and~\eqref{eq:delta_t_coup:stars} set the minimum resolution for gas and stars interactions to be solved in the \texttt{BRIDGE} steps. Since $f_{\rm coup}$ is a security parameter, it is recommended to use values $<1$.
+
+Taking into account the minimum gas free-fall time (Equation~\eqref{eq:delta_t_coup:stars}) and the Courant-type time steps (Equations~\eqref{eq:delta_t_coup:gas} and \eqref{eq:delta_t_coup:stars}), the relevant time scale yields
+
+\begin{equation}
+	\tau_{\rm step} = \min(t_{\rm ff}, \Delta t_{\rm coup, gas}, \Delta t_{\rm coup, stars})~.
+\end{equation}
+
+Finally, the time step of \texttt{BRIDGE} is adjusted by the condition
+
+\begin{equation}
+	0.5\tau_{\rm step} \leq \frac{\tau}{2^n} \leq \tau_{\rm step}~,
+	\label{eq:Bridge_tstep_cond}
+\end{equation}
+
+with $\tau$ the crossing time of the stellar cluster and $n$ an integer. The time step of the \texttt{BRIDGE} $\Delta t_{\rm BRIDGE} = \tau/2^n$ is adjusted at the end of each \texttt{BRIDGE} step, and is also used in SPH code. Note that the adjusted time step is a power of two of the initial N-body time unit, consistent with the block time steps used for the N-body particles. Consequently, the three interacting codes are in synchrony. Figure~\ref{img:Bridge_diagram} shows a schematic of the coupling strategy.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Esquemas/Bridge_Diagram}
+	\caption{Scheme of the \texttt{BRIDGE} coupling strategy. In the kick steps, \texttt{FASTKICK} computes the mutual gravitational forces between stars and gas, and the velocities of both components are updated. In the drift step, each code evolves its particles independently: \texttt{Ph4} handles stellar dynamics (including collision detection and mergers), while \texttt{Fi} evolves the gas. After the kick-drift-kick cycle, the global \texttt{BRIDGE} time step is updated based on the gas free-fall time and the coupling timescales ($t_{\rm ff}$, $\Delta t_{\rm coup, gas}$, $\Delta t_{\rm coup, stars}$). This updated timestep is used for both the next \texttt{BRIDGE} step and the \texttt{Fi} integration. Additionally, escaped N-body particles are identified and tagged in the post-processing phase.}
+	\label{img:Bridge_diagram}
+\end{figure}
 
 \chapter{Initial Conditions and Setup}
 \label{sec:4_Initial_conditions}
@@ -562,7 +657,7 @@ Chapter \ref{cap:3_Numerical_Methods} described the numerical methods used in th
 \section{Plummer distribution}
 \label{sec:4.1_Plummer_dist}
 
-The scenario presented in Section \ref{sec:2.1_collisions_criterion} and proposed by \citet{escala2021observational} was previously explored by \citet{vergara2023global} through simulations sampling different collisional regimes. These models represent stellar systems characterized by their initial mass and size scale. The stellar clusters are initialized using a Plummer distribution \citep{plummer1911problem}. The Plummer model is characterized by the potential \citep{binney2011galactic}:
+The scenario presented in Chapter \ref{chap:2_SMBH_formation_scenario} and proposed by \citet{escala2021observational} was previously explored by \citet{vergara2023global} through simulations sampling different collisional regimes. These models represent stellar systems characterized by their initial mass and size scale. The stellar clusters are initialized using a Plummer distribution \citep{plummer1911problem}. The Plummer model is characterized by the potential \citep{2008gady.book.....B}:
 
 \begin{equation}
 	\Phi_p(r) = -\frac{GM}{\sqrt{r^2 + b^2}},\quad \text{with } r = |\mathbf{r}|
@@ -581,7 +676,7 @@ The potential energy of a Plummer model is:
 	\label{eq:4.3_Upl}
 \end{equation}
 
-Now we need a description for velocity. The velocity dispersion $\sigma$ for an isotropic spherical stellar system can be obtained through the Jeans equation \citep{binney2011galactic}:
+Now we need a description for velocity. The velocity dispersion $\sigma$ for an isotropic spherical stellar system can be obtained through the Jeans equation \citep{2008gady.book.....B}:
 
 \begin{equation}
 	\frac{d(\rho \sigma^2)}{d r} = -\rho \frac{d \Phi}{d r}
@@ -590,18 +685,18 @@ Now we need a description for velocity. The velocity dispersion $\sigma$ for an 
 Solving for the Plummer model we have the dispersion velocity:
 
 \begin{equation}
-	\sigma_p(r) = \frac{GM}{6\sqrt{r^2 + b^2}}
+	\sigma_p(r)^2 = \frac{GM}{6\sqrt{r^2 + b^2}}
 \end{equation}
 
-We can relate the Plummer scale parameter $b$ with a physical scale. First, we define a characteristic system radius $R$ via the potential energy:
+We can relate the Plummer scale parameter $b$ with a physical scale. First, we use the definition of virial radius as the characteristic system radius $R$ via the potential energy $U$:
 
 \begin{align}
 	-\frac{GM^2}{2R} =& U \\
-	\frac{1}{R} =& -\frac{2}{GM^2}U
+	\frac{1}{R} =& -\frac{2}{GM^2}U~,
 	\label{eq:4.7_virial_radius}
 \end{align}
 
-Where $U$ is the total gravitational potential energy. In the case of a system of $N$ particles, this radius is defined as:
+where $U$ is the total gravitational potential energy. In the case of a system of $N$ particles, this radius is defined as:
 
 \begin{equation}
 	R = \left(\frac{1}{M^2} \sum_{i,j \neq i}^{N}\frac{m_i m_j}{|\mathbf{r}_i - \mathbf{r_j}|}\right)^{-1}
@@ -619,14 +714,14 @@ Once the physical scale of the system is defined via $b$ (or equivalently $R$), 
 \subsection{N-body units}
 \label{sec:4.2_Nbody_units}
 
-Most gravitational N-body codes employ a dimensionless system of units, known as N-body units or Hénon units (see \cite{10.1007/BFb0116419}). In this system, physical quantities are scaled to be of order unity, which brings two main benefits: (i) it eliminates the need to multiply by $G$ in every force calculation, and (ii) it improves numerical precision by keeping variables close to unity, thereby minimizing round-off errors that would otherwise arise when working with astrophysical scales spanning many orders of magnitude. Additionally, N-body units facilitate comparison between results obtained with different codes.
+Most gravitational N-body codes employ a dimensionless system of units, known as N-body units or Hénon units (see \citet{10.1007/BFb0116419}). In this system, physical quantities are scaled to be of order unity, which brings two main benefits: (i) it eliminates the need to multiply by $G$ in every force calculation, and (ii) it improves numerical precision by keeping variables close to unity, thereby minimizing round-off errors that would otherwise arise when working with astrophysical scales spanning many orders of magnitude. Additionally, N-body units facilitate comparison between results obtained with different codes.
 
 N-body units are defined by setting the gravitational constant, total mass, and total energy to convenient values:
 
 \begin{align}
 	G =& 1 \\
 	M =& 1 \\
-	E =& -\frac{1}{4} \\
+	E =& -\frac{1}{4}
 \end{align}
 
 With this, the unit of mass, length and time can been defined. The mass unit is simply the total mass:
@@ -673,7 +768,7 @@ With $G=1$, $M=1$, and $E=-1/4$, we obtain $t_{\mathrm{cross}} = 2^{3/2}$. The s
 	u_t = t_{cross}2^{-2/3} = \frac{GM^{5/2}}{(-4E)^{3/2}}
 \end{equation}
 
-which indeed yields $u_t = 1$ for $G=1$, $M=1$ and $E=-1/4$. Note that defining the unit system requires only a scale radius and the total mass of the system. AMUSE provides its own physical units system, which can be converted to N-body units using a converter. In AMUSE, N-body units are handled through the \pythonfunc{nbody\_system} class, which requires at least two physical quantities—typically the total mass and the virial radius. The following example illustrates how to initialize a converter:
+which indeed yields $u_t = 1$ for $G=1$, $M=1$ and $E=-1/4$. Note that defining the unit system requires only a scale radius and the total mass of the system. AMUSE provides its own physical units system, which can be converted to N-body units using a converter. In AMUSE, N-body units are handled through the \pythonfunc{nbody\_system} class, which requires at least two physical quantities, typically the total mass and the virial radius. The following example illustrates how to initialize a converter:
 
 \begin{lstlisting}[caption=How to define a converter in AMUSE, label=lst:create_converter]
 	from amuse.units import units, nbody_system
@@ -689,58 +784,175 @@ The converter serves a bidirectional role: it translates physical quantities (e.
 \section{Stars and Gas Initial Conditions}
 \label{sec:4.2_stars_gas_IC}
 
-For the results presented in Chapter \ref{cap:5_results_analysis}, we adopt the same initial conditions as the models in \citet{vergara2023global}. For each model, we consider four variations: one with stars only, and three with gas fractions of $5\%$, $10\%$, and $20\%$ added. The initial conditions for models with stars only (we use the same notation for letters in \cite{vergara2023global}) are presented in table \ref{tab:4.1_models_IC}:
+For the results presented in Chapter \ref{cap:5_results_analysis}, we adopt the same initial conditions as the models in \citet{vergara2023global}. For each model, we perform four simulations with different gas fractions, using the same stellar initial conditions (same as in \citet{vergara2023global}) for all gas fractions. We use the notation of family model to reference the four variations of a specific model. For example, the model family A is composed of the four models A$_0$, A$_5$, A$_{10}$ and A$_{20}$, where the capital letter indicate that they share the same initial conditions for stellar cluster, and the suffix indicate the percentage of mass of the gas component added. Table~\ref{tab:4.1_models_IC} summarizes the initial conditions of stellar components of each model.
 
 \begin{table}[!ht]
 	\centering
-	\begin{tabular}{|clrrrll|}
-		\hline
-		\rowcolor[gray]{0.8}
-		\textbf{Models ID} & $R_v$ [pc] & $M$ [$M_\odot$] & $N$ & $m_s$ [$M_\odot$] & $r_s$ [$R_\odot$] & $\sigma$ [$km/s$]\\
-		\hline
-		
-		\rowcolor[gray]{1}
-		A & 0.005  & $5 \times 10^4$  & $10^3$  & 50  & 11.7  & ?? \\
-		
-		\rowcolor[gray]{0.9}
-		B & 0.005  & $2.5 \times 10^4$  & $5 \times 10^2$  & 50  & 11.7  & ?? \\
-		
-		\rowcolor[gray]{1}
-		C & 0.005  & $10^4$  & $10^3$  & 10  & 4.7  & ?? \\
-		
-		\rowcolor[gray]{0.9}
-		D & 0.005  & $5 \times 10^3$  & $5 \times 10^2$  & 10  & 4.7  & ?? \\
-		
-		\rowcolor[gray]{1}
-		F & 0.005  & $10^3$  & $10^3$  & 1  & 1  & ?? \\
-		
-		\rowcolor[gray]{0.9}
-		H & 0.01  & $5 \times 10^4$  & $5 \times 10^3$  & 10  & 4.7  & ?? \\
-		
-		\rowcolor[gray]{1}
-		I & 0.01  & $10^4$  & $10^3$  & 10  & 4.7  & ?? \\
-		
-		\rowcolor[gray]{0.9}
-		J & 0.01  & $5 \times 10^3$  & $5 \times 10^3$  & 1  & 1  & ?? \\
-		
-		\rowcolor[gray]{1}
-		K & 0.01  & $10^3$  & $10^3$  & 1  & 1  & ?? \\
-		
-		\rowcolor[gray]{0.9}
-		L & 0.1  & $5 \times 10^5$  & $10^4$  & 50  & 11.7  & ?? \\
-		
-		\rowcolor[gray]{1}
-		M & 0.1  & $10^5$  & $10^4$  & 10  & 4.7  & ?? \\
-		
-		\rowcolor[gray]{0.9}
-		N & 0.1  & $10^4$  & $10^4$  & 1  & 1  & ?? \\
-		\hline
-	\end{tabular}
-	\caption{Initial conditions for stars systems}
-	\label{tab:4.1_models_IC}
+	\begin{threeparttable}
+		\begin{tabular}{clrrrrr}
+			\hline
+			\rowcolor[gray]{0.8}
+			\textbf{Model ID}\tnote{1} & $R_v$ [pc] & $M$ [$M_\odot$] & $N$ & $m_s$ [$M_\odot$] & $r_s$ [$R_\odot$] & $\sigma$ [$km/s$]\\
+			\hline
+
+			A & 0.005  & $5 \times 10^4$  & $10^3$  & 50  & 11.7  & 146.66 \\
+			
+			B & 0.005  & $2.5 \times 10^4$  & $5 \times 10^2$  & 50  & 11.7  & 103.71 \\
+			
+			C & 0.005  & $10^4$  & $10^3$  & 10  & 4.7  & 65.59 \\
+
+			D & 0.005  & $5 \times 10^3$  & $5 \times 10^2$  & 10  & 4.7  & 46.38 \\
+
+			F & 0.005  & $10^3$  & $10^3$  & 1  & 1.0  & 20.74 \\
+
+			H & 0.01  & $5 \times 10^4$  & $5 \times 10^3$  & 10  & 4.7  & 103.71 \\
+
+			I & 0.01  & $10^4$  & $10^3$  & 10  & 4.7  & 46.38 \\
+
+			J & 0.01  & $5 \times 10^3$  & $5 \times 10^3$  & 1  & 1.0  & 32.79 \\
+
+			K & 0.01  & $10^3$  & $10^3$  & 1  & 1.0  & 14.66 \\
+
+			L & 0.1  & $5 \times 10^5$  & $10^4$  & 50  & 11.7  & 103.71 \\
+
+			M & 0.1  & $10^5$  & $10^4$  & 10  & 4.7  & 46.38 \\
+
+			N & 0.1  & $10^4$  & $10^4$  & 1  & 1.0  & 14.67 \\
+	        \end{tabular}
+	        
+	        \begin{tablenotes}
+	        	\item[1] The "Model ID" column identifies the family of models. All members of a given family (e.g., A$_0$, A$_5$, A$_{10}$, and A$_{20}$) share the same stellar initial conditions, which are listed here with capital letters with no suffix (A, B, C, etc.).
+	        \end{tablenotes}
+        \end{threeparttable}
+        \caption{Initial conditions for stars systems.}
+        \label{tab:4.1_models_IC}
 \end{table}
 
-In the table, $R_v$, $M$, $N$, and $\sigma$ denote the virial radius, total mass, number of stars, and velocity dispersion of the stellar system, respectively. The initial mass and radius of each star are given by $m_s$ and $r_s$. A full description of each model with their variations can be found in Appendix \ref{ap:C}. Both the stellar and gaseous systems are generated using the AMUSE implementation of the Plummer model. For example, to generate a stellar system with the initial conditions of model A, we first initialize a converter:
+In the table, $R_v$, $M$, $N$, and $\sigma$ denote the virial radius, total mass, number of stars, and velocity dispersion of the stellar system, respectively. The initial mass and radius of each star are given by $m_s$ and $r_s$. Each variant of a family model have the same initial conditions for the stellar system. For the gas-free models, the stellar clusters are initialized in virial equilibrium ($2K + U = 0$). For models with gas, the stellar component retains the same initial velocities and is therefore not in virial equilibrium with the total mass (stars and gas). The total system is subvirial, with $2K<|U_{\rm total}|$, and will evolve dynamically toward a new equilibrium. The gas is initialized in hydrostatic equilibrium, supported by pressure in the gravitational potential of the stars. As the gas has zero initial velocity, it is far from virial equilibrium and will adjust on a dynamical timescale. The initial conditions of gas components are presented in Table~\ref{tab:4.1_models_IC_gas}, where $q=M_{\rm SPH}/M$, $M_{\rm SPH}$ is the total mass of SPH particles, $N_{\rm SPH}$ and $m_{\rm SPH}$ are the total number and mass per SPH particle, and $c_{\rm s}$ is the sound speed of the gas component, calculated as the mass-weighted average within the virial radius.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{clrrrr}
+		\hline
+		\rowcolor[gray]{0.8}
+		\textbf{Model ID} & $q$ & $M_{\rm SPH}$ [$M_\odot$] & $N_{\rm SPH}$ & $m_{\rm SPH}$ [$M_\odot$] & $c_{\rm s}$ [$km/s$]\\
+		\hline
+		
+		\rowcolor[gray]{1}
+		A$_{5}$ & 0.05  & $2.5 \times 10^3$  & $5 \times 10^3$  & 0.5  & 95.97 \\
+		
+		\rowcolor[gray]{1}
+		A$_{10}$ & 0.1  & $5 \times 10^3$  & $10^4$  & 0.5  & 96.67 \\
+		
+		\rowcolor[gray]{1}
+		A$_{20}$ & 0.2  & $ 10^4$  & $2 \times 10^4$  & 0.5  & 96.90 \\
+		
+		\rowcolor[gray]{0.9}
+		B$_{5}$ & 0.05  & $1.25 \times 10^3$  & $2.5 \times 10^3$  & 0.5  & 66.35 \\
+		
+		\rowcolor[gray]{0.9}
+		B$_{10}$ & 0.1  & $2.5 \times 10^3$  & $5 \times 10^3$  & 0.5  & 67.17 \\
+		
+		\rowcolor[gray]{0.9}
+		B$_{20}$ & 0.2  & $5 \times 10^3$  & $10^4$  & 0.5  & 68.11 \\
+		
+		\rowcolor[gray]{1}
+		C$_{5}$ & 0.05  & $5 \times 10^2$  & $5 \times 10^3$  & 0.1  & 43.10 \\
+		
+		\rowcolor[gray]{1}
+		C$_{10}$ & 0.1  & $10^3$  & $10^4$  & 0.1  & 43.24 \\
+		
+		\rowcolor[gray]{1}
+		C$_{20}$ & 0.2  & $2 \times 10^3$  & $2 \times 10^4$  & 0.1  & 43.35 \\
+		
+		\rowcolor[gray]{0.9}
+		D$_{5}$ & 0.05  & $2.5 \times 10^2$  & $2.5 \times 10^3$  & 0.1  & 29.77 \\
+		
+		\rowcolor[gray]{0.9}
+		D$_{10}$ & 0.1  & $5 \times 10^2$  & $5 \times 10^3$  & 0.1  & 30.51 \\
+		
+		\rowcolor[gray]{0.9}
+		D$_{20}$ & 0.2  & $10^3$  & $10^4$  & 0.1  & 30.46 \\
+		
+		\rowcolor[gray]{1}
+		F$_{5}$ & 0.05  & $5 \times 10^1$  & $5 \times 10^3$  & 0.01  & 13.63 \\
+		
+		\rowcolor[gray]{1}
+		F$_{10}$ & 0.1  & $10^2$  & $10^4$  & 0.01  & 13.64 \\
+		
+		\rowcolor[gray]{1}
+		F$_{20}$ & 0.2  & $2 \times 10^2$  & $2 \times 10^4$  & 0.01  & 13.72 \\
+		
+		\rowcolor[gray]{0.9}
+		H$_{5}$ & 0.05  & $2.5 \times 10^3$  & $2.5 \times 10^4$  & 0.1  & 68.50 \\
+		
+		\rowcolor[gray]{0.9}
+		H$_{10}$ & 0.1  & $5 \times 10^3$  & $5 \times 10^4$  & 0.1  & 68.57 \\
+		
+		\rowcolor[gray]{0.9}
+		H$_{20}$ & 0.2  & $10^4$  & $10^5$  & 0.1  & 69.04 \\
+		
+		\rowcolor[gray]{1}
+		I$_{5}$ & 0.05  & $5 \times 10^2$  & $5 \times 10^3$  & 0.1 & 30.25 \\
+		
+		\rowcolor[gray]{1}
+		I$_{10}$ & 0.1  & $10^3$  & $10^4$  & 0.1 & 30.24 \\
+		
+		\rowcolor[gray]{1}
+		I$_{20}$ & 0.2  & $2 \times 10^3$  & $2 \times 10^4$  & 0.1 & 30.72 \\
+		
+		\rowcolor[gray]{0.9}
+		J$_{5}$ & 0.05  & $2.5 \times 10^2$  & $2.5 \times 10^4$  & 0.01 & 21.64 \\
+		
+		\rowcolor[gray]{0.9}
+		J$_{10}$ & 0.1  & $5 \times 10^2$  & $5 \times 10^4$  & 0.01 & 21.85 \\
+		
+		\rowcolor[gray]{0.9}
+		J$_{20}$ & 0.2  & $10^3$  & $10^5$  & 0.01 & 21.78 \\
+		
+		\rowcolor[gray]{1}
+		K$_{5}$ & 0.05  & $5 \times 10^1$  & $5 \times 10^3$  & 0.01 & 9.65 \\
+		
+		\rowcolor[gray]{1}
+		K$_{10}$ & 0.1  & $10^2$  & $10^4$  & 0.01 & 9.62 \\
+		
+		\rowcolor[gray]{1}
+		K$_{20}$ & 0.2  & $2 \times 10^2$  & $2 \times 10^4$  & 0.01 & 9.63 \\
+		
+		\rowcolor[gray]{0.9}
+		L$_{5}$ & 0.05  & $2.5 \times 10^4$  & $5 \times 10^4$  & 0.5 & 68.84 \\
+		
+		\rowcolor[gray]{0.9}
+		L$_{10}$ & 0.1  & $5 \times 10^4$  & $10^5$  & 0.5 & 68.85 \\
+		
+		\rowcolor[gray]{0.9}
+		L$_{20}$ & 0.2  & $10^5$  & $2 \times 10^5$  & 0.5 & 69.15 \\
+		
+		\rowcolor[gray]{1}
+		M$_{5}$ & 0.05  & $5 \times 10^3$  & $5 \times 10^4$  & 0.1 & 30.76 \\
+		
+		\rowcolor[gray]{1}
+		M$_{10}$ & 0.1  & $10^4$  & $10^5$  & 0.1 & 30.84 \\
+		
+		\rowcolor[gray]{1}
+		M$_{20}$ & 0.2  & $2 \times 10^4$  & $2 \times 10^5$  & 0.1 & 30.90 \\
+		
+		\rowcolor[gray]{0.9}
+		N$_{5}$ & 0.05  & $5 \times 10^2$  & $5 \times 10^4$  & 0.01 & 9.76 \\
+		
+		\rowcolor[gray]{0.9}
+		N$_{10}$ & 0.1  & $10^3$  & $10^5$  & 0.01 & 9.71 \\
+		
+		\rowcolor[gray]{0.9}
+		N$_{20}$ & 0.2  & $2 \times 10^3$  & $2 \times 10^5$  & 0.01 & 9.78 \\
+	\end{tabular}
+	\caption{Initial conditions for gas systems}
+	\label{tab:4.1_models_IC_gas}
+\end{table}
+
+\subsection{Particles generation}
+
+Both the stellar and gaseous systems are generated using the AMUSE implementation of the Plummer model. To generate a stellar system with the initial conditions of model A for example, we first initialize a converter:
 
 \begin{lstlisting}[caption=Converter example for model A, label=lst:conv_model_A]
 	from amuse.units import units, nbody_system
@@ -750,7 +962,7 @@ In the table, $R_v$, $M$, $N$, and $\sigma$ denote the virial radius, total mass
 	converter = nbody_system.nbody_to_si(R_vir, M_stars)
 \end{lstlisting}
 
-After importing the \pythonfunc{plummer} module, the stellar particles are generated by calling \pythonfunc{new\_plummer\_model} with the converter and number of particles:
+After importing the \pythonfunc{plummer} module, the stellar particles are generated by calling the function \pythonfunc{new\_plummer\_model} with the converter and number of particles:
 
 \begin{lstlisting}[caption=Stars particles in model A, label=lst:stars_part_A]
 	from amuse.ic import plummer
@@ -762,7 +974,7 @@ After importing the \pythonfunc{plummer} module, the stellar particles are gener
 
 The \pythonfunc{radius\_cutoff} parameter truncates the distribution at $5b$, where $b$ is the Plummer scale parameter (here corresponding to a virial radius $R_v = 0.005$ pc). Setting \pythonfunc{do\_scale=True} ensures that the generated particles are scaled to N-body units, satisfying the virial conditions described in Section \ref{sec:4.2_Nbody_units} (total mass $M=1$, total energy $E=-1/4$, kinetic energy $T=1/4$, and potential energy $U=-1/2$).
 
-For the gaseous component, we use AMUSE's \pythonfunc{gasplummer} module to generate the SPH particles. The number of gas particles is chosen such that the mass ratio $m_{\mathrm{SPH}} / m_{\mathrm{NB}} = 0.01$, where $m_{\mathrm{SPH}}$ is the (equal) mass of each SPH particle and $m_{\mathrm{NB}}$ is the mass of each N-body particle. For example, for the variation with $20\%$ of gas for model A, denoted $\text{A}_{20}$, the gas particles are generated as follows:
+For the gaseous component, we use \pythonfunc{gasplummer} function from module \pythonfunc{amuse.ic} to generate the SPH particles. The number of gas particles is chosen such that the mass ratio $m_{\rm SPH} / m_{\rm NB} = 0.01$, where $m_{\rm NB}$ is the mass of each N-body particle. For example, for the variation with $20\%$, A$_{20}$, the gas particles are generated as follows:
 
 \begin{lstlisting}[caption=Gas particles in model A, label=lst:gas_part_A]
 	from amuse.ic import gasplummer
@@ -778,39 +990,225 @@ For the gaseous component, we use AMUSE's \pythonfunc{gasplummer} module to gene
 	gas.mass = (M_stars*f_gas / N_gas)
 \end{lstlisting}
 
-While the stellar component is initialized in virial equilibrium (with velocities scaled accordingly), the gas particles are generated with zero initial velocity. Instead, their internal energy is adjusted to achieve hydrostatic equilibrium. For a fluid in hydrostatic equilibrium,
+While the stellar component is initialized in virial equilibrium with respect to its own mass, the gas particles are initially at rest. To prevent immediate collapse, their internal energy is set to achieve hydrostatic equilibrium in the gravitational potential of the stellar cluster. For a fluid in hydrostatic equilibrium,
 
 \begin{equation}
-	\nabla p = - \rho \nabla \Phi
+	\nabla p = - \rho \nabla \Phi~,
 \end{equation}
 
 where $p$, $\rho$, $\Phi$ stand for the pressure, density and gravitational potential. Assuming a polytropic equation of state (Eqs.~\ref{eq:3.43_poly_eq_state} and \ref{eq:3.44_int_energy}), this condition gives a relation for the specific internal energy $u$:
 
 \begin{equation}
-	u = - \frac{\Phi}{\gamma}
+	u = - \frac{\Phi}{\gamma}~,
 \end{equation}
 
 where $\gamma$ is the polytropic index. 
 
-The initialization described in Listing~\ref{lst:gas_part_A} raises a potential issue. The gas particles are generated using a converter scaled to the total stellar mass ($M = 5\times10^4\,\mathrm{M_\odot}$), and their internal energy is set accordingly to achieve hydrostatic equilibrium in the combined potential. However, after generation, we explicitly reduce the gas mass to $f_{\mathrm{gas}} M$ (in this case, $20\%$ of the stellar mass). In isolation, this reduction would lead to an imbalance: the gravitational force from the gas diminishes, while the internal pressure remains unchanged, causing the gaseous component to expand. However, because the gas is embedded in and gravitationally coupled to the stellar system, the dominant contribution to the potential comes from the stars. We therefore expect the gas to remain near dynamical equilibrium, with any minor adjustments occurring on a dynamical timescale as the simulation evolves. 
+The initialization described in Listing~\ref{lst:gas_part_A} raises a potential issue. The gas particles are generated using a converter scaled to the total stellar mass ($M = 5\times10^4\,\mathrm{M_\odot}$), and their internal energy is set accordingly to achieve hydrostatic equilibrium in the combined potential. However, after generation, we explicitly reduce the gas mass to $f_{\mathrm{gas}} M$ (in this case, $20\%$ of the stellar mass). In isolation, this reduction would lead to an imbalance: the gravitational force from the gas diminishes, while the internal pressure remains unchanged, causing the gaseous component to expand. However, because the gas is embedded in and gravitationally coupled to the stellar system, the dominant contribution to the potential comes from the stars. We therefore expect the gas to remain near dynamical equilibrium, with any minor adjustments occurring on a dynamical timescale as the simulation evolves.
 
 \section{Numerical Parameters}
 \label{sec:4.3_Numerical_parameters}
 
-\chapter{Results and analysis}
-\label{cap:5_results_analysis}
+Having described the numerical methods in the previous chapter, we now detail the specific parameter configurations used for each code. As discussed in Section~\ref{sec:3.1_AMUSE}, the AMUSE framework provides a unified interface that connects Python scripts with compiled codes through class structures. Each code is accessible via the community module, e.g., \pythonfunc{amuse.community.ph4.interface} for \texttt{Ph4}. The following example illustrates how to create an instance of \texttt{Ph4}:
 
-\section{Gas-Free Baseline Simulations}
-\label{sec:5.1_gas_free_sim}
+\begin{lstlisting}[caption=Instance creation for \texttt{Ph4}, label=lst:Ph4_instance]
+	from amuse.community.ph4.interface import ph4
+	
+	grav = ph4()
+\end{lstlisting}
 
-\section{Effects of Gas Fraction on Collision Rates}
-\label{sec:5.2_gas_effect}
+In listing~\ref{lst:Ph4_instance}, \pythonfunc{grav} is an instance of the class \pythonfunc{amuse.community.ph4.interface.ph4} (shortened \pythonfunc{ph4}). The code classes have a variety of parameters and internal methods, whose principal functionality is to set up the parameters and particles before running the code. Most codes run in N-body units; however, they have the possibility to work with physical units. In the following, we show how to correctly initialize and run an instance of \pythonfunc{ph4}, with the creation of particles using a Plummer distribution, and using a converter:
 
-\section{Massive Object Formation}
-\label{sec:5.3_MO_formation}
+\begin{lstlisting}[caption=Example setup for \texttt{Ph4} with particles, label=lst:Ph4_inst_and_run]
+	from amuse.community.ph4.interface import ph4
+	from amuse.units import units, nbody_system
+	from amuse.ic.plummer import new_plummer_model
+	
+	# Step 1, creation of a converter and particles
+	virial_radius = 1 | units.pc
+	total_mass = 1000 | units.MSun
+	N_stars = 1000
+	
+	converter = nbody_system.nbody_to_si(total_mass, virial_radius)
+	
+	bodies = new_plummer_model(N_stars, 
+	                                           convert_nbody=converter, 
+	                                           do_scale=True)
+	bodies.radius = 1 | units.RSun
+	
+	# Step 2, creation of an instance of the code
+	grav = ph4(converter, 
+						 mode = 'cpu',
+						 number_of_workers=1)
+	
+	grav.initialize_code()
+	grav.parameters.epsilon_squared = (1 | units.RSun) ** 2
+	
+	# Step 3, adding particles
+	grav.particles.add_particles(bodies)
+	grav.commit_particles()
+	
+	# Step 4, enable collision detection
+	sc_col_det = grav.stopping_conditions.collision_detection
+	sc_col_det.enable()
+\end{lstlisting}
 
-\section{Comparative Analysis Across Gas Fractions}
-\label{sec:5.4_comparisson_gas_frac}
+In listing~\ref{lst:Ph4_inst_and_run}, we have created a converter. The principal function of the converter is to translate units from the N-body system of units (see Section~\ref{sec:4.2_Nbody_units}), to the international system of units. The converter needs the virial radius and total mass, then escalates quantities such that one N-body unit of length is equal to the virial radius. When the instance of \pythonfunc{ph4} is created, we provided the converter, the \pythonfunc{mode} (where options are \pythonfunc{'gpu'} and \pythonfunc{'cpu'}), and the \pythonfunc{number\_of\_workers}, that controls the number of cpus used in parallel calculations. Since the stopping condition for detection of collisions is enabled, is necessary to provide a function to handle collisions. Then, we can evolve the instance of \pythonfunc{grav}. The next listing shows a minimalist loop:
+
+\begin{lstlisting}[caption=Loop with evolution for \texttt{Ph4}, label=lst:Ph4_loop_evolve]
+	from amuse.community.ph4.interface import ph4
+	from amuse.units import units, nbody_system
+	from amuse.ic.plummer import new_plummer_model
+	
+	t_end = 1000 | units.yr
+	
+	# Principal loop
+	while grav.model_time < t_end:
+		grav.evolve_model(t_end)
+		
+		if sc_col_det.is_set():
+			solve_collision(grav, sc_col_det)
+\end{lstlisting}
+
+where \pythonfunc{solve\_collision} is a function that handles the collisions. Note that when a collision is detected, the code stop before reaching the final time. Then, if there is no function to correctly solve the collisions, the loop could be infinite. Since the structures provided by AMUSE are generic, the initialization of most codes is very similar.
+
+\subsection{Ph4}
+
+The principal parameters of \pythonfunc{ph4} are summarized in Table~\ref{tab:ph4_parameters}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{threeparttable}
+		\begin{tabular}{l p{5.5cm} c c}
+			\hline
+			\rowcolor[gray]{0.8}
+			\textbf{Parameter} & \textbf{Description} & \textbf{Default} & \textbf{Used} \\
+			\hline
+			\texttt{epsilon\_squared} & Gravitational softening length squared & $0.0$ & $(0.05\,R_\odot)^2$ \\
+			\texttt{timestep\_parameter} & Accuracy parameter for Hermite integrator & 0.14 & 0.01 \\
+			\texttt{force\_sync} & Force synchronization of particles & 0 (False) & 1 (True) \\
+			\texttt{manage\_encounters} & Close encounter management & 4 & 4 \\
+			\texttt{initial\_timestep\_fac} & Initial timestep factor & 0.0625 & 0.0625 \\
+			\texttt{initial\_timestep\_limit} & Initial timestep limit & 0.03125 & 0.03125 \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item The smaller timestep parameter (0.01) increases the accuracy of the Hermite integrator, which is necessary to resolve close encounters and collisions accurately. The gravitational softening is set to a small fraction ($(0.05\,R_\odot)^2$) of the stellar radii to avoid singularities while minimally affecting the dynamics.
+		\end{tablenotes}
+	\end{threeparttable}
+	\caption{Key runtime parameters for the PH4 N-body code. Parameters shown with their default and the values used in this work.}
+	\label{tab:ph4_parameters}
+\end{table}
+
+In our simulations we use a gravitational softening of $0.05~R_{\rm \odot}$. Since the smaller stars are solar-stars, the force calculation has small differences from real forces, while infinite forces are avoided. To use the GPU, it is necessary to set \texttt{mode='gpu'} during initialization. By default, \pythonfunc{ph4} instance is created with \texttt{mode='cpu'}. All our simulations run with cpu, and with \texttt{number\_of\_workers=4}, to run parallel calculations.
+
+\subsection{Fi}
+
+To initialize \texttt{Fi}, we create an instance of \pythonfunc{amuse.community.fi.interface.Fi}. However, SPH particles are stored as \texttt{gas\_particles}. The following shows how to initialize \texttt{Fi} with SPH particles following a plummer distribution:
+
+\begin{lstlisting}[caption=Example setup for \texttt{FI} with gas particles, label=lst:Fi_instance_creation]
+	from amuse.community.fi.interface import Fi
+	from amuse.units import units, nbody_system
+	from amuse.ic.gasplummer import new_plummer_gas_model
+	
+	# Creation of SPH particles
+	gas_pl = gasplummer.new_plummer_gas_model
+	SPH_bodies = gas_pl(N_gas,
+											 convert_nbody=converter, 
+											 do_scale=True)
+	
+	# Creation of Fi instance
+	SPH = Fi(converter, mode='openmp', number_of_workers=8)
+	SPH.initialize_code()
+	
+	# Adding gas particles
+	SPH.gas_particles.add_particles(SPH_bodies) 
+\end{lstlisting}
+
+Now, we present the principal parameters used in \texttt{Fi}, summarized in Table~\ref{tab:fi_parameters}. In our simulations, \texttt{Fi} runs with 8 parallel process, through \pythonfunc{Fi(number\_of\_workers = 8)} during the initialization.
+
+\begin{table}[!ht]
+	\centering
+	\begin{threeparttable}
+		\begin{tabular}{l p{5.5cm} c c}
+			\hline
+			\rowcolor[gray]{0.8}
+			\textbf{Parameter} & \textbf{Description} & \textbf{Default} & \textbf{Used} \\
+			\hline
+			\texttt{integrate\_entropy\_flag} & Integrate entropy (True) or internal energy (False) & True & False \\
+			\texttt{radiation\_flag} & Include radiative cooling/heating & False & False \\
+			\texttt{star\_formation\_flag} & Include star formation & False & False \\
+			\texttt{use\_hydro\_flag} & Enable SPH hydrodynamics & True & True \\
+			\texttt{eps\_is\_h\_flag} & Gravitational softening = SPH smoothing length & True & True \\
+			\texttt{gamma} & Adiabatic index (polytropic) & 1.6666667 & 1.6666667 \\
+			\texttt{n\_smooth} & Target number of SPH neighbours & 64 & 64 \\
+			\texttt{alpha} & Artificial viscosity parameter (Monaghan) & 0.5 & 0.5 \\
+			\texttt{beta} & Artificial viscosity parameter (Monaghan) & 1.0 & 1.0 \\
+			\texttt{courant} & Courant condition parameter & 0.3 & 0.3 \\
+			\texttt{acc\_timestep\_flag} & Use acceleration-based timestep criterion & True & True \\
+			\texttt{timestep} & Initial system timestep & 1.0 & 1.0 \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item The only parameter modified from its default is \texttt{integrate\_entropy\_flag}, which is set to \texttt{False} to evolve the specific internal energy instead of the entropic function. This choice provides better numerical stability for energy conservation (see Section~\ref{sec:3.3}). All other parameters are left at their default values.
+		\end{tablenotes}
+	\end{threeparttable}
+	\caption{Key runtime parameters for the FI SPH code. Parameters shown with their default and the values used in this work.}
+	\label{tab:fi_parameters}
+\end{table}
+
+\subsection{Bridge}
+
+Finally, we present the parameters used in our \texttt{BRIDGE} implementation. Although the implementation\footnote{This implementation was developed by B. Reinoso, a co-author of the paper presented in Chapter~\ref{cap:5_results}.} runs in Python and is independent of AMUSE, it is designed to work with AMUSE data structures. The principal parameters used to initialize \texttt{BRIDGE} are summarized in Table~\ref{tab:bridge_parameters}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{threeparttable}
+		\begin{tabular}{l p{5.5cm} c}
+			\hline
+			\rowcolor[gray]{0.8}
+			\textbf{Parameter} & \textbf{Description} & \textbf{Value} \\
+			\hline
+			\texttt{mode} & Use GPU-accelerated kicks (1) or CPU (0) & 1 (GPU enabled) \\
+			\texttt{f\_coup} & Coupling safety factor for timestep calculation & 0.5 \\
+			\texttt{eps\_nb} & Softening length for gravitational coupling & 5 AU \\
+			\texttt{dt\_bridge} & Maximum \texttt{BRIDGE} timestep (N-body units)\tnote{1} & 1.0 \\
+			\texttt{do\_accretion} & Use accretion implementation & False \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item[1] The \texttt{BRIDGE} timestep is adaptive and determined by the gas free-fall time and the coupling timescales ($t_{\rm ff}$, $\Delta t_{\rm coup,gas}$, $\Delta t_{\rm coup,stars}$). The value listed here is the maximum allowed timestep in N-body units, which is adjusted downward as needed.
+			\item GPU acceleration is enabled via \texttt{mode=1} for the FASTKICK force calculations. The N-body and SPH components run on CPU (PH4 with 4 workers, FI with 8 workers). The parameter \texttt{do\_accretion} is set to \texttt{False} in our simulations, as we do not include gas accretion.
+		\end{tablenotes}
+	\end{threeparttable}
+	\caption{Key runtime parameters for the \texttt{BRIDGE} coupling scheme.}
+	\label{tab:bridge_parameters}
+\end{table}
+
+\subsection{Code validation}
+
+\label{sec:4.4_validation}
+
+To verify the accuracy and stability of our numerical setup, we present the results of a test simulation. Figure~\ref{fig:energy_virial} shows the relative energy error $\Delta E / E$ (top panel) and the virial ratio $2K/|U|$ (bottom panel) as a function of time over 50 crossing times. The system evolved is a star cluster of $5000$ stars of $1~M_{\odot}$ (total star mass $M=5000~M_{\odot}$), with virial radius $R_{\rm v} = 1.0~{\rm pc}$, embedded in a gas cloud of mass $5000~M_{\odot}$, with $5000$ SPH particles. The initial crossing time of the system is $0.1491~{\rm Myr}$. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{Plots/Energy_cons_virial.png}
+	\caption{Energy conservation and virial equilibrium for a test simulation of a gas-embedded star cluster. Top panel: relative energy error $\Delta E / E$. Bottom panel: virial ratio $2K/|U|$. The system remains in virial equilibrium with an energy error of $\lesssim 10^{-4}$ over 50 crossing times.}
+	\label{fig:energy_virial}
+\end{figure}
+
+The relative energy error remains below $\sim 10^{-4}$ throughout the simulation, confirming that the integration scheme conserves energy to high accuracy. The virial ratio fluctuates around unity, indicating that the system remains in virial equilibrium. These results validate the numerical setup described in this chapter.
+
+
+\chapter{Results}
+\label{cap:5_results}
+
+\section{Statement about my contribution}
+
+This section presents the research article entitled 'The role of a gaseous component on the collisional runaway path to supermassive black hole seeds'. My contributions include the derivation of the generalized critical mass, which incorporates gravitational focusing and an external potential, as well as the definition of the relaxation mass scale. I performed all simulations, carried out the data analysis, and produced all tables and figures shown in the article. All authors contributed to the discussion and to the revision of the manuscript. In particular, Bastian Reinoso developed the \texttt{BRIDGE} implementation used for the coupling strategy.
+%
+\includepdf[pages=-]{/home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf}
 
 \chapter{Discussion and Conclusions}
 \label{sec:cap.6_discussion}
@@ -839,6 +1237,309 @@ The initialization described in Listing~\ref{lst:gas_part_A} raises a potential 
 % el cual acepta \chapter y escribe el título de anexos encima
 % ------------------------------------------------------------------------------
 \begin{appendixs}
+	\section{Derivation of Critical Masses for Collisions and Relaxation}
+	
+	In this section we derive two quantities relevant for the dynamical evolution of stellar clusters: the critical mass for collisions (following \citet{escala2021observational}) and the relaxation mass. For the critical mass, we first present the original derivation, then extend it to include an external potential (following \citet{reinoso2020effects}), and finally generalize it by including gravitational focusing. For the relaxation mass, we derive an analogous mass scale from the two-body relaxation timescale.
+	
+	\subsection{Critical Mass in the Simplified Case}
+	\label{sec:Mcrit_first}
+	
+	First, we show the derivation of the critical mass from \citet{escala2021observational}. We begin with the collisional timescale (Equation~\eqref{eq:tcoll_escala}) from section \ref{sec:2.1_Mcrit}, for a star cluster of equal stars with mass $m$ and radius $r_{\star}$, total mass $M$ and characteristic radius $R$:
+	
+	\begin{equation}
+		t_{\rm coll} = \frac{1}{n \Sigma_0}\sqrt{\frac{R}{GM}}~,
+	\end{equation}
+	
+	where $\Sigma_0=16\sqrt{\pi}r_{\star}^2(1+\Theta)$ is the effective cross-section, $n$ is the number density, and
+	
+	\begin{equation}
+		\Theta = 9.54 \frac{m}{M_{\odot}} \frac{R_{\odot}}{r_{\star}} \left(\frac{100~{\rm km}~{\rm s}^{-1}}{\sigma}\right)^2 ,
+	\end{equation}
+	
+	is the Safronov number. This derivation relies on two assumptions. First, we assume the system is virialized, so the velocity dispersion $\sigma$ can be expressed as a function of the total mass $M$ and characteristic radius $R$. Second, we take $\sigma \sim 100~{\rm km}~{\rm s}^{-1}$, then the Safronov number depends only on the stellar mass and radius. The implication of this assumption is that the effective cross-section depends only on the geometric cross-section of the stars, effectively neglecting gravitational focusing (i.e., the dependence on the velocity dispersion). Collisions become dynamically important when $t_{\rm coll} \leq t_{\rm H}$:
+	
+	\begin{align}
+		t_{\rm coll} =& \frac{1}{n \Sigma_0}\sqrt{\frac{R}{GM}}\\
+		=& \frac{4\pi R^3m}{3M \Sigma_0}\sqrt{\frac{R}{GM}}\\
+		=& \frac{4\pi R^{7/2}m}{3M^{3/2} \Sigma_0 G^{1/2}} \leq t_{\rm H}~,
+	\end{align}
+	
+	where $n=3M/(4\pi R^3m)$ is the number density for an homogeneous system. Solving for $M$:
+	
+	\begin{align}
+		M^{3/2} \geq& \frac{4\pi R^{7/2}m}{3t_{\rm H} \Sigma_0 G^{1/2}} \\
+		M \geq& \left(\frac{4 \pi m}{3 \Sigma_0 G^{1/2} t_{\rm H}}\right)^{2/3}R^{7/3}~.
+	\end{align}
+	
+	The critical mass is then:
+	
+	\begin{equation}
+		M_{\rm crit} = \left(\frac{4 \pi m}{3 \Sigma_0 G^{1/2} t_{\rm H}}\right)^{2/3}R^{7/3}~.
+	\end{equation}
+	
+	This defines the mass limit for a virialized system of characteristic radius $R$, composed of equal-mass stars (mass $m$, radius $r_{\star}$), for which the collision time equals the characteristic time ($t_{\rm coll} = t_{\rm H}$). If a system exceeds this mass, its collision time is shorter than $t_{\rm H}$. This limit can be represented in a radius–mass diagram \citep{escala2021observational,vergara2023global}.
+	
+	\subsection{Effect of an External Gravitational Potential}
+	
+	We now show how the critical mass changes when an external potential is considered. When no external potential is present, the virial theorem gives a relation for the time average kinetic and potential energies ($K$ and $W$):
+	
+	\begin{equation}
+		\label{eq:virial_equation}
+		2K+W=0~.
+	\end{equation}
+	
+	Although $K$ and $W$ are time-average quantities, in virial equilibrium they fluctuate about their mean values (for more details see~\citet{collins1978virial}). Then, we can express $K$ and $W$ in terms of characteristic quantities:
+	
+	\begin{align}
+		K =& \frac{1}{2} \langle \sum_{i} m_i v_i^2 \rangle  = \frac{M}{2} \langle v^2 \rangle \\
+		W =& - \frac{1}{2} \langle \sum_{i, j \neq i} \frac{G m_i m_j}{|r_i - r_j|} \rangle = - \frac{G M^2}{2R_{\rm vir}}~.
+	\end{align}
+	
+	Note that $m_i$ is the mass of ith star, and $M = \sum_{i} m_i$ is the total mass of the stellar system. For a stellar system, it is standard to replace $\langle v^2 \rangle$ with the square of the velocity dispersion, $\sigma^2$. The quantity $R_{\rm vir}$ is known as the virial radius (for consistency, we use $R$ instead of $R_{\rm vir}$ in the following). Replacing in Equation~\eqref{eq:virial_equation}, we have:
+	
+	\begin{equation}
+		\frac{M}{2} \sigma^2 = \frac{GM^2}{2 R}~.
+	\end{equation}
+	
+	The relation between $\sigma$ and $R_{\rm vir}$ is then:
+	
+	\begin{equation}
+		\sigma = \sqrt{\frac{GM}{R}}~.
+	\end{equation}
+	
+	Following \citet{reinoso2020effects}, if we consider an external potential of mass $M_{\rm ext}$ with the same spatial distribution as the stellar system, then the total mass can be rewritten as $M + M_{\rm ext}$. Assuming the stars are in global virial equilibrium with this external potential yields:
+	
+	\begin{equation}
+		\frac{M}{2} \sigma_{\rm ext}^2 = \frac{G(M + M_{\rm ext})^2}{2 R}~.
+	\end{equation}
+	
+	Defining $q=M_{\rm ext}/M$,
+	
+	\begin{equation}
+		\label{eq:disp_vel_ext}
+		\sigma_{\rm ext} = \sqrt{\frac{GM}{R}}(1 + q)~.
+	\end{equation}
+	
+	Then, for an external potential, the collision time is:
+	
+	\begin{align}
+		t_{\rm coll} =& \frac{1}{n \Sigma_0}\sqrt{\frac{R}{GM}}\frac{1}{(1 + q)}\\
+		=& \frac{4\pi R^3m}{3M \Sigma_0}\sqrt{\frac{R}{GM}}\frac{1}{(1 + q)}\\
+		=& \frac{4\pi R^{7/2}m}{3M^{3/2} \Sigma_0 G^{1/2} (1 + q)}~,
+		\label{eq:t_coll_ext}
+	\end{align}
+	
+	and the critical mass can be written as
+	
+	\begin{equation}
+		M_{\rm crit, ext} = \left(\frac{4 \pi m}{3 \Sigma_0 G^{1/2} t_{\rm H}(1+q)}\right)^{2/3}R^{7/3}~.
+	\end{equation}
+	
+	\subsection{Generalized Critical Mass Including Gravitational Focusing}
+	
+	In Section~\ref{sec:Mcrit_first}, we assumed $\sigma \sim 100~{\rm km}~{\rm s}^{-1}$. Consequently, the Safronov number depended only on the stellar mass and radius. To account for gravitational focusing, we now derive the critical mass using the virial velocity dispersion. In the following, we use $M$ to denote the mass of stellar cluster. Then, the total mass of the system is $M(1+q)$ when considering an external potential (with $q=M_{\rm ext}/M$), and $M$ when no external potential is present. First, we expand the effective cross section:
+	
+	\begin{align}
+		\Sigma_0 =& 16\sqrt{\pi}r_{\star}^2(1+\Theta) \\
+		=& 16\sqrt{\pi}r_{\star}^2\left(1+9.54 \frac{m}{M_{\odot}} \frac{R_{\odot}}{r_{\star}} \left(\frac{100~{\rm km}~{\rm s}^{-1}}{\sigma_{\rm ext}}\right)^2\right) \\
+		=& 16\sqrt{\pi} r_\star^2 + \frac{9.54\times16\sqrt{\pi} ~r_\star~ mR_\odot v_{100}^2}{M_\odot} \frac{R}{G~M(1+q)^2}~.
+		\label{eq:sigma_eff_expanded}
+	\end{align}
+	
+	We have introduced $\sigma_{\rm ext}$, and have defined $v_{100} = 100~{\rm km}~{\rm s}^{-1}$. From $t_{\rm coll} = t_{\rm H}$ in Equation~\eqref{eq:t_coll_ext}, we have
+	
+	\begin{equation}
+		\label{eq:Sigma_Mstar}
+		\Sigma_0~M^{3/2} = \frac{4 \pi m}{3 G^{1/2}t_H} \frac{R^{7/2}}{(1+q)}~.
+	\end{equation}
+	
+	Replacing Equation~\eqref{eq:sigma_eff_expanded} into \eqref{eq:Sigma_Mstar} yields,
+	
+	
+	\begin{align}
+		16\sqrt{\pi} r_\star^2~M^{3/2} + \frac{9.54\times16\sqrt{\pi} ~r_\star~ mR_\odot v_{100}^2}{M_\odot} \frac{R~M^{1/2}}{G(1+q)^2} =& \frac{4 \pi m}{3 G^{1/2}t_H} \frac{R^{7/2}}{(1+q)} \\
+		M^{3/2} + \frac{9.54 ~ mR_\odot v_{100}^2 R}{r_{\star} G M_{\odot} (1+q)^2}~M^{1/2} =& \frac{\sqrt{\pi} m}{12 G^{1/2}t_H r_\star^2} \frac{R^{7/2}}{(1+q)}~.
+		\label{eq:equation_mcrit_poly}
+	\end{align}
+	
+	Now, defining the coefficients
+	
+	\begin{align}
+		A &= \frac{9.54 ~ mR_\odot v_{100}^2}{r_\star G M_\odot (1+q)^2}R \\
+		B &= \frac{\sqrt{\pi} m}{12 G^{1/2}t_H r_\star^2 (1+q)}R^{7/2}~,
+	\end{align}
+	
+	we can rewrite Equation~\eqref{eq:equation_mcrit_poly}:
+	
+	\begin{equation}
+		M^{3/2} + A M^{1/2} = B~.
+	\end{equation}
+	
+	To continue, we introduce the change of variable $u=M^{1/2}$:
+	
+	\begin{equation}
+		u^3 + A u - B = 0~.
+	\end{equation}
+	
+	Note that $u$ must be positive since $M > 0$. As $A$ and $B$ are positive, the function $f(u) = u^3 + Au - B$ ranges from $-B$ to $\infty$. Then, $f(u)$ is strictly increasing, and there is exactly one real solution. Using Cardano's formula, the real solution for a depressed cubic equation is,
+	
+	\begin{equation}
+		u_{\rm real} = \sqrt[3]{\frac{B}{2}+\sqrt{\frac{B^2}{4} + \frac{A^3}{27}}} + \sqrt[3]{\frac{B}{2}-\sqrt{\frac{B^2}{4} + \frac{A^3}{27}}}~.
+	\end{equation}
+	
+	Returning to $M = u^2$, we obtain
+	
+	\begin{align}
+		M &= u_{\rm real}^2 \\ 
+		&= \left(\frac{B}{2}+\sqrt{\frac{B^2}{4} + \frac{A^3}{27}}\right)^{2/3} + \left(\frac{B}{2}-\sqrt{\frac{B^2}{4} + \frac{A^3}{27}}\right)^{2/3} \\
+		&\quad + 2\left( \frac{B^2}{4} - \left(\frac{B^2}{4} + \frac{A^3}{27}\right) \right)^{1/3}, \\
+		&= \left(\frac{B}{2}+\sqrt{\frac{B^2}{4} + \frac{A^3}{27}}\right)^{2/3} + \left(\frac{B}{2}-\sqrt{\frac{B^2}{4} + \frac{A^3}{27}}\right)^{2/3} - \frac{2A}{3}~.
+	\end{align}
+	
+	Defining $\alpha = A/R$ and $\beta = B/R^{7/2}$, the critical mass is:
+	
+	\begin{equation}
+		M_{\rm crit} = \left(\frac{\beta R^{7/2}}{2}+\sqrt{\frac{\beta^2 R^7}{4} + \frac{\alpha^3 R^3}{27}}\right)^{2/3} + \left(\frac{\beta R^{7/2}}{2}-\sqrt{\frac{\beta^2 R^7}{4} + \frac{\alpha^3 R^3}{27}}\right)^{2/3} - \frac{2\alpha R}{3}~.
+		\label{eq:Mcrit_extended}
+	\end{equation}
+	
+	Equation~\eqref{eq:Mcrit_extended} sets the upper mass limit for a stellar system of mass $M$, embedded in and in virial equilibrium with an external potential ( with mass $M_{\rm ext} = q M$), such that its collision timescale satisfies $t_{\rm coll} = t_{\rm H}$. In consequence, if $M > M_{\rm crit}$, the collision time is shorter than $t_{\rm H}$.
+	
+	\subsection{Derivation of the Relaxation Mass}
+	\label{sec:app_Mrelax}
+	
+	In this section, we derive a similar relation for the relaxation timescale $t_{\rm relax}$. In a stellar cluster, the energy of stars changes due to stellar encounters, which are typically divided into strong and weak encounters. If we consider a target star with velocity $v$, a strong encounter is considered, when after the interaction the change in velocity $\delta v$ is comparable to $v$ (i.e., $\delta v \sim v$). On the other hand, in a weak encounter, the change in velocity is small ($\delta v \ll v$). While strong encounters can produce notable effects (e.g., stellar collisions, binary formation) they are less frequent. Weak encounters, however, can accumulate over time and significantly alter the energy distribution and trajectories of stars. The relaxation timescale is the time required for a typical star's velocity to change significantly due to the cumulative effect of weak encounters. From \citet{2008gady.book.....B}, the deflection in the star velocity for crossing the system once is:
+	
+	\begin{equation}
+		\delta v^2 \simeq 8N \left(\frac{Gm}{Rv}\right)^2 \ln(\Lambda)~,
+	\end{equation}
+	
+	where $N$ is the number of stars, $m$ and $v$ are the mass and velocity of the target star, and $\Lambda = R/b_{90}$ is the ratio of the maximum to minimum impact parameter for weak encounters. From \citet{2008gady.book.....B}, the minimum impact parameter is $b_{90} = 2Gm/v^2$, then $\Lambda = v^2 R/(2Gm)$. The number of system crossings required to change $v$ significantly is
+	
+	\begin{equation}
+		n_{\rm cross} = \frac{v^2}{\delta v^2} = \frac{1}{8N\ln(\Lambda)}\left(\frac{Rv^2}{Gm}\right)^2~.
+	\end{equation}
+	
+	When an external potential is present, we can approximate $v^2 \sim \sigma_{\rm ext}^2$, and $n_{\rm cross}$ becomes
+	
+	\begin{align}
+		n_{\rm cross} =& \frac{1}{8N\ln(\frac{GmN(1+q)^2}{R} \frac{R}{2Gm})}\left(\frac{R}{Gm} \frac{GmN(1+q)^2}{R}\right)^2 \\
+		\simeq& \frac{0.1 N(1+q)^4}{\ln(N(1+q)^2)}~.
+		\label{eq:n_cross}
+	\end{align}
+	
+	In the last equation, we have used $M = Nm$, and we have neglected the $1/2$ inside $\ln(\Lambda)$. In the absence of an external potential (i.e., $q=0$), Equation~\eqref{eq:n_cross} reduces to the standard expression from \citet{2008gady.book.....B}. Since a typical star crosses the system in a crossing time $t_{\rm cross}$, the relaxation timescale is:
+	
+	\begin{equation}
+		t_{\rm relax} = n_{\rm cross} t_{\rm cross} = \frac{0.1 N(1+q)^4}{\ln(N(1+q)^2)} t_{\rm cross}~.
+		\label{eq:trelax_tcross}
+	\end{equation}
+	
+	With the crossing time estimated as $t_{\rm cross} = R/\sigma$, and using $\sigma_{\rm ext}$, Equation~\eqref{eq:trelax_tcross} becomes
+	
+	\begin{equation}
+		t_{\rm relax} = \frac{0.1 N(1+q)^3}{\ln(N(1+q)^2)} \frac{R^{3/2}}{\sqrt{GM}}~.
+		\label{eq:trelax_ext}
+	\end{equation}
+	
+	Imposing $t_{\rm relax} < t_{\rm H}$ yields a relation between the radius $R$ and mass $M$:
+	
+	\begin{align}
+		R^{3/2} \leq & \frac{t_{\rm H} \ln(N(1+q)^2) \sqrt{GM}}{0.1 N(1+q)^3 }\\
+		\leq & \frac{t_{\rm H} m \ln(M(1+q)^2/m) \sqrt{GM}}{0.1 M(1+q)^3} \\ 
+		=& \frac{t_{\rm H}m}{0.1(1+q)^3} \ln(\frac{M(1+q)^2}{m}) \sqrt{\frac{G}{M}} \\
+		R \leq& \left(\frac{t_{\rm H}m}{0.1(1+q)^3} \ln(\frac{M(1+q)^2}{m})\right)^{2/3} \left(\frac{G}{M}\right)^{1/3}~.
+		\label{eq:R_relax}
+	\end{align}
+	
+	Equation~\eqref{eq:R_relax} defines the condition for a system to significantly alter its initial conditions on a timescale $\sim t_{\rm H}$. If we denote the equality case by $R_{\rm relax}$, systems with $R > R_{\rm relax}$ have a relaxation timescale longer than $t_{\rm H}$. In a collisionless scenario, such systems are considered to be in virial equilibrium.
+	
+	We now derive a mass scale from the condition in Equation~\eqref{eq:R_relax}. First, we rearrange the terms in \eqref{eq:R_relax} for the limit case:
+	
+	\begin{align}
+		R =& \left(\frac{t_{\rm H}m}{0.1(1+q)^3} \ln(\frac{M(1+q)^2}{m})\right)^{2/3} \left(\frac{G}{M}\right)^{1/3} \\
+		R^3 M =& \left(\frac{t_{\rm H}m}{0.1(1+q)^3} \ln(\frac{M(1+q)^2}{m})\right)^2 G~.
+	\end{align}
+	
+	We introduce the change of variable $u\equiv M(1+q)^2/m$,
+	
+	\begin{align}
+		\frac{R^3um}{(1+q)^2} =& \left(\frac{t_{\rm H}m}{0.1(1+q)^3} \ln(u)\right)^2 G \\
+		\frac{R^{3/2}u^{1/2}m^{1/2}}{1+q} =& \frac{t_{\rm H}m}{0.1(1+q)^3} \ln(u) G^{1/2} \\
+		u^{1/2} =& \frac{t_{\rm H}\sqrt{Gm}}{0.1(1+q)^2R^{3/2}} \ln(u)~.
+	\end{align}
+	
+	Defining $\lambda = (t_{\rm H}\sqrt{Gm})/(0.1(1+q)^2R^{3/2})$, 
+	
+	\begin{equation}
+		u^{1/2} = \lambda \ln(u)~,
+	\end{equation}
+	
+	and introducing another change of variable, $\omega = \ln(u)$:
+	
+	\begin{align}
+		e^{\omega/2} =& \lambda \omega \\
+		\frac{1}{\lambda} =& \omega e^{-\omega/2} \\
+		\frac{-1}{2\lambda} =& \frac{- \omega}{2}e^{-\omega/2}~.
+		\label{eq:omega_lambert}
+	\end{align}
+	
+	Equation~\eqref{eq:omega_lambert} is solved by the Lambert $W$ function \citep{weisstein2002lambert}. Indeed, for a function $f(w)=we^w$,  its inverse is the Lambert $W(z)$ function, defined such that $W(f(w)) = w$. Hence,
+	
+	\begin{align}
+		\frac{-\omega}{2} =& W\left(\frac{-1}{2\lambda}\right) \\
+		\omega = -2 W\left(\frac{-1}{2\lambda}\right)~.
+	\end{align}
+	
+	Returning to $u = e^{\omega}$,
+	
+	\begin{equation}
+		u = \exp(-2 W\left(\frac{-1}{2\lambda}\right))~.
+	\end{equation}
+	
+	Finally, we use $M = mu/(1+q)^2$:
+	
+	\begin{equation}
+		M_{\rm relax} = \frac{m}{(1+q)^2}\exp(-2 W\left(\frac{-1}{2\lambda}\right))~.
+		\label{eq:Mrelax_lambert}
+	\end{equation}
+	
+	Since $-1/2\lambda < 0$ ($\lambda > 0$), the argument of the Lambert $W$ function is negative, and there are two real-valued branches \citep[Chapter~III.17]{higham2015princeton}. The principal branch, $W_{0}(z)$, is defined for $z \in [-1/e, \infty)$, and takes values $W_{0}(z)> -1$. In particular, for $z \in [-1/e, 0]$, it ranges from $-1$ to $0$. The lower branch, $W_{-1}(z)$, is defined for $z \in [-1/e, 0]$, and ranges from $-1$ to $-\infty$, with $\lim_{z \to 0^-} W_{-1}(z) = -\infty$. Figure~\ref{fig:Lambert_function_branches} shows the principal and lower branches of the Lambert function.
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.5\textwidth]{img/Plots/lambert_plot.png}
+		\caption{Lambert function. The black line shows the $W_{0}(z)$ branch, and the blue line shows the $W_{-1}(z)$ branch.}
+		\label{fig:Lambert_function_branches}
+	\end{figure} 
+	
+	If we consider the principal branch $W_{0}(z)$, we note that the exponential in Equation~\eqref{eq:Mrelax_lambert} takes values between $e^0$ and $e^2$. Consequently, the relaxation mass would be of the order of the individual stellar mass ($M_{\rm relax} \sim m$). In contrast, for the lower branch $W_{-1}(z)$, the exponential ranges from $e^2$ to $\infty$, yielding a relaxation mass that can reach the mass scale of the system. We therefore adopt the lower branch as the physically relevant solution:
+	
+	\begin{equation}
+		M_{\rm relax} = \frac{m}{(1+q)^2}\exp(-2 W_{-1}\left(\frac{-1}{2\lambda}\right))~.
+		\label{eq:Mrelax_lambert_lower}
+	\end{equation}
+	
+	Finally, we must verify that the argument of the Lambert $W$ function lies within the domain of the lower branch: $-1/e \leq -1/2\lambda < 0$. The right inequality is satisfied since $\lambda > 0$. The left part gives a condition over the characteristic timescale:
+	
+	\begin{align}
+		-1/e \leq& -1/2\lambda \\
+		-2\lambda \leq& -e \\
+		\lambda \geq& e/2 \\
+		\frac{t_{\rm H}\sqrt{Gm}}{0.1(1+q)^2R^{3/2}} \geq& \frac{e}{2} \\
+		t_{\rm H} \geq& \frac{0.1e(1+q)^2R^{3/2}}{2\sqrt{Gm}}
+		\label{eq:tH_condition}		
+	\end{align}
+	
+	Equation~\eqref{eq:tH_condition} implies that, for a system of characteristic radius $R$ composed of equal-mass stars $m$, there exists a minimum possible relaxation time. From Equation~\eqref{eq:trelax_ext}, for fixed $R$ and $m$, the number of stars that minimizes $t_{\rm relax}$ is $N_{\rm opt}=e^2/(1+q)^2$. If we evaluate $t_{\rm relax}(N_{\rm opt})$:
+	
+	\begin{align}
+		t_{\rm relax}(N_{\rm opt}) =& \frac{0.1 N_{\rm opt}(1+q)^3}{\ln(N_{\rm opt}(1+q)^2)} \frac{R^{3/2}}{\sqrt{GN_{\rm opt}m}} \\
+		=& \frac{0.1 e^2(1+q)^{-2}(1+q)^3}{\ln(e^2(1+q)^{-2}(1+q)^2)} \frac{R^{3/2}}{\sqrt{Ge^2(1+q)^{-2}m}}\\
+		=& \frac{0.1 e^2(1+q)}{2} \frac{R^{3/2}(1+q)}{\sqrt{Gm}e}\\
+		=& \frac{0.1 e(1+q)^2 R^{3/2}}{2\sqrt{Gm}}~.
+	\end{align}
+	
 	\section{Fourth-Order Hermite Integration Scheme} 
 	\label{ap:A}
 	
@@ -1023,9 +1724,6 @@ The initialization described in Listing~\ref{lst:gas_part_A} raises a potential 
 	
 	\section{SPH equations}
 	\label{ap:B}
-	
-	\section{Initial conditions for Stars and Gas particles} 
-	\label{ap:C}
 	
 
 \end{appendixs}
