@@ -16,6 +16,7 @@
 \chapter{Introduction}
 \label{cap:1_Introduction}
 
+
 \section{Formation Channels for SMBHs}
 \label{sec:1.1_SMBH_formation_chanels}
 
@@ -416,7 +417,7 @@ With the density estimation and kernel defined, we now turn to the treatment of 
 	\label{eq:3_sph_h_constraint}
 \end{equation}
 
-where $M_{\mathrm{SPH}} = \bar{m} N_{\mathrm{nb}}$, with $\bar{m}$ the mean particle mass and $N_{\mathrm{nb}}$ the target number of neighbors. The term $\tilde{\rho}$ is an extra density introduced to prevent $h_i$ from diverging as $\rho_i \to 0$ \citep{pelupessy2005numerical}. This constraint can be incorporated into the variational principle via Lagrangian multipliers, yielding correction factors in the equations of motion (referencia a futuro).
+where $M_{\mathrm{SPH}} = \bar{m} N_{\mathrm{nb}}$, with $\bar{m}$ the mean particle mass and $N_{\mathrm{nb}}$ the target number of neighbors. The term $\tilde{\rho}$ is an extra density introduced to prevent $h_i$ from diverging as $\rho_i \to 0$ \citep{pelupessy2005numerical}. This constraint can be incorporated into the variational principle via Lagrangian multipliers, yielding correction factors in the equations of motion (see Appendix~\ref{ap:SPH_equations}).
 
 With the notation $W_{ij}(h_i) \equiv W(|\mathbf{r}_i - \mathbf{r}_j|, h_i)$ and the symmetrized kernel $\bar{W}_{ij} = [W_{ij}(h_i) + W_{ij}(h_j)]/2$, the equation of motion for particle $i$ becomes:
 
@@ -437,7 +438,7 @@ where the correction factor $f_i$ accounts for the variability of the smoothing 
 \end{equation}
 
 
-To handle discontinuities such as shocks, an artificial viscosity (AV) term $\Pi_{ij}$ is included. In SPH, entropy generation is confined to shocks through this viscous term, which also prevents unphysical particle interpenetration. 
+The first two terms come from a conservative derivation of SPH equations.To handle discontinuities such as shocks, an artificial viscosity (AV) term $\Pi_{ij}$ is included. In SPH, entropy generation is confined to shocks through this viscous term, which also prevents unphysical particle interpenetration. 
 
 \texttt{Fi} implements the standard Monaghan artificial viscosity \citep{monaghan1992smoothed, pelupessy2005numerical}:
 
@@ -459,7 +460,7 @@ with
 
 where $\mathbf{v}_{ij} = \mathbf{v}_i - \mathbf{v}_j$ and $\mathbf{r}_{ij} = \mathbf{r}_i - \mathbf{r}_j$. The dimensionless parameters $\alpha$ and $\beta$ control the strength of the viscosity (default values are $\alpha = 0.5$, $\beta = 1.0$), and $\eta \ll 1$ prevents numerical divergences. Quantities overlaid with a bar are symmetrized averages, e.g., $\bar{c}_{ij} = (c_i + c_j)/2$. 
 
-The AV is only activated when particles are approaching each other ($\mathbf{v}_{ij} \cdot \mathbf{r}_{ij} < 0$), ensuring that $\mu_{ij} \leq 0$ and therefore $\Pi_{ij} \geq 0$. As the term $-\nabla_i W_{ij}(h_i)$ is proportional to $(\mathbf{r}_i - \mathbf{r}_j) = \mathbf{r}_{ij}$ (referencia a futuro), the AV acts to decrease kinetic energy, with the dissipated energy converted into thermal energy, thereby increasing the internal energy (or, equivalently, the entropic function, depending on the thermodynamic formulation chosen) of the particles.
+The AV is only activated when particles are approaching each other ($\mathbf{v}_{ij} \cdot \mathbf{r}_{ij} < 0$), ensuring that $\mu_{ij} \leq 0$ and therefore $\Pi_{ij} \geq 0$. As the term $-\nabla_i W_{ij}(h_i)$ is proportional to $(\mathbf{r}_i - \mathbf{r}_j) = \mathbf{r}_{ij}$, the AV acts to decrease kinetic energy, with the dissipated energy converted into thermal energy, thereby increasing the internal energy (or, equivalently, the entropic function, depending on the thermodynamic formulation chosen) of the particles.
 
 Finally, the thermodynamic evolution of the gas must be specified. \texttt{Fi} offers two formulations: evolving either the specific internal energy $u_i$ or the entropic function $A_i$ (related to the specific entropy). For an ideal gas with adiabatic index $\gamma$, these quantities are related through
 
@@ -480,7 +481,7 @@ where $\Gamma$ and $\Lambda$ represent external heating and cooling rates (both 
 	\frac{d u_i}{d t} = \sum_{j=1}^N m_j \left[ \frac{f_i}{2} \frac{p_i}{\rho_i^2} \nabla_i W_{ij}(h_i) +  \frac{f_j}{2} \frac{p_j}{\rho_j^2} \nabla_i W_{ij}(h_j)  + \Pi_{ij} \nabla_i \bar{W}_{ij}\right] \mathbf{v}_{ij} \label{eq:sph_energy_eq}
 \end{equation}
 
-For our simulations, we adopt the energy equation (Eq.~\eqref{eq:sph_energy_eq}), as it provides better numerical stability in the coupled stellar-gas framework (referencia a futuro).
+For our simulations, we adopt the energy equation (Eq.~\eqref{eq:sph_energy_eq}), as it provides better numerical stability in the coupled stellar-gas framework (see Appendix~\ref{ap:SPH_equations}).
 
 \section{Coupling Strategy: The BRIDGE Method}
 \label{sec:3.4_Coupling_codes}
@@ -1723,7 +1724,227 @@ This section presents the research article entitled 'The role of a gaseous compo
 	The suggested value for the startup parameter is $\eta_s \sim 0.01$ \cite{makino1992}.
 	
 	\section{SPH equations}
-	\label{ap:B}
+	\label{ap:SPH_equations}
+	In this section, we derive the hydrodynamic equations for the SPH method. We follow the derivation of \citet{springel2002cosmological}. From a particle perspective, the idea of SPH is to use a discrete representation of the Lagrangian \citep{rasio2000particle}:
 	
-
+	\begin{equation}
+		L_{\rm SPH} = \sum_{i=1}^{N} m_i \left(\frac{1}{2}\mathbf{v}^2_i - u_i \right)~.
+		\label{eq:Lagrangian_SPH}
+	\end{equation}
+	
+	The sum is over all the particles (or fluid elements), described by a mass $m_i$, velocity $\mathbf{v}_i = d \mathbf{r}_i/dt$ and position $\mathbf{r}_i$. For Equation~\ref{eq:Lagrangian_SPH} to be the Lagrangian of a fluid, it is necessary to have an adequate prescription to compute the density $\rho_i$ of any particle. In SPH, the density is calculated as
+	
+	\begin{equation}
+		\rho_i = \rho(\mathbf{r}_i) = \sum_{j} m_j W(|\mathbf{r}_i - \mathbf{r}_j|;h_i)~,
+	\end{equation}
+	
+	where $W$ is the smoothing kernel, and $h_i$ is the smoothing length parameter. In particular, the one used in FI is the cubic spline kernel \citep{pelupessy2005numerical,monaghan1992smoothed}:
+	
+	\begin{equation}
+		W(r,h) = \frac{1}{\pi h^3}
+		\begin{cases}
+			1 - \frac{3}{2}\left(\frac{r}{h}\right)^2 + \frac{3}{4}\left(\frac{r}{h}\right)^3, & 0 \leq \frac{r}{h} \leq 1, \\[2ex]
+			\frac{1}{4}\left(2 - \frac{r}{h}\right)^3, & 1 \leq \frac{r}{h} \leq 2, \\[2ex]
+			0, & \text{otherwise}~.
+		\end{cases}
+	\end{equation}
+	
+	In some derivations, $h_i$ is taken as a constant. However, since different particles needs different resolutions, modern codes use a variable $h_i$. Requiring that a smoothing volume contains a fixed mass leads to $M_{\rm SPH} = (4 \pi /3)h_i^3 \rho_i$, where $M_{\rm SPH} = \bar{m}N_{\rm SPH}$, $\bar{m}$ the mean mass among SPH particles and $N_{\rm SPH}$ is a fixed number of particles neighbors. The condition over $h_i$ gives the restriction:
+	
+	\begin{equation}
+		\phi_i = \frac{4 \pi}{3}h_i^3(\rho_i + \rho_0) - M_{\rm SPH} = 0~.
+	\end{equation}
+	
+	Here, a fixed density $\rho_0$ is introduced to prevent $h_i$ from diverging in low-density regions. The restrictions can be introduced on the Lagrangian via Lagrange multipliers $\lambda_i$. Then the equations of motion yields
+	
+	\begin{equation}
+		\frac{d}{dt}\frac{\partial L_{\rm SPH}}{\partial \dot{q}_i} - \frac{\partial L_{\rm SPH}}{\partial q_i} = \sum_{j=1}^{N}\lambda_j \frac{\partial \phi_j}{\partial q_i}~,
+		\label{eq:lagrangian_equations}
+	\end{equation}
+	
+	where $q_i$ is replaced by the coordinate, and $\dot{q}_i = d q_i/dt$. The advantage of this approach is that by treating $h_i$ as independent variables in the Lagrangian, the $\grad{h_i}$terms are consistently included in the equations of motion.
+	
+	\subsection{Solving $\lambda_i$}
+	
+	If we consider a polytropic equation of state, the pressure yields
+	
+	\begin{equation}
+		P=A \rho(\mathbf{r})^{\gamma}~,
+	\end{equation}
+	
+	where $\gamma$ is the polytropic index, and $A$ is the entropic function (see \citet{horedt2004polytropes} for a complete derivation). For SPH formalism, the pressure for particle is
+	
+	\begin{equation}
+		P_i=A_i \rho_i^{\gamma}~.
+	\end{equation}
+	
+	This is the entropic equation of state. Since we are interested in energy conservation, we replace $A_i$ in terms of the specific internal energy $u_i = A_i \rho_i^{\gamma - 1}/(\gamma - 1)$. Then, the pressure is
+	
+	\begin{equation}
+		P_i= u_i \rho_i (\gamma - 1)~.
+	\end{equation}
+	
+	First, we solve the Lagrangian equations (Equation~\eqref{eq:lagrangian_equations}), for the variable $h_i$. As there is no explicit dependency on $\dot{h}_i$, then $\partial L_{\rm SPH} / \partial \dot{h}_i = 0$. Then, for $q_i=h_i$ Equation~\eqref{eq:lagrangian_equations} becomes:
+	
+	\begin{align}
+		- \frac{\partial}{\partial h_i} \sum_{j=1}^{N} m_j \left(\frac{1}{2}|\dot{\mathbf{r}_j}|^2 - u_j \right) = & \sum_{k=1}^{N}\lambda_k \frac{\partial \phi_k}{\partial h_i} \\
+		-\sum_{j=1}^{N} m_j \left(\dot{\mathbf{r}_j} \frac{\partial \dot{\mathbf{r}_j}}{\partial h_i} - \frac{\partial u_j}{\partial h_i} \right) =& \sum_{k=1}^{N}\lambda_k \frac{\partial}{\partial h_i} \left(\frac{4 \pi}{3}h_k^3(\rho_k + \rho_0) - M_{\rm SPH} \right) \\
+		\sum_{j=1}^{N}m_j \frac{\partial u_j}{\partial \rho_j} \frac{\partial \rho_j}{\partial h_j} \frac{\partial h_j}{\partial h_i} =& \sum_{k=1}^{N}\lambda_k \frac{4 \pi}{3} \left(3 h_k^2(\rho_k + \rho_0) + h_k^3 \frac{\partial \rho_k}{\partial h_k} \right)\frac{\partial h_k}{\partial h_i}~.
+	\end{align}
+	
+	Now, we use that $\partial u / \partial \rho = P/\rho^2$, and applying $\partial h_l / \partial h_m = \delta_{lm}$ in the summations:
+	
+	\begin{align}
+		\sum_{j=1}^{N}m_j \frac{P_j}{\rho_j^2} \frac{\partial \rho_j}{\partial h_j} \delta_{ji} =& \sum_{k=1}^{N}\lambda_k \frac{4 \pi}{3} \left(3 h_k^2(\rho_k + \rho_0) + h_k^3 \frac{\partial \rho_k}{\partial h_k} \right) \delta_{ki}\\
+		m_i \frac{P_i}{\rho_i^2} \frac{\partial \rho_i}{\partial h_i} =& \lambda_i \frac{4 \pi}{3} \left(3 h_i^2 (\rho_i + \rho_0) + h_i^3 \frac{\partial \rho_i}{\partial h_i}\right) \\
+		=& \lambda_i \frac{4 \pi h_i^3}{3} \frac{\partial \rho_i}{\partial h_i}\left(1 + \frac{3(\rho_i + \rho_0)}{h_i}\left[\frac{\partial \rho_i}{\partial h_i}\right]^{-1}\right)~.
+	\end{align}
+	
+	Then, the Lagrangian multipliers yields
+	
+	\begin{equation}
+		\lambda_i = \frac{3}{4 \pi} \frac{m_i}{h_i^3} \frac{P_i}{\rho_i^2} \left(1 + \frac{3 (\rho_i + \rho_0)}{h_i} \left[\frac{\partial \rho_i}{\partial h_i}\right]^{-1}\right)^{-1}~.
+	\end{equation}
+	
+	\subsection{Equation of motion for SPH particles}
+	
+	We now derive the equations of motion by applying Equation~\eqref{eq:lagrangian_equations} to the spatial coordinates $q_i = \mathbf{r}_i$:
+	
+	\begin{equation}
+		\frac{d}{dt}\frac{\partial L_{\rm SPH}}{\partial \dot{\mathbf{r}_i}} - \frac{\partial L_{\rm SPH}}{\partial \mathbf{r}_i} = \sum_{j=1}^{N}\lambda_j \frac{\partial \phi_j}{\partial \mathbf{r}_i}~.
+		\label{eq:Lagr_to_eq_of_motion}
+	\end{equation}
+	
+	The first term in the left can be obtained directly:
+	
+	\begin{align}
+		\frac{d}{dt}\frac{\partial L_{\rm SPH}}{\partial \dot{\mathbf{r}_i}} =& \frac{d}{dt} \sum_{j=1}^{N} m_j \mathbf{v}_j \frac{\partial \mathbf{v}_j}{\partial \mathbf{v}_i} \\
+		=& m_i \frac{d \mathbf{v}_i}{dt}~.
+	\end{align}
+	
+	The second term:
+	
+	\begin{align}
+		\frac{\partial L_{\rm SPH}}{\partial \mathbf{r}_i} =& \sum_{j=1}^{N} m_j \left(\dot{\mathbf{r}_j} \frac{\partial \dot{\mathbf{r}_j}}{\partial \mathbf{r}_j} - \frac{\partial u_j}{\partial \mathbf{r}_i} \right) \\
+		=& - \sum_{j=1}^{N} m_j \frac{\partial u_j}{\partial \rho_j} \grad_i{\rho_j} \\
+		=& \sum_{j=1}^{N} m_j \frac{P_j}{\rho_j^2} \grad_i{\rho_j}~,
+	\end{align}
+	
+	where $\grad_i = \partial / \partial \mathbf{r}_i$. For the right side of Equation~\eqref{eq:Lagr_to_eq_of_motion}:
+	
+	\begin{align}
+		\sum_{j=1}^{N}\lambda_j \frac{\partial \phi_j}{\partial \mathbf{r}_i} =& \sum_{j=1}^{N}\lambda_j \frac{\partial}{\partial \mathbf{r}_i} \left(\frac{4 \pi}{3}h_j^3(\rho_j + \rho_0) - M_{\rm SPH}\right) \\
+		=& \sum_{j=1}^{N}\lambda_j \frac{4 \pi}{3} h_j^3 \grad_i{\rho_j} ~.
+	\end{align}
+	
+	Replacing all the terms back to Equation~\eqref{eq:Lagr_to_eq_of_motion},
+	
+	\begin{align}
+		m_i \frac{d \mathbf{v}_i}{dt} - \sum_{j=1}^{N} m_j \frac{P_j}{\rho_j^2} \grad_i{\rho_j} =& \sum_{j=1}^{N}\lambda_j \frac{4 \pi}{3} h_j^3 \grad_i{\rho_j} \\
+		m_i \frac{d \mathbf{v}_i}{dt} =& \sum_{j=1}^{N} m_j \frac{P_j}{\rho_j^2}\left[1 + \lambda_j \frac{4 \pi}{3} \frac{h_j^3}{m_j} \frac{\rho_j^2}{P_j} \right] \grad_i{\rho_j}~.
+		\label{eq:C_25}
+	\end{align}
+	
+	Expanding the term with $\lambda_i$, 
+	
+	\begin{align}
+		\lambda_j \frac{4 \pi}{3} \frac{h_j^3}{m_j} \frac{\rho_j^2}{P_j} =& \left(1 + \frac{3 (\rho_j + \rho_0)}{h_j} \left[\frac{\partial \rho_j}{\partial h_j}\right]^{-1}\right)^{-1} \\
+		=& \left(1 + \left[ \frac{h_j}{3 (\rho_j + \rho_0)}\frac{\partial \rho_j}{\partial h_j}\right]^{-1}\right)^{-1}~.
+	\end{align}
+	
+	Defining 
+	
+	\begin{equation}
+		f_j = \left(1 + \frac{h_j}{3 (\rho_{j} + \rho_0)} \frac{\partial \rho_j}{\partial h_j}\right)^{-1}~,
+	\end{equation}
+	
+	then the term involving $\lambda_j$ simplifies to a compact expression, as shown below:
+	
+	\begin{align}
+		\lambda_j \frac{4 \pi}{3} \frac{h_j^3}{m_j} \frac{\rho_j^2}{P_j} =& \left(1 + (f_j^{-1} - 1)^{-1} \right)^{-1} \\
+		=& \left(\frac{f_j^{-1}}{f_j^{-1} - 1}\right)^{-1} = 1 - f_j~.
+		\label{eq:SPH_m_dv_dt}
+	\end{align}
+	
+	Replacing back to Equation~\eqref{eq:C_25},
+	
+	\begin{equation}
+		m_i \frac{d \mathbf{v}_i}{dt} = - \sum_{j=1}^{N} m_j \frac{P_j}{\rho_j^2}f_j \grad_i{\rho_j}~.
+	\end{equation}
+	
+	Using the notation $W_{ij}(h) = W(|\mathbf{r}_i - \mathbf{r}_j|, h)$, then we can write \citep{springel2002cosmological}
+	
+	\begin{equation}
+		\grad_i{\rho_j} = m_i \grad_i{W_{ij}(h_j)} + \delta_{ij}\sum_{k=1}^{N} m_k \grad_i{W_{ki}(h_i)}~.
+	\end{equation}
+	
+	Back into Equation~\eqref{eq:SPH_m_dv_dt},
+	
+	\begin{align}
+		m_i \frac{d \mathbf{v}_i}{dt} =& - \sum_{j=1}^{N} m_j \frac{P_j}{\rho_j^2}f_j \left(m_i \grad_i{W_{ij}(h_j)} + \delta_{ij}\sum_{k=1}^{N} m_k \grad_i{W_{ki}(h_i)}\right) \\
+		=& - \sum_{j=1}^{N} m_j m_i \frac{P_j}{\rho_j^2}f_j \grad_i{W_{ij}(h_j)} - m_i \frac{P_i}{\rho_i^2}f_i\sum_{k=1}^{N} m_k \grad_i{W_{ki}(h_i)} \\
+		\frac{d \mathbf{v}_i}{dt} =& - \sum_{j=1}^{N} m_j \frac{P_j}{\rho_j^2}f_j \grad_i{W_{ij}(h_j)} - \frac{P_i}{\rho_i^2}f_i\sum_{k=1}^{N} m_k \grad_i{W_{ki}(h_i)}
+	\end{align}
+	
+	Renaming index $k$ to $j$ in the second summation, and using the symmetry of the kernel, which implies $\grad_i{W_{ki}(h_i)} = \grad_i{W_{ik}(h_i)}$, we obtain the final form of the equation of motion:
+	
+	\begin{equation}
+		\frac{d \mathbf{v}_i}{dt} = - \sum_{j=1}^{N} m_j\left[\frac{P_j}{\rho_j^2}f_j \grad_i{W_{ij}(h_j)} + \frac{P_i}{\rho_i^2}f_i \grad_i{W_{ij}(h_i)}\right]~.
+		\label{eq:SPH_eq_of_motion}
+	\end{equation}
+	
+	\subsection{Equation of energy for SPH particles}
+	
+	We now derive the evolution equation for the specific internal energy. The total energy of the SPH particles is given by:
+	
+	\begin{equation}
+		E = \sum_{i=1}^{N} m_i u_i + \sum_{j=1}^{N} m_j \frac{\mathbf{v}_j^2}{2}~,
+	\end{equation}
+	
+	and under the condition of energy conservation:
+	
+	\begin{align}
+		\frac{dE}{dt} =& 0 \\
+		=& \sum_{i=1}^{N} m_i \frac{du_i}{dt} + \sum_{j=1}^{N} m_j \mathbf{v}_j \frac{d \mathbf{v}_j}{dt}~.
+	\end{align}
+	
+	Now, we use Equation~\eqref{eq:SPH_eq_of_motion} on the right side:
+	
+	\begin{align}
+		\sum_{i=1}^{N} m_i \frac{du_i}{dt} =& -\sum_{j=1}^{N} m_j \mathbf{v}_j\left(- \sum_{k=1}^{N} m_k\left[\frac{P_k}{\rho_k^2}f_k \grad_j{W_{jk}(h_k)} + \frac{P_j}{\rho_j^2}f_j \grad_j{W_{jk}(h_j)}\right]\right) \\
+		=& \sum_{j, k} m_jm_k \mathbf{v}_j\frac{P_k}{\rho_k^2}f_k \grad_j{W_{jk}(h_k)} + \sum_{j, k} m_jm_k \mathbf{v}_j\frac{P_j}{\rho_j^2}f_j \grad_j{W_{jk}(h_j)}~.
+	\end{align}
+	
+	Since $j$ and $k$ are dummy indices, we can relabel them to symmetrize the expression. In the first sum we set $j \to i, k \to j$, and in the second sum we set $k \to i$, yielding
+	
+	\begin{align}
+		\sum_{i=1}^{N} m_i \frac{du_i}{dt} =& \sum_{i, j} m_i m_j \mathbf{v}_i\frac{P_j}{\rho_j^2}f_j \grad_i{W_{ij}(h_j)} + \sum_{i, j} m_jm_i \mathbf{v}_j\frac{P_j}{\rho_j^2}f_j \grad_j{W_{ji}(h_j)} \\
+		=& \sum_{i, j} m_i m_j \mathbf{v}_i\frac{P_j}{\rho_j^2}f_j \grad_i{W_{ij}(h_j)} + \sum_{i, j} m_jm_i \mathbf{v}_j\frac{P_j}{\rho_j^2}f_j (-\grad_i{W_{ij}(h_j))} \\
+		=& \sum_{i, j} m_i m_j f_j \frac{P_j}{\rho_j^2} \mathbf{v}_{ij} \cdot \grad_i{W_{ij}(h_j)}~,
+		\label{eq:dt_dt_1} 
+	\end{align}
+	
+	where we have used $\grad_j{W_{ji}(h_j)} = -\grad_i{W_{ij}(h_j)}$ and $\mathbf{v}_{ij} = \mathbf{v}_{i} - \mathbf{v}_{j}$. Since $i, j$ are also dummy indices, we can exchange them, having another solution for the equation of energy:
+	
+	\begin{align}
+		\sum_{i=1}^{N} m_i \frac{du_i}{dt} =& \sum_{i, j} m_i m_j f_j \frac{P_j}{\rho_j^2} \mathbf{v}_{ij} \cdot \grad_i{W_{ij}(h_j)} \\
+		=& \sum_{i, j} m_i m_j f_i \frac{P_i}{\rho_i^2} \mathbf{v}_{ji} \cdot \grad_j{W_{ji}(h_i)} \\
+		=& \sum_{i, j} m_i m_j f_i \frac{P_i}{\rho_i^2} \mathbf{v}_{ij} \cdot \grad_i{W_{ij}(h_i)}~.
+		\label{eq:dt_dt_2}
+	\end{align}
+	
+	Taking the average of Equations~\eqref{eq:dt_dt_1} and~\eqref{eq:dt_dt_2} yields the symmetrized form:
+	
+	\begin{equation}
+		\sum_{i=1}^{N} m_i \frac{du_i}{dt} = \sum_{i, j} m_i m_j \frac{1}{2}\left[f_j \frac{P_j}{\rho_j^2} \mathbf{v}_{ij} \cdot \grad_i{W_{ij}(h_j)} + f_i \frac{P_i}{\rho_i^2} \mathbf{v}_{ij} \cdot \grad_i{W_{ij}(h_i)}\right]~,
+	\end{equation}
+	
+	and the solution for the internal energy:
+	
+	\begin{equation}
+		\frac{du_i}{dt} = \frac{1}{2} \sum_{j=1}^{N} m_j \left[f_j \frac{P_j}{\rho_j^2} \mathbf{v}_{ij} \cdot \grad_i{W_{ij}(h_j)} + f_i \frac{P_i}{\rho_i^2} \mathbf{v}_{ij} \cdot \grad_i{W_{ij}(h_i)}\right]~.
+	\end{equation}
+	
+	
+	
 \end{appendixs}

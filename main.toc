@@ -52,3 +52,6 @@
 \contentsline {subsection}{\numberline {B.5}Step 5: Add corrections}{79}{subsection.Alph0.2.5}%
 \contentsline {subsection}{\numberline {B.6}Step 6: Time step update}{80}{subsection.Alph0.2.6}%
 \contentsline {section}{\numberline {C}SPH equations}{80}{section.Alph0.3}%
+\contentsline {subsection}{\numberline {C.1}Solving $\lambda _i$}{81}{subsection.Alph0.3.1}%
+\contentsline {subsection}{\numberline {C.2}Equation of motion for SPH particles}{83}{subsection.Alph0.3.2}%
+\contentsline {subsection}{\numberline {C.3}Equation of energy for SPH particles}{85}{subsection.Alph0.3.3}%
