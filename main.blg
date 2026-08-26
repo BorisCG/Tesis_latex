@@ -3,52 +3,54 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: library.bib
-Repeated entry---line 277 of file library.bib
+Repeated entry---line 420 of file library.bib
  : @book{1987degc.book.....S
  :                          ,
 I'm skipping whatever remains of this entry
 Warning--empty publisher in 2008gady.book.....B
+Warning--can't use both volume and number fields in hoyle1939evolution
 Warning--empty school in reinoso2024formation
+Warning--empty journal in salpeter1965accretion
 Warning--empty publisher in 1987degc.book.....S
-You've used 33 entries,
+You've used 48 entries,
             1935 wiz_defined-function locations,
-            684 strings with 9248 characters,
-and the built_in function-call counts, 12352 in all, are:
-= -- 1225
-> -- 424
-< -- 29
-+ -- 146
-- -- 134
-* -- 1019
-:= -- 2160
-add.period$ -- 99
-call.type$ -- 33
-change.case$ -- 221
-chr.to.int$ -- 33
-cite$ -- 36
-duplicate$ -- 480
-empty$ -- 907
-format.name$ -- 188
-if$ -- 2406
+            775 strings with 12270 characters,
+and the built_in function-call counts, 19034 in all, are:
+= -- 1862
+> -- 765
+< -- 43
++ -- 272
+- -- 254
+* -- 1608
+:= -- 3321
+add.period$ -- 145
+call.type$ -- 48
+change.case$ -- 352
+chr.to.int$ -- 48
+cite$ -- 53
+duplicate$ -- 718
+empty$ -- 1330
+format.name$ -- 335
+if$ -- 3702
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 36
-newline$ -- 166
-num.names$ -- 103
-pop$ -- 180
+missing$ -- 52
+newline$ -- 240
+num.names$ -- 148
+pop$ -- 294
 preamble$ -- 1
-purify$ -- 228
+purify$ -- 360
 quote$ -- 0
-skip$ -- 378
+skip$ -- 569
 stack$ -- 0
-substring$ -- 944
-swap$ -- 51
-text.length$ -- 2
+substring$ -- 1362
+swap$ -- 90
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 188
-warning$ -- 3
-while$ -- 110
+type$ -- 276
+warning$ -- 5
+while$ -- 160
 width$ -- 0
-write$ -- 421
+write$ -- 614
 (There was 1 error message)

@@ -1,57 +1,57 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Formation Channels for SMBHs}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}A route for SMBH formation}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Research Objectives and Thesis Outline}{1}{section.1.3}%
-\contentsline {chapter}{\numberline {2}A scenario for SMBH formation}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Critical mass}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Relaxation mass}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Global instability scenario}{5}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Numerical Methods}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}The AMUSE Framework}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}N-body code: PH4}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Hermite integrator}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Block time steps}{12}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Collisions and mergers}{13}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Escaping stars}{14}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}SPH code: Fi}{16}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Barnes-Hut tree}{16}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Smoothed Particle Hydrodynamics}{18}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Coupling Strategy: The BRIDGE Method}{21}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Symplectic Integrator}{21}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}BRIDGE}{23}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Adaptive timestep}{26}{subsection.3.4.3}%
-\contentsline {chapter}{\numberline {4}Initial Conditions and Setup}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Plummer distribution}{28}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}N-body units}{30}{subsection.4.1.1}%
-\contentsline {section}{\numberline {4.2}Stars and Gas Initial Conditions}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Particles generation}{33}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}Numerical Parameters}{36}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Ph4}{38}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Fi}{38}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Bridge}{40}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Code validation}{40}{subsection.4.3.4}%
-\contentsline {chapter}{\numberline {5}Results}{42}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Statement about my contribution}{42}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{61}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Interpretation of Gas-Induced Enhancements}{61}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Implications for SMBH Seed Formation}{61}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Limitations and Future Work}{61}{section.6.3}%
-\contentsline {chapter}{References}{62}{chapter*.27}%
-\contentsline {chapter}{Appendices}{65}{appendix*.29}%
-\contentsline {section}{\numberline {A}Derivation of Critical Masses for Collisions and Relaxation}{65}{section.Alph0.1}%
-\contentsline {subsection}{\numberline {A.1}Critical Mass in the Simplified Case}{65}{subsection.Alph0.1.1}%
-\contentsline {subsection}{\numberline {A.2}Effect of an External Gravitational Potential}{66}{subsection.Alph0.1.2}%
-\contentsline {subsection}{\numberline {A.3}Generalized Critical Mass Including Gravitational Focusing}{68}{subsection.Alph0.1.3}%
-\contentsline {subsection}{\numberline {A.4}Derivation of the Relaxation Mass}{70}{subsection.Alph0.1.4}%
-\contentsline {section}{\numberline {B}Fourth-Order Hermite Integration Scheme}{75}{section.Alph0.2}%
-\contentsline {subsection}{\numberline {B.1}Step 1: Particle selection}{75}{subsection.Alph0.2.1}%
-\contentsline {subsection}{\numberline {B.2}Step 2: Calculate the predicted position and velocities for all particles}{76}{subsection.Alph0.2.2}%
-\contentsline {subsection}{\numberline {B.3}Step 3: Calculate acceleration and jerk for particle $i$}{77}{subsection.Alph0.2.3}%
-\contentsline {subsection}{\numberline {B.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{77}{subsection.Alph0.2.4}%
-\contentsline {subsection}{\numberline {B.5}Step 5: Add corrections}{79}{subsection.Alph0.2.5}%
-\contentsline {subsection}{\numberline {B.6}Step 6: Time step update}{80}{subsection.Alph0.2.6}%
-\contentsline {section}{\numberline {C}SPH equations}{80}{section.Alph0.3}%
-\contentsline {subsection}{\numberline {C.1}Solving $\lambda _i$}{81}{subsection.Alph0.3.1}%
-\contentsline {subsection}{\numberline {C.2}Equation of motion for SPH particles}{83}{subsection.Alph0.3.2}%
-\contentsline {subsection}{\numberline {C.3}Equation of energy for SPH particles}{85}{subsection.Alph0.3.3}%
+\contentsline {section}{\numberline {1.1}Brief history: from Quasars to SMBHs}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Formation channels for SMBHs}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Research Objectives and Thesis Outline}{4}{section.1.3}%
+\contentsline {chapter}{\numberline {2}A scenario for SMBH formation}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Critical mass}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Relaxation mass}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Global instability scenario}{8}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Numerical Methods}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}The AMUSE Framework}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}N-body code: PH4}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Hermite integrator}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Block time steps}{15}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Collisions and mergers}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Escaping stars}{17}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}SPH code: Fi}{19}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Barnes-Hut tree}{19}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Smoothed Particle Hydrodynamics}{21}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Coupling Strategy: The BRIDGE Method}{24}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Symplectic Integrator}{24}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}BRIDGE}{26}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Adaptive timestep}{29}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}Initial Conditions and Setup}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Plummer distribution}{31}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}N-body units}{33}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Stars and Gas Initial Conditions}{35}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Particles generation}{36}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Numerical Parameters}{39}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Ph4}{41}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Fi}{41}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Bridge}{43}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Code validation}{43}{subsection.4.3.4}%
+\contentsline {chapter}{\numberline {5}Results}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Statement about my contribution}{45}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{64}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Interpretation of Gas-Induced Enhancements}{64}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Implications for SMBH Seed Formation}{64}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Limitations and Future Work}{64}{section.6.3}%
+\contentsline {chapter}{References}{65}{chapter*.29}%
+\contentsline {chapter}{Appendices}{69}{appendix*.31}%
+\contentsline {section}{\numberline {A}Derivation of Critical Masses for Collisions and Relaxation}{69}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {A.1}Critical Mass in the Simplified Case}{69}{subsection.Alph0.1.1}%
+\contentsline {subsection}{\numberline {A.2}Effect of an External Gravitational Potential}{70}{subsection.Alph0.1.2}%
+\contentsline {subsection}{\numberline {A.3}Generalized Critical Mass Including Gravitational Focusing}{72}{subsection.Alph0.1.3}%
+\contentsline {subsection}{\numberline {A.4}Derivation of the Relaxation Mass}{74}{subsection.Alph0.1.4}%
+\contentsline {section}{\numberline {B}Fourth-Order Hermite Integration Scheme}{79}{section.Alph0.2}%
+\contentsline {subsection}{\numberline {B.1}Step 1: Particle selection}{79}{subsection.Alph0.2.1}%
+\contentsline {subsection}{\numberline {B.2}Step 2: Calculate the predicted position and velocities for all particles}{80}{subsection.Alph0.2.2}%
+\contentsline {subsection}{\numberline {B.3}Step 3: Calculate acceleration and jerk for particle $i$}{81}{subsection.Alph0.2.3}%
+\contentsline {subsection}{\numberline {B.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{81}{subsection.Alph0.2.4}%
+\contentsline {subsection}{\numberline {B.5}Step 5: Add corrections}{83}{subsection.Alph0.2.5}%
+\contentsline {subsection}{\numberline {B.6}Step 6: Time step update}{84}{subsection.Alph0.2.6}%
+\contentsline {section}{\numberline {C}SPH equations}{84}{section.Alph0.3}%
+\contentsline {subsection}{\numberline {C.1}Solving $\lambda _i$}{85}{subsection.Alph0.3.1}%
+\contentsline {subsection}{\numberline {C.2}Equation of motion for SPH particles}{87}{subsection.Alph0.3.2}%
+\contentsline {subsection}{\numberline {C.3}Equation of energy for SPH particles}{89}{subsection.Alph0.3.3}%

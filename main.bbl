@@ -6,10 +6,21 @@ Aarseth, S.~J. (1985).
 \newblock In Brackbill, J.~U. and Cohen, B.~I., editors, {\em Multiple Time
   Scales}, pages 377--418. Academic Press.
 
+\bibitem[Balick and Brown, 1974]{balick1974intense}
+Balick, B. and Brown, R.~L. (1974).
+\newblock Intense sub-arcsecond structure in the galactic center.
+\newblock {\em The Astrophysical Journal}, 194:265--270.
+
 \bibitem[Barnes and Hut, 1986]{barnes1986hierarchical}
 Barnes, J. and Hut, P. (1986).
 \newblock A hierarchical o (n log n) force-calculation algorithm.
 \newblock {\em nature}, 324(6096):446--449.
+
+\bibitem[Belczynski et~al., 2010]{belczynski2010maximum}
+Belczynski, K., Bulik, T., Fryer, C.~L., Ruiter, A., Valsecchi, F., Vink,
+  J.~S., and Hurley, J.~R. (2010).
+\newblock On the maximum mass of stellar black holes.
+\newblock {\em The Astrophysical Journal}, 714(2):1217--1226.
 
 \bibitem[Bianchini et~al., 2016]{bianchini2016novel}
 Bianchini, P., van~de Ven, G., Norris, M., Schinnerer, E., and Varri, A.
@@ -28,11 +39,24 @@ Cohn, H. (1980).
 \newblock {\em Astrophysical Journal, Part 1, vol. 242, Dec. 1, 1980, p.
   765-771.}, 242:765--771.
 
+\bibitem[Collaboration et~al., 2022]{event2022first}
+Collaboration, E. H.~T., Akiyama, K., Alberdi, A., Alef, W., Algaba, J.~C.,
+  Anantua, R., Asada, K., Azulay, R., Bach, U., Baczko, A.-K., et~al. (2022).
+\newblock First sagittarius a* event horizon telescope results. i. the shadow
+  of the supermassive black hole in the center of the milky way.
+\newblock {\em The Astrophysical Journal Letters}, 930(2):L12.
+
 \bibitem[Collins et~al., 1978]{collins1978virial}
 Collins, G.~W. et~al. (1978).
 \newblock The virial theorem in stellar astrophysics.
 \newblock {\em Tucson, Ariz., Pachart Publishing House (Astronomy and
   Astrophysics Series. Volume 7), 1978. 143 p.}
+
+\bibitem[Doeleman et~al., 2009]{doeleman2009imaging}
+Doeleman, S., Agol, E., Backer, D., Baganoff, F., Bower, G.~C., Broderick, A.,
+  Fabian, A., Fish, V., Gammie, C., Ho, P., et~al. (2009).
+\newblock Imaging an event horizon: submm-vlbi of a super massive black hole.
+\newblock {\em arXiv preprint arXiv:0906.3899}.
 
 \bibitem[Escala, 2021]{escala2021observational}
 Escala, A. (2021).
@@ -47,10 +71,24 @@ Fujii, M., Iwasawa, M., Funato, Y., and Makino, J. (2007).
 \newblock {\em Publications of the Astronomical Society of Japan},
   59(6):1095--1106.
 
+\bibitem[Garwin and Lincoln, 2019]{garwin2019century}
+Garwin, L. and Lincoln, T. (2019).
+\newblock {\em A century of nature: twenty-one discoveries that changed science
+  and the world}.
+\newblock University of Chicago Press.
+
 \bibitem[Gerritsen et~al., 1997]{gerritsen1997star}
 Gerritsen, J., Icke, V., et~al. (1997).
 \newblock Star formation in n-body simulation, i.
 \newblock {\em Astronomy \& Astrophysics}, 325.
+
+\bibitem[Ghez et~al., 1999]{ghez1999high}
+Ghez, A., Klein, B., Morris, M., and Becklin, E. (1999).
+\newblock High proper motion stars in the vicinity of sgr a*: Evidence for a
+  supermassive black hole at the center of our galaxy.
+\newblock In {\em Observational Evidence for Black Holes in the Universe:
+  Proceedings of a Conference held in Calcutta, India, January 10--17, 1998},
+  pages 265--278. Springer.
 
 \bibitem[Gingold and Monaghan, 1977]{gingold1977smoothed}
 Gingold, R.~A. and Monaghan, J.~J. (1977).
@@ -58,6 +96,11 @@ Gingold, R.~A. and Monaghan, J.~J. (1977).
   non-spherical stars.
 \newblock {\em Monthly notices of the royal astronomical society},
   181(3):375--389.
+
+\bibitem[Greenstein and Matthews, 1963]{greenstein1963red}
+Greenstein, J.~L. and Matthews, T.~A. (1963).
+\newblock Red-shift of the unusual radio source: 3 c 48.
+\newblock {\em Nature}, 197(4872):1041--1042.
 
 \bibitem[Heggie and Mathieu, 1986]{10.1007/BFb0116419}
 Heggie, D.~C. and Mathieu, R.~D. (1986).
@@ -77,6 +120,12 @@ Horedt, G.~P. (2004).
 \newblock {\em Polytropes: applications in astrophysics and related fields}.
 \newblock Springer.
 
+\bibitem[Hoyle and Lyttleton, 1939]{hoyle1939evolution}
+Hoyle, F. and Lyttleton, R.~A. (1939).
+\newblock The evolution of the stars.
+\newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, volume~35, pages 592--609. Cambridge University Press.
+
 \bibitem[Lee, 1987]{lee1987dynamical}
 Lee, H.~M. (1987).
 \newblock Dynamical effects of successive mergers on the evolution of spherical
@@ -88,6 +137,11 @@ Lucy, L.~B. (1977).
 \newblock A numerical approach to the testing of the fission hypothesis.
 \newblock {\em Astronomical Journal, vol. 82, Dec. 1977, p. 1013-1024.},
   82:1013--1024.
+
+\bibitem[Lynden-Bell, 1969]{lynden1969galactic}
+Lynden-Bell, D. (1969).
+\newblock Galactic nuclei as collapsed old quasars.
+\newblock {\em Nature}, 223(5207).
 
 \bibitem[Makino and Aarseth, 1992]{makino1992}
 Makino, J. and Aarseth, S.~J. (1992).
@@ -102,12 +156,23 @@ Monaghan, J.~J. (1992).
 \newblock {\em In: Annual review of astronomy and astrophysics. Vol. 30
   (A93-25826 09-90), p. 543-574.}, 30:543--574.
 
+\bibitem[Natarajan and Treister, 2009]{natarajan2009there}
+Natarajan, P. and Treister, E. (2009).
+\newblock Is there an upper limit to black hole masses?
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  393(3):838--845.
+
 \bibitem[Nelson and Papaloizou, 1994]{nelson1994variable}
 Nelson, R.~P. and Papaloizou, J.~C. (1994).
 \newblock Variable smoothing lengths and energy conservation in smoothed
   particle hydrodynamics.
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
   270(1):1--20.
+
+\bibitem[O'Connor and Ott, 2011]{o2011black}
+O'Connor, E. and Ott, C.~D. (2011).
+\newblock Black hole formation in failing core-collapse supernovae.
+\newblock {\em The Astrophysical Journal}, 730(2):70.
 
 \bibitem[Pelupessy, 2005]{pelupessy2005numerical}
 Pelupessy, F.~I. (2005).
@@ -142,6 +207,22 @@ Reinoso~Reinoso, B.~A. (2024).
 Salmon, J.~K. and Warren, M.~S. (1994).
 \newblock Skeletons from the treecode closet.
 \newblock {\em Journal of Computational Physics}, 111(1):136--155.
+
+\bibitem[Salpeter, 1965]{salpeter1965accretion}
+Salpeter, E.~E. (1965).
+\newblock Accretion of interstellar matter by massive objects.
+
+\bibitem[Schmidt, 1963]{schmidt19633c273}
+Schmidt, M. (1963).
+\newblock 3c273: a star-like object with large red-shift.”.
+\newblock {\em A Century of Nature, Twenty One Discoveries That Changed Science
+  and the World}, page~43.
+
+\bibitem[Shields, 1999]{shields1999brief}
+Shields, G.~A. (1999).
+\newblock A brief history of active galactic nuclei.
+\newblock {\em Publications of the Astronomical Society of the Pacific},
+  111(760):661--678.
 
 \bibitem[{Spitzer}, 1987]{1987degc.book.....S}
 {Spitzer}, L. (1987).
@@ -189,6 +270,13 @@ Vergara, M.~C., Escala, A., Schleicher, D., and Reinoso, B. (2023).
 Weisstein, E.~W. (2002).
 \newblock Lambert w-function.
 \newblock {\em https://mathworld. wolfram. com/}.
+
+\bibitem[Woods et~al., 2019]{woods2019titans}
+Woods, T.~E., Agarwal, B., Bromm, V., Bunker, A., Chen, K.-J., Chon, S.,
+  Ferrara, A., Glover, S.~C., Haemmerle, L., Haiman, Z., et~al. (2019).
+\newblock Titans of the early universe: The prato statement on the origin of
+  the first supermassive black holes.
+\newblock {\em Publications of the Astronomical Society of Australia}, 36:e027.
 
 \bibitem[Zwart and McMillan, 2018]{zwart2018astrophysical}
 Zwart, S.~P. and McMillan, S. (2018).
