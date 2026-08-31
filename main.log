@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  25 AUG 2026 22:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.14)  30 AUG 2026 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2491,24 +2491,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -2558,16 +2558,16 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 )
 \symgns@font=\mathgroup11
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/ptm/m/n --> TS1/ptm/b/n on input line 121.
-Package gensymb Info: Math companion symbols declared on input line 121.
-LaTeX Info: Redefining \degree on input line 121.
-LaTeX Info: Redefining \celsius on input line 121.
+(Font)                  TS1/ptm/m/n --> TS1/ptm/b/n on input line 122.
+Package gensymb Info: Math companion symbols declared on input line 122.
+LaTeX Info: Redefining \degree on input line 122.
+LaTeX Info: Redefining \celsius on input line 122.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 121.
-LaTeX Info: Redefining \ohm on input line 121.
-Package gensymb Info: Using \textohm for \ohm on input line 121.
-Package gensymb Info: Using \textmu for \micro on input line 121.
-Package hyperref Info: Link coloring ON on input line 121.
+erthousand on input line 122.
+LaTeX Info: Redefining \ohm on input line 122.
+Package gensymb Info: Using \textohm for \ohm on input line 122.
+Package gensymb Info: Using \textmu for \micro on input line 122.
+Package hyperref Info: Link coloring ON on input line 122.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2639,61 +2639,61 @@ Package hyperref Info: Link coloring ON on input line 121.
 File: ./img//departamentos/uchile2.pdf Graphic file (type pdf)
 <use ./img//departamentos/uchile2.pdf>
 Package pdftex.def Info: ./img//departamentos/uchile2.pdf  used on input line 1
-24.
+25.
 (pdftex.def)             Requested size: 50.42442pt x 85.35826pt.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 124.
+ 125.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 124.
+ 125.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 124.
+ 125.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 124.
+ 125.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-4.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 12
-4.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-24.
+25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-24.
+25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-24.
+25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -2736,13 +2736,13 @@ st/fonts/enc/dvips/base/8r.enc} <./img//departamentos/uchile2.pdf>]
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Calculating math sizes for size <10.95007> on input line 13
-0.
+1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95007> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 130.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.1031> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 130.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.5701> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 130.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
  [1
 
 
@@ -2779,154 +2779,160 @@ Chapter 1.
 
 
 ]
-<./img//3c_273.png, id=301, 1088.065pt x 1405.25pt>
+<./img//3c_273.png, id=317, 1088.065pt x 1405.25pt>
 File: ./img//3c_273.png Graphic file (type png)
 <use ./img//3c_273.png>
 Package pdftex.def Info: ./img//3c_273.png  used on input line 42.
 (pdftex.def)             Requested size: 236.01561pt x 304.80316pt.
  [2 <./img//3c_273.png>]
-<./img//Sag_A.jpg, id=332, 513.117pt x 160.1985pt>
+<./img//Sag_A.jpg, id=349, 513.117pt x 160.1985pt>
 File: ./img//Sag_A.jpg Graphic file (type jpg)
 <use ./img//Sag_A.jpg>
 Package pdftex.def Info: ./img//Sag_A.jpg  used on input line 71.
 (pdftex.def)             Requested size: 472.03123pt x 147.37706pt.
  [3] [4 <./img//Sag_A.jpg>]
+<./img//Light_heavy_seeds.png, id=423, 845.40843pt x 597.73312pt>
+File: ./img//Light_heavy_seeds.png Graphic file (type png)
+<use ./img//Light_heavy_seeds.png>
+Package pdftex.def Info: ./img//Light_heavy_seeds.png  used on input line 90.
+(pdftex.def)             Requested size: 424.82523pt x 300.3616pt.
+ [5 <./img//Light_heavy_seeds.png>] [6] [7]
 Chapter 2.
-[5
+[8
 
-] [6] [7]
-<./img//Plots/Scenario_Mcrit_Mrelax.png, id=426, 462.528pt x 346.896pt>
+] [9] [10]
+<./img//Plots/Scenario_Mcrit_Mrelax.png, id=561, 462.528pt x 346.896pt>
 File: ./img//Plots/Scenario_Mcrit_Mrelax.png Graphic file (type png)
 <use ./img//Plots/Scenario_Mcrit_Mrelax.png>
 Package pdftex.def Info: ./img//Plots/Scenario_Mcrit_Mrelax.png  used on input 
-line 187.
+line 219.
 (pdftex.def)             Requested size: 424.82523pt x 318.63474pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] [9 <./img//Plots/Scenario_Mcrit_Mrelax.png>] [10]
+[11] [12 <./img//Plots/Scenario_Mcrit_Mrelax.png>] [13]
 Chapter 3.
-<./img//Esquemas/amuse_domains.png, id=468, 728.7225pt x 735.74875pt>
+<./img//Esquemas/amuse_domains.png, id=601, 728.7225pt x 735.74875pt>
 File: ./img//Esquemas/amuse_domains.png Graphic file (type png)
 <use ./img//Esquemas/amuse_domains.png>
 Package pdftex.def Info: ./img//Esquemas/amuse_domains.png  used on input line 
-207.
+239.
 (pdftex.def)             Requested size: 377.62642pt x 381.26682pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11
+[14
 
 ]
-<./img//Esquemas/amuse_layers.png, id=480, 643.40375pt x 743.77875pt>
+<./img//Esquemas/amuse_layers.png, id=613, 643.40375pt x 743.77875pt>
 File: ./img//Esquemas/amuse_layers.png Graphic file (type png)
 <use ./img//Esquemas/amuse_layers.png>
 Package pdftex.def Info: ./img//Esquemas/amuse_layers.png  used on input line 2
-16.
+48.
 (pdftex.def)             Requested size: 424.82523pt x 491.11113pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12 <./img//Esquemas/amuse_domains.png>] [13 <./img//Esquemas/amuse_layers.png>
-] [14] [15] [16] [17] [18]
-<./img//Esquemas/BHtree_plot.png, id=589, 859.86845pt x 422.49042pt>
+[15 <./img//Esquemas/amuse_domains.png>] [16 <./img//Esquemas/amuse_layers.png>
+] [17] [18] [19] [20] [21]
+<./img//Esquemas/BHtree_plot.png, id=722, 859.86845pt x 422.49042pt>
 File: ./img//Esquemas/BHtree_plot.png Graphic file (type png)
 <use ./img//Esquemas/BHtree_plot.png>
-Package pdftex.def Info: ./img//Esquemas/BHtree_plot.png  used on input line 39
-5.
+Package pdftex.def Info: ./img//Esquemas/BHtree_plot.png  used on input line 42
+7.
 (pdftex.def)             Requested size: 472.03123pt x 231.93207pt.
- [19] [20 <./img//Esquemas/BHtree_plot.png>] [21]
-[22] [23] [24] [25] [26]
-LaTeX Font Info:    Calculating math sizes for size <8.00006> on input line 634
+ [22] [23 <./img//Esquemas/BHtree_plot.png>] [24]
+[25] [26] [27] [28] [29]
+LaTeX Font Info:    Calculating math sizes for size <8.00006> on input line 666
 .
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.00006> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 634.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 666.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.92007> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 634.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 666.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <4.80008> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 634.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 666.
 
 
 LaTeX Font Warning: Font shape `T1/lmvtt/m/it' in size <12> not available
-(Font)              Font shape `T1/lmvtt/m/sl' tried instead on input line 634.
+(Font)              Font shape `T1/lmvtt/m/sl' tried instead on input line 666.
 
 
-<./img//Plots/force_comparison_1.png, id=733, 462.528pt x 346.896pt>
+<./img//Plots/force_comparison_1.png, id=867, 462.528pt x 346.896pt>
 File: ./img//Plots/force_comparison_1.png Graphic file (type png)
 <use ./img//Plots/force_comparison_1.png>
 Package pdftex.def Info: ./img//Plots/force_comparison_1.png  used on input lin
-e 650.
+e 682.
 (pdftex.def)             Requested size: 377.62642pt x 283.23383pt.
-[27] [28 <./img//Plots/force_comparison_1.png>] [29]
-<./img//Esquemas/Bridge_Diagram.png, id=770, 1393.205pt x 586.19pt>
+[30] [31 <./img//Plots/force_comparison_1.png>] [32]
+<./img//Esquemas/Bridge_Diagram.png, id=903, 1393.205pt x 586.19pt>
 File: ./img//Esquemas/Bridge_Diagram.png Graphic file (type png)
 <use ./img//Esquemas/Bridge_Diagram.png>
 Package pdftex.def Info: ./img//Esquemas/Bridge_Diagram.png  used on input line
- 701.
+ 733.
 (pdftex.def)             Requested size: 472.03123pt x 198.60428pt.
- [30 <./img//Esquemas/Bridge_Diagram.png>]
+ [33 <./img//Esquemas/Bridge_Diagram.png>]
 Chapter 4.
-[31
+[34
 
-] [32] [33] [34] [35]
+] [35] [36] [37] [38]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36]
+[39]
 
-LaTeX Warning: Text page 37 contains only floats.
+LaTeX Warning: Text page 40 contains only floats.
 
-[37] [38] [39] [40] [41]
+[40] [41] [42] [43] [44]
 LaTeX Font Info:    Calculating math sizes for size <10.00012> on input line 12
-16.
+48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.00012> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1216.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1248.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.40013> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1216.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1248.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.00012> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1216.
- [42]
-<./img//Plots/Energy_cons_virial.png, id=1009, 722.7pt x 433.62pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1248.
+ [45]
+<./img//Plots/Energy_cons_virial.png, id=1142, 722.7pt x 433.62pt>
 File: ./img//Plots/Energy_cons_virial.png Graphic file (type png)
 <use ./img//Plots/Energy_cons_virial.png>
 Package pdftex.def Info: ./img//Plots/Energy_cons_virial.png  used on input lin
-e 1250.
+e 1282.
 (pdftex.def)             Requested size: 472.03123pt x 283.21927pt.
- [43] [44 <./img//Plots/Energy_cons_virial.png>]
+ [46] [47 <./img//Plots/Energy_cons_virial.png>]
 Chapter 5.
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1023
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1157
 , 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf  used on input line 1265.
+/aa_example.pdf  used on input line 1297.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf  used on input line 1265.
+/aa_example.pdf  used on input line 1297.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1026
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1160
 , page=1, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 1>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page1 used on input line 1265.
+/aa_example.pdf , page1 used on input line 1297.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 1>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page1 used on input line 1265.
+/aa_example.pdf , page1 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-[45
+[48
 
 ]
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
@@ -2934,534 +2940,534 @@ phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 1>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page1 used on input line 1265.
+/aa_example.pdf , page1 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 1>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page1 used on input line 1265.
+/aa_example.pdf , page1 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 1>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page1 used on input line 1265.
+/aa_example.pdf , page1 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [46
+ [49
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1117
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1250
 , page=2, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 2>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page2 used on input line 1265.
+/aa_example.pdf , page2 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 2>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page2 used on input line 1265.
+/aa_example.pdf , page2 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 2>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page2 used on input line 1265.
+/aa_example.pdf , page2 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [47
+ [50
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1123
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1256
 , page=3, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 3>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page3 used on input line 1265.
+/aa_example.pdf , page3 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 3>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page3 used on input line 1265.
+/aa_example.pdf , page3 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 3>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page3 used on input line 1265.
+/aa_example.pdf , page3 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-[48
+[51
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1135
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1268
 , page=4, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 4>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page4 used on input line 1265.
+/aa_example.pdf , page4 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 4>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page4 used on input line 1265.
+/aa_example.pdf , page4 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 4>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page4 used on input line 1265.
+/aa_example.pdf , page4 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[49
+[52
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1157
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1291
 , page=5, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 5>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page5 used on input line 1265.
+/aa_example.pdf , page5 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 5>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page5 used on input line 1265.
+/aa_example.pdf , page5 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 5>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page5 used on input line 1265.
+/aa_example.pdf , page5 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[50
+[53
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1166
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1300
 , page=6, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 6>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page6 used on input line 1265.
+/aa_example.pdf , page6 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 6>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page6 used on input line 1265.
+/aa_example.pdf , page6 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 6>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page6 used on input line 1265.
+/aa_example.pdf , page6 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[51
+[54
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1179
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1313
 , page=7, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 7>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page7 used on input line 1265.
+/aa_example.pdf , page7 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 7>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page7 used on input line 1265.
+/aa_example.pdf , page7 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 7>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page7 used on input line 1265.
+/aa_example.pdf , page7 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[52
+[55
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1189
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1322
 , page=8, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 8>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page8 used on input line 1265.
+/aa_example.pdf , page8 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 8>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page8 used on input line 1265.
+/aa_example.pdf , page8 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 8>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page8 used on input line 1265.
+/aa_example.pdf , page8 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[53
+[56
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1198
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1331
 , page=9, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 9>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page9 used on input line 1265.
+/aa_example.pdf , page9 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 9>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page9 used on input line 1265.
+/aa_example.pdf , page9 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 9>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page9 used on input line 1265.
+/aa_example.pdf , page9 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[54
+[57
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1204
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1337
 , page=10, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 10>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page10 used on input line 1265.
+/aa_example.pdf , page10 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 10>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page10 used on input line 1265.
+/aa_example.pdf , page10 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 10>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page10 used on input line 1265.
+/aa_example.pdf , page10 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[55
+[58
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1210
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1344
 , page=11, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 11>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page11 used on input line 1265.
+/aa_example.pdf , page11 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 11>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page11 used on input line 1265.
+/aa_example.pdf , page11 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 11>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page11 used on input line 1265.
+/aa_example.pdf , page11 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[56
+[59
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1216
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1350
 , page=12, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 12>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page12 used on input line 1265.
+/aa_example.pdf , page12 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 12>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page12 used on input line 1265.
+/aa_example.pdf , page12 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 12>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page12 used on input line 1265.
+/aa_example.pdf , page12 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[57
+[60
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1222
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1356
 , page=13, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 13>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page13 used on input line 1265.
+/aa_example.pdf , page13 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 13>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page13 used on input line 1265.
+/aa_example.pdf , page13 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 13>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page13 used on input line 1265.
+/aa_example.pdf , page13 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[58
+[61
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1229
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1362
 , page=14, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 14>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page14 used on input line 1265.
+/aa_example.pdf , page14 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 14>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page14 used on input line 1265.
+/aa_example.pdf , page14 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 14>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page14 used on input line 1265.
+/aa_example.pdf , page14 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[59
+[62
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1238
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1371
 , page=15, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 15>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page15 used on input line 1265.
+/aa_example.pdf , page15 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 15>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page15 used on input line 1265.
+/aa_example.pdf , page15 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 15>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page15 used on input line 1265.
+/aa_example.pdf , page15 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[60
+[63
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1247
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1380
 , page=16, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 16>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page16 used on input line 1265.
+/aa_example.pdf , page16 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 16>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page16 used on input line 1265.
+/aa_example.pdf , page16 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 16>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page16 used on input line 1265.
+/aa_example.pdf , page16 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[61
+[64
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1256
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1390
 , page=17, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 17>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page17 used on input line 1265.
+/aa_example.pdf , page17 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 17>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page17 used on input line 1265.
+/aa_example.pdf , page17 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 17>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page17 used on input line 1265.
+/aa_example.pdf , page17 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[62
+[65
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
-</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1271
+</home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, id=1405
 , page=18, 597.50829pt x 845.0471pt>
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 18>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page18 used on input line 1265.
+/aa_example.pdf , page18 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 18>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page18 used on input line 1265.
+/aa_example.pdf , page18 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf Gra
 phic file (type pdf)
 <use /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf, pag
 e 18>
 Package pdftex.def Info: /home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate
-/aa_example.pdf , page18 used on input line 1265.
+/aa_example.pdf , page18 used on input line 1297.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
-[63
+[66
 
  </home/boris/LaTex/Astronomy_Astrophysics_LaTeXtemplate/aa_example.pdf>]
 Chapter 6.
-(./main.bbl [64
+(./main.bbl [67
 
-] [65
+] [68
 
-] [66] [67]) [68] [69
+] [69] [70] [71]) [72] [73
 
-] [70] [71] [72] [73] [74] [75]
-[76]
-<img/Plots/lambert_plot.png, id=1445, 325.215pt x 469.755pt>
+] [74] [75] [76] [77] [78]
+[79] [80]
+<img/Plots/lambert_plot.png, id=1583, 325.215pt x 469.755pt>
 File: img/Plots/lambert_plot.png Graphic file (type png)
 <use img/Plots/lambert_plot.png>
-Package pdftex.def Info: img/Plots/lambert_plot.png  used on input line 1565.
+Package pdftex.def Info: img/Plots/lambert_plot.png  used on input line 1597.
 (pdftex.def)             Requested size: 236.01561pt x 340.91847pt.
- [77] [78 <./img/Plots/lambert_plot.png>] [79] [80]
+ [81] [82 <./img/Plots/lambert_plot.png>] [83] [84]
 LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 16
-50.
+82.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.39996> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1650.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1682.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.65605> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1650.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1682.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.64006> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1650.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1682.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1650.
+(hyperref)                removing `math shift' on input line 1682.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1650.
+(hyperref)                removing `math shift' on input line 1682.
 
-[81] [82] [83] [84]
+[85] [86] [87] [88]
 
-Package mathptmx Warning: There are no bold math fonts on input line 1818.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1820.
+Package mathptmx Warning: There are no bold math fonts on input line 1850.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1820.
+(hyperref)                removing `math shift' on input line 1852.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1820.
+(hyperref)                removing `subscript' on input line 1852.
 
-[85] [86] [87] [88] [89] [90])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1852.
+
+[89] [90] [91] [92] [93] [94])
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [91]
+) [95]
 (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -3469,10 +3475,10 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 44546 strings out of 474222
- 792263 string characters out of 5748733
- 2117975 words of memory out of 5000000
- 65322 multiletter control sequences out of 15000+600000
+ 44665 strings out of 474222
+ 795192 string characters out of 5748733
+ 2118975 words of memory out of 5000000
+ 65409 multiletter control sequences out of 15000+600000
  699640 words of font info for 300 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,18n,110p,3415b,4022s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3500,10 +3506,10 @@ texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (100 pages, 5898082 bytes).
+Output written on main.pdf (104 pages, 6125014 bytes).
 PDF statistics:
- 2063 PDF objects out of 2073 (max. 8388607)
- 1807 compressed objects within 19 object streams
- 611 named destinations out of 1000 (max. 500000)
- 665 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2218 PDF objects out of 2487 (max. 8388607)
+ 1953 compressed objects within 20 object streams
+ 643 named destinations out of 1000 (max. 500000)
+ 694 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,6 +6,11 @@ Aarseth, S.~J. (1985).
 \newblock In Brackbill, J.~U. and Cohen, B.~I., editors, {\em Multiple Time
   Scales}, pages 377--418. Academic Press.
 
+\bibitem[Alvarez et~al., 2009]{alvarez2009accretion}
+Alvarez, M.~A., Wise, J.~H., and Abel, T. (2009).
+\newblock Accretion onto the first stellar-mass black holes.
+\newblock {\em The Astrophysical Journal}, 701(2):L133--L137.
+
 \bibitem[Balick and Brown, 1974]{balick1974intense}
 Balick, B. and Brown, R.~L. (1974).
 \newblock Intense sub-arcsecond structure in the galactic center.
@@ -15,6 +20,11 @@ Balick, B. and Brown, R.~L. (1974).
 Barnes, J. and Hut, P. (1986).
 \newblock A hierarchical o (n log n) force-calculation algorithm.
 \newblock {\em nature}, 324(6096):446--449.
+
+\bibitem[Baumgarte and Shapiro, 1999]{baumgarte1999evolution}
+Baumgarte, T.~W. and Shapiro, S.~L. (1999).
+\newblock Evolution of rotating supermassive stars to the onset of collapse.
+\newblock {\em The Astrophysical Journal}, 526(2):941--952.
 
 \bibitem[Belczynski et~al., 2010]{belczynski2010maximum}
 Belczynski, K., Bulik, T., Fryer, C.~L., Ruiter, A., Valsecchi, F., Vink,
@@ -32,6 +42,18 @@ Bianchini, P., van~de Ven, G., Norris, M., Schinnerer, E., and Varri, A.
 \bibitem[{Binney} and {Tremaine}, 2008]{2008gady.book.....B}
 {Binney}, J. and {Tremaine}, S. (2008).
 \newblock {\em {Galactic Dynamics: Second Edition}}.
+
+\bibitem[Bromm and Loeb, 2003]{bromm2003formation}
+Bromm, V. and Loeb, A. (2003).
+\newblock Formation of the first supermassive black holes.
+\newblock {\em The Astrophysical Journal}, 596(1):34--46.
+
+\bibitem[Chon et~al., 2021]{chon2021cosmological}
+Chon, S., Hosokawa, T., and Omukai, K. (2021).
+\newblock Cosmological direct-collapse black hole formation sites hostile for
+  their growth.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  502(1):700--713.
 
 \bibitem[Cohn, 1980]{cohn1980late}
 Cohn, H. (1980).
@@ -64,6 +86,11 @@ Escala, A. (2021).
   runaway stellar collisions in galactic nuclei.
 \newblock {\em The Astrophysical Journal}, 908(1):57.
 
+\bibitem[Fryer et~al., 2001]{fryer2001pair}
+Fryer, C., Woosley, S., and Heger, A. (2001).
+\newblock Pair-instability supernovae, gravity waves, and gamma-ray transients.
+\newblock {\em The Astrophysical Journal}, 550(1):372--382.
+
 \bibitem[Fujii et~al., 2007]{fujii2007bridge}
 Fujii, M., Iwasawa, M., Funato, Y., and Makino, J. (2007).
 \newblock Bridge: A direct-tree hybrid-body algorithm for fully self-consistent
@@ -89,6 +116,13 @@ Ghez, A., Klein, B., Morris, M., and Becklin, E. (1999).
 \newblock In {\em Observational Evidence for Black Holes in the Universe:
   Proceedings of a Conference held in Calcutta, India, January 10--17, 1998},
   pages 265--278. Springer.
+
+\bibitem[Gillessen et~al., 2009]{gillessen2009orbit}
+Gillessen, S., Eisenhauer, F., Fritz, T., Bartko, H., Dodds-Eden, K., Pfuhl,
+  O., Ott, T., and Genzel, R. (2009).
+\newblock The orbit of the star s2 around sgr a* from very large telescope and
+  keck data.
+\newblock {\em The Astrophysical Journal}, 707(2):L114--L117.
 
 \bibitem[Gingold and Monaghan, 1977]{gingold1977smoothed}
 Gingold, R.~A. and Monaghan, J.~J. (1977).
@@ -126,6 +160,18 @@ Hoyle, F. and Lyttleton, R.~A. (1939).
 \newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
   Society}, volume~35, pages 592--609. Cambridge University Press.
 
+\bibitem[Jiang et~al., 2015]{jiang2015discovery}
+Jiang, L., McGreer, I.~D., Fan, X., Bian, F., Cai, Z., Clement, B., Wang, R.,
+  and Fan, Z. (2015).
+\newblock Discovery of eight z~ 6 quasars in the sloan digital sky survey
+  overlap regions.
+\newblock {\em The Astronomical Journal}, 149(6):188.
+
+\bibitem[Latif and Ferrara, 2016]{latif2016formation}
+Latif, M.~A. and Ferrara, A. (2016).
+\newblock Formation of supermassive black hole seeds.
+\newblock {\em Publications of the Astronomical Society of Australia}, 33:e051.
+
 \bibitem[Lee, 1987]{lee1987dynamical}
 Lee, H.~M. (1987).
 \newblock Dynamical effects of successive mergers on the evolution of spherical
@@ -150,11 +196,24 @@ Makino, J. and Aarseth, S.~J. (1992).
 \newblock {\em Publications of the Astronomical Society of Japan},
   44(2):141--151.
 
+\bibitem[Milosavljevi{\'c} et~al., 2009]{milosavljevic2009accretion}
+Milosavljevi{\'c}, M., Couch, S.~M., and Bromm, V. (2009).
+\newblock Accretion onto intermediate-mass black holes in dense protogalactic
+  clouds.
+\newblock {\em The Astrophysical Journal}, 696(2):L146--L149.
+
 \bibitem[Monaghan, 1992]{monaghan1992smoothed}
 Monaghan, J.~J. (1992).
 \newblock Smoothed particle hydrodynamics.
 \newblock {\em In: Annual review of astronomy and astrophysics. Vol. 30
   (A93-25826 09-90), p. 543-574.}, 30:543--574.
+
+\bibitem[Mortlock et~al., 2011]{mortlock2011luminous}
+Mortlock, D.~J., Warren, S.~J., Venemans, B.~P., Patel, M., Hewett, P.~C.,
+  McMahon, R.~G., Simpson, C., Theuns, T., Gonz{\'a}les-Solares, E.~A.,
+  Adamson, A., et~al. (2011).
+\newblock A luminous quasar at a redshift of z= 7.085.
+\newblock {\em Nature}, 474(7353):616--619.
 
 \bibitem[Natarajan and Treister, 2009]{natarajan2009there}
 Natarajan, P. and Treister, E. (2009).
@@ -174,11 +233,30 @@ O'Connor, E. and Ott, C.~D. (2011).
 \newblock Black hole formation in failing core-collapse supernovae.
 \newblock {\em The Astrophysical Journal}, 730(2):70.
 
+\bibitem[O’Shea and Norman, 2007]{o2007population}
+O’Shea, B.~W. and Norman, M.~L. (2007).
+\newblock Population iii star formation in a $\lambda$cdm universe. i. the
+  effect of formation redshift and environment on protostellar accretion rate.
+\newblock {\em The Astrophysical Journal}, 654(1):66--92.
+
+\bibitem[O’Shea and Norman, 2008]{o2008population}
+O’Shea, B.~W. and Norman, M.~L. (2008).
+\newblock Population iii star formation in a $\lambda$cdm universe. ii. effects
+  of a photodissociating background.
+\newblock {\em The Astrophysical Journal}, 673(1):14--33.
+
 \bibitem[Pelupessy, 2005]{pelupessy2005numerical}
 Pelupessy, F.~I. (2005).
 \newblock {\em Numerical studies of the interstellar medium on galactic
   scales}.
 \newblock PhD thesis, {\'e}diteur non identifi{\'e}.
+
+\bibitem[Pfister et~al., 2019]{pfister2019erratic}
+Pfister, H., Volonteri, M., Dubois, Y., Dotti, M., and Colpi, M. (2019).
+\newblock The erratic dynamical life of black hole seeds in high-redshift
+  galaxies.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  486(1):101--111.
 
 \bibitem[Plummer, 1911]{plummer1911problem}
 Plummer, H.~C. (1911).
@@ -186,10 +264,22 @@ Plummer, H.~C. (1911).
 \newblock {\em Monthly Notices of the Royal Astronomical Society, Vol. 71, p.
   460-470}, 71:460--470.
 
+\bibitem[Portegies~Zwart et~al., 2004]{portegies2004formation}
+Portegies~Zwart, S.~F., Baumgardt, H., Hut, P., Makino, J., and McMillan, S.~L.
+  (2004).
+\newblock Formation of massive black holes through runaway collisions in dense
+  young star clusters.
+\newblock {\em Nature}, 428(6984):724--726.
+
 \bibitem[Rasio, 2000]{rasio2000particle}
 Rasio, F.~A. (2000).
 \newblock Particle methods in astrophysical fluid dynamics.
 \newblock {\em Progress of Theoretical Physics Supplement}, 138:609--621.
+
+\bibitem[Regan and Volonteri, 2024]{regan2024massive}
+Regan, J. and Volonteri, M. (2024).
+\newblock Massive black hole seeds.
+\newblock {\em arXiv preprint arXiv:2405.17975}.
 
 \bibitem[Reinoso et~al., 2020]{reinoso2020effects}
 Reinoso, B., Schleicher, D., Fellhauer, M., Leigh, N., and Klessen, R. (2020).
@@ -218,11 +308,33 @@ Schmidt, M. (1963).
 \newblock {\em A Century of Nature, Twenty One Discoveries That Changed Science
   and the World}, page~43.
 
+\bibitem[Shang et~al., 2010]{shang2010supermassive}
+Shang, C., Bryan, G.~L., and Haiman, Z. (2010).
+\newblock Supermassive black hole formation by direct collapse: keeping
+  protogalactic gas h2 free in dark matter haloes with virial temperatures t
+  vir> rsim 104 k.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  402(2):1249--1262.
+
+\bibitem[Shibata and Shapiro, 2002]{shibata2002collapse}
+Shibata, M. and Shapiro, S.~L. (2002).
+\newblock Collapse of a rotating supermassive star to a supermassive black
+  hole: Fully relativistic simulations.
+\newblock {\em The Astrophysical Journal Letters}, 572(1):L39--L43.
+
 \bibitem[Shields, 1999]{shields1999brief}
 Shields, G.~A. (1999).
 \newblock A brief history of active galactic nuclei.
 \newblock {\em Publications of the Astronomical Society of the Pacific},
   111(760):661--678.
+
+\bibitem[Smith et~al., 2018]{smith2018growth}
+Smith, B.~D., Regan, J.~A., Downes, T.~P., Norman, M.~L., O’Shea, B.~W., and
+  Wise, J.~H. (2018).
+\newblock The growth of black holes from population iii remnants in the
+  renaissance simulations.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  480(3):3762--3773.
 
 \bibitem[{Spitzer}, 1987]{1987degc.book.....S}
 {Spitzer}, L. (1987).
@@ -266,10 +378,40 @@ Vergara, M.~C., Escala, A., Schleicher, D., and Reinoso, B. (2023).
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
   522(3):4224--4237.
 
+\bibitem[Vesperini et~al., 2010]{vesperini2010intermediate}
+Vesperini, E., McMillan, S.~L., D'Ercole, A., and D'Antona, F. (2010).
+\newblock Intermediate-mass black holes in early globular clusters.
+\newblock {\em The Astrophysical Journal Letters}, 713(1):L41--L44.
+
+\bibitem[Volonteri, 2010]{volonteri2010formation}
+Volonteri, M. (2010).
+\newblock Formation of supermassive black holes.
+\newblock {\em The Astronomy and Astrophysics Review}, 18(3):279--315.
+
+\bibitem[Wang et~al., 2021]{wang2021luminous}
+Wang, F., Yang, J., Fan, X., Hennawi, J.~F., Barth, A.~J., Banados, E., Bian,
+  F., Boutsia, K., Connor, T., Davies, F.~B., et~al. (2021).
+\newblock A luminous quasar at redshift 7.642.
+\newblock {\em The Astrophysical Journal Letters}, 907(1):L1.
+
 \bibitem[Weisstein, 2002]{weisstein2002lambert}
 Weisstein, E.~W. (2002).
 \newblock Lambert w-function.
 \newblock {\em https://mathworld. wolfram. com/}.
+
+\bibitem[Willott et~al., 2007]{willott2007four}
+Willott, C.~J., Delorme, P., Omont, A., Bergeron, J., Delfosse, X., Forveille,
+  T., Albert, L., Reyl{\'e}, C., Hill, G.~J., Gully-Santiago, M., et~al.
+  (2007).
+\newblock Four quasars above redshift 6 discovered by the canada-france high-z
+  quasar survey.
+\newblock {\em The Astronomical Journal}, 134(6):2435--2450.
+
+\bibitem[Woods et~al., 2017]{woods2017maximum}
+Woods, T., Heger, A., Whalen, D.~J., Haemmerl{\'e}, L., and Klessen, R.~S.
+  (2017).
+\newblock On the maximum mass of accreting primordial supermassive stars.
+\newblock {\em The Astrophysical Journal Letters}, 842(1):L6.
 
 \bibitem[Woods et~al., 2019]{woods2019titans}
 Woods, T.~E., Agarwal, B., Bromm, V., Bunker, A., Chen, K.-J., Chon, S.,
@@ -277,6 +419,12 @@ Woods, T.~E., Agarwal, B., Bromm, V., Bunker, A., Chen, K.-J., Chon, S.,
 \newblock Titans of the early universe: The prato statement on the origin of
   the first supermassive black holes.
 \newblock {\em Publications of the Astronomical Society of Australia}, 36:e027.
+
+\bibitem[Yang et~al., 2026]{yang2026euclid}
+Yang, D., Hennawi, J., Guarneri, F., Wolf, J., Belladitta, S., Schindler,
+  J.-T., Hughes, A., Ba{\~n}ados, E., Mortlock, D., Yang, J., et~al. (2026).
+\newblock Euclid: Discovery of 31 new quasars at 6.6< z< 7.8.
+\newblock {\em Astronomy \& Astrophysics}, 711:A104.
 
 \bibitem[Zwart and McMillan, 2018]{zwart2018astrophysical}
 Zwart, S.~P. and McMillan, S. (2018).
