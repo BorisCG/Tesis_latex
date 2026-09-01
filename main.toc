@@ -37,24 +37,22 @@
 \contentsline {chapter}{\numberline {5}Results}{48}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Statement about my contribution}{48}{section.5.1}%
 \contentsline {chapter}{\numberline {6}Conclusions}{67}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Interpretation of Gas-Induced Enhancements}{67}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Implications for SMBH Seed Formation}{67}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Limitations and Future Work}{67}{section.6.3}%
-\contentsline {chapter}{References}{68}{chapter*.30}%
-\contentsline {chapter}{Appendices}{73}{appendix*.32}%
-\contentsline {section}{\numberline {A}Derivation of Critical Masses for Collisions and Relaxation}{73}{section.Alph0.1}%
-\contentsline {subsection}{\numberline {A.1}Critical Mass in the Simplified Case}{73}{subsection.Alph0.1.1}%
-\contentsline {subsection}{\numberline {A.2}Effect of an External Gravitational Potential}{74}{subsection.Alph0.1.2}%
-\contentsline {subsection}{\numberline {A.3}Generalized Critical Mass Including Gravitational Focusing}{76}{subsection.Alph0.1.3}%
-\contentsline {subsection}{\numberline {A.4}Derivation of the Relaxation Mass}{78}{subsection.Alph0.1.4}%
-\contentsline {section}{\numberline {B}Fourth-Order Hermite Integration Scheme}{83}{section.Alph0.2}%
-\contentsline {subsection}{\numberline {B.1}Step 1: Particle selection}{83}{subsection.Alph0.2.1}%
-\contentsline {subsection}{\numberline {B.2}Step 2: Calculate the predicted position and velocities for all particles}{84}{subsection.Alph0.2.2}%
-\contentsline {subsection}{\numberline {B.3}Step 3: Calculate acceleration and jerk for particle $i$}{85}{subsection.Alph0.2.3}%
-\contentsline {subsection}{\numberline {B.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{85}{subsection.Alph0.2.4}%
-\contentsline {subsection}{\numberline {B.5}Step 5: Add corrections}{87}{subsection.Alph0.2.5}%
-\contentsline {subsection}{\numberline {B.6}Step 6: Time step update}{88}{subsection.Alph0.2.6}%
-\contentsline {section}{\numberline {C}SPH equations}{88}{section.Alph0.3}%
-\contentsline {subsection}{\numberline {C.1}Solving $\lambda _i$}{89}{subsection.Alph0.3.1}%
-\contentsline {subsection}{\numberline {C.2}Equation of motion for SPH particles}{91}{subsection.Alph0.3.2}%
-\contentsline {subsection}{\numberline {C.3}Equation of energy for SPH particles}{93}{subsection.Alph0.3.3}%
+\contentsline {section}{\numberline {6.1}Caveats}{68}{section.6.1}%
+\contentsline {chapter}{References}{69}{chapter*.30}%
+\contentsline {chapter}{Appendices}{76}{appendix*.32}%
+\contentsline {section}{\numberline {A}Derivation of Critical Masses for Collisions and Relaxation}{76}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {A.1}Critical Mass in the Simplified Case}{76}{subsection.Alph0.1.1}%
+\contentsline {subsection}{\numberline {A.2}Effect of an External Gravitational Potential}{77}{subsection.Alph0.1.2}%
+\contentsline {subsection}{\numberline {A.3}Generalized Critical Mass Including Gravitational Focusing}{79}{subsection.Alph0.1.3}%
+\contentsline {subsection}{\numberline {A.4}Derivation of the Relaxation Mass}{81}{subsection.Alph0.1.4}%
+\contentsline {section}{\numberline {B}Fourth-Order Hermite Integration Scheme}{86}{section.Alph0.2}%
+\contentsline {subsection}{\numberline {B.1}Step 1: Particle selection}{86}{subsection.Alph0.2.1}%
+\contentsline {subsection}{\numberline {B.2}Step 2: Calculate the predicted position and velocities for all particles}{87}{subsection.Alph0.2.2}%
+\contentsline {subsection}{\numberline {B.3}Step 3: Calculate acceleration and jerk for particle $i$}{88}{subsection.Alph0.2.3}%
+\contentsline {subsection}{\numberline {B.4}Step 4: Second and third time derivative of acceleration, using Hermite interpolation}{88}{subsection.Alph0.2.4}%
+\contentsline {subsection}{\numberline {B.5}Step 5: Add corrections}{90}{subsection.Alph0.2.5}%
+\contentsline {subsection}{\numberline {B.6}Step 6: Time step update}{91}{subsection.Alph0.2.6}%
+\contentsline {section}{\numberline {C}SPH equations}{91}{section.Alph0.3}%
+\contentsline {subsection}{\numberline {C.1}Solving $\lambda _i$}{92}{subsection.Alph0.3.1}%
+\contentsline {subsection}{\numberline {C.2}Equation of motion for SPH particles}{94}{subsection.Alph0.3.2}%
+\contentsline {subsection}{\numberline {C.3}Equation of energy for SPH particles}{96}{subsection.Alph0.3.3}%

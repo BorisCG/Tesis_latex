@@ -6,6 +6,11 @@ Aarseth, S.~J. (1985).
 \newblock In Brackbill, J.~U. and Cohen, B.~I., editors, {\em Multiple Time
   Scales}, pages 377--418. Academic Press.
 
+\bibitem[Abel et~al., 2000]{abel2000formation}
+Abel, T., Bryan, G.~L., and Norman, M.~L. (2000).
+\newblock The formation and fragmentation of primordial molecular clouds.
+\newblock {\em The Astrophysical Journal}, 540(1):39--44.
+
 \bibitem[Alvarez et~al., 2009]{alvarez2009accretion}
 Alvarez, M.~A., Wise, J.~H., and Abel, T. (2009).
 \newblock Accretion onto the first stellar-mass black holes.
@@ -43,6 +48,13 @@ Bianchini, P., van~de Ven, G., Norris, M., Schinnerer, E., and Varri, A.
 {Binney}, J. and {Tremaine}, S. (2008).
 \newblock {\em {Galactic Dynamics: Second Edition}}.
 
+\bibitem[Bonnell and Bate, 2002]{bonnell2002accretion}
+Bonnell, I.~A. and Bate, M.~R. (2002).
+\newblock Accretion in stellar clusters and the collisional formation of
+  massive stars.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  336(2):659--669.
+
 \bibitem[Bromm and Loeb, 2003]{bromm2003formation}
 Bromm, V. and Loeb, A. (2003).
 \newblock Formation of the first supermassive black holes.
@@ -54,6 +66,13 @@ Chon, S., Hosokawa, T., and Omukai, K. (2021).
   their growth.
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
   502(1):700--713.
+
+\bibitem[Chung et~al., 2026]{chung2026dense}
+Chung, E., Jo, Y., Kim, J.-h., Jung, M., and Kwon, O.-k. (2026).
+\newblock From dense gas clouds to supermassive black hole seeds: Hybrid
+  hydro/direct n-body simulations of runaway collision-driven intermediate-mass
+  black hole formation.
+\newblock {\em The Astrophysical Journal}, 1004(2):250.
 
 \bibitem[Cohn, 1980]{cohn1980late}
 Cohn, H. (1980).
@@ -74,17 +93,42 @@ Collins, G.~W. et~al. (1978).
 \newblock {\em Tucson, Ariz., Pachart Publishing House (Astronomy and
   Astrophysics Series. Volume 7), 1978. 143 p.}
 
+\bibitem[Das et~al., 2021]{das2021formation}
+Das, A., Schleicher, D.~R., Leigh, N.~W., and Boekholt, T.~C. (2021).
+\newblock Formation of supermassive black hole seeds in nuclear star clusters
+  via gas accretion and runaway collisions.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  503(1):1051--1069.
+
 \bibitem[Doeleman et~al., 2009]{doeleman2009imaging}
 Doeleman, S., Agol, E., Backer, D., Baganoff, F., Bower, G.~C., Broderick, A.,
   Fabian, A., Fish, V., Gammie, C., Ho, P., et~al. (2009).
 \newblock Imaging an event horizon: submm-vlbi of a super massive black hole.
 \newblock {\em arXiv preprint arXiv:0906.3899}.
 
+\bibitem[Escala, 2006]{escala2006fueling}
+Escala, A. (2006).
+\newblock On the fueling of massive black holes and the properties of their
+  host spheroids.
+\newblock {\em The Astrophysical Journal Letters}, 648(1):L13--L16.
+
 \bibitem[Escala, 2021]{escala2021observational}
 Escala, A. (2021).
 \newblock Observational support for massive black hole formation driven by
   runaway stellar collisions in galactic nuclei.
 \newblock {\em The Astrophysical Journal}, 908(1):57.
+
+\bibitem[Freitag et~al., 2006a]{freitag2006runaway_b}
+Freitag, M., G{\"u}rkan, M.~A., and Rasio, F.~A. (2006a).
+\newblock Runaway collisions in young star clusters--ii. numerical results.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  368(1):141--161.
+
+\bibitem[Freitag et~al., 2006b]{freitag2006runaway_a}
+Freitag, M., Rasio, F.~A., and Baumgardt, H. (2006b).
+\newblock Runaway collisions in young star clusters--i. methods and tests.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  368(1):121--140.
 
 \bibitem[Fryer et~al., 2001]{fryer2001pair}
 Fryer, C., Woosley, S., and Heger, A. (2001).
@@ -136,6 +180,12 @@ Greenstein, J.~L. and Matthews, T.~A. (1963).
 \newblock Red-shift of the unusual radio source: 3 c 48.
 \newblock {\em Nature}, 197(4872):1041--1042.
 
+\bibitem[G{\"u}rkan et~al., 2004]{gurkan2004formation}
+G{\"u}rkan, M.~A., Freitag, M., and Rasio, F.~A. (2004).
+\newblock Formation of massive black holes in dense star clusters. i. mass
+  segregation and core collapse.
+\newblock {\em The Astrophysical Journal}, 604(2):632--652.
+
 \bibitem[Heggie and Mathieu, 1986]{10.1007/BFb0116419}
 Heggie, D.~C. and Mathieu, R.~D. (1986).
 \newblock Standardised units and time scales.
@@ -160,12 +210,23 @@ Hoyle, F. and Lyttleton, R.~A. (1939).
 \newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
   Society}, volume~35, pages 592--609. Cambridge University Press.
 
+\bibitem[Inayoshi et~al., 2022]{inayoshi2022rapid}
+Inayoshi, K., Nakatani, R., Toyouchi, D., Hosokawa, T., Kuiper, R., and Onoue,
+  M. (2022).
+\newblock Rapid growth of seed black holes during early bulge formation.
+\newblock {\em The Astrophysical Journal}, 927(2):237.
+
 \bibitem[Jiang et~al., 2015]{jiang2015discovery}
 Jiang, L., McGreer, I.~D., Fan, X., Bian, F., Cai, Z., Clement, B., Wang, R.,
   and Fan, Z. (2015).
 \newblock Discovery of eight z~ 6 quasars in the sloan digital sky survey
   overlap regions.
 \newblock {\em The Astronomical Journal}, 149(6):188.
+
+\bibitem[Kritos et~al., 2023]{kritos2023massive}
+Kritos, K., Berti, E., and Silk, J. (2023).
+\newblock Massive black hole assembly in nuclear star clusters.
+\newblock {\em Physical Review D}, 108(8):083012.
 
 \bibitem[Latif and Ferrara, 2016]{latif2016formation}
 Latif, M.~A. and Ferrara, A. (2016).
@@ -177,6 +238,18 @@ Lee, H.~M. (1987).
 \newblock Dynamical effects of successive mergers on the evolution of spherical
   stellar systems.
 \newblock {\em The astrophysical journal}, 319:801.
+
+\bibitem[Leigh et~al., 2014]{leigh2014stellar}
+Leigh, N.~W., Mastrobuono-Battisti, A., Perets, H.~B., and B{\"o}ker, T.
+  (2014).
+\newblock Stellar dynamics in gas: the role of gas damping.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  441(2):919--932.
+
+\bibitem[Liao and Turk, 2019]{liao2019fragmentation}
+Liao, W.-T. and Turk, M. (2019).
+\newblock Fragmentation in a primordial accretion flow.
+\newblock {\em arXiv preprint arXiv:1911.00610}.
 
 \bibitem[Lucy, 1977]{lucy1977numerical}
 Lucy, L.~B. (1977).
@@ -215,6 +288,12 @@ Mortlock, D.~J., Warren, S.~J., Venemans, B.~P., Patel, M., Hewett, P.~C.,
 \newblock A luminous quasar at a redshift of z= 7.085.
 \newblock {\em Nature}, 474(7353):616--619.
 
+\bibitem[Naiman et~al., 2015]{naiman2015role}
+Naiman, J., Ramirez-Ruiz, E., Debuhr, J., and Ma, C.-P. (2015).
+\newblock The role of nuclear star clusters in enhancing supermassive black
+  hole feeding rates during galaxy mergers.
+\newblock {\em The Astrophysical Journal}, 803(2):81.
+
 \bibitem[Natarajan and Treister, 2009]{natarajan2009there}
 Natarajan, P. and Treister, E. (2009).
 \newblock Is there an upper limit to black hole masses?
@@ -232,6 +311,17 @@ Nelson, R.~P. and Papaloizou, J.~C. (1994).
 O'Connor, E. and Ott, C.~D. (2011).
 \newblock Black hole formation in failing core-collapse supernovae.
 \newblock {\em The Astrophysical Journal}, 730(2):70.
+
+\bibitem[Omukai et~al., 2008]{omukai2008can}
+Omukai, K., Schneider, R., and Haiman, Z. (2008).
+\newblock Can supermassive black holes form in metal-enriched high-redshift
+  protogalaxies?
+\newblock {\em The Astrophysical Journal}, 686(2):801--814.
+
+\bibitem[Ostriker, 1999]{ostriker1999dynamical}
+Ostriker, E.~C. (1999).
+\newblock Dynamical friction in a gaseous medium.
+\newblock {\em The Astrophysical Journal}, 513(1):252--258.
 
 \bibitem[O’Shea and Norman, 2007]{o2007population}
 O’Shea, B.~W. and Norman, M.~L. (2007).
@@ -271,15 +361,33 @@ Portegies~Zwart, S.~F., Baumgardt, H., Hut, P., Makino, J., and McMillan, S.~L.
   young star clusters.
 \newblock {\em Nature}, 428(6984):724--726.
 
+\bibitem[Portegies~Zwart and McMillan, 2002]{portegies2002runaway}
+Portegies~Zwart, S.~F. and McMillan, S.~L. (2002).
+\newblock The runaway growth of intermediate-mass black holes in dense star
+  clusters.
+\newblock {\em The Astrophysical Journal}, 576(2):899--907.
+
 \bibitem[Rasio, 2000]{rasio2000particle}
 Rasio, F.~A. (2000).
 \newblock Particle methods in astrophysical fluid dynamics.
 \newblock {\em Progress of Theoretical Physics Supplement}, 138:609--621.
 
+\bibitem[Rasio et~al., 2003]{rasio2003formation}
+Rasio, F.~A., Freitag, M., and G{\"u}rkan, M.~A. (2003).
+\newblock Formation of massive black holes in dense star clusters.
+\newblock {\em arXiv preprint astro-ph/0304038}.
+
 \bibitem[Regan and Volonteri, 2024]{regan2024massive}
 Regan, J. and Volonteri, M. (2024).
 \newblock Massive black hole seeds.
 \newblock {\em arXiv preprint arXiv:2405.17975}.
+
+\bibitem[Reinoso et~al., 2023]{reinoso2023formation}
+Reinoso, B., Klessen, R.~S., Schleicher, D., Glover, S.~C., and Solar, P.
+  (2023).
+\newblock Formation of supermassive stars in the first star clusters.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  521(3):3553--3569.
 
 \bibitem[Reinoso et~al., 2020]{reinoso2020effects}
 Reinoso, B., Schleicher, D., Fellhauer, M., Leigh, N., and Klessen, R. (2020).
@@ -292,6 +400,13 @@ Reinoso~Reinoso, B.~A. (2024).
 \newblock {\em Formation of massive black hole seeds through runaway stellar
   collisions and gas accretion in dense stellar systems}.
 \newblock PhD thesis.
+
+\bibitem[Sakurai et~al., 2017]{sakurai2017formation}
+Sakurai, Y., Yoshida, N., Fujii, M.~S., and Hirano, S. (2017).
+\newblock Formation of intermediate-mass black holes through runaway collisions
+  in the first star clusters.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  472(2):1677--1684.
 
 \bibitem[Salmon and Warren, 1994]{salmon1994skeletons}
 Salmon, J.~K. and Warren, M.~S. (1994).
@@ -327,6 +442,11 @@ Shields, G.~A. (1999).
 \newblock A brief history of active galactic nuclei.
 \newblock {\em Publications of the Astronomical Society of the Pacific},
   111(760):661--678.
+
+\bibitem[Shlosman et~al., 1990]{shlosman1990fuelling}
+Shlosman, I., Begelman, M.~C., and Frank, J. (1990).
+\newblock The fuelling of active galactic nuclei.
+\newblock {\em Nature}, 345(6277):679--686.
 
 \bibitem[Smith et~al., 2018]{smith2018growth}
 Smith, B.~D., Regan, J.~A., Downes, T.~P., Norman, M.~L., O’Shea, B.~W., and
@@ -370,6 +490,29 @@ Trenti, M. and van~der Marel, R. (2013).
 \newblock No energy equipartition in globular clusters.
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
   435(4):3272--3282.
+
+\bibitem[Vergara et~al., 2021]{vergara2021stellar}
+Vergara, M., Schleicher, D., Boekholt, T., Reinoso, B., Fellhauer, M., Klessen,
+  R., and Leigh, N. (2021).
+\newblock Stellar collisions in flattened and rotating population iii star
+  clusters.
+\newblock {\em Astronomy \& Astrophysics}, 649:A160.
+
+\bibitem[Vergara et~al., 2024]{vergara2024efficiency}
+Vergara, M., Schleicher, D., Escala, A., Reinoso, B., Flammini~Dotti, F.,
+  Kamlah, A., Liempi, M., Hoyer, N., Neumayer, N., and Spurzem, R. (2024).
+\newblock Efficiency of black hole formation via collisions in stellar systems:
+  Data analysis from simulations and observations.
+\newblock {\em Astronomy \& Astrophysics}, 689:A34.
+
+\bibitem[Vergara et~al., 2025]{vergara2025rapid}
+Vergara, M.~C., Askar, A., Kamlah, A.~W., Spurzem, R., Flammini~Dotti, F.,
+  Schleicher, D.~R., Arca~Sedda, M., Hypki, A., Giersz, M., Hurley, J., et~al.
+  (2025).
+\newblock Rapid formation of a very massive star (> 50000 m⊙), and
+  subsequently, of an imbh, from runaway collisions: Direct n-body and monte
+  carlo simulations of dense star clusters.
+\newblock {\em Astronomy \& Astrophysics}, 704:A321.
 
 \bibitem[Vergara et~al., 2023]{vergara2023global}
 Vergara, M.~C., Escala, A., Schleicher, D., and Reinoso, B. (2023).
