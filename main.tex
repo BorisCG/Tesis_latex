@@ -92,7 +92,7 @@
 		WALTER MAX-MOERBECK
 		\vspace{0.5cm} \\
 		Este trabajo ha sido parcialmente financiado por: \\
-		NOMBRE INSTITUCIÓN \\
+		CENTRO DE ASTROFÍSICA Y TECNOLOGÍAS AFINES \\
 		\vspace{0.5cm} \\
 		\MakeUppercase{\universitylocation} \\
 		\MakeUppercase{\documentdate}
@@ -129,20 +129,30 @@
 
 % RESUMEN O ABSTRACT
 \begin{abstractd}
-	Observations of quasars at high redshift impose strong constraints on the formation mechanisms of supermassive black holes (SMBHs). Consequently, several pathways have been proposed to explain the formation of such massive objects ($\geq 10^6~M_{\odot}$) in the early universe. Among them, runaway collisions in nuclear star clusters (NSCs) are a promising channel for SMBH seed formation. In this work, we present a set of simulations of gas-embedded nuclear star clusters to study the effect of gas on the formation of a supermassive black hole seed. We explore a scenario that quantifies the role of collisions and the interplay with relaxation processes. The methods include an SPH code for the gas and an N-body code for the stars, both from the AMUSE framework, coupled externally via the BRIDGE method. We show that for simulations in the intermediate regime, the black hole formation efficiency is $\gtrsim 20\%$, and in our most massive models, an IMBH of $\geq 10^4~M_{\odot}$ is formed. Our findings show that gas enhances the formation of a SMBH seed by increasing the mass of the final most massive object and shortening the core collapse timescale.
+	Observaciones de cuásares a alto redshift imponen fuertes restricciones sobre los mecanismos de formación de agujeros negros supermasivos (SMBHs). En consecuencia, varias vías han sido propuestas para explicar la formación de estos objetos masivos (con masas del orden de $\geq 10^6~M_{\odot}$) en el Universo temprano. Entre ellas, el escenario de colisiones descontroladas en cúmulos estelares nucleares parece ser prometedor para generar semillas de agujeros negros, que posteriormente podrían crecer hasta el rango de supermasivo. En este trabajo, presentamos un conjunto de simulaciones de cúmulos estelares nucleares con una componente gaseosa, para estudiar el efecto del gas en la formación de semillas de agujeros negros supermasivos. Exploramos un escenario que cuantifica el papel de las colisiones y de los procesos de relajación. Acoplamos un código SPH con un código de N cuerpos, ambos del proyecto AMUSE, usando el método BRIDGE. El código SPH resuelve las ecuaciones hidrodinámicas del gas, mientras que el código de N cuerpos resuelve la dinámica de las estrellas. Para una escala de tiempo característica $t_{H}$, la comparación con las escalas de tiempo de colisión $t_{\rm coll}$ y relajación $t_{\rm relax}$ define tres regímenes dinámicos, basados en la estabilidad frente a las colisiones. Mostramos que para simulaciones en el régimen intermedio, definido por $t_{\rm relax} \leq t_{\rm coll} \leq t_{H}$, la eficiencia de formación de agujeros negros es $\gtrsim 20\%$, y en nuestro modelo más masivo, se forma un agujero negro de masa intermedia con $\gtrsim 10^4~M_{\odot}$. Nuestros hallazgos muestran que el gas mejora la formación de semillas de agujeros negros supermasivos, ya que incrementa la masa final del objeto más masivo formado, además de acortar el tiempo de colapso del núcleo del cúmulo.
+\end{abstractd}
+
+\begin{abstractd}
+	Observations of quasars at high redshift impose strong constraints on the formation mechanisms of supermassive black holes (SMBHs). Consequently, several pathways have been proposed to explain the formation of such massive objects ($\geq 10^6~M_{\odot}$) in the early Universe. Among them, runaway collisions in nuclear star clusters (NSCs) are a promising channel for SMBH seed formation. In this work, we present a set of simulations of gas-embedded nuclear star clusters to study the effect of gas on the formation of a supermassive black hole seed. We explore a scenario that quantifies the role of collisions and the interplay with relaxation processes. We couple an SPH code with a pure N-body code, both from the AMUSE framework, using the BRIDGE method. The SPH code solves the hydrodynamics equations for the gas, whereas the N-body code is used to solve the equations for the dynamics
+	of the stars. For a characteristic timescale $t_{H}$, the interplay between the collision timescale $t_{\rm coll}$ and the relaxation timescale $t_{\rm relax}$ defines three dynamical regimes based on the stability under collisions. We show that for simulations in the intermediate regime, defined by $t_{\rm relax} \leq t_{\rm coll} \leq t_{H}$, the black hole formation efficiency is $\gtrsim 20\%$, and in our most massive models, an IMBH of $\gtrsim 10^4~M_{\odot}$ is formed. Our findings show that gas enhances the formation of a SMBH seeds by increasing the mass of the final most massive object and shortening the timescale for core collapse of the star cluster.
 \end{abstractd}
 
 % DEDICATORIA
 \begin{dedicatory}
-	Una frase de dedicatoria, \\
-	pueden ser dos líneas. \\
-	~ \\
-	\textbf{Saludos}
+	Dedicado a mis padres, y mis dos hermanas, por su amor incondicional.
 \end{dedicatory}
 
 % AGRADECIMIENTOS
 \begin{acknowledgments}
-	Acknowledgments
+	Quiero agradecer a mi profesor guía, Andrés Escala, por su apoyo en este proyecto. También a los coautores del documento científico producto de este trabajo, que sumados a mi profesor guía son Bastián Reinoso, Marcelo Vergara, Dominik Schleicher, y Sebastián Valdebenito, por su participación y comentarios de dicho documento. En particular Bastián, quien ha participado activamente durante todo mi proyecto de tesis.
+	
+	También quisiera agradecer a los profesores Ricardo Muñoz y Walter Max-Moerbeck por aceptar ser parte de mi comité.
+	
+	También quisiera agradecer a mis grupos de amigos, tanto del colegio, del pregrado y posteriormente dentro del magíster, por ofrecerme su desinteresada amistad, y su apoyo en momentos no tan buenos.
+	
+	También quisiera agradecer a mi familia. A mis padres, Nelson y Jacqueline, por su amor incondicional y paciencia infinita por todo este tiempo. A mis hermanas, Daniela y Jacqueline, que al igual que mis padres me han apoyado de manera incondicional y me han abierto las puertas de sus hogares. A mis cuñados, Pablo y Lucas, a quienes considero mis hermanos postizos, y que me han regalado hermosos sobrinos.
+	
+	Finalmente agradecer al soporte financiero del CATA, que a través del proyecto BASAL ANID FB21003 han financiado parte de esta investigación.
 \end{acknowledgments}
 
 % TABLA DE CONTENIDOS - ÍNDICE

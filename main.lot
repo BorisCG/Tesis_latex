@@ -3,10 +3,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Initial conditions for stars systems.}}{38}{table.caption.20}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Initial conditions for gas systems}}{40}{table.caption.22}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Key runtime parameters for the PH4 N-body code. Parameters shown with their default and the values used in this work.}}{44}{table.caption.23}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Key runtime parameters for the FI SPH code. Parameters shown with their default and the values used in this work.}}{45}{table.caption.25}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Key runtime parameters for the \texttt {BRIDGE} coupling scheme.}}{46}{table.caption.27}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Initial conditions for the stellar systems. $R_v$, $M$, $N$, $m_s$, $r_s$, and $\sigma $ denote the virial radius, total stellar mass, number of stars, stellar mass, stellar radius, and velocity dispersion, respectively.}}{38}{table.caption.21}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Initial conditions for gas systems. $q$, $M_{\rm SPH}$, $N_{\rm SPH}$, $m_{\rm SPH}$, and $c_{\rm s}$ denote the gas mass fraction, total gas mass, number of SPH particles, SPH particle mass and mean sound speed, respectively.}}{39}{table.caption.23}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Key runtime parameters for the PH4 N-body code. Parameters shown with their default and the values used in this work.}}{44}{table.caption.24}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Key runtime parameters for the \texttt {Fi} SPH code. Parameters shown with their default and the values used in this work.}}{45}{table.caption.26}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Key runtime parameters for the \texttt {BRIDGE} coupling scheme. GPU acceleration is enabled via \texttt {mode=1} for the FASTKICK force calculations. The N-body and SPH components run on CPU (\texttt {PH4} with 4 workers, \texttt {Fi} with 8 workers). The parameter \texttt {do\_accretion} is set to \texttt {False} in our simulations, as we do not include gas accretion.}}{46}{table.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

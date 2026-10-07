@@ -3,11 +3,11 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: library.bib
-Repeated entry---line 699 of file library.bib
+Repeated entry---line 710 of file library.bib
  : @article{reinoso2020effects
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 816 of file library.bib
+Repeated entry---line 827 of file library.bib
  : @book{1987degc.book.....S
  :                          ,
 I'm skipping whatever remains of this entry
@@ -16,45 +16,45 @@ Warning--can't use both volume and number fields in hoyle1939evolution
 Warning--empty school in reinoso2024formation
 Warning--empty journal in salpeter1965accretion
 Warning--empty publisher in 1987degc.book.....S
-You've used 95 entries,
+You've used 96 entries,
             1935 wiz_defined-function locations,
-            1020 strings with 21091 characters,
-and the built_in function-call counts, 40546 in all, are:
-= -- 3904
-> -- 1938
+            1028 strings with 21338 characters,
+and the built_in function-call counts, 41090 in all, are:
+= -- 3955
+> -- 1971
 < -- 56
-+ -- 705
-- -- 668
-* -- 3685
-:= -- 7119
-add.period$ -- 286
-call.type$ -- 95
-change.case$ -- 789
-chr.to.int$ -- 94
-cite$ -- 100
-duplicate$ -- 1373
-empty$ -- 2671
-format.name$ -- 816
-if$ -- 7746
++ -- 719
+- -- 680
+* -- 3740
+:= -- 7213
+add.period$ -- 289
+call.type$ -- 96
+change.case$ -- 800
+chr.to.int$ -- 95
+cite$ -- 101
+duplicate$ -- 1387
+empty$ -- 2703
+format.name$ -- 829
+if$ -- 7847
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 99
-newline$ -- 475
-num.names$ -- 289
-pop$ -- 630
+missing$ -- 100
+newline$ -- 480
+num.names$ -- 292
+pop$ -- 639
 preamble$ -- 1
-purify$ -- 797
+purify$ -- 808
 quote$ -- 0
-skip$ -- 1056
+skip$ -- 1066
 stack$ -- 0
-substring$ -- 2894
-swap$ -- 137
+substring$ -- 2939
+swap$ -- 138
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 558
+type$ -- 564
 warning$ -- 5
-while$ -- 330
+while$ -- 334
 width$ -- 0
-write$ -- 1222
+write$ -- 1235
 (There were 2 error messages)

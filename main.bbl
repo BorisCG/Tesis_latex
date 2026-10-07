@@ -74,18 +74,18 @@ Chung, E., Jo, Y., Kim, J.-h., Jung, M., and Kwon, O.-k. (2026).
   black hole formation.
 \newblock {\em The Astrophysical Journal}, 1004(2):250.
 
+\bibitem[Clark et~al., 2011]{clark2011formation}
+Clark, P.~C., Glover, S.~C., Smith, R.~J., Greif, T.~H., Klessen, R.~S., and
+  Bromm, V. (2011).
+\newblock The formation and fragmentation of disks around primordial
+  protostars.
+\newblock {\em Science}, 331(6020):1040--1042.
+
 \bibitem[Cohn, 1980]{cohn1980late}
 Cohn, H. (1980).
 \newblock Late core collapse in star clusters and the gravothermal instability.
 \newblock {\em Astrophysical Journal, Part 1, vol. 242, Dec. 1, 1980, p.
   765-771.}, 242:765--771.
-
-\bibitem[Collaboration et~al., 2022]{event2022first}
-Collaboration, E. H.~T., Akiyama, K., Alberdi, A., Alef, W., Algaba, J.~C.,
-  Anantua, R., Asada, K., Azulay, R., Bach, U., Baczko, A.-K., et~al. (2022).
-\newblock First sagittarius a* event horizon telescope results. i. the shadow
-  of the supermassive black hole in the center of the milky way.
-\newblock {\em The Astrophysical Journal Letters}, 930(2):L12.
 
 \bibitem[Collins et~al., 1978]{collins1978virial}
 Collins, G.~W. et~al. (1978).
@@ -105,6 +105,13 @@ Doeleman, S., Agol, E., Backer, D., Baganoff, F., Bower, G.~C., Broderick, A.,
   Fabian, A., Fish, V., Gammie, C., Ho, P., et~al. (2009).
 \newblock Imaging an event horizon: submm-vlbi of a super massive black hole.
 \newblock {\em arXiv preprint arXiv:0906.3899}.
+
+\bibitem[{EHT Collaboration} et~al., 2022]{event2022first}
+{EHT Collaboration}, Akiyama, K., Alberdi, A., Alef, W., Algaba, J.~C.,
+  Anantua, R., Asada, K., Azulay, R., Bach, U., Baczko, A.-K., et~al. (2022).
+\newblock First sagittarius a* event horizon telescope results. i. the shadow
+  of the supermassive black hole in the center of the milky way.
+\newblock {\em The Astrophysical Journal Letters}, 930(2):L12.
 
 \bibitem[Escala, 2006]{escala2006fueling}
 Escala, A. (2006).
@@ -354,6 +361,11 @@ Plummer, H.~C. (1911).
 \newblock {\em Monthly Notices of the Royal Astronomical Society, Vol. 71, p.
   460-470}, 71:460--470.
 
+\bibitem[Portegies~Zwart and McMillan, 2018]{zwart2018astrophysical}
+Portegies~Zwart, S. and McMillan, S. (2018).
+\newblock {\em Astrophysical Recipes: the art of AMUSE}.
+\newblock IOP Publishing.
+
 \bibitem[Portegies~Zwart et~al., 2004]{portegies2004formation}
 Portegies~Zwart, S.~F., Baumgardt, H., Hut, P., Makino, J., and McMillan, S.~L.
   (2004).
@@ -395,8 +407,8 @@ Reinoso, B., Schleicher, D., Fellhauer, M., Leigh, N., and Klessen, R. (2020).
   delay in the relaxation time-scale and runaway collision processes.
 \newblock {\em Astronomy \& Astrophysics}, 639:A92.
 
-\bibitem[Reinoso~Reinoso, 2024]{reinoso2024formation}
-Reinoso~Reinoso, B.~A. (2024).
+\bibitem[Reinoso, 2024]{reinoso2024formation}
+Reinoso, B.~A. (2024).
 \newblock {\em Formation of massive black hole seeds through runaway stellar
   collisions and gas accretion in dense stellar systems}.
 \newblock PhD thesis.
@@ -568,10 +580,5 @@ Yang, D., Hennawi, J., Guarneri, F., Wolf, J., Belladitta, S., Schindler,
   J.-T., Hughes, A., Ba{\~n}ados, E., Mortlock, D., Yang, J., et~al. (2026).
 \newblock Euclid: Discovery of 31 new quasars at 6.6< z< 7.8.
 \newblock {\em Astronomy \& Astrophysics}, 711:A104.
-
-\bibitem[Zwart and McMillan, 2018]{zwart2018astrophysical}
-Zwart, S.~P. and McMillan, S. (2018).
-\newblock {\em Astrophysical Recipes: the art of AMUSE}.
-\newblock IOP Publishing.
 
 \end{thebibliography}
