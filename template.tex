@@ -4503,7 +4503,16 @@
 	\ifthenelse{\isundefined{\abstracttable}}{%
 		\def\abstracttable {}}{%
 	}%
-	\begin{abstractenv}{\abstracttable}{\documenttitle}{\nameabstract}{abstractbookmark}%
+	\begin{abstractenv}{\abstracttableIN}{\documenttitle}{\nameabstract}{abstractbookmark}%
+	}{%
+	\end{abstractenv}%
+}
+
+\newenvironment{resumen}{%
+	\ifthenelse{\isundefined{\abstracttable}}{%
+		\def\abstracttable {}}{%
+	}%
+	\begin{abstractenv}{\abstracttableES}{\documenttitleES}{nameresumen}{resumenbookmark}%
 	}{%
 	\end{abstractenv}%
 }
@@ -4537,6 +4546,21 @@
 	}%
 	\forceindent%
 	}{%
+}
+
+% Crea una sección de declaracion del uso de ia
+\newenvironment{iausedeclaration}{%
+	\clearpage%
+	\ifthenelse{\equal{\GLOBALtwoside}{true}}{%
+		\coretriggeronpage{\emptypagespredocformat}{}%
+	}{}%
+	\chapter*{\nameiadec}%
+	\ifthenelse{\equal{\addagradectobookmarks}{true}}{%
+		\phantomsection%
+		\pdfbookmark{\nameiadec}{iausedeclaration}}{%
+	}%
+	\forceindent%
+}{%
 }
 
 % Crea una sección de imágenes múltiples

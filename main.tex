@@ -55,7 +55,11 @@
 \graphicspath{{./img/}{./pictures/}}
 
 % INFORMACIÓN DEL DOCUMENTO
-\def\documenttitle {Study of the role of gas in the formation of SMBH seed, through simulations of NSC with gas embedded}
+\def\documenttitle {Study of the role of gas in the formation of SMBH seeds, through simulations of NSC with gas embedded}
+
+\def\documenttitleES {Estudio del papel del gas en la formación de semillas de agujeros negros supermasivos mediante simulaciones de cúmulos estelares nucleares con gas}
+\def\addagradectobookmarks {true}
+
 \def\documentsubtitle {}
 \def\degreetitle {
 	Tesis para optar al grado de magíster en ciencias, mención astronomía
@@ -70,44 +74,59 @@
 \def\universitylocation {Santiago de Chile}
 
 % INTEGRANTES, PROFESORES Y FECHAS
-\def\documentauthor {Boris Cuevas Gomez}
+\def\documentauthor {Boris Nelson Nicolás Cuevas Gómez}
 \def\documentdate {\the\year}
 
-\def\portrait {
+\def\portrait{%
 	\begin{center}
-	\vspace{1.5cm} ~ \\
-	\MakeUppercase{\textbf{\documenttitle}} ~ \\
-	\vspace{1.5cm}
-	\MakeUppercase{\degreetitle} ~ \\
-	\vfill
-	\begin{tabular}{c}
-		\MakeUppercase{\textbf{\documentauthor}} \\ \\
-		\vspace{1.0cm} \\
-		PROFESOR GUÍA: \\
-		ANDRÉS ESCALA \\
-		\vspace{0.5cm} \\
-		MIEMBROS DE LA COMISIÓN: \\
-		BASTIÁN REINOSO \\
-		RICARDO MUÑOZ \\
-		WALTER MAX-MOERBECK
-		\vspace{0.5cm} \\
-		Este trabajo ha sido parcialmente financiado por: \\
-		CENTRO DE ASTROFÍSICA Y TECNOLOGÍAS AFINES \\
-		\vspace{0.5cm} \\
-		\MakeUppercase{\universitylocation} \\
-		\MakeUppercase{\documentdate}
-	\end{tabular}
+		\vspace{1.2cm} ~ \\
+		\MakeUppercase{\textbf{\documenttitle}} ~ \\
+		\vspace{1.2cm}
+		\MakeUppercase{\degreetitle} ~ \\
+		\vfill
+		\begin{minipage}{\textwidth}
+			\centering
+			\MakeUppercase{\textbf{\documentauthor}} \\[1.0cm]
+			PROFESOR GUÍA: \\
+			ANDRÉS ESCALA ASTORQUIZA \\[0.4cm]
+			MIEMBROS DE LA COMISIÓN: \\
+			BASTIÁN REINOSO REINOSO \\
+			RICARDO MUÑOZ VIDAL \\
+			WALTER MAX-MOERBECK ASTUDILLO \\[0.4cm]
+			Este trabajo ha sido parcialmente financiado por: Centro de Astrofísica y Tecnologías Afines (CATA), \\
+			Agencia Nacional de Investigación y Desarrollo
+			(ANID) a través del Proyecto Basal FB21003 \\[0.4cm]
+			\MakeUppercase{\universitylocation} \\
+			\MakeUppercase{\documentdate}
+		\end{minipage}
 	\end{center}
 }
-\def\abstracttable {
-	\begin{tabular}{l}
-		RESUMEN DE LA TESIS PARA OPTAR \\
-		AL GRADO DE MAGÍSTER EN CIENCIAS, \\
-		MENCIÓN ASTRONOMÍA \\
-		POR: \MakeUppercase{\documentauthor} \\
-		FECHA: \MakeUppercase{\documentdate} \\
-		PROF. GUÍA: ANDRÉS ESCALA
-	\end{tabular}
+\def\abstracttableES{%
+	\begin{flushright}
+		\begin{minipage}[t]{0.52\textwidth}
+			\raggedright
+			RESUMEN DE LA TESIS PARA OPTAR \\
+			AL GRADO DE MAGÍSTER EN CIENCIAS, \\
+			MENCIÓN ASTRONOMÍA \\
+			POR: \MakeUppercase{\documentauthor} \\
+			FECHA: \MakeUppercase{\documentdate} \\
+			PROF. GUÍA: ANDRÉS ESCALA ASTORQUIZA
+		\end{minipage}
+	\end{flushright}
+}
+
+\def\abstracttableIN{%
+	\begin{flushright}
+		\begin{minipage}[t]{0.52\textwidth}
+			\raggedright
+			ABSTRACT OF THE THESIS TO OBTAIN \\
+			THE DEGREE OF MASTER OF SCIENCE, \\
+			MAJOR IN ASTRONOMY \\
+			BY: \MakeUppercase{\documentauthor} \\
+			DATE: \MakeUppercase{\documentdate} \\
+			ADVISOR: ANDRÉS ESCALA ASTORQUIZA
+		\end{minipage}
+	\end{flushright}
 }
 
 % IMPORTACIÓN DEL TEMPLATE
@@ -129,13 +148,13 @@
 
 % RESUMEN O ABSTRACT
 \begin{abstractd}
-	Observaciones de cuásares a alto redshift imponen fuertes restricciones sobre los mecanismos de formación de agujeros negros supermasivos (SMBHs). En consecuencia, varias vías han sido propuestas para explicar la formación de estos objetos masivos (con masas del orden de $\geq 10^6~M_{\odot}$) en el Universo temprano. Entre ellas, el escenario de colisiones descontroladas en cúmulos estelares nucleares parece ser prometedor para generar semillas de agujeros negros, que posteriormente podrían crecer hasta el rango de supermasivo. En este trabajo, presentamos un conjunto de simulaciones de cúmulos estelares nucleares con una componente gaseosa, para estudiar el efecto del gas en la formación de semillas de agujeros negros supermasivos. Exploramos un escenario que cuantifica el papel de las colisiones y de los procesos de relajación. Acoplamos un código SPH con un código de N cuerpos, ambos del proyecto AMUSE, usando el método BRIDGE. El código SPH resuelve las ecuaciones hidrodinámicas del gas, mientras que el código de N cuerpos resuelve la dinámica de las estrellas. Para una escala de tiempo característica $t_{H}$, la comparación con las escalas de tiempo de colisión $t_{\rm coll}$ y relajación $t_{\rm relax}$ define tres regímenes dinámicos, basados en la estabilidad frente a las colisiones. Mostramos que para simulaciones en el régimen intermedio, definido por $t_{\rm relax} \leq t_{\rm coll} \leq t_{H}$, la eficiencia de formación de agujeros negros es $\gtrsim 20\%$, y en nuestro modelo más masivo, se forma un agujero negro de masa intermedia con $\gtrsim 10^4~M_{\odot}$. Nuestros hallazgos muestran que el gas mejora la formación de semillas de agujeros negros supermasivos, ya que incrementa la masa final del objeto más masivo formado, además de acortar el tiempo de colapso del núcleo del cúmulo.
-\end{abstractd}
-
-\begin{abstractd}
 	Observations of quasars at high redshift impose strong constraints on the formation mechanisms of supermassive black holes (SMBHs). Consequently, several pathways have been proposed to explain the formation of such massive objects ($\geq 10^6~M_{\odot}$) in the early Universe. Among them, runaway collisions in nuclear star clusters (NSCs) are a promising channel for SMBH seed formation. In this work, we present a set of simulations of gas-embedded nuclear star clusters to study the effect of gas on the formation of a supermassive black hole seed. We explore a scenario that quantifies the role of collisions and the interplay with relaxation processes. We couple an SPH code with a pure N-body code, both from the AMUSE framework, using the BRIDGE method. The SPH code solves the hydrodynamics equations for the gas, whereas the N-body code is used to solve the equations for the dynamics
 	of the stars. For a characteristic timescale $t_{H}$, the interplay between the collision timescale $t_{\rm coll}$ and the relaxation timescale $t_{\rm relax}$ defines three dynamical regimes based on the stability under collisions. We show that for simulations in the intermediate regime, defined by $t_{\rm relax} \leq t_{\rm coll} \leq t_{H}$, the black hole formation efficiency is $\gtrsim 20\%$, and in our most massive models, an IMBH of $\gtrsim 10^4~M_{\odot}$ is formed. Our findings show that gas enhances the formation of a SMBH seeds by increasing the mass of the final most massive object and shortening the timescale for core collapse of the star cluster.
 \end{abstractd}
+
+\begin{resumen}
+	Observaciones de cuásares a alto redshift imponen fuertes restricciones sobre los mecanismos de formación de agujeros negros supermasivos (SMBHs). En consecuencia, varias vías han sido propuestas para explicar la formación de estos objetos masivos (con masas del orden de $\geq 10^6~M_{\odot}$) en el Universo temprano. Entre ellas, el escenario de colisiones descontroladas en cúmulos estelares nucleares parece ser prometedor para generar semillas de agujeros negros, que posteriormente podrían crecer hasta el rango de supermasivo. En este trabajo, presentamos un conjunto de simulaciones de cúmulos estelares nucleares con una componente gaseosa, para estudiar el efecto del gas en la formación de semillas de agujeros negros supermasivos. Exploramos un escenario que cuantifica el papel de las colisiones y de los procesos de relajación. Acoplamos un código SPH con un código de N cuerpos, ambos del proyecto AMUSE, usando el método BRIDGE. El código SPH resuelve las ecuaciones hidrodinámicas del gas, mientras que el código de N cuerpos resuelve la dinámica de las estrellas. Para una escala de tiempo característica $t_{H}$, la comparación con las escalas de tiempo de colisión $t_{\rm coll}$ y relajación $t_{\rm relax}$ define tres regímenes dinámicos, basados en la estabilidad frente a las colisiones. Mostramos que para simulaciones en el régimen intermedio, definido por $t_{\rm relax} \leq t_{\rm coll} \leq t_{H}$, la eficiencia de formación de agujeros negros es $\gtrsim 20\%$, y en nuestro modelo más masivo, se forma un agujero negro de masa intermedia con $\gtrsim 10^4~M_{\odot}$. Nuestros hallazgos muestran que el gas mejora la formación de semillas de agujeros negros supermasivos, ya que incrementa la masa final del objeto más masivo formado, además de acortar el tiempo de colapso del núcleo del cúmulo.
+\end{resumen}
 
 % DEDICATORIA
 \begin{dedicatory}
@@ -158,12 +177,37 @@
 % TABLA DE CONTENIDOS - ÍNDICE
 \templateIndex
 
+
+\begin{iausedeclaration}
+	En la elaboración de esta tesis se utilizaron herramientas de inteligencia artificial generativa. Específicamente, se usó DeepSeek\footnote{DeepSeek. (2026). \textit{DeepSeek Chat} [Modelo de lenguaje grande]. \url{https://www.deepseek.com/en/}}. Su uso fue motivado principalmente para tener una transición al inglés. A continuación se detalla su uso en distintos procesos:
+	
+	\begin{enumerate}
+		\item Redacción: se utilizó para corregir ortografía, puntuación, y palabras repetidas, así como para sugerir cambios en la redacción de ideas. Cada corrección entregada por la herramienta es entregada párrafo por párrafo, con una breve descripción de la misma. Las correcciones se realizan sobre textos redactados previamente por el autor, y se prohibió explícitamente redactar párrafos o secciones desde cero.
+		\item Generación de código: Se utiliza como apoyo, principalmente para modificar código desarrollado por el autor. Su uso se limitó a la generación de gráficos en Python (cuyo diseño es del autor), y ediciones en LaTex. 
+		\item Lectura de documentos: En algunos documentos, principalmente los relacionados con la introducción, se utilizó para realizar resumenes. Se tomó el cuidado de leer tanto el abstract como las secciones de conclusiones y discusión de cada documento resumido. Cada afirmación relevante en dichos resúmenes fue verificada en los respectivos documentos por el autor.
+	\end{enumerate}
+	
+	Respecto al análisis de resultados, conclusiones, discusión y diseño de secciones dentro del documento, corresponden a producción exclusiva del autor, sin intervención de herramientas externas. El marco teórico fue discutido con el profesor guía, y con otros estudiantes exclusivmente. A continuación, se muestra un fragmento de un promt real utilizado:
+	
+	\begin{quote}
+		"Correcciones por párrafo: Prefiero que las correcciones se hagan de forma organizada, párrafo por párrafo, señalando problemas específicos y sugiriendo soluciones sin redactar secciones completas por mí.
+		
+		Sin redacción por tu parte: No redactes secciones desde cero. Yo debo redactar los textos, y sobre eso tú me das correcciones y mejoras de redacción.
+		
+		Enfoque en precisión científica y estilo: Priorizar correcciones gramaticales, de estilo, consistencia terminológica, precisión científica, y uso apropiado de citas (\verb|\citet| vs \verb|\citep|)."
+	\end{quote}
+	
+	Finalmente, todo el contenido fue revisado y validado por el autor, quien asume plena responsabilidad sobre el trabajo presentado.
+\end{iausedeclaration}
+
 % CONFIGURACIONES FINALES
 \templateFinalcfg
 
 % ======================= INICIO DEL DOCUMENTO =======================
 
+
 \input{example} % Ejemplo, se puede borrar
+
 
 % FIN DEL DOCUMENTO
 \end{document}
